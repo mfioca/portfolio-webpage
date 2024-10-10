@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Graph from './Graph';
 import SecondGraph from './Graph2'; // Import your new graph component
+import ThirdGraph from './Graph3'; // Import your new graph component
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           </header>
           <Graph />
           <SecondGraph />
+          <ThirdGraph />
       </div>
   );
 }
