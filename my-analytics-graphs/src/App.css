@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+.chart-container {
+  width: 1000px; /* Adjust width */
+  height: 700px; /* Adjust height */
+  /* Additional styles if needed */
+}
