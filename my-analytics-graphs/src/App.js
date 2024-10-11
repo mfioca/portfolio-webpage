@@ -3,6 +3,7 @@ import './App.css';
 import Graph from './Graph';
 import SecondGraph from './Graph2'; // Import your new graph component
 import ThirdGraph from './Graph3'; // Import your new graph component
+import Dashboard from './dashboard'; // Import your new graph component
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
           <header className="App-header">
               <h1>CSV Data Graph</h1>
           </header>
-          <Graph />
+          {/*<Graph />
           <SecondGraph />
-          <ThirdGraph />
+          <ThirdGraph /> */}
+          <Dashboard />
       </div>
   );
 }
