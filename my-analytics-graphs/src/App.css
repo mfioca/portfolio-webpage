@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,4 +70,44 @@
   padding: 10px; /* Padding inside the box */
   width: 300px; /* Set width as desired */
   margin-left: 20px; /* Space between title and box */
+}
+
+.filtered-data {
+    margin: 20px 0; /* Add margin for spacing */
+    border: 1px solid #ccc; /* Optional border for visibility */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Remove inner padding to allow for fixed header */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Set a maximum height for the div */
+    padding-top: 0; /* Adjust padding to match the header height */
+}
+
+table {
+    width: 100%; /* Make the table full width */
+    border-collapse: collapse; /* Collapse borders for cleaner look */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Cell borders */
+    padding: 8px; /* Cell padding */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #f2f2f2; /* Header background color */
+    position: sticky; /* Enable sticky positioning */
+    top: 0; /* Stick to the top */
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+.dropdowns {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out dropdowns evenly */
+  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+  margin: 20px 0; /* Optional margin for spacing */
+}
+
+.dropdowns > div {
+  margin-right: 20px; /* Space between each dropdown */
+  flex: 1; /* Allow dropdowns to grow equally */
 }

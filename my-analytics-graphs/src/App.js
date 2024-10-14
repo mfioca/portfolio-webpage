@@ -11,9 +11,9 @@ function App() {
           <header className="App-header">
               <h1>CSV Data Graph</h1>
           </header>
-          {/*<Graph />
+          <Graph />
           <SecondGraph />
-          <ThirdGraph /> */}
+          <ThirdGraph /> 
           <Dashboard />
       </div>
   );

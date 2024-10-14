@@ -12,10 +12,15 @@ const Dashboard = () => {
     const [months, setMonths] = useState([]);
     const [years, setYears] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const rowsPerPage = 100; // Number of rows to display per page 
+    const rowsPerPage = 100; // Number of rows to display per page
+
 
     // Load and parse the CSV data
     useEffect(() => {
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
         const fetchData = async () => {
             const response = await fetch('/cleaned_data_1.csv'); 
             const text = await response.text();
@@ -27,28 +32,23 @@ const Dashboard = () => {
                     console.log('Parsed Results:', results.data); // Log parsed data
                     setData(results.data);
 
-                    const uniqueActivityTypes = [...new Set(results.data.map(row => row.activity_subtype))];
+                    const uniqueActivityTypes = [...new Set(results.data.map(row => row.activity_type))];
                     setActivityTypes(uniqueActivityTypes); // Set the unique activity types
 
                     const uniqueApplications = [...new Set(results.data.map(row => row.application))];
                     setApplications(uniqueApplications); // Set the unique applications
 
-                    const uniqueMonths = new Set(); // To store unique months
+                    const uniqueMonths = new Set();
                     results.data.forEach(row => {
                         const dateStr = row.timestamp; // Assuming this is your date column
                         if (dateStr) { // Check if dateStr is not null or undefined
-                            const dateParts = dateStr.split(' ')[0].split('/'); // Split the date and take only the date part
-
-                            // Create a Date object from the parts
-                            const month = 
-                                new Date(`${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`).toLocaleString('default', 
-                                { month: 'long' });
-                            
-                            uniqueMonths.add(month); // Add the month to the Set
+                            const monthIndex = new Date(dateStr).getMonth(); // Get the month index
+                            uniqueMonths.add(monthNames[monthIndex]); // Add the month name to the Set
                         }
                     });
-                    const monthsArray = [...uniqueMonths]; // Convert Set to Array
-                    setMonths(monthsArray); // Set the unique months for dropdown
+
+                    // Set the state for unique months
+                    setMonths(Array.from(uniqueMonths)); // Set the unique months for dropdown
 
                     const uniqueYears = new Set();
                     results.data.forEach(row => {
@@ -67,9 +67,9 @@ const Dashboard = () => {
     // Define filteredData based on selected filters
     const filteredData = data.filter(row => {
         const matchesApp = selectedApp ? row.application === selectedApp : true; // Check application filter
-        const matchesActivityType = selectedActivityType ? row.activity_subtype === selectedActivityType : true; // Check activity type filter
+        const matchesActivityType = selectedActivityType ? row.activity_type === selectedActivityType : true; // Check activity type filter
         const matchesMonth = selectedMonth ? new Date(row.timestamp).toLocaleString('default', { month: 'long' }) === selectedMonth : true; // Check month filter
-        const matchesYear = selectedYear ? new Date(row.timestamp).getFullYear() === selectedYear : true; // Check year filter
+        const matchesYear = selectedYear ? new Date(row.timestamp).getFullYear() === parseInt(selectedYear) : true; // Check year filter
 
         return matchesApp && matchesActivityType && matchesMonth && matchesYear; // Combine conditions
     });
@@ -100,6 +100,7 @@ const Dashboard = () => {
                     ))}
                     </select>
                 </div>
+                {/*}
                 <div>
                     <h2>Select Application</h2>
                     <select 
@@ -107,14 +108,14 @@ const Dashboard = () => {
                         onChange={(e) => setSelectedApp([...e.target.selectedOptions].map(option => option.value))} 
                         multiple
                     >
-                        <option value="">All Applications</option> {/* Default option for all applications */}
+                        <option value="">All Applications</option> //Default option for all applications 
                             {applications.map((app, index) => (
                             <option key={index} value={app}>
                             {app}
                         </option>
                     ))}
                     </select>
-                </div>
+                </div> */}
 
                 <div>
                     <h2>Select Month</h2>
@@ -133,7 +134,8 @@ const Dashboard = () => {
 
                 <div>
                     <h2>Select Year</h2>
-                    <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
+                    <select value={selectedYear} 
+                        onChange={(e) => setSelectedYear(e.target.value)}>
                         <option value="">All Years</option> {/* Default option for all years */}
                             {years.map((year, index) => (
                         <option key={index} value={year}>
@@ -152,22 +154,37 @@ const Dashboard = () => {
                 {/* Area to display top apps by duration */}
             </div>
 
+
             <div className="filtered-data">
-    {currentData.map((row, index) => (
-        <div key={index}>
-            {Object.keys(row).map((key) => {
-                if (key !== 'timestamp') { // Exclude the timestamp key
-                    return (
-                        <div key={key}>
-                            <strong>{key}:</strong> {row[key]} {/* Display the key and value */}
-                        </div>
-                    );
-                }
-                return null; // Return null if it's the timestamp
-            })}
-        </div>
-    ))}
-</div>
+                {currentData.length > 0 ? ( // Check if there is any data
+                    <table>
+                        <thead>
+                            <tr>
+                                {Object.keys(currentData[0]).map((key, index) => {
+                                    if (key !== 'timestamp' && key !== 'hour') {
+                                        return <th key={index}>{key}</th>; // Table headers
+                                    }
+                                    return null; // Exclude timestamp from headers
+                                })}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {currentData.map((row, index) => (
+                                <tr key={index}>
+                                    {Object.keys(row).map((key) => {
+                                        if (key !== 'timestamp' && key !== 'hour') {
+                                            return <td key={key}>{row[key]}</td>; // Table data cells
+                                        }
+                                        return null; // Exclude timestamp from data
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No data available</p> // Message when there is no data
+                )}
+            </div>
             
 
             
