@@ -3,12 +3,12 @@ import Papa from 'papaparse'; // For parsing CSV data
 
 const Dashboard = () => {
     const [data, setData] = useState([]); // Use data state to store CSV results
-    const [selectedApp, setSelectedApp] = useState('');
+    //const [selectedApp, setSelectedApp] = useState('');
     const [selectedActivityType, setSelectedActivityType] = useState('');
     const [selectedMonth, setSelectedMonth] = useState('');
     const [selectedYear, setSelectedYear] = useState('');
     const [activityTypes, setActivityTypes] = useState([]);
-    const [applications, setApplications] = useState([]);
+    //const [applications, setApplications] = useState([]);
     const [months, setMonths] = useState([]);
     const [years, setYears] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -35,12 +35,12 @@ const Dashboard = () => {
                     const uniqueActivityTypes = [...new Set(results.data.map(row => row.activity_type))];
                     setActivityTypes(uniqueActivityTypes); // Set the unique activity types
 
-                    const uniqueApplications = [...new Set(results.data.map(row => row.application))];
-                    setApplications(uniqueApplications); // Set the unique applications
+                    //const uniqueApplications = [...new Set(results.data.map(row => row.application))];
+                    //setApplications(uniqueApplications); // Set the unique applications
 
                     const uniqueMonths = new Set();
                     results.data.forEach(row => {
-                        const dateStr = row.timestamp; // Assuming this is your date column
+                        const dateStr = row.timestamp; 
                         if (dateStr) { // Check if dateStr is not null or undefined
                             const monthIndex = new Date(dateStr).getMonth(); // Get the month index
                             uniqueMonths.add(monthNames[monthIndex]); // Add the month name to the Set
@@ -56,23 +56,23 @@ const Dashboard = () => {
                         uniqueYears.add(year);
                     });
                     const yearsArray = [...uniqueYears];
-                    setYears(yearsArray); // Ensure you have the state to hold the years
+                    setYears(yearsArray); 
                 },
             });
         };
-
         fetchData();
     }, []);
 
     // Define filteredData based on selected filters
     const filteredData = data.filter(row => {
-        const matchesApp = selectedApp ? row.application === selectedApp : true; // Check application filter
+        //const matchesApp = selectedApp ? row.application === selectedApp : true; // Check application filter
         const matchesActivityType = selectedActivityType ? row.activity_type === selectedActivityType : true; // Check activity type filter
         const matchesMonth = selectedMonth ? new Date(row.timestamp).toLocaleString('default', { month: 'long' }) === selectedMonth : true; // Check month filter
         const matchesYear = selectedYear ? new Date(row.timestamp).getFullYear() === parseInt(selectedYear) : true; // Check year filter
 
-        return matchesApp && matchesActivityType && matchesMonth && matchesYear; // Combine conditions
+        return matchesActivityType && matchesMonth && matchesYear; // Combine conditions "matchesApp &&" if I want to add app back
     });
+
     console.log('Filtered Data:', filteredData); // Log the filtered data
 
     // Calculate pagination
@@ -84,23 +84,21 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <h2>Dashboard</h2>
-            
             <div className="dropdowns">
                 <div>
                     <h2>Select Activity Type</h2>
                     <select 
                         value={selectedActivityType} 
-                        onChange={(e) => setSelectedActivityType(e.target.value)} // Update state on selection
-                    >
+                        onChange={(e) => setSelectedActivityType(e.target.value)}>
                         <option value="">All Activity Types</option> {/* Default option for all activity types */}
                         {activityTypes.map((type, index) => (
-                        <option key={index} value={type}>
-                        {type}
-                        </option>
-                    ))}
+                            <option key={index} value={type}>
+                                {type}
+                            </option>
+                        ))}
                     </select>
                 </div>
-                {/*}
+                {/*} application dropdown
                 <div>
                     <h2>Select Application</h2>
                     <select 
@@ -116,36 +114,33 @@ const Dashboard = () => {
                     ))}
                     </select>
                 </div> */}
-
                 <div>
                     <h2>Select Month</h2>
                     <select 
                         value={selectedMonth} 
-                        onChange={(e) => setSelectedMonth(e.target.value)} // Single selection
-                    >
+                        onChange={(e) => setSelectedMonth(e.target.value)}> 
                         <option value="">All Months</option> {/* Default option for all months */}
-                            {months.map((month, index) => (
+                        {months.map((month, index) => (
                             <option key={index} value={month}>
-                            {month}
-                        </option>
-                    ))}
+                                {month}
+                            </option>
+                        ))}
                     </select>
                 </div>
-
                 <div>
                     <h2>Select Year</h2>
-                    <select value={selectedYear} 
+                    <select 
+                        value={selectedYear} 
                         onChange={(e) => setSelectedYear(e.target.value)}>
                         <option value="">All Years</option> {/* Default option for all years */}
-                            {years.map((year, index) => (
-                        <option key={index} value={year}>
-                        {year}
-                        </option>
-                    ))}
+                        {years.map((year, index) => (
+                            <option key={index} value={year}>
+                                {year}
+                            </option>
+                        ))}
                     </select>
                 </div>
             </div>
-
             <div className="calculations">
                 {/* Area to display calculations based on dropdown selections */}
             </div>
@@ -153,8 +148,6 @@ const Dashboard = () => {
             <div className="top-apps">
                 {/* Area to display top apps by duration */}
             </div>
-
-
             <div className="filtered-data">
                 {currentData.length > 0 ? ( // Check if there is any data
                     <table>
@@ -185,23 +178,16 @@ const Dashboard = () => {
                     <p>No data available</p> // Message when there is no data
                 )}
             </div>
-            
-
-            
-
-
             <div className="pagination">
                 <button 
                     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-                    disabled={currentPage === 1}
-                >
+                    disabled={currentPage === 1}>
                     Previous
                 </button>
                 <span>Page {currentPage} of {totalPages}</span>
                 <button 
                     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                    disabled={currentPage === totalPages}
-                >
+                    disabled={currentPage === totalPages}>
                     Next
                 </button>
             </div>

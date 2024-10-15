@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Graph from './Graph';
 import SecondGraph from './Graph2'; // Import your new graph component
