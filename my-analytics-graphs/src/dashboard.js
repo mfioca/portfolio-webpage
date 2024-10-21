@@ -13,6 +13,7 @@ const Dashboard = () => {
     const [years, setYears] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 100; // Number of rows to display per page
+ 
 
 
     // Load and parse the CSV data
@@ -74,6 +75,41 @@ const Dashboard = () => {
     });
 
     console.log('Filtered Data:', filteredData); // Log the filtered data
+
+    // Calculate top applications and activity subtypes
+const topApplications = [];
+const topActivitySubtypes = [];
+
+// Aggregate hours for applications
+filteredData.forEach(row => {
+    // Convert duration from seconds to hours
+    const hours = row.duration / 3600; // Assuming row.duration is in seconds
+
+    // Update application hours
+    const appIndex = topApplications.findIndex(app => app.name === row.application);
+    if (appIndex > -1) {
+        topApplications[appIndex].hours += hours;
+    } else {
+        topApplications.push({ name: row.application, hours });
+    }
+
+    // Update activity subtype hours
+    const subtypeIndex = topActivitySubtypes.findIndex(subtype => subtype.name === row.activity_type);
+    if (subtypeIndex > -1) {
+        topActivitySubtypes[subtypeIndex].hours += hours;
+    } else {
+        topActivitySubtypes.push({ name: row.activity_type, hours });
+    }
+});
+
+// Sort and get top 5 applications and subtypes
+topApplications.sort((a, b) => b.hours - a.hours);
+topActivitySubtypes.sort((a, b) => b.hours - a.hours);
+
+// Limit to top 5
+const top5Applications = topApplications.slice(0, 5);
+const top5ActivitySubtypes = topActivitySubtypes.slice(0, 5);
+
 
     // Calculate pagination
     const totalPages = Math.ceil(filteredData.length / rowsPerPage);
@@ -145,9 +181,46 @@ const Dashboard = () => {
                 {/* Area to display calculations based on dropdown selections */}
             </div>
 
-            <div className="top-apps">
-                {/* Area to display top apps by duration */}
-            </div>
+            <div className="top-applications">
+    <h3>Top Applications</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Application</th>
+                <th>Hours Spent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {top5Applications.map(app => (
+                <tr key={app.name}>
+                    <td>{app.name}</td>
+                    <td>{app.hours.toFixed(2)}</td> {/* Display hours spent, rounded to 2 decimal places */}
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
+<div className="top-subtypes">
+    <h3>Top Activity Subtypes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Activity Subtype</th>
+                <th>Hours Spent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {top5ActivitySubtypes.map(subtype => (
+                <tr key={subtype.name}>
+                    <td>{subtype.name}</td>
+                    <td>{subtype.hours.toFixed(2)}</td> {/* Display hours spent, rounded to 2 decimal places */}
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+            
             <div className="filtered-data">
                 {currentData.length > 0 ? ( // Check if there is any data
                     <table>

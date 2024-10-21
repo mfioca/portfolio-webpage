@@ -50,7 +50,6 @@
   width: 100%; /* Full width */
 }
 
-
 .data-box {
   position: absolute; /* Position it absolutely */
   right: 5px; /* Adjust this value to position it */
@@ -64,33 +63,32 @@
   font-size: 14px; /* Adjust font size as needed */
 }
 
-
 .filtered-data {
-    margin: 20px 0; /* Add margin for spacing */
-    border: 1px solid #ccc; /* Optional border for visibility */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px; /* Remove inner padding to allow for fixed header */
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 400px; /* Set a maximum height for the div */
-    padding-top: 0; /* Adjust padding to match the header height */
+  margin: 20px 0; /* Add margin for spacing */
+  border: 1px solid #ccc; /* Optional border for visibility */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Remove inner padding to allow for fixed header */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 400px; /* Set a maximum height for the div */
+  padding-top: 0; /* Adjust padding to match the header height */
 }
 
 table {
-    width: 100%; /* Make the table full width */
-    border-collapse: collapse; /* Collapse borders for cleaner look */
+  width: 100%; /* Make the table full width */
+  border-collapse: collapse; /* Collapse borders for cleaner look */
 }
 
 th, td {
-    border: 1px solid #ddd; /* Cell borders */
-    padding: 8px; /* Cell padding */
-    text-align: left; /* Align text to the left */
+  border: 1px solid #ddd; /* Cell borders */
+  padding: 8px; /* Cell padding */
+  text-align: left; /* Align text to the left */
 }
 
 th {
-    background-color: #f2f2f2; /* Header background color */
-    position: sticky; /* Enable sticky positioning */
-    top: 0; /* Stick to the top */
-    z-index: 10; /* Ensure it appears above other content */
+  background-color: #f2f2f2; /* Header background color */
+  position: sticky; /* Enable sticky positioning */
+  top: 0; /* Stick to the top */
+  z-index: 10; /* Ensure it appears above other content */
 }
 
 .dropdowns {
@@ -105,7 +103,6 @@ th {
   flex: 1; /* Allow dropdowns to grow equally */
 }
 
-
 .graph-container {
   display: flex; /* Use flexbox to align graph and text side by side */
   align-items: flex-start; /* Align items at the start */
@@ -114,6 +111,7 @@ th {
 
 .text-section {
   margin-left: 20px; /* Space between graph and text */
+  margin-top: 100px; /* Space between top of graph section and start of text box */
   max-width: 300px; /* Max width for the text section */
   text-align: left; /* Align text to the left */
   font-size: 14px; /* Font size for the text */

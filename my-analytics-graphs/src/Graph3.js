@@ -66,7 +66,7 @@ const Graph3 = () => {
                             const year = new Date(row.timestamp).getFullYear();
                             if (year < 2000) return; // Skip entries from before 2000
     
-                            const duration = row.duration;
+                            const duration = row.duration / 3600; // Convert seconds to hours
     
                             // Accumulate total work durations
                             totalWorkByYear[year] = (totalWorkByYear[year] || 0) + duration;
