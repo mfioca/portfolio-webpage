@@ -65,7 +65,7 @@ function DashboardLayout() {
 
                             <ThirdGraph />
  
-                        <div className="text-section-alt">
+                        <div className="text-section">
                         <p>
                             In this section, we have a quick visual display of the amount of time spent with a focus on analytics per year 
                             with time reflected in hours. It also shows the total number of hours completed per year and the 
@@ -75,6 +75,7 @@ function DashboardLayout() {
                     </div>
                 </div>
             </div>
+            <Dashboard />
         </div>
     );
 }

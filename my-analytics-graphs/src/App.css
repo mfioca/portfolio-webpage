@@ -3,9 +3,7 @@
 }
 
 
-* {
-  box-sizing: border-box;
-}
+
 
 
 .App-header {
@@ -18,8 +16,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-
 
 
 
@@ -84,112 +80,68 @@ th {
   flex: 1; /* Allow dropdowns to grow equally */
 }
 
-.graph-box-1 {
-  display: flex;
-  flex-direction: row; /* Place the graph and text section side by side */
-  align-items: flex-start; /* Align items to the top */
-  margin: 5px; /* Space between each graph box */
-  width: 50%; /* Set the width of the graph box to 50% of the page */
-  /*max-width: 1000px; /* Max width for larger screens */
-  min-width: 700px; /* Min width for responsiveness */
-  background-color: #4CAF50; /* Green color */
-}
-
-
-
-.graph-container1 {
-  flex: 1; /* Allow the graph to take up available space */
-  max-width: 1000px; /* Max width for the graph container */
-  min-width: 700px; /* Min width to prevent shrinking below this size */
-  width: 100%; /* Full width for the graph container */
-}
-
-
-
-.chart-container1 {
-  width: 100%; /* Make the chart fill the container */
-  max-width: 1000px; /* Ensure it doesn't exceed the max width */
-  height: auto; /* Allow the height to adjust automatically */
-  display: flex; /* Enable flexbox for inner content */
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center the chart horizontally */
-  padding: 20px; /* Add some padding around the chart */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-  border-radius: 8px; /* Round the corners for a smoother look */
-  background-color: #ffffff; /* White background for the chart container */
-}
-
-.text-section1 {
-  padding: 10px; /* Add padding for text */
-  text-align: left; /* Align text to the left */
-  max-width: 400px; /* Set a max width for the text section */
-  height: auto; /* Allow the height to be flexible */
-}
-
 .Body {
   display: flex; /* Enable flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping if there's not enough space */
   align-items: stretch; /* Ensures all items are the same height */
   gap: 5px;
   padding: 1px;
-  height: 100vh; /* Full viewport height */
-  
-  
+  /*height: 100vh; /* Full viewport height */
+  justify-content: center; /* Center items horizontally */
   background-color: #800080; /* Purple */
 }
 
 .graph-box {
-  flex-grow: 1; /* Will grow to take up available space */
   padding: 5px; /* Keep 5px margin */
   margin: 5px;
   background-color: #4CAF50; /* Green color */
-  min-width: 700px; /* Set a minimum width */
   width: 1500px;
+  height: 700px;
   display: flex; /* Enable flexbox for contents inside */
   flex-direction: column; /* Arrange children vertically */
+  /*align-items: stretch; /* Ensures all items are the same height */
+  gap: 5px;
+}
+
+.graph-container {
+  flex-grow: 1;
+  display: grid; /* Enable grid layout */
+  grid-template-columns: 1fr 300px; /* Default to a single column layout */
+  gap: 5px; /* Space between the chart and text section */
+  padding: 10px; /* Padding for internal spacing */
+  max-height: 1350px; /* Set a maximum height */
 }
 
 .chart-container {
-  flex-grow: 1; /* Allows the chart to grow within the graph-box */
-  min-width: 700px; /* Set a minimum height */
-  max-width: 1300px;
-  max-height: 800px;
-  /*width: 100%; /* Ensure it takes the full width of the graph-box */
+  flex-shrink: 1;
+  min-width: 700px; /* Set a minimum width */
+  max-width: 1700px; /* Set a maximum width */
+  max-height: 1350px; /* Set a maximum height */
   background-color: #ffffff; /* Optional: white background for contrast */
-  padding: 10px; /* Optional: add padding inside the chart container */
+  padding: 10px; /* Padding for inner spacing */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
   border-radius: 4px; /* Optional: rounded corners */
 }
 
 .text-section {
-  flex-grow: 1;
-  flex-basis: 300px; /* This item will start with a size of 200px */
+  flex-shrink:1;
   background-color: #f0f0f0; /* Light gray background for contrast */
   padding: 10px; /* Padding for inner spacing */
-  margin: 50px; /* Space above the text section */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 4px; /* Rounded corners for aesthetics */
+  border-radius: 4px; /* Rounded corners */
+  margin: 10px; /* Reset margin if necessary */
 }
 
-.text-section-alt {
-  /*flex-grow: 0; /* Prevent it from growing, keeping its content size */
-  min-width: 200px; /* Minimum width to maintain readability */
-  max-width: 300px; /* Set a maximum width for better control */
-  background-color: #f0f0f0; /* Light gray background for contrast */
-  padding: 10px; /* Padding for inner spacing */
-  margin: 50px; /* Space above the text section */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 4px; /* Rounded corners for aesthetics */
+@media (max-width: 800px) { /* Adjust this breakpoint as needed */
+  .graph-container {
+      grid-template-columns: 1fr; /* Switch to a single column layout */
+  }
+
+  .text-section {
+      width: 95%; /* Make it full width below the graph */
+      max-width: 95%; /* Ensure it doesn't exceed the width of its container */
+      margin: 5px; /* Reset margin if necessary */
+      padding: 5px;
+  }
 }
 
-.graph-container {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
-  /*flex-direction: column; /* Or row, depending on your layout needs */
-  /*gap: 10px; /* Space between the chart and text section */
-  /*width: 100%; /* Ensure it takes the full width of the graph box */
-  justify-content: center;
-  gap: 5px;
-  padding: 1px;
-
-}
