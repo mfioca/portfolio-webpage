@@ -83,18 +83,23 @@ th {
 .Body {
   display: flex; /* Enable flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping if there's not enough space */
-  align-items: stretch; /* Ensures all items are the same height */
-  gap: 5px;
-  padding: 1px;
+  /*align-items: stretch; /* Ensures all items are the same height */
+  max-width: 100%; /* Ensure it doesn't overflow */
+
+  padding: 5px;
   /*height: 100vh; /* Full viewport height */
   justify-content: center; /* Center items horizontally */
-  background-color: #800080; /* Purple */
+  background-color: #f4f4f4; /* Light gray */
+  border: none; /* No border */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
 
 .graph-box {
   padding: 5px; /* Keep 5px margin */
   margin: 5px;
-  background-color: #4CAF50; /* Green color */
+  background-color: #ffffff; /* White */
+  border: 1px solid #dee2e6; /* Light gray border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   width: 1500px;
   height: 700px;
   display: flex; /* Enable flexbox for contents inside */
@@ -117,17 +122,25 @@ th {
   min-width: 700px; /* Set a minimum width */
   max-width: 1700px; /* Set a maximum width */
   max-height: 1350px; /* Set a maximum height */
-  background-color: #ffffff; /* Optional: white background for contrast */
+  background-color: #ffffff; /* White */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slight rounding */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 10px; /* Padding for inner spacing */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
   border-radius: 4px; /* Optional: rounded corners */
 }
 
 .text-section {
-  flex-shrink:1;
-  background-color: #f0f0f0; /* Light gray background for contrast */
+  flex-grow: 1;
+  background-color: #f8f9fa; /* Light beige or cream */
+  border: 1px solid #ddd; /* Subtle light border */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  color: #333; /* Dark gray text for readability */
   padding: 10px; /* Padding for inner spacing */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+
+  
   border-radius: 4px; /* Rounded corners */
   margin: 10px; /* Reset margin if necessary */
 }
