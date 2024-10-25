@@ -67,7 +67,7 @@ function DashboardLayout() {
             <header className="App-header">
                 <h1>Dashboard Layout</h1>
             </header>
-            <div className="Body">
+            <div className="graph-flexbox">
                 <div className="graph-box">
                     <div className="graph-container">
 

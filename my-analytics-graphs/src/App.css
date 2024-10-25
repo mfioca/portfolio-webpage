@@ -2,119 +2,52 @@
   text-align: center;
 }
 
-
-
-
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100px;
+  background-color: #282c34;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+/*******************************************************************/
+/*Secton of Dashboard that contains the graphs in a flexbox layout */
+/*******************************************************************/
 
 
-
-
-
-.chart-header {
-  position: relative; /* Allow absolute positioning inside */
-  text-align: center; /* Center align title */
-  width: 100%; /* Full width */
-}
-
-.data-box {
-  position: absolute; /* Position it absolutely */
-  right: 5px; /* Adjust this value to position it */
-  top: 0; /* Align it to the top */
-  background-color: #f9f9f9; /* Background color */
-  padding: 10px; /* Adjust padding */
-  border-radius: 4px; /* Rounded corners */
-  height: 40px; /* Set height to match title/key height */
-  width: 250px;
-  align-items: center; /* Center text vertically */
-  font-size: 14px; /* Adjust font size as needed */
-}
-
-.filtered-data {
-  margin: 20px 0; /* Add margin for spacing */
-  border: 1px solid #ccc; /* Optional border for visibility */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px; /* Remove inner padding to allow for fixed header */
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 400px; /* Set a maximum height for the div */
-  padding-top: 0; /* Adjust padding to match the header height */
-}
-
-table {
-  width: 100%; /* Make the table full width */
-  border-collapse: collapse; /* Collapse borders for cleaner look */
-}
-
-th, td {
-  border: 1px solid #ddd; /* Cell borders */
-  padding: 8px; /* Cell padding */
-  text-align: left; /* Align text to the left */
-}
-
-th {
-  background-color: #f2f2f2; /* Header background color */
-  position: sticky; /* Enable sticky positioning */
-  top: 0; /* Stick to the top */
-  z-index: 10; /* Ensure it appears above other content */
-}
-
-.dropdowns {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space out dropdowns evenly */
-  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
-  margin: 20px 0; /* Optional margin for spacing */
-}
-
-.dropdowns > div {
-  margin-right: 20px; /* Space between each dropdown */
-  flex: 1; /* Allow dropdowns to grow equally */
-}
-
-.Body {
+.graph-flexbox {
   display: flex; /* Enable flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping if there's not enough space */
-  /*align-items: stretch; /* Ensures all items are the same height */
-  max-width: 100%; /* Ensure it doesn't overflow */
-
-  padding: 5px;
-  /*height: 100vh; /* Full viewport height */
   justify-content: center; /* Center items horizontally */
-  background-color: #f4f4f4; /* Light gray */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  padding: 5px;
   border: none; /* No border */
+  background-color: #f4f4f4; /* Light gray */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
 
 .graph-box {
-  padding: 5px; /* Keep 5px margin */
-  margin: 5px;
-  background-color: #ffffff; /* White */
-  border: 1px solid #dee2e6; /* Light gray border */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 1500px;
-  height: 700px;
   display: flex; /* Enable flexbox for contents inside */
   flex-direction: column; /* Arrange children vertically */
-  /*align-items: stretch; /* Ensures all items are the same height */
   gap: 5px;
+  width: 1500px;
+  height: 800px;
+  padding: 5px; /* Keep 5px margin */
+  margin: 5px;
+  border: 1px solid #dee2e6; /* Light gray border */
+  background-color: #ffffff; /* White */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .graph-container {
-  flex-grow: 1;
   display: grid; /* Enable grid layout */
+  flex-grow: 1;
   grid-template-columns: 1fr 300px; /* Default to a single column layout */
   gap: 5px; /* Space between the chart and text section */
-  padding: 10px; /* Padding for internal spacing */
   max-height: 1350px; /* Set a maximum height */
+  padding: 10px; /* Padding for internal spacing */
 }
 
 .chart-container {
@@ -122,27 +55,86 @@ th {
   min-width: 700px; /* Set a minimum width */
   max-width: 1700px; /* Set a maximum width */
   max-height: 1350px; /* Set a maximum height */
-  background-color: #ffffff; /* White */
+  padding: 10px; /* Padding for inner spacing */
   border: 1px solid #ccc; /* Light gray border */
   border-radius: 4px; /* Slight rounding */
+  background-color: #ffffff; /* White */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 10px; /* Padding for inner spacing */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
-  border-radius: 4px; /* Optional: rounded corners */
 }
 
 .text-section {
   flex-grow: 1;
-  background-color: #f8f9fa; /* Light beige or cream */
+  padding: 10px; /* Padding for inner spacing */
+  margin: 10px auto; /* Reset margin if necessary */
   border: 1px solid #ddd; /* Subtle light border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #f8f9fa; /* Light beige or cream */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
   color: #333; /* Dark gray text for readability */
-  padding: 10px; /* Padding for inner spacing */
+}
 
+.chart-header {
+  position: relative; /* Allow absolute positioning inside */
+  text-align: center; /* Center align title */
+  width: 100%; /* Full width */
+}
 
-  
+/* exists in the 3rd graph that shows percent calculations */
+.data-box {
+  position: absolute; /* Position it absolutely */
+  right: 5px; /* Adjust this value to position it */
+  top: 0; /* Align it to the top */
+  align-items: center; /* Center text vertically */
+  height: 40px; /* Set height to match title/key height */
+  width: 250px;
+  padding: 10px; /* Adjust padding */
   border-radius: 4px; /* Rounded corners */
-  margin: 10px; /* Reset margin if necessary */
+  background-color: #f9f9f9; /* Background color */  
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+/***********************************************************************************/
+/*this section is for displaying the section with the dropdown lists and csv data. */
+/***********************************************************************************/
+
+.filtered-data {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 400px; /* Set a maximum height for the div */
+  padding: 10px; /* Remove inner padding to allow for fixed header */
+  padding-top: 0; /* Adjust padding to match the header height */
+  margin: 20px 0; /* Add margin for spacing */
+  border: 1px solid #ccc; /* Optional border for visibility */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.csv-data {
+  width: 100%; /* Make the table full width */
+  border-collapse: collapse; /* Collapse borders for cleaner look */
+}
+
+.csv-data th, .csv-data td {
+  border: 1px solid #ddd; /* Cell borders */
+  padding: 8px; /* Cell padding */
+  text-align: left; /* Align text to the left */
+}
+
+.csv-data th {
+  position: sticky; /* Enable sticky positioning */
+  top: 0; /* Stick to the top */
+  z-index: 10; /* Ensure it appears above other content */
+  background-color: #f2f2f2; /* Header background color */
+}
+
+.dropdowns {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+  justify-content: space-between; /* Space out dropdowns evenly */
+  margin: 20px 0; /* Optional margin for spacing */
+}
+
+.dropdowns > div {
+  flex: 1; /* Allow dropdowns to grow equally */
+  margin-right: 20px; /* Space between each dropdown */
 }
 
 @media (max-width: 800px) { /* Adjust this breakpoint as needed */
@@ -154,7 +146,7 @@ th {
       width: 95%; /* Make it full width below the graph */
       max-width: 95%; /* Ensure it doesn't exceed the width of its container */
       margin: 5px; /* Reset margin if necessary */
-      padding: 5px;
+      padding: 10px;
   }
 }
 

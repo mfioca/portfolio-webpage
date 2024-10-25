@@ -223,7 +223,7 @@ const top5ActivitySubtypes = topActivitySubtypes.slice(0, 5);
             
             <div className="filtered-data">
                 {currentData.length > 0 ? ( // Check if there is any data
-                    <table>
+                    <table class="csv-data">
                         <thead>
                             <tr>
                                 {Object.keys(currentData[0]).map((key, index) => {
