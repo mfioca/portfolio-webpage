@@ -1,16 +1,17 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { Line } from 'react-chartjs-2';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux'; // Import hooks from react-redux
+import { setGraphData } from './actions'; // Adjust the path as needed
 import { Chart, CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
-import Papa from 'papaparse';
+import { Line } from 'react-chartjs-2'; // Import the Line component
+import Papa from 'papaparse'; // Import PapaParse
 
 // Register Chart.js components
 Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend);
 
 const Graph2 = () => {
-    const [data, setData] = useState({
-        labels: [],
-        datasets: [],
-    });
+    const dispatch = useDispatch(); // Initialize dispatch
+    const graphData = useSelector((state) => state.graphData.graph2); // Access the Redux state for graph2
+    
 
     const options = useMemo(() => ({
         responsive: true,
@@ -63,7 +64,8 @@ const Graph2 = () => {
                         const combinedUsageByMonth = prepareMonthlyData(combinedData, fullRange);
                         const analyticsUsageByMonth = prepareMonthlyData(analyticsData, fullRange);
     
-                        setData({
+                        // Dispatch data to Redux store
+                        dispatch(setGraphData('graph2', {
                             labels: combinedUsageByMonth.month_year,
                             datasets: [
                                 {
@@ -81,7 +83,7 @@ const Graph2 = () => {
                                     fill: false,
                                 },
                             ],
-                        });
+                        }));
                     },
                 });
             } catch (error) {
@@ -90,7 +92,7 @@ const Graph2 = () => {
         };
     
         fetchData();
-    }, []);
+    }, [dispatch]); // Ensure dispatch is included in the dependency array
 
     const prepareMonthlyData = (data, fullRange) => {
         const monthlyData = {};
@@ -125,7 +127,7 @@ const Graph2 = () => {
     return (
         <div className="chart-container">
             <h2>Job Focus and Activities Over Time by Month</h2>
-            <Line data={data} options={options} />
+            <Line data={graphData} options={options} /> {/* Use Redux graph data */}
         </div>
     );
 };

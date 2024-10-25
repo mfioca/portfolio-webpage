@@ -9,9 +9,24 @@
   justify-content: center;
   min-height: 100px;
   background-color: #282c34;
-  font-size: calc(10px + 2vmin);
+  /*font-size: calc(10px + 2vmin); */
   color: white;
 }
+header h1 {
+  font-size: calc(10px + 2vmin); /* Responsive font size */
+
+}
+
+
+header .footer-text {
+  font-size: 1em; /* Makes the text smaller */
+  color: #666; /* A lighter color for a subtle appearance */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some space above the footer */
+  padding: 10px; /* Add some padding for better spacing */
+}
+
+
 /*******************************************************************/
 /*Secton of Dashboard that contains the graphs in a flexbox layout */
 /*******************************************************************/

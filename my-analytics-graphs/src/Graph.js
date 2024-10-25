@@ -1,17 +1,16 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { Line } from 'react-chartjs-2';
-import { Chart, CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux'; // Import hooks from react-redux
+import { setGraphData } from './actions'; // Adjust the path as needed
+import { Chart, CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { Line } from 'react-chartjs-2'; // Import the Line component
 import Papa from 'papaparse'; // Import PapaParse
-import 'chartjs-plugin-annotation';
 
 // Register Chart.js components
-Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend);
+Chart.register(CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend);
 
 const Graph = () => {
-    const [data, setData] = useState({
-        labels: [],
-        datasets: [],
-    });
+    const dispatch = useDispatch(); // Initialize dispatch
+    const graphData = useSelector((state) => state.graphData.graph1); // Adjust as needed
 
     const options = useMemo(() => ({
         responsive: true,
@@ -30,16 +29,6 @@ const Graph = () => {
                 beginAtZero: true,
             },
         },
-        annotation: {
-            annotations: {
-                line1: {
-                    yMin: 40, // Adjust as necessary
-                    yMax: 40,
-                    borderColor: 'rgb(255, 99, 132)',
-                    borderWidth: 10,
-                },
-            },
-        },
     }), []);
 
     useEffect(() => {
@@ -50,8 +39,8 @@ const Graph = () => {
 
                 // Use PapaParse to parse the CSV data
                 Papa.parse(text, {
-                    header: true, // Use the first row as headers
-                    dynamicTyping: true, // Automatically convert types
+                    header: true,
+                    dynamicTyping: true,
                     complete: (results) => {
                         const modeData = [];
                         const sheetsData = [];
@@ -59,12 +48,12 @@ const Graph = () => {
                         results.data.forEach(row => {
                             const application = row.application;
                             const duration = row.duration;
-                        
+
                             if (application === 'mode') {
-                                const monthYear = new Date(row.timestamp).toISOString().slice(0, 7); // Extract just YYYY-MM
-                                modeData.push({ monthYear, duration: duration / 3600 });   
+                                const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
+                                modeData.push({ monthYear, duration: duration / 3600 });
                             } else if (application === 'google sheets') {
-                                const monthYear = new Date(row.timestamp).toISOString().slice(0, 7); // Extract just YYYY-MM
+                                const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
                                 sheetsData.push({ monthYear, duration: duration / 3600 });
                             }
                         });
@@ -73,7 +62,8 @@ const Graph = () => {
                         const modeUsageByMonth = prepareMonthlyData(modeData, fullRange);
                         const sheetsUsageByMonth = prepareMonthlyData(sheetsData, fullRange);
 
-                        setData({
+                        // Dispatch action to store graph data in Redux
+                        dispatch(setGraphData('graph1', {
                             labels: modeUsageByMonth.month_year,
                             datasets: [
                                 {
@@ -91,7 +81,7 @@ const Graph = () => {
                                     fill: false,
                                 },
                             ],
-                        });
+                        }));
                     },
                 });
             } catch (error) {
@@ -100,7 +90,7 @@ const Graph = () => {
         };
 
         fetchData();
-    }, []); // Dependency array is empty to run once
+    }, [dispatch]); // Ensure dispatch is included in the dependency array
 
     const prepareMonthlyData = (data, fullRange) => {
         const monthlyData = {};
@@ -135,7 +125,7 @@ const Graph = () => {
     return (
         <div className="chart-container">
             <h2>Application Usage Over Time by Month</h2>
-            <Line data={data} options={options} />
+            <Line data={graphData} options={options} /> {/* This line draws the graph */}
         </div>
     );
 };

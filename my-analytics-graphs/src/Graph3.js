@@ -1,16 +1,17 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react'; // Include useState here
 import { Bar } from 'react-chartjs-2';
 import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import Papa from 'papaparse'; // Import PapaParse
+import { useDispatch, useSelector } from 'react-redux'; // Import Redux hooks
+import { setGraphData } from './actions'; // Adjust the path to your actions file
 
 // Register Chart.js components
 Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
 const Graph3 = () => {
-    const [data, setData] = useState({
-        labels: [],
-        datasets: [],
-    });
+    const dispatch = useDispatch(); // Initialize dispatch
+    
+    const graphData = useSelector((state) => state.graphData.graph3); // Access the Redux state for graph
     const [textBoxContent, setTextBoxContent] = useState('');
     const [percentages, setPercentages] = useState([]); // Declare percentages as state
 
@@ -100,9 +101,9 @@ const Graph3 = () => {
                         }).join('\n');
 
                         setTextBoxContent(`${yearText}\n\n`);
-                        
-                        // Set data with both datasets
-                        setData({
+
+                        // Dispatch data to Redux store
+                        dispatch(setGraphData('graph3', {
                             labels: years,
                             datasets: [
                                 {
@@ -116,7 +117,7 @@ const Graph3 = () => {
                                     backgroundColor: 'blue',
                                 },
                             ],
-                        });
+                        }));
                     },
                 });
             } catch (error) {
@@ -125,7 +126,7 @@ const Graph3 = () => {
         };
     
         fetchData();
-    }, []);
+    }, [dispatch]); // Ensure dispatch is included in the dependency array
 
     return (
         <div className="chart-container">
@@ -135,7 +136,7 @@ const Graph3 = () => {
                 {textBoxContent}
                 </div> 
             </div>
-            <Bar data={data} options={options} />
+            <Bar data={graphData} options={options} /> {/* Use Redux graph data */}
         </div>
     );
 };
