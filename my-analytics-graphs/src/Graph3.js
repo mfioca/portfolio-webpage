@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'; // Include useState here
+import React, { useEffect, useMemo, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import Papa from 'papaparse'; // Import PapaParse
@@ -10,10 +10,10 @@ Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Too
 
 const Graph3 = () => {
     const dispatch = useDispatch(); // Initialize dispatch
-    
-    const graphData = useSelector((state) => state.graphData.graph3); // Access the Redux state for graph
+    const graphData = useSelector((state) => state.graphData.graph3) || {}; // Use empty object or array as fallback
     const [textBoxContent, setTextBoxContent] = useState('');
     const [percentages, setPercentages] = useState([]); // Declare percentages as state
+    
 
     const options = useMemo(() => ({
         responsive: true,
@@ -128,6 +128,10 @@ const Graph3 = () => {
         fetchData();
     }, [dispatch]); // Ensure dispatch is included in the dependency array
 
+    if (!graphData.labels || !graphData.datasets) {
+        return <p>Loading...</p>; // Show loading or error message
+    }
+
     return (
         <div className="chart-container">
             <div className="chart-header">
@@ -142,8 +146,3 @@ const Graph3 = () => {
 };
 
 export default Graph3;
-
-
-
-
-

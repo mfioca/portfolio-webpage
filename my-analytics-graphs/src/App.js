@@ -112,7 +112,7 @@ function App() {
                     <div className="graph-box">
                         <div className="graph-container">
 
-                                <ThirdGraph />
+                        <ThirdGraph />
                                 <TextSection3 />
     
                             

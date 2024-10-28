@@ -1,15 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+// Initial state structure
 const initialState = {
     rawData: [],
     graphData: {
-        graph1: [],
-        graph2: [],
-        graph3: [],
+        graph1: { labels: [], datasets: [] },
+        graph2: { labels: [], datasets: [] },
+        graph3: { labels: [], datasets: [] },
     },
     filteredData: [],
 };
 
+// Reducer function to handle actions
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_GRAPH_DATA':
@@ -17,17 +19,22 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 graphData: {
                     ...state.graphData,
-                    [action.payload.graphId]: action.payload.data, // Use graphId to set specific graph data
+                    [action.payload.graphId]: action.payload.data,
                 },
+            };
+        case 'SET_RAW_DATA': // New case to handle raw data setting
+            return {
+                ...state,
+                rawData: action.payload, // Update rawData with the payload
             };
         default:
             return state;
     }
 };
 
-// Create the store using configureStore
+// Create the store
 const store = configureStore({
-    reducer, // Pass the reducer directly
+    reducer,
 });
 
-export default store; // Export the store
+export default store;

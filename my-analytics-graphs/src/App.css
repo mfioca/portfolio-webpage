@@ -165,3 +165,22 @@ header .footer-text {
   }
 }
 
+
+
+.loading-overlay {
+  position: fixed; /* Fix to viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.loading-message {
+  color: white; /* Text color */
+  font-size: 1.5em; /* Adjust font size */
+}
