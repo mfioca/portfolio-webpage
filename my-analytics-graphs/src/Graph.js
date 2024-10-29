@@ -34,7 +34,7 @@ const Graph = () => {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true); // Set loading to true
-            await loadDataForGraphs(dispatch); // Load data for graphs
+            await loadDataForGraphs(dispatch, 'graph1'); // Load data for graphs
             setIsLoading(false); // Set loading to false
         };
 

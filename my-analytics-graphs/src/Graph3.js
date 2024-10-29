@@ -1,20 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import Papa from 'papaparse'; // Import PapaParse
-import { useDispatch, useSelector } from 'react-redux'; // Import Redux hooks
-import { setGraphData } from './actions'; // Adjust the path to your actions file
+import { useDispatch, useSelector } from 'react-redux';
+import loadDataForGraphs from './dataloader'; // Import the data loader
 
 // Register Chart.js components
 Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
 const Graph3 = () => {
     const dispatch = useDispatch(); // Initialize dispatch
-    const graphData = useSelector((state) => state.graphData.graph3) || {}; // Use empty object or array as fallback
-    const [textBoxContent, setTextBoxContent] = useState('');
-    const [percentages, setPercentages] = useState([]); // Declare percentages as state
-    
+    const graphData = useSelector((state) => state.graphData.graph3) || {}; // Access Redux state for graph3
+    const [textBoxContent, setTextBoxContent] = useState(''); // State for text box content
+    const [percentages, setPercentages] = useState([]); // State for percentages
+    const [isLoading, setIsLoading] = useState(true); // State for loading
 
+    // Chart options configuration
     const options = useMemo(() => ({
         responsive: true,
         scales: {
@@ -46,90 +46,47 @@ const Graph3 = () => {
                 },
             },
         },
-    }), [percentages]); // Add percentages to the dependencies
+    }), [percentages]); // Dependency on percentages
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch('/cleaned_data_1.csv'); // Ensure this file exists
-                const text = await response.text();
-    
-                // Use PapaParse to parse the CSV data
-                Papa.parse(text, {
-                    header: true,
-                    dynamicTyping: true,
-                    complete: (results) => {
-                        const totalWorkByYear = {};
-                        const analyticsByYear = {};
-                        let tempPercentages = []; // Temporary variable for percentages
-    
-                        results.data.forEach(row => {
-                            const year = new Date(row.timestamp).getFullYear();
-                            if (year < 2000) return; // Skip entries from before 2000
-    
-                            const duration = row.duration / 3600; // Convert seconds to hours
-    
-                            // Accumulate total work durations
-                            totalWorkByYear[year] = (totalWorkByYear[year] || 0) + duration;
-    
-                            // Check for analytics activity
-                            if (row.activity_subtype === 'analytics') {
-                                analyticsByYear[year] = (analyticsByYear[year] || 0) + duration;
-                            }
-                        });
-    
-                        // Calculate total work and analytics durations
-                        const years = Object.keys(totalWorkByYear);
-                        const totalWorkDurations = years.map(year => totalWorkByYear[year]);
-                        const analyticsDurations = years.map(year => analyticsByYear[year] || 0);
-    
-                        // Calculate the percentage of analytics time relative to total work time per year
-                        tempPercentages = analyticsDurations.map((duration, index) => {
-                            const total = totalWorkDurations[index] || 1; // Avoid division by zero
-                            return (duration / total) * 100; // Calculate percentage
-                        });
-    
-                        console.log('Percentages:', tempPercentages); // Debugging line
-    
-                        // Set percentages state
-                        setPercentages(tempPercentages); // Update percentages state
-
-                        // Prepare text for the box after setting percentages
-                        const yearText = years.map((year, index) => {
-                            const percentage = tempPercentages[index].toFixed(1); // Use tempPercentages here
-                            return `${year}: Analytics ${percentage}%`;
-                        }).join('\n');
-
-                        setTextBoxContent(`${yearText}\n\n`);
-
-                        // Dispatch data to Redux store
-                        dispatch(setGraphData('graph3', {
-                            labels: years,
-                            datasets: [
-                                {
-                                    label: 'Total Work',
-                                    data: totalWorkDurations,
-                                    backgroundColor: 'gray',
-                                },
-                                {
-                                    label: 'Analytics',
-                                    data: analyticsDurations,
-                                    backgroundColor: 'blue',
-                                },
-                            ],
-                        }));
-                    },
-                });
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+            setIsLoading(true); // Set loading to true
+            await loadDataForGraphs(dispatch, 'graph3', setTextBoxContent); // Load data for graphs
+            setIsLoading(false); // Set loading to false
         };
-    
+
         fetchData();
     }, [dispatch]); // Ensure dispatch is included in the dependency array
 
+    // Calculate percentages for the datasets after loading data
+    useEffect(() => {
+        if (graphData.labels && graphData.datasets.length > 0) {
+            const totalWorkDurations = graphData.datasets[0].data; // Total work data
+            const analyticsDurations = graphData.datasets[1].data; // Analytics data
+
+            const tempPercentages = analyticsDurations.map((duration, index) => {
+                const total = totalWorkDurations[index] || 1; // Avoid division by zero
+                return (duration / total) * 100; // Calculate percentage
+            });
+
+            setPercentages(tempPercentages); // Update percentages state
+
+            // Prepare text for the box with percentages
+            const yearText = graphData.labels.map((year, index) => {
+                const percentage = tempPercentages[index].toFixed(1); // Use tempPercentages here
+                return `${year}: Analytics ${percentage}%`;
+            }).join('\n');
+
+            setTextBoxContent(`${yearText}\n\n`); // Set the text box content
+        }
+    }, [graphData]); // Dependency on graphData
+
+    if (isLoading) {
+        return <div className="loading-overlay"><p>Loading...</p></div>; // Display loading message
+    }
+
     if (!graphData.labels || !graphData.datasets) {
-        return <p>Loading...</p>; // Show loading or error message
+        return <p>No data available</p>; // Show message if no data
     }
 
     return (
@@ -137,8 +94,8 @@ const Graph3 = () => {
             <div className="chart-header">
                 <h2 style={{ flex: 1, textAlign: 'center' }}>Application Usage Over Time by Month</h2>
                 <div className="data-box">
-                {textBoxContent}
-                </div> 
+                    {textBoxContent}
+                </div>
             </div>
             <Bar data={graphData} options={options} /> {/* Use Redux graph data */}
         </div>

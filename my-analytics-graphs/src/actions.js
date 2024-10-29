@@ -12,3 +12,14 @@ export const setRawData = (data) => ({
     payload: data, // The raw data parsed from the CSV
 });
 
+// Action to set text box content
+export const setTextBoxContent = (content) => ({
+    type: 'SET_TEXT_BOX_CONTENT',
+    payload: content,
+});
+
+// New action to set filtered data
+export const setFilteredData = (data) => ({
+    type: 'SET_FILTERED_DATA',
+    payload: data, // The filtered data to be stored
+});

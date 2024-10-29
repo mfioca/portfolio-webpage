@@ -8,7 +8,8 @@ const initialState = {
         graph2: { labels: [], datasets: [] },
         graph3: { labels: [], datasets: [] },
     },
-    filteredData: [],
+    textBoxContent: '', // Add this to your initial state
+    filteredData: [], // Add filteredData to your initial state
 };
 
 // Reducer function to handle actions
@@ -26,6 +27,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 rawData: action.payload, // Update rawData with the payload
+            };
+        case 'SET_TEXT_BOX_CONTENT':
+            return {
+                ...state,
+                textBoxContent: action.payload,
+            };
+        case 'SET_FILTERED_DATA': // New case to handle filtered data setting
+            return {
+                ...state,
+                filteredData: action.payload, // Update filteredData with the payload
             };
         default:
             return state;

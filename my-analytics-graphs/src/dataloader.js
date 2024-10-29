@@ -1,7 +1,7 @@
 import Papa from 'papaparse'; 
 import { setGraphData } from './actions'; 
 
-const loadDataForGraphs = async (dispatch) => {
+const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
     try {
         const response = await fetch('/cleaned_data_1.csv'); 
         const text = await response.text(); 
@@ -10,46 +10,13 @@ const loadDataForGraphs = async (dispatch) => {
             header: true,
             dynamicTyping: true,
             complete: (results) => {
-                const modeData = [];
-                const sheetsData = [];
-
-                results.data.forEach(row => {
-                    const application = row.application;
-                    const duration = row.duration;
-
-                    if (application === 'mode') {
-                        const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
-                        modeData.push({ monthYear, duration: duration / 3600 });
-                    } else if (application === 'google sheets') {
-                        const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
-                        sheetsData.push({ monthYear, duration: duration / 3600 });
-                    }
-                });
-
-                const fullRange = generateFullMonthRange('2021-01', '2024-06');
-                const modeUsageByMonth = prepareMonthlyData(modeData, fullRange);
-                const sheetsUsageByMonth = prepareMonthlyData(sheetsData, fullRange);
-
-                // Dispatch action to store graph data in Redux
-                dispatch(setGraphData('graph1', {
-                    labels: modeUsageByMonth.month_year,
-                    datasets: [
-                        {
-                            label: 'Mode',
-                            data: modeUsageByMonth.duration,
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            fill: false,
-                        },
-                        {
-                            label: 'Google Sheets',
-                            data: sheetsUsageByMonth.duration,
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            fill: false,
-                        },
-                    ],
-                }));
+                if (graphType === 'graph1') {
+                    handleGraph1Data(results.data, dispatch);
+                } else if (graphType === 'graph2') {
+                    handleGraph2Data(results.data, dispatch);
+                } else if (graphType === 'graph3') {
+                    handleGraph3Data(results.data, dispatch, setTextBoxContent);
+                }
             },
         });
     } catch (error) {
@@ -57,11 +24,154 @@ const loadDataForGraphs = async (dispatch) => {
     }
 };
 
-// Utility functions remain the same
+// Handle data processing for graph 1
+const handleGraph1Data = (data, dispatch) => {
+    const modeData = [];
+    const sheetsData = [];
+
+    data.forEach(row => {
+        const application = row.application;
+        const duration = row.duration;
+
+        if (application === 'mode') {
+            const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
+            modeData.push({ monthYear, duration: duration / 3600 });
+        } else if (application === 'google sheets') {
+            const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
+            sheetsData.push({ monthYear, duration: duration / 3600 });
+        }
+    });
+
+    const fullRange = generateFullMonthRange('2021-01', '2024-06');
+    const modeUsageByMonth = prepareMonthlyData(modeData, fullRange);
+    const sheetsUsageByMonth = prepareMonthlyData(sheetsData, fullRange);
+
+    dispatch(setGraphData('graph1', {
+        labels: modeUsageByMonth.month_year,
+        datasets: [
+            {
+                label: 'Mode',
+                data: modeUsageByMonth.duration,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: false,
+            },
+            {
+                label: 'Google Sheets',
+                data: sheetsUsageByMonth.duration,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                fill: false,
+            },
+        ],
+    }));
+};
+
+// Handle data processing for graph 2
+const handleGraph2Data = (data, dispatch) => {
+    const combinedData = [];
+    const analyticsData = [];
+
+    data.forEach(row => {
+        const duration = row.duration;
+        const monthYear = new Date(row.timestamp).toISOString().slice(0, 7);
+
+        if (row.activity_subtype === 'Email & Customer Relations' || row.activity_subtype === 'Operations') {
+            combinedData.push({ monthYear, duration: duration / 3600 });
+        } else if (row.activity_subtype === 'analytics') {
+            analyticsData.push({ monthYear, duration: duration / 3600 });
+        }
+    });
+
+    const fullRange = generateFullMonthRange('2021-01', '2024-06');
+    const combinedUsageByMonth = prepareMonthlyData(combinedData, fullRange);
+    const analyticsUsageByMonth = prepareMonthlyData(analyticsData, fullRange);
+
+    dispatch(setGraphData('graph2', {
+        labels: combinedUsageByMonth.month_year,
+        datasets: [
+            {
+                label: 'Email & Customer Relations / Operations',
+                data: combinedUsageByMonth.duration,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: false,
+            },
+            {
+                label: 'Analytics',
+                data: analyticsUsageByMonth.duration,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                fill: false,
+            },
+        ],
+    }));
+};
+
+const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
+    const totalWorkByYear = {};
+    const analyticsByYear = {};
+    let tempPercentages = [];
+
+    data.forEach(row => {
+        const year = new Date(row.timestamp).getFullYear();
+        if (year < 2000) return; // Skip entries from before 2000
+
+        const duration = row.duration / 3600; // Convert seconds to hours
+
+        // Accumulate total work durations
+        totalWorkByYear[year] = (totalWorkByYear[year] || 0) + duration;
+
+        // Check for analytics activity
+        if (row.activity_subtype === 'analytics') {
+            analyticsByYear[year] = (analyticsByYear[year] || 0) + duration;
+        }
+    });
+
+    // Calculate total work and analytics durations
+    const years = Object.keys(totalWorkByYear);
+    const totalWorkDurations = years.map(year => totalWorkByYear[year]);
+    const analyticsDurations = years.map(year => analyticsByYear[year] || 0);
+
+    // Calculate the percentage of analytics time relative to total work time per year
+    tempPercentages = analyticsDurations.map((duration, index) => {
+        const total = totalWorkDurations[index] || 1; // Avoid division by zero
+        return (duration / total) * 100; // Calculate percentage
+    });
+
+    // Prepare text for the box with percentages
+    const yearText = years.map((year, index) => {
+        const percentage = tempPercentages[index].toFixed(1); // Use tempPercentages here
+        return `${year}: Analytics ${percentage}%`;
+    }).join('\n');
+
+    // Set the text box content
+    setTextBoxContent(`${yearText}\n\n`);
+
+    // Dispatch data to Redux store
+    dispatch(setGraphData('graph3', {
+        labels: years,
+        datasets: [
+            {
+                label: 'Total Work',
+                data: totalWorkDurations,
+                backgroundColor: 'gray',
+            },
+            {
+                label: 'Analytics',
+                data: analyticsDurations,
+                backgroundColor: 'blue',
+            },
+        ],
+    }));
+};
+
+// Ensure you're using these values in your component
+
 // Generates an array of month strings in the format 'YYYY-MM' between the start and end dates
 const generateFullMonthRange = (start, end) => {
     const fullRange = [];
-    const startDate = new Date(start + '-01'); // Append '-01' for the first day of the month
+    const startDate = new Date(start + '-01');
     const endDate = new Date(end + '-01');
 
     let currentDate = startDate;
