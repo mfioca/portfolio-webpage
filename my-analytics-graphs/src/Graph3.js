@@ -92,7 +92,9 @@ const Graph3 = () => {
     return (
         <div className="chart-container">
             <div className="chart-header">
-                <h2 style={{ flex: 1, textAlign: 'center' }}>Application Usage Over Time by Month</h2>
+                <div className="header-content">
+                    <h2 >Application Usage Over Time by Month</h2>
+                </div>
                 <div className="data-box">
                     {textBoxContent}
                 </div>
