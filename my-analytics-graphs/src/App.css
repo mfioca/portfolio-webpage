@@ -255,9 +255,42 @@ header .footer-text {
 }
 
 
+.graph-wrapper {
+  display: flex; /* Enable flexbox */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-around; /* Space between the graphs */
+  align-items: flex-start; /* Align items at the start */
+  border: 5px solid transparent; /* Add a transparent border */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    padding: 10px; /* Padding inside the wrapper */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+
+
 .donut-chart {
-  width: 100%;
-  max-width: 600px; /* Control the size of the donut chart */
-  margin: auto; /* Center it */
+  flex: 0 0 60%; /* Set a fixed basis for the donut chart (60% of the width) */
+  max-width: 600px; /* Control the maximum size of the donut chart */
+  margin: 10px; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
+}
+
+.bar-chart {
+  flex: 0 0 35%; /* Set a fixed basis for the bar chart (35% of the width) */
+  min-width: 1000px; /* Control the maximum size of the bar chart */
+  margin: 10px; /* Add some spacing around the chart */
+  padding: 20px; /* Add padding if needed */
+}
+
+@media (max-width: 768px) {
+  .graph-wrapper {
+    flex-direction: column; /* Stack graphs in a column */
+  }
+
+  .donut-chart,
+  .bar-chart {
+    width: 100%; /* Full width for each graph */
+    max-width: none; /* Remove max-width for responsive design */
+  }
 }

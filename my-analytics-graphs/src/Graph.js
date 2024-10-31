@@ -29,6 +29,11 @@ const Graph = () => {
                 beginAtZero: true,
             },
         },
+        plugins: {
+            datalabels: {
+                display: false, // Hide data labels
+            },
+        },
     }), []);
 
     useEffect(() => {

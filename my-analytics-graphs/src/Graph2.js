@@ -30,6 +30,11 @@ const Graph2 = () => {
                 beginAtZero: true,
             },
         },
+        plugins: {
+            datalabels: {
+                display: false, // Hide data labels
+            },
+        },
     }), []);
 
     useEffect(() => {

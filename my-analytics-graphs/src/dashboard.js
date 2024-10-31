@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import loadDataForGraphs from './dataloader'; // Import the data loader function
 import { Doughnut } from 'react-chartjs-2';
-import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
-Chart.register(ArcElement, Tooltip, Legend);
+import { Bar } from 'react-chartjs-2'; // Import the Bar component for the bar chart
+import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+
+Chart.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels);
 
 
 
@@ -28,6 +32,20 @@ const createChartData = (top5Applications) => {
                     'rgba(54, 162, 235, 1)',
                     'rgba(153, 102, 255, 1)',
                 ],
+            },
+        ],
+    };
+};
+
+const createBarChartData = (top5ActivitySubtypes) => {
+    return {
+        labels: top5ActivitySubtypes.map(subtype => subtype.name), // Names of the activity subtypes
+        datasets: [
+            {
+                label: 'Hours Spent',
+                data: top5ActivitySubtypes.map(subtype => subtype.hours), // All hours in a single dataset
+                backgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${75 + index * 30}, ${192 - index * 30}, 192, 0.6)`), // Generate colors dynamically
+                hoverBackgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${75 + index * 30}, ${192 - index * 30}, 192, 1)`), // Hover colors
             },
         ],
     };
@@ -111,12 +129,15 @@ const Dashboard = () => {
         }
 
         // Update activity subtype hours
+            // Only update activity subtype hours if an activity type is selected
+    if (selectedActivityType) {
         const subtypeIndex = topActivitySubtypes.findIndex(subtype => subtype.name === row.activity_subtype);
         if (subtypeIndex > -1) {
             topActivitySubtypes[subtypeIndex].hours += hours;
         } else {
-            topActivitySubtypes.push({ name: row.activity_type, hours });
+            topActivitySubtypes.push({ name: row.activity_subtype, hours });
         }
+    }
     });
 
     // Sort and get top 5 applications and subtypes
@@ -185,56 +206,61 @@ const Dashboard = () => {
             </div>
 
 
+            <div className="graph-wrapper">
+                <div className="donut-chart">
+                    <h3>Top Applications - Donut Chart</h3>
+                    <Doughnut
+                        data={createChartData(top5Applications)}
+                        options={{
+                            plugins: {
 
-            <div className="donut-chart">
-            <h3>Top Applications - Donut Chart</h3>
-            <Doughnut data={createChartData(top5Applications)} />
-        </div>
-
-
-{/*}
-            <div className="top-applications">
-                <h3>Top Applications</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Application</th>
-                            <th>Hours Spent</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {top5Applications.map(app => (
-                            <tr key={app.name}>
-                                <td>{app.name}</td>
-                                <td>{app.hours.toFixed(2)}</td> 
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                                tooltip: {
+                                    callbacks: {
+                                        label: (context) => {
+                                            const label = context.dataset.label || '';
+                                            const value = context.parsed; // Get the value for the Doughnut chart
+                                            return `${label}: ${value.toFixed(2)} hours`; // Format the tooltip label to two decimal points
+                                        },
+                                    },
+                                },
+                                datalabels: {
+                                    display: true, // Show data labels for the Doughnut chart
+                                    color: 'black', // Color of the data labels
+                                    formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label to two decimal points
+                                },
+                            },
+                        }}
+                    />
+                </div>
+                <div className="top-subtypes">
+                    <h3>Top Activity Subtypes</h3>
+                        {top5ActivitySubtypes.length === 0 ? (
+                            <p>Filter Activity Types for more analytical data.</p>
+                        ) : (
+                            <div className="bar-chart">
+                                <h3>Top Activity Subtypes - Bar Chart</h3>
+                                <Bar
+                                    data={createBarChartData(top5ActivitySubtypes)}
+                                    options={{
+                                        plugins: {
+                                            legend: {
+                                                display: false, // Hide the legend
+                                            },
+                                            datalabels: {
+                                                display: true, // Show data labels for the bar chart
+                                                color: 'black', // Color of the data labels
+                                                anchor: 'end', // Positioning of the labels
+                                                align: 'bottom', // Align below the bar
+                                                formatter: (value) => `${value.toFixed(2)} hours`,
+                                            },
+                                        },
+                                    }}
+                                />
+                            </div>
+                        )}
+                </div>
             </div>
-           
-            <div className="top-subtypes">
-                <h3>Top Activity Subtypes</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Activity Subtype</th>
-                            <th>Hours Spent</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {top5ActivitySubtypes.map(subtype => (
-                            <tr key={subtype.name}>
-                                <td>{subtype.name}</td>
-                                <td>{subtype.hours.toFixed(2)}</td> 
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-            */}
-
-
+        
             <div className="filtered-data">
                 {currentData.length > 0 ? (
                     <table className="csv-data">

@@ -9,7 +9,7 @@ Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Too
 
 const Graph3 = () => {
     const dispatch = useDispatch(); // Initialize dispatch
-    const graphData = useSelector((state) => state.graphData.graph3) || {}; // Access Redux state for graph3
+    const graphData = useSelector((state) => state.graphData.graph3)  // Access Redux state for graph3
     const [textBoxContent, setTextBoxContent] = useState(''); // State for text box content
     const [percentages, setPercentages] = useState([]); // State for percentages
     const [isLoading, setIsLoading] = useState(true); // State for loading
@@ -44,6 +44,11 @@ const Graph3 = () => {
                         return `${label}: ${value} hours (${percentage}%)`; // Format the label
                     },
                 },
+            },
+            datalabels: {
+                align: 'end', // Position the labels
+                anchor: 'end', // Anchor the labels to the end of the bars
+                formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label
             },
         },
     }), [percentages]); // Dependency on percentages
