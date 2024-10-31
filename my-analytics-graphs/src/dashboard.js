@@ -1,6 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import loadDataForGraphs from './dataloader'; // Import the data loader function
+import { Doughnut } from 'react-chartjs-2';
+import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
+Chart.register(ArcElement, Tooltip, Legend);
+
+
+
+const createChartData = (top5Applications) => {
+    return {
+        labels: top5Applications.map(app => app.name), // Names of the applications
+        datasets: [
+            {
+                label: 'Hours Spent',
+                data: top5Applications.map(app => app.hours), // Corresponding hours spent
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                ],
+                hoverBackgroundColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+            },
+        ],
+    };
+};
 
 const Dashboard = () => {
     const dispatch = useDispatch();
@@ -80,7 +111,7 @@ const Dashboard = () => {
         }
 
         // Update activity subtype hours
-        const subtypeIndex = topActivitySubtypes.findIndex(subtype => subtype.name === row.activity_type);
+        const subtypeIndex = topActivitySubtypes.findIndex(subtype => subtype.name === row.activity_subtype);
         if (subtypeIndex > -1) {
             topActivitySubtypes[subtypeIndex].hours += hours;
         } else {
@@ -101,6 +132,11 @@ const Dashboard = () => {
     const startIndex = (currentPage - 1) * rowsPerPage;
     const endIndex = startIndex + rowsPerPage;
     const currentData = filteredData.slice(startIndex, endIndex);
+ 
+
+
+    // Inside your Dashboard component
+
 
     return (
         <div className="dashboard-container">
@@ -147,6 +183,16 @@ const Dashboard = () => {
                     </select>
                 </div>
             </div>
+
+
+
+            <div className="donut-chart">
+            <h3>Top Applications - Donut Chart</h3>
+            <Doughnut data={createChartData(top5Applications)} />
+        </div>
+
+
+{/*}
             <div className="top-applications">
                 <h3>Top Applications</h3>
                 <table>
@@ -160,12 +206,13 @@ const Dashboard = () => {
                         {top5Applications.map(app => (
                             <tr key={app.name}>
                                 <td>{app.name}</td>
-                                <td>{app.hours.toFixed(2)}</td> {/* Display hours spent, rounded to 2 decimal places */}
+                                <td>{app.hours.toFixed(2)}</td> 
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
+           
             <div className="top-subtypes">
                 <h3>Top Activity Subtypes</h3>
                 <table>
@@ -179,12 +226,15 @@ const Dashboard = () => {
                         {top5ActivitySubtypes.map(subtype => (
                             <tr key={subtype.name}>
                                 <td>{subtype.name}</td>
-                                <td>{subtype.hours.toFixed(2)}</td> {/* Display hours spent, rounded to 2 decimal places */}
+                                <td>{subtype.hours.toFixed(2)}</td> 
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
+            */}
+
+
             <div className="filtered-data">
                 {currentData.length > 0 ? (
                     <table className="csv-data">

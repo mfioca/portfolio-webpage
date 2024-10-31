@@ -242,7 +242,7 @@ header .footer-text {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter semi-transparent background */
   display: flex; /* Flexbox for centering */
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
@@ -252,4 +252,12 @@ header .footer-text {
 .loading-message {
   color: white; /* Text color */
   font-size: 1.5em; /* Adjust font size */
+}
+
+
+.donut-chart {
+  width: 100%;
+  max-width: 600px; /* Control the size of the donut chart */
+  margin: auto; /* Center it */
+  padding: 20px; /* Add padding if needed */
 }
