@@ -1,5 +1,5 @@
 import Papa from 'papaparse'; 
-import { setGraphData } from './actions'; 
+import { setGraphData, setRawData } from './actions'; // Include setRawData action
 
 const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
     try {
@@ -10,6 +10,9 @@ const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
             header: true,
             dynamicTyping: true,
             complete: (results) => {
+                // Dispatch raw data for the dashboard
+                dispatch(setRawData(results.data)); // Dispatch the raw data for dashboard use
+                
                 if (graphType === 'graph1') {
                     handleGraph1Data(results.data, dispatch);
                 } else if (graphType === 'graph2') {
@@ -165,8 +168,6 @@ const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
         ],
     }));
 };
-
-// Ensure you're using these values in your component
 
 // Generates an array of month strings in the format 'YYYY-MM' between the start and end dates
 const generateFullMonthRange = (start, end) => {

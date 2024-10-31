@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Papa from 'papaparse'; // For parsing CSV data
 import { useDispatch, useSelector } from 'react-redux';
-import { setRawData } from './actions'; // Import the action to set raw data
+import loadDataForGraphs from './dataloader'; // Import the data loader function
 
 const Dashboard = () => {
     const dispatch = useDispatch();
@@ -15,49 +14,43 @@ const Dashboard = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 100; // Number of rows to display per page
 
-    // Load and parse the CSV data
+    // Load data using the data loader function
     useEffect(() => {
-        const monthNames = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-
         const fetchData = async () => {
-            const response = await fetch('/cleaned_data_1.csv'); 
-            const text = await response.text();
-
-            Papa.parse(text, {
-                header: true,
-                dynamicTyping: true,
-                complete: (results) => {
-                    console.log('Parsed Results:', results.data); // Log parsed data
-                    dispatch(setRawData(results.data)); // Dispatch the parsed data to Redux
-
-                    const uniqueActivityTypes = [...new Set(results.data.map(row => row.activity_type))];
-                    setActivityTypes(uniqueActivityTypes); // Set the unique activity types
-
-                    const uniqueMonths = new Set();
-                    results.data.forEach(row => {
-                        const dateStr = row.timestamp; 
-                        if (dateStr) { // Check if dateStr is not null or undefined
-                            const monthIndex = new Date(dateStr).getMonth(); // Get the month index
-                            uniqueMonths.add(monthNames[monthIndex]); // Add the month name to the Set
-                        }
-                    });
-                    setMonths(Array.from(uniqueMonths)); // Set the unique months for dropdown
-
-                    const uniqueYears = new Set();
-                    results.data.forEach(row => {
-                        const year = new Date(row.timestamp).getFullYear();
-                        uniqueYears.add(year);
-                    });
-                    const yearsArray = [...uniqueYears];
-                    setYears(yearsArray); 
-                },
-            });
+            await loadDataForGraphs(dispatch); // Load data from the dataloader
         };
         fetchData();
     }, [dispatch]);
+
+    // Set unique activity types, months, and years from the raw data
+    useEffect(() => {
+        if (data.length > 0) {
+            const uniqueActivityTypes = [...new Set(data.map(row => row.activity_type))];
+            setActivityTypes(uniqueActivityTypes); // Set unique activity types
+
+            const monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            
+            const uniqueMonths = new Set();
+            data.forEach(row => {
+                const dateStr = row.timestamp; 
+                if (dateStr) {
+                    const monthIndex = new Date(dateStr).getMonth();
+                    uniqueMonths.add(monthNames[monthIndex]); 
+                }
+            });
+            setMonths(Array.from(uniqueMonths)); // Set unique months for dropdown
+
+            const uniqueYears = new Set();
+            data.forEach(row => {
+                const year = new Date(row.timestamp).getFullYear();
+                uniqueYears.add(year);
+            });
+            setYears([...uniqueYears]); // Set unique years for dropdown
+        }
+    }, [data]);
 
     // Define filteredData based on selected filters
     const filteredData = data.filter(row => {
@@ -112,14 +105,14 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <h2>Dashboard</h2>
-            <p>When modifying drop down boxes, data changes in redoux and may take some time to reload</p>
+            <p>When modifying drop down boxes, data changes in Redux and may take some time to reload</p>
             <div className="dropdowns">
                 <div>
                     <h2>Select Activity Type</h2>
                     <select 
                         value={selectedActivityType} 
                         onChange={(e) => setSelectedActivityType(e.target.value)}>
-                        <option value="">All Activity Types</option> {/* Default option for all activity types */}
+                        <option value="">All Activity Types</option>
                         {activityTypes.map((type, index) => (
                             <option key={index} value={type}>
                                 {type}
@@ -132,7 +125,7 @@ const Dashboard = () => {
                     <select 
                         value={selectedMonth} 
                         onChange={(e) => setSelectedMonth(e.target.value)}> 
-                        <option value="">All Months</option> {/* Default option for all months */}
+                        <option value="">All Months</option>
                         {months.map((month, index) => (
                             <option key={index} value={month}>
                                 {month}
@@ -145,7 +138,7 @@ const Dashboard = () => {
                     <select 
                         value={selectedYear} 
                         onChange={(e) => setSelectedYear(e.target.value)}>
-                        <option value="">All Years</option> {/* Default option for all years */}
+                        <option value="">All Years</option>
                         {years.map((year, index) => (
                             <option key={index} value={year}>
                                 {year}

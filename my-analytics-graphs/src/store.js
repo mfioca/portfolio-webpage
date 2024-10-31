@@ -9,7 +9,7 @@ const initialState = {
         graph3: { labels: [], datasets: [] },
     },
     textBoxContent: '', // Add this to your initial state
-    filteredData: [], // Add filteredData to your initial state
+    // filteredData: [], // Removed since we'll handle filtered data locally in Dashboard
 };
 
 // Reducer function to handle actions
@@ -33,11 +33,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 textBoxContent: action.payload,
             };
-        case 'SET_FILTERED_DATA': // New case to handle filtered data setting
-            return {
-                ...state,
-                filteredData: action.payload, // Update filteredData with the payload
-            };
+        // Removed the filtered data case since we're managing that locally
         default:
             return state;
     }
