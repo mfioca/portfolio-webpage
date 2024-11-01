@@ -7,6 +7,10 @@ import ThirdGraph from './Graph3'; // Import your new graph component
 import Dashboard from './dashboard'; // Import your new graph component
 
 
+/*****************************************************/
+/* Custom sections to insert into the Main Display   */
+/*****************************************************/
+
 const TextSection1 = () => {
     return (
         <div className="text-section">
@@ -64,18 +68,22 @@ const TextSection3 = () => {
                 efforts evolve relative to total work hours.
             </p>
             <p>
-            By examining this graph, viewers can quickly grasp trends in workload and the significance of analytics within the broader context of job 
-            responsibilities. This dual representation not only illustrates raw data but also contextualizes the impact of analytics activities,
-            making it easier to identify shifts in focus and the growing importance of data-driven decision-making over time.
+                By examining this graph, viewers can quickly grasp trends in workload and the significance of analytics within the broader context of job 
+                responsibilities. This dual representation not only illustrates raw data but also contextualizes the impact of analytics activities,
+                making it easier to identify shifts in focus and the growing importance of data-driven decision-making over time.
             </p>
         </div>
     );
 };
 
+/*****************************************************/
+/*                  Main Display                     */
+/*****************************************************/
 
 function App() {
     return (
-        <Provider store={store}> {/* Wrap the App component with Provider */}
+        // Wrap the App component with Provider for Redoux functions
+        <Provider store={store}> 
             <div className="App">
                 <header className="App-header">
                     <h1>Dashboard Layout</h1>
@@ -91,101 +99,47 @@ function App() {
                     </p>
                     <br/>
                     <p className="footer-text">
-                    During our collaboration, we focused on enhancing the functionality of the Dashboard component in a React application. 
-                    You emphasized the importance of establishing a baseline understanding before diving into code changes. We discussed how 
-                    the dropdown boxes needed to filter data effectively, and you sought to ensure clarity in the data handling process.
+                        During our collaboration, we focused on enhancing the functionality of the Dashboard component in a React application. 
+                        You emphasized the importance of establishing a baseline understanding before diving into code changes. We discussed how 
+                        the dropdown boxes needed to filter data effectively, and you sought to ensure clarity in the data handling process.
                     <br/>
-                    You guided the conversation by prompting me to revisit the existing code, ensuring I understood the current structure 
-                    and the necessary adjustments required in the dataloader.js, actions.js, and store.js files. This methodical approach 
-                    allowed us to align our understanding of the tasks at hand and clarify the functionality needed for the dropdown filters.
+                        You guided the conversation by prompting me to revisit the existing code, ensuring I understood the current structure 
+                        and the necessary adjustments required in the dataloader.js, actions.js, and store.js files. This methodical approach 
+                        allowed us to align our understanding of the tasks at hand and clarify the functionality needed for the dropdown filters.
                     <br/>
-                    Throughout the process, you actively engaged by identifying errors and clarifying expectations for code adjustments, 
-                    particularly with regards to unused variables. You demonstrated patience and determination in troubleshooting, 
-                    leading to productive discussions on optimizing the Redux state management and improving data loading efficiency.
+                        Throughout the process, you actively engaged by identifying errors and clarifying expectations for code adjustments, 
+                        particularly with regards to unused variables. You demonstrated patience and determination in troubleshooting, 
+                        leading to productive discussions on optimizing the Redux state management and improving data loading efficiency.
                     <br/>
-                    In the end, we successfully implemented the desired changes, and the dropdowns functioned as expected, significantly 
-                    enhancing the Dashboards usability. Your logical and analytical approach, coupled with a focus on clear communication, 
-                    proved essential in achieving our objectives.
-
+                        In the end, we successfully implemented the desired changes, and the dropdowns functioned as expected, significantly 
+                        enhancing the Dashboards usability. Your logical and analytical approach, coupled with a focus on clear communication, 
+                        proved essential in achieving our objectives.
                     </p>
                 </header>
-
-   
                 <div className="graph-flexbox">
                     <div className="graph-box">
                         <div className="graph-container">
-
-                                <Graph />
-                                <TextSection1 />
-
-                            
+                            <Graph />
+                            <TextSection1 />
                         </div>
                     </div>
                     <div className="graph-box">
                         <div className="graph-container">
-    
-                                <SecondGraph />
-                                <TextSection2 />
-
-                            
+                            <SecondGraph />
+                            <TextSection2 />
                         </div>
                     </div>
                     <div className="graph-box">
                         <div className="graph-container">
-
-                        <ThirdGraph />
-                                <TextSection3 />
-    
-                            
+                            <ThirdGraph />
+                            <TextSection3 />
                         </div>
                     </div>
                 </div>
-                
                 <Dashboard />
-                
- 
             </div>
         </Provider>
-        
     );
 }
 
 export default App;
-
-
-
-
-/*
-function App() {
-  return (
-      <div className="App">
-          <header className="App-header">
-              <h1>CSV Data Graph</h1>
-          </header>
-          <Graph />
-          <SecondGraph />
-          <ThirdGraph /> 
-          <Dashboard />
-      </div>
-  );
-}
-
-export default App;
-*/
-
-
-/*import React from 'react';
-import Graph from './Graph';
-import SecondGraph from './Graph2'; // Import your new graph component
-
-const App = () => {
-    return (
-        <div>
-            <Graph />
-            <SecondGraph />
-        </div>
-    );
-};
-
-export default App;
-*/

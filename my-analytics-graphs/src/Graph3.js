@@ -4,7 +4,7 @@ import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, To
 import { useDispatch, useSelector } from 'react-redux';
 import loadDataForGraphs from './dataloader'; // Import the data loader
 
-// Register Chart.js components
+
 Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
 const Graph3 = () => {
@@ -96,11 +96,11 @@ const Graph3 = () => {
 
     return (
         <div className="chart-container">
-            <div className="chart-header">
-                <div className="header-content">
+            <div className="chart3-header">
+                <div className="chart3-header-content">
                     <h2 >Application Usage Over Time by Month</h2>
                 </div>
-                <div className="data-box">
+                <div className="chart3-data-box">
                     {textBoxContent}
                 </div>
             </div>

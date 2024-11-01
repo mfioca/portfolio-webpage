@@ -6,10 +6,12 @@ import { Bar } from 'react-chartjs-2'; // Import the Bar component for the bar c
 import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-
+ 
 Chart.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels);
 
-
+/***************************************************/
+/* Custom charts based on dropdown box filtering   */
+/***************************************************/
 
 const createChartData = (top5Applications) => {
     return {
@@ -51,6 +53,10 @@ const createBarChartData = (top5ActivitySubtypes) => {
     };
 };
 
+/******************************************/
+/* Main dashboard functions and display   */
+/******************************************/
+
 const Dashboard = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.rawData); // Access rawData from Redux
@@ -66,7 +72,7 @@ const Dashboard = () => {
     // Load data using the data loader function
     useEffect(() => {
         const fetchData = async () => {
-            await loadDataForGraphs(dispatch); // Load data from the dataloader
+            await loadDataForGraphs(dispatch); 
         };
         fetchData();
     }, [dispatch]);
@@ -154,87 +160,75 @@ const Dashboard = () => {
     const endIndex = startIndex + rowsPerPage;
     const currentData = filteredData.slice(startIndex, endIndex);
  
-
-
-    // Inside your Dashboard component
-
-
     return (
         <div className="dashboard-container">
-            
-        <div className="temp">        
-            <h2>Dashboard</h2>
-            <p>When modifying drop down boxes, data changes in Redux and may take some time to reload</p>
-            
-            <div className="dropdowns">
-                <div>
-                    <h2>Select Activity Type</h2>
-                    <select 
-                        value={selectedActivityType} 
-                        onChange={(e) => setSelectedActivityType(e.target.value)}>
-                        <option value="">All Activity Types</option>
-                        {activityTypes.map((type, index) => (
-                            <option key={index} value={type}>
-                                {type}
-                            </option>
-                        ))}
-                    </select>
+            <div className="temp">        
+                <h2>Dashboard</h2>
+                <p>When modifying drop down boxes, data changes in Redux and may take some time to reload</p>
+                <div className="dropdowns">
+                    <div>
+                        <h2>Select Activity Type</h2>
+                        <select value={selectedActivityType} onChange={(e) => setSelectedActivityType(e.target.value)}>
+                            <option value="">All Activity Types</option>
+                            {activityTypes.map((type, index) => (
+                                <option key={index} value={type}>
+                                    {type}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Select Month</h2>
+                        <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}> 
+                            <option value="">All Months</option>
+                            {months.map((month, index) => (
+                                <option key={index} value={month}>
+                                    {month}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Select Year</h2>
+                        <select 
+                            value={selectedYear} 
+                            onChange={(e) => setSelectedYear(e.target.value)}>
+                            <option value="">All Years</option>
+                            {years.map((year, index) => (
+                                <option key={index} value={year}>
+                                    {year}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <h2>Select Month</h2>
-                    <select 
-                        value={selectedMonth} 
-                        onChange={(e) => setSelectedMonth(e.target.value)}> 
-                        <option value="">All Months</option>
-                        {months.map((month, index) => (
-                            <option key={index} value={month}>
-                                {month}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div>
-                    <h2>Select Year</h2>
-                    <select 
-                        value={selectedYear} 
-                        onChange={(e) => setSelectedYear(e.target.value)}>
-                        <option value="">All Years</option>
-                        {years.map((year, index) => (
-                            <option key={index} value={year}>
-                                {year}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </div>
-            <div className="graph-wrapper">
-                <div className="donut-chart">
-                    <h3>Top Applications - Donut Chart</h3>
-                    <Doughnut
-                        data={createChartData(top5Applications)}
-                        options={{
-                            plugins: {
-
-                                tooltip: {
-                                    callbacks: {
-                                        label: (context) => {
-                                            const label = context.dataset.label || '';
-                                            const value = context.parsed; // Get the value for the Doughnut chart
-                                            return `${label}: ${value.toFixed(2)} hours`; // Format the tooltip label to two decimal points
+                <div className="graph-wrapper">
+                    <div className="donut-chart">
+                        <h3>Top Applications - Donut Chart</h3>
+                        <Doughnut
+                            data={createChartData(top5Applications)}
+                            options={{
+                                plugins: {
+                                    tooltip: {
+                                        callbacks: {
+                                            label: (context) => {
+                                                const label = context.dataset.label || '';
+                                                const value = context.parsed; // Get the value for the Doughnut chart
+                                                return `${label}: ${value.toFixed(2)} hours`; // Format the tooltip label to two decimal points
+                                            },
                                         },
                                     },
+                                    datalabels: {
+                                        display: true, // Show data labels for the Doughnut chart
+                                        color: 'black', // Color of the data labels
+                                        formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label to two decimal points
+                                    },
                                 },
-                                datalabels: {
-                                    display: true, // Show data labels for the Doughnut chart
-                                    color: 'black', // Color of the data labels
-                                    formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label to two decimal points
-                                },
-                            },
-                        }}
-                    />
-                </div>
-                <div className="top-subtypes">
-                    <h3>Top Activity Subtypes</h3>
+                            }}
+                        />
+                    </div>
+                    <div className="top-subtypes">
+                        <h3>Top Activity Subtypes</h3>
                         {top5ActivitySubtypes.length === 0 ? (
                             <p>Filter Activity Types for more analytical data.</p>
                         ) : (
@@ -265,56 +259,56 @@ const Dashboard = () => {
                                 />
                             </div>
                         )}
+                    </div>
                 </div>
             </div>
-            </div>
             <div className = "temp2">
-            <div className="filtered-data">
-                {currentData.length > 0 ? (
-                    <table className="csv-data">
-                        <thead>
-                            <tr>
-                                {Object.keys(currentData[0]).map((key, index) => {
-                                    if (key !== 'timestamp' && key !== 'hour') {
-                                        return <th key={index}>{key}</th>; // Table headers
-                                    }
-                                    return null; // Exclude timestamp from headers
-                                })}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {currentData.map((row, index) => (
-                                <tr key={index}>
-                                    {Object.keys(row).map((key) => {
+                <div className="filtered-data">
+                    {currentData.length > 0 ? (
+                        <table className="csv-data">
+                            <thead>
+                                <tr>
+                                    {Object.keys(currentData[0]).map((key, index) => {
                                         if (key !== 'timestamp' && key !== 'hour') {
-                                            return <td key={key}>{row[key]}</td>; // Table data cells
+                                            return <th key={index}>{key}</th>; // Table headers
                                         }
-                                        return null; // Exclude timestamp from data
+                                        return null; // Exclude timestamp from headers
                                     })}
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                ) : (
-                    <p>No data available</p> // Message when there is no data
-                )}
+                            </thead>
+                            <tbody>
+                                {currentData.map((row, index) => (
+                                    <tr key={index}>
+                                        {Object.keys(row).map((key) => {
+                                            if (key !== 'timestamp' && key !== 'hour') {
+                                                return <td key={key}>{row[key]}</td>; // Table data cells
+                                            }
+                                            return null; // Exclude timestamp from data
+                                        })}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    ) : (
+                        <p>No data available</p> // Message when there is no data
+                    )}
+                </div>
+                <div className="pagination">
+                    <button 
+                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+                        disabled={currentPage === 1}>
+                        Previous
+                    </button>
+                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button 
+                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+                        disabled={currentPage === totalPages}>
+                        Next
+                    </button>
+                </div>
             </div>
-            <div className="pagination">
-                <button 
-                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-                    disabled={currentPage === 1}>
-                    Previous
-                </button>
-                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
-                    Page {currentPage} of {totalPages}
-                </span>
-                <button 
-                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                    disabled={currentPage === totalPages}>
-                    Next
-                </button>
-            </div>
-        </div>
         </div>
     );
 };

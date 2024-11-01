@@ -1,6 +1,10 @@
 import Papa from 'papaparse'; 
 import { setGraphData, setRawData } from './actions'; // Include setRawData action
 
+/***************************************************/
+/*          Parse the data from the csv file       */
+/***************************************************/
+
 const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
     try {
         const response = await fetch('/cleaned_data_1.csv'); 
@@ -11,7 +15,8 @@ const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
             dynamicTyping: true,
             complete: (results) => {
                 // Dispatch raw data for the dashboard
-                dispatch(setRawData(results.data)); // Dispatch the raw data for dashboard use
+                // all other processing handled locally in the dashboard.js file
+                dispatch(setRawData(results.data)); 
                 
                 if (graphType === 'graph1') {
                     handleGraph1Data(results.data, dispatch);
@@ -27,7 +32,10 @@ const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
     }
 };
 
-// Handle data processing for graph 1
+/***************************************************/
+/*          Filtered data for grpah 1              */
+/***************************************************/
+
 const handleGraph1Data = (data, dispatch) => {
     const modeData = [];
     const sheetsData = [];
@@ -70,7 +78,10 @@ const handleGraph1Data = (data, dispatch) => {
     }));
 };
 
-// Handle data processing for graph 2
+/***************************************************/
+/*          Filtered data for grpah 2              */
+/***************************************************/
+
 const handleGraph2Data = (data, dispatch) => {
     const combinedData = [];
     const analyticsData = [];
@@ -110,6 +121,10 @@ const handleGraph2Data = (data, dispatch) => {
         ],
     }));
 };
+
+/***************************************************/
+/*          Filtered data for grpah 3              */
+/***************************************************/
 
 const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
     const totalWorkByYear = {};

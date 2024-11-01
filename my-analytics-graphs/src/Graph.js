@@ -4,7 +4,7 @@ import { Chart, CategoryScale, LinearScale, LineController, LineElement, Title, 
 import { Line } from 'react-chartjs-2';
 import loadDataForGraphs from './dataloader'; // Import your data loader function
 
-// Register Chart.js components
+
 Chart.register(CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend);
 
 const Graph = () => {
@@ -55,6 +55,7 @@ const Graph = () => {
     }
 
     console.log('Graph Data:', graphData); // Log the graph data to verify
+    
     return (
         <div className="chart-container">
             <h2>Application Usage Over Time by Month</h2>

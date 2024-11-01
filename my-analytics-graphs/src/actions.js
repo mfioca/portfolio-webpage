@@ -1,5 +1,3 @@
-// actions.js
-
 // Action to set graph data
 export const setGraphData = (graphId, data) => ({
     type: 'SET_GRAPH_DATA',
