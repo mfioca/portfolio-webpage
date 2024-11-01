@@ -110,7 +110,7 @@ function App() {
                     </p>
                 </header>
 
-    <div className="graph-flexbox"></div>
+   
                 <div className="graph-flexbox">
                     <div className="graph-box">
                         <div className="graph-container">

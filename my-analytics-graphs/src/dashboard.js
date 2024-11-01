@@ -161,8 +161,11 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
+            
+        <div className="temp">        
             <h2>Dashboard</h2>
             <p>When modifying drop down boxes, data changes in Redux and may take some time to reload</p>
+            
             <div className="dropdowns">
                 <div>
                     <h2>Select Activity Type</h2>
@@ -204,8 +207,6 @@ const Dashboard = () => {
                     </select>
                 </div>
             </div>
-
-
             <div className="graph-wrapper">
                 <div className="donut-chart">
                     <h3>Top Applications - Donut Chart</h3>
@@ -250,7 +251,13 @@ const Dashboard = () => {
                                                 display: true, // Show data labels for the bar chart
                                                 color: 'black', // Color of the data labels
                                                 anchor: 'end', // Positioning of the labels
-                                                align: 'bottom', // Align below the bar
+                                                align: (context) => {
+                                                    const value = context.dataset.data[context.dataIndex]; // Get the value of the current data point
+                                                    const thresholdValue = 4; // Define a threshold value (e.g., 10 hours)
+                                            
+                                                    // Determine the alignment based on the value
+                                                    return value > thresholdValue ? 'bottom' : 'top'; 
+                                                },
                                                 formatter: (value) => `${value.toFixed(2)} hours`,
                                             },
                                         },
@@ -260,7 +267,8 @@ const Dashboard = () => {
                         )}
                 </div>
             </div>
-        
+            </div>
+            <div className = "temp2">
             <div className="filtered-data">
                 {currentData.length > 0 ? (
                     <table className="csv-data">
@@ -297,13 +305,16 @@ const Dashboard = () => {
                     disabled={currentPage === 1}>
                     Previous
                 </button>
-                <span>Page {currentPage} of {totalPages}</span>
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
+                    Page {currentPage} of {totalPages}
+                </span>
                 <button 
                     onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
                     disabled={currentPage === totalPages}>
                     Next
                 </button>
             </div>
+        </div>
         </div>
     );
 };

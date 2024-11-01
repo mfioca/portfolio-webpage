@@ -38,17 +38,18 @@ header .footer-text {
   margin: 20px; /* Add margin to prevent overlap */
 }
 
+
+
 .graph-flexbox {
   display: flex; /* Enable flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping if there's not enough space */
   justify-content: center; /* Center items horizontally */
-  max-width: 100%; /* Ensure it doesn't overflow */
-  padding: 5px;
-  margin-bottom: 10px;
-  border: none; /* No border */
-  background-color: #f4f4f4; /* Light gray */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  
+  margin: 30px;
+  border: 5px solid transparent; /* Add a transparent border */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+  padding: 10px; /* Padding inside the wrapper */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .graph-box {
@@ -98,27 +99,6 @@ header .footer-text {
   color: #333; /* Dark gray text for readability */
 }
 
-.chart-header_original {
-  position: relative; /* Allow absolute positioning inside */
-  text-align: center; /* Center align title */
-  width: 100%; /* Full width */
-}
-
-/* exists in the 3rd graph that shows percent calculations */
-.data-box_original {
-  position: absolute; /* Position it absolutely */
-  right: 5px; /* Adjust this value to position it */
-  top: 0; /* Align it to the top */
-  align-items: center; /* Center text vertically */
-  height: 40px; /* Set height to match title/key height */
-  width: 250px;
-  padding: 10px; /* Adjust padding */
-  border-radius: 4px; /* Rounded corners */
-  background-color: #f9f9f9; /* Background color */  
-  font-size: 14px; /* Adjust font size as needed */
-}
-
-
 .chart-header {
   display: flex; /* Enable flexbox layout */
   flex-direction: column; /* Stack items vertically */
@@ -146,22 +126,6 @@ header .footer-text {
   width: 90%; /* Ensure it takes full width */
 }
 
-.data-box-1 {
-  position: relative; /* Change this from absolute to relative */
-  margin-left: auto; /* Push the data box to the right within flex */
-  display: flex; /* Enable flexbox */
-  align-items: right; /* Center the text vertically */
-  height: 40px; /* Adjust height as needed */
-  padding: 10px; /* Adjust padding */
-  border-radius: 4px; /* Rounded corners */
-  background-color: #f9f9f9; /* Background color */  
-  font-size: 14px; /* Adjust font size as needed */
-  max-width: 250px; /* Set a max width */
-  z-index: 0; /* Ensure it stays behind the title */
-}
-
-
-
 
 /***********************************************************************************/
 /*this section is for displaying the section with the dropdown lists and csv data. */
@@ -179,15 +143,19 @@ header .footer-text {
   border-radius: 5px; /* Rounded corners */
 }
 
+
 .csv-data {
   width: 100%; /* Make the table full width */
   border-collapse: collapse; /* Collapse borders for cleaner look */
+  table-layout: fixed; /* Ensure fixed layout for consistent column widths */
 }
 
-.csv-data th, .csv-data td {
+.csv-data th,
+.csv-data td {
   border: 1px solid #ddd; /* Cell borders */
-  padding: 8px; /* Cell padding */
+  padding: 12px; /* Increased cell padding for better spacing */
   text-align: left; /* Align text to the left */
+  min-width: 100px; /* Set a minimum width for columns */
 }
 
 .csv-data th {
@@ -195,6 +163,12 @@ header .footer-text {
   top: 0; /* Stick to the top */
   z-index: 10; /* Ensure it appears above other content */
   background-color: #f2f2f2; /* Header background color */
+  font-weight: bold; /* Make header text bold */
+}
+
+/* Optional: Improve hover effects */
+.csv-data tr:hover {
+  background-color: #f5f5f5; /* Highlight row on hover */
 }
 
 .dropdowns {
@@ -260,14 +234,8 @@ header .footer-text {
   flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: space-around; /* Space between the graphs */
   align-items: flex-start; /* Align items at the start */
-  border: 5px solid transparent; /* Add a transparent border */
-    border-radius: 10px; /* Rounded corners for a smoother look */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    padding: 10px; /* Padding inside the wrapper */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+ 
 }
-
-
 
 .donut-chart {
   flex: 0 0 60%; /* Set a fixed basis for the donut chart (60% of the width) */
@@ -293,4 +261,40 @@ header .footer-text {
     width: 100%; /* Full width for each graph */
     max-width: none; /* Remove max-width for responsive design */
   }
+}
+
+{/* when working on styling, remember this is inline styling in the dashboard.js file to consider for the page number text */}
+.pagination {
+  display: flex; /* Align pagination items in a row */
+  justify-content: center; /* Center the pagination controls */
+  margin-top: 20px; /* Space above pagination */
+}
+
+.pagination button {
+  padding: 10px 15px; /* Button padding */
+  margin: 0 5px; /* Space between buttons */
+  border: none; /* Remove default border */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border-radius: 5px; /* Rounded edges */
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+.temp {
+  border: 5px solid transparent; /* Add a transparent border */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    padding: 10px; /* Padding inside the wrapper */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.temp2 {
+  border: 5px solid transparent; /* Add a transparent border */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    
+    padding: 10px; /* Padding inside the wrapper */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
