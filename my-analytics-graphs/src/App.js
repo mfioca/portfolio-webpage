@@ -87,35 +87,18 @@ function App() {
             <div className="App">
                 <header className="App-header">
                     <h1>Dashboard Layout</h1>
-                    <p class="footer-text">
-                        We engaged in a collaborative dialogue focused on integrating Redux into your React application. 
-                        You initially expressed a desire to manage graph data more efficiently without overwhelming complexity. 
-                        I guided you through the process step-by-step, emphasizing clear explanations and minimizing unnecessary details. 
-                        You actively participated by asking specific questions and providing feedback on instructions, which helped refine 
-                        our conversation. Together, we established a Redux store, created an action file, and modified the Graph component 
-                        to use Redux for state management, ensuring the data was visualized correctly. Throughout, the emphasis was on 
-                        maintaining clarity and adapting to your learning style, highlighting the importance of concise communication and 
-                        active engagement.
-                    </p>
-                    <br/>
-                    <p className="footer-text">
-                        During our collaboration, we focused on enhancing the functionality of the Dashboard component in a React application. 
-                        You emphasized the importance of establishing a baseline understanding before diving into code changes. We discussed how 
-                        the dropdown boxes needed to filter data effectively, and you sought to ensure clarity in the data handling process.
-                    <br/>
-                        You guided the conversation by prompting me to revisit the existing code, ensuring I understood the current structure 
-                        and the necessary adjustments required in the dataloader.js, actions.js, and store.js files. This methodical approach 
-                        allowed us to align our understanding of the tasks at hand and clarify the functionality needed for the dropdown filters.
-                    <br/>
-                        Throughout the process, you actively engaged by identifying errors and clarifying expectations for code adjustments, 
-                        particularly with regards to unused variables. You demonstrated patience and determination in troubleshooting, 
-                        leading to productive discussions on optimizing the Redux state management and improving data loading efficiency.
-                    <br/>
-                        In the end, we successfully implemented the desired changes, and the dropdowns functioned as expected, significantly 
-                        enhancing the Dashboards usability. Your logical and analytical approach, coupled with a focus on clear communication, 
-                        proved essential in achieving our objectives.
-                    </p>
                 </header>
+                <div className="context-box">
+                    <h2>Dashboard Overview</h2>
+                    <p><strong>Purpose:</strong>This dashboard offers a dynamic visualization of activity data accumulated over four years, 
+                        expertly showcasing trends in job focus and providing valuable insights into time allocation across various activities. 
+                        Designed with user experience in mind, it transforms raw CSV data into a sleek, spreadsheet-like display, 
+                        eliminating the overwhelming noise of traditional excel formats. The integration of responsive graphs, intuitive pagination, 
+                        and interactive drop-down filters allows for seamless navigation and analysis, empowering users to easily explore their activity 
+                        data and make informed decisions.
+                    </p>
+
+                </div>
                 <div className="graph-flexbox">
                     <div className="graph-box">
                         <div className="graph-container">
