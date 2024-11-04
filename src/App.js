@@ -85,9 +85,6 @@ function App() {
         // Wrap the App component with Provider for Redoux functions
         <Provider store={store}> 
             <div className="App">
-                <header className="App-header">
-                    <h1>Dashboard Layout</h1>
-                </header>
                 <div className="context-box">
                     <h2>Dashboard Overview</h2>
                     <p><strong>Purpose:</strong>This dashboard offers a dynamic visualization of activity data accumulated over four years, 
@@ -126,3 +123,10 @@ function App() {
 }
 
 export default App;
+
+
+/*
+<header className="App-header">
+                    <h1>Dashboard Layout</h1>
+                </header>
+*/
