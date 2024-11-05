@@ -9,9 +9,6 @@ import AboutPage from './About'; // Import your Home component if you create one
 import reportWebVitals from './reportWebVitals';
 
 
-
-
-
 const Navigation = () => {
   const location = useLocation(); // Get the current location
 
@@ -50,8 +47,6 @@ const Navigation = () => {
   );
 };
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -61,7 +56,6 @@ root.render(
         <Route path="/" element={<Home />} /> {/* Your home page */}
         <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
         <Route path="/App" element={<App />} /> {/* Your dashboard page */}
-        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
@@ -69,18 +63,3 @@ root.render(
 
 reportWebVitals();
 
-
-/*
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-
-*/

@@ -94,7 +94,6 @@ function App() {
                         and interactive drop-down filters allows for seamless navigation and analysis, empowering users to easily explore their activity 
                         data and make informed decisions.
                     </p>
-
                 </div>
                 <div className="graph-flexbox">
                     <div className="graph-box">
