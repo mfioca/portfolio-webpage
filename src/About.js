@@ -1,24 +1,23 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect  } from 'react';
 import './About.css'; // Importing the CSS for styling 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-
-
-
 const quotes = [
-    "The only way to do great work is to love what you do. – Steve Jobs",
-    "Life is what happens when you’re busy making other plans. – John Lennon",
-    "The purpose of our lives is to be happy. – Dalai Lama",
-    "Get busy living or get busy dying. – Stephen King",
-    "You have within you right now, everything you need to deal with whatever the world can throw at you. – Brian Tracy",
-    "I think that the chances of finding out what's actually going on are so absurdly remote that the only thing to do is to say, 'Hang the sense of it,' and keep yourself busy. I'd much rather be happy than right any day. – The Hitchhiker's Guide to the Galaxy",
-    "If life is going to exist in a Universe of this size, then the one thing it cannot afford to have is a sense of proportion. - The Hitchhiker's Guide to the Galaxy"
+    "If life is going to exist in a Universe of this size, then the one thing it cannot afford to have is a sense of proportion. - The Hitchhiker's Guide to the Galaxy",
+    "You cannot see what I see because you see what you see. you cannot know what I know because you know what you know.  What I see and what I know cannot be added to what you see and what you know because they are not of the same kind.  Neither can it replace what you see and what you know, because that would be to replace yourself. - The Hitchhiker's Guide to the Galaxy",
+    "We also live in strange places: each in a universe of our own. The people with whom we populate our universes are the shadows of whole other universes intersecting with our own. - The Hitchhiker's Guide to the Galaxy",
+    "The mind can go either direction under stress - toward positive or toward negative: on or off.  Think of it as a spectrum whose extremes are unconsciousness at the negative end and hyperconsciousness at the positive end.  The way the mind will lean under stress is strongly influenced by training. - Dune",
+    "It occured to her that mercy was the ability to stop, if only for a moment.  There was no mercy where there could be no stopping. - Dune",
+    "The mystery of life isn't a problem to sove, but a reality to experience. - Dune",
+    "The most persistent principles of he universe were accident and error. - Dune",
+    "I learned this, at least, by my experiment: that if one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours. - Henry David Thoreau Walden: Or, Life in the Woods"
 ];
 
 const ScrollingQuotes = () => {
@@ -27,7 +26,7 @@ const ScrollingQuotes = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-        }, 10000); // Change quote every 3 seconds
+        }, 10000); // Change quote every 10 seconds
 
         return () => clearInterval(intervalId); // Clear interval on component unmount
     }, []);
@@ -39,33 +38,92 @@ const ScrollingQuotes = () => {
     );
 };
 
-
 const About = () => {
-
     return (
-<div>
-
-<Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        <SwiperSlide>
-            <div className="personal-card">
-        <p>
-                    I am a movie, sci-fi, and overall tech geek who always seeks out new and interesting things to experience and learn. 
-                    I strive to keep an open mind on everything because you never know what kind of hidden truths await those who pay attention.
-                </p>
-                </div></SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
-
-
-
-</div>
+        <div className="body">
+            <div >
+                <ScrollingQuotes/>
+            </div>
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                pagination={{
+                clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="about-card"
+            >
+                <SwiperSlide>
+                <div className="icon">💡</div>
+                    <div className="about-section">
+                        <div className='about-title'>
+                            <h2>About Me</h2>
+                        </div>
+                        {/*<img src="path/to/your/image.jpg" alt="Personal" /> */}
+                        <p>
+                            Hello! I&apos;m a passionate creator who thrives on challenges and revels in the art of building intricate virtual worlds. 
+                            Whether I&apos;m reconstructing the majestic city of Whiterun in Minecraft or delving into the complexities of data analytics, 
+                            my approach is always methodical yet imaginative. With a knack for detail, I often find myself lost in the enchanting process 
+                            of transforming mere ideas into tangible structures, both in the digital realm and beyond.
+                        </p>
+                        <p>
+                            Much like a Mentat from the book <em>Dune</em>, I have the ability to connect seemingly unrelated dots like a complex web of interconnected 
+                            processes. This analytical prowess allows me to identify patterns, solve problems, and innovate creatively. 
+                            With a penchant for humor, I approach projects and collaborations with a touch of levity, believing that a little laughter can go a 
+                            long way in fostering productive interactions.
+                        </p>
+                        <p>
+                            My journey reflects a commitment to continuous improvement and exploration, where each project completed fuels my motivation to keep pushing 
+                            boundaries. With each new build, whether it&apos;s a complex data visualization or an elaborate Minecraft realm, I enjoy building new things 
+                            and seeing the results of my efforts. I believe in the power of curiosity and innovation, and I approach each endeavor with a spirit of adventure 
+                            and a touch of humor, ready to tackle whatever comes next!
+                        </p>
+                        <div className="icon">&#x1F4A1;</div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                <div className="icon">⚙️</div>
+                    <div className="about-section">
+                        <h2>Developer Learning Projects</h2>
+                        <ul>
+                            <li>
+                                In 6 months, I learned and built a fairly complex Windows desktop widget suite themed around the Skyrim video game, 
+                                which includes a setup widget that controls almost everything, containing close to 10,000 lines of code using .ini and .inc files.
+                            </li>
+                            <li>
+                                In 6 months, I taught myself how to build a multipage webpage using React and Next.js, which included Bootstrap 
+                                and a Dungeons and Dragons battle simulator involving a hero and a monster that accurately applied all rules 
+                                of the Advanced Special Edition 2 system.
+                            </li>
+                            <li>
+                                In just under 2 calendar years, I progressed from a basic understanding of SQL to being able to create 
+                                polished dashboards with at least 3-5 graphs and charts. This involved utilizing highly advanced multi-table 
+                                SQL queries with 700+ lines to sort through hundreds of thousands of rows of data in a complex ActiveAdmin setup, 
+                                while reducing the data to under 1MB for CSV export.
+                            </li>
+                            <li>
+                                In 60 hours, ChatGPT and I built a single-page app using React and Redux that parses CSV data into a dashboard 
+                                featuring 3 custom graphs, an adaptive analysis section, and a display of the CSV data. A portion of that time 
+                                was spent going back over the code due to multiple data parsing, and implementing Redux. Another significant 
+                                portion was dedicated to learning how to collaborate effectively with ChatGPT on development and troubleshooting.
+                            </li>
+                            <li>
+                                In just a few days, I explored the OpenAI Playground training materials and examples from my brother, 
+                                enabling me to start developing fairly advanced custom prompt engineering systems.
+                            </li>
+                        </ul>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>Slide 4</SwiperSlide>
+                <SwiperSlide>Slide 5</SwiperSlide>
+                <SwiperSlide>Slide 6</SwiperSlide>
+                <SwiperSlide>Slide 7</SwiperSlide>
+                <SwiperSlide>Slide 8</SwiperSlide>
+                <SwiperSlide>Slide 9</SwiperSlide>
+            </Swiper>
+        </div>
       );
     };
 

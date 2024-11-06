@@ -1,25 +1,84 @@
-.about-container {
-    max-width: 2000px; /* Centered and constrained width */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Padding around the content */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+.body {
+    margin: 5px;
+    padding: 5px;
 }
 
-.about-title {
-    text-align: center; /* Center the title */
-    font-size: 32px; /* Title font size */
-    margin-bottom: 20px; /* Space below the title */
+.scrolling-quotes {
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background for contrast */
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 20px; /* Some padding for comfort */
+    border: 1px solid #ddd; /* Border for structure */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    font-style: italic; /* Italics for quotes */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.swiper {
+    width: 100%;
+    min-height: 80vh;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 100vh; /* Full height of the viewport */
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.about-card {
+    display: flex;
+    background-color: #ffffff; /* Card background */
+    border: 1px solid #ddd; /* Light gray border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 50px; /* Padding inside the card */
+    margin: 20px auto; /* Centered card */
+    max-width: 1500px;  /*Max width for the card */
+    text-align: center; /* Center text inside the card */
 }
 
 .about-section {
     margin-bottom: 20px; /* Space between sections */
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.about-card img {
+    width: 100%; /* Responsive image */
+    border-radius: 8px; /* Round image corners */
+}
+
+.about-card .icon {
+    font-size: 40px; /* Adjust icon size */
+    color: #282c34; /* Match header color */
+    padding-top: 20px;
 }
 
 .about-section h2 {
+    text-align: center; /* Center the title */
     color: #007bff; /* Primary color for section headings */
-    font-size: 24px; /* Section heading font size */
+    font-size: 32px; /* Section heading font size */
     margin-bottom: 10px; /* Space below section headings */
 }
 
@@ -34,69 +93,8 @@
     padding-left: 20px; /* Indent the list */
 }
 
-
-
-.quote-section {
-    font-style: italic;
-    text-align: center;
-    margin: 20px 0;
-    padding: 10px;
-    border-left: 4px solid #007bff; /* Highlight color for the quote */
-}
-
-
-
-.scrolling-quotes {
-    background-color: #f8f9fa; /* Light background for contrast */
-    padding: 20px; /* Some padding for comfort */
-    border: 1px solid #ddd; /* Border for structure */
-    border-radius: 5px; /* Rounded corners */
-    text-align: center; /* Center the text */
-    font-style: italic; /* Italics for quotes */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
-}
-
-
-
-
-.personal-card {
-    background-color: #ffffff; /* Card background */
-    border: 1px solid #ddd; /* Light gray border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the card */
-    margin: 20px auto; /* Centered card */
-    max-width: 1500px; /* Max width for the card */
-    text-align: center; /* Center text inside the card */
-}
-
-.personal-card h2 {
-    margin-bottom: 15px; /* Space below the title */
-}
-
-.personal-card img {
-    width: 100%; /* Responsive image */
-    border-radius: 8px; /* Round image corners */
-}
-
-.personal-card .icon {
-    font-size: 40px; /* Adjust icon size */
-    color: #282c34; /* Match header color */
-}
-
-.swiper {
-    width: 100%;
-    height: 100%;
-  }
   
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
 
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
+
   
