@@ -1,15 +1,15 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Chart, CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart, CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import loadDataForGraphs from './dataloader'; // Import your data loader function
+import loadDataForGraphs from '../dataloader'; // Import your data loader function
 
 
-Chart.register(CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend);
+Chart.register(CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend);
 
-const Graph2 = () => {
-    const dispatch = useDispatch(); // Initialize dispatch
-    const graphData = useSelector((state) => state.graphData.graph2); // Access the Redux state for graph2
+const Graph = () => {
+    const dispatch = useDispatch();
+    const graphData = useSelector((state) => state.graphData.graph1); // Adjust as needed
     const [isLoading, setIsLoading] = useState(true); // Initialize loading state
 
     const options = useMemo(() => ({
@@ -39,7 +39,7 @@ const Graph2 = () => {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true); // Set loading to true
-            await loadDataForGraphs(dispatch, 'graph2'); // Load data for graphs
+            await loadDataForGraphs(dispatch, 'graph1'); // Load data for graphs
             setIsLoading(false); // Set loading to false
         };
 
@@ -55,13 +55,13 @@ const Graph2 = () => {
     }
 
     console.log('Graph Data:', graphData); // Log the graph data to verify
-
+    
     return (
         <div className="chart-container">
-            <h2>Job Focus and Activities Over Time by Month</h2>
-            <Line data={graphData} options={options} /> {/* Use Redux graph data */}
+            <h2>Application Usage Over Time by Month</h2>
+            <Line data={graphData} options={options} />
         </div>
     );
 };
 
-export default Graph2;
+export default Graph;

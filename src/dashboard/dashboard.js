@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import loadDataForGraphs from './dataloader'; // Import the data loader function
+import loadDataForGraphs from '../dataloader'; // Import the data loader function
 import { Doughnut } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2'; // Import the Bar component for the bar chart
 import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';

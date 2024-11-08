@@ -1,10 +1,10 @@
 import './App.css';
 import { Provider } from 'react-redux'; // Import Provider
 import store from './store'; // Adjust the path to your store file
-import Graph from './Graph';
-import SecondGraph from './Graph2'; // Import your new graph component
-import ThirdGraph from './Graph3'; // Import your new graph component
-import Dashboard from './dashboard'; // Import your new graph component
+import Graph from './dashboard/Graph';
+import SecondGraph from './dashboard/Graph2'; // Import your new graph component
+import ThirdGraph from './dashboard/Graph3'; // Import your new graph component
+import Dashboard from './dashboard/dashboard'; // Import your new graph component
 
 
 /*****************************************************/
