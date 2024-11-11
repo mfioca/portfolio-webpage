@@ -51,12 +51,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Navigation /> {/* Place Navigation here */}
-      <Routes>
-        <Route path="/" element={<Home />} /> {/* Your home page */}
-        <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
-        <Route path="/App" element={<App />} /> {/* Your dashboard page */}
-      </Routes>
+      <Navigation /> {/* Place Navigation here */}
+      <div className="body">
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* Your home page */}
+          <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
+          <Route path="/App" element={<App />} /> {/* Your dashboard page */}
+        </Routes>
+      </div>
     </BrowserRouter>
   </React.StrictMode>
 );

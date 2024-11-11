@@ -240,39 +240,42 @@ const Dashboard = () => {
                             }}
                         />
                     </div>
-                    <div className="top-subtypes">
-                        <h3>Top Activity Subtypes</h3>
-                        {top5ActivitySubtypes.length === 0 ? (
-                            <p>Filter Activity Types for more analytical data.</p>
-                        ) : (
-                            <div className="bar-chart">
-                                <h3>Top Activity Subtypes - Bar Chart</h3>
-                                <Bar
-                                    data={createBarChartData(top5ActivitySubtypes)}
-                                    options={{
-                                        plugins: {
-                                            legend: {
-                                                display: false, // Hide the legend
-                                            },
-                                            datalabels: {
-                                                display: true, // Show data labels for the bar chart
-                                                color: 'black', // Color of the data labels
-                                                anchor: 'end', // Positioning of the labels
-                                                align: (context) => {
-                                                    const value = context.dataset.data[context.dataIndex]; // Get the value of the current data point
-                                                    const thresholdValue = 4; // Define a threshold value (e.g., 10 hours)
-                                            
-                                                    // Determine the alignment based on the value
-                                                    return value > thresholdValue ? 'bottom' : 'top'; 
-                                                },
-                                                formatter: (value) => `${value.toFixed(2)} hours`,
-                                            },
+                    {top5ActivitySubtypes.length === 0 ? (
+                        <div className="bar-chart">
+                        <h3 style={{ marginBottom: '200px' }}>Top Activity Subtypes</h3>
+                        {/*<p>Filter Activity Types for more analytical data.</p>*/}
+                        <p style={{ fontStyle: 'italic', color: '#6c757d', textAlign: 'center', marginTop: '20px' }}>
+                            Filter Activity Types for more analytical data.
+                        </p>
+                        </div>
+                    ) : (
+                        <div className="bar-chart">
+                            <h3 style={{ marginBottom: '70px' }}>Top Activity Subtypes</h3>
+                            <Bar
+                                data={createBarChartData(top5ActivitySubtypes)}
+                                options={{
+                                    plugins: {
+                                        legend: {
+                                            display: false, // Hide the legend
                                         },
-                                    }}
-                                />
-                            </div>
-                        )}
-                    </div>
+                                        datalabels: {
+                                            display: true, // Show data labels for the bar chart
+                                            color: 'black', // Color of the data labels
+                                            anchor: 'end', // Positioning of the labels
+                                            align: (context) => {
+                                                const value = context.dataset.data[context.dataIndex]; // Get the value of the current data point
+                                                const thresholdValue = 4; // Define a threshold value (e.g., 10 hours)
+                                        
+                                                // Determine the alignment based on the value
+                                                return value > thresholdValue ? 'bottom' : 'top'; 
+                                            },
+                                            formatter: (value) => `${value.toFixed(2)} hours`,
+                                        },
+                                    },
+                                }}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
             <div className = "temp2">

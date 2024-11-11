@@ -3,6 +3,7 @@
 
 .App {
   text-align: center;
+  padding-top: 120px;
 }
 
 .App-header {
@@ -205,19 +206,18 @@ header .footer-text {
   flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: space-around; /* Space between the graphs */
   align-items: flex-start; /* Align items at the start */
- 
 }
 
 .donut-chart {
-  flex: 0 0 60%; /* Set a fixed basis for the donut chart (60% of the width) */
-  max-width: 600px; /* Control the maximum size of the donut chart */
+  flex: 0 0 40%; /* Set a fixed basis for the donut chart (60% of the width) */
+  max-width: 400px; /* Control the maximum size of the donut chart */
   margin: 10px; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
 
 .bar-chart {
-  flex: 0 0 35%; /* Set a fixed basis for the bar chart (35% of the width) */
-  min-width: 1000px; /* Control the maximum size of the bar chart */
+  flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
+  min-width: 600px; /* Control the maximum size of the bar chart */
   margin: 10px; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
