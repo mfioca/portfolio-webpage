@@ -13,6 +13,8 @@ import 'swiper/css/navigation';
 /*                  Scrolling quote section                        */
 /*******************************************************************/
 
+
+/*
 const quotes = [
     "If life is going to exist in a Universe of this size, then the one thing it cannot afford to have is a sense of proportion. - The Hitchhiker's Guide to the Galaxy",
     "You cannot see what I see because you see what you see. you cannot know what I know because you know what you know.  What I see and what I know cannot be added to what you see and what you know because they are not of the same kind.  Neither can it replace what you see and what you know, because that would be to replace yourself. - The Hitchhiker's Guide to the Galaxy",
@@ -38,6 +40,63 @@ const ScrollingQuotes = () => {
     return (
         <div className="scrolling-quotes">
             <p>{quotes[currentQuoteIndex]}</p>
+        </div>
+    );
+};
+
+*/
+
+
+const quotes = [
+    {
+        text: "If life is going to exist in a Universe of this size, then the one thing it cannot afford to have is a sense of proportion.",
+        source: "- The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+        text: "You cannot see what I see because you see what you see. you cannot know what I know because you know what you know. What I see and what I know cannot be added to what you see and what you know because they are not of the same kind. Neither can it replace what you see and what you know, because that would be to replace yourself.",
+        source: "- The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+        text: "We also live in strange places: each in a universe of our own. The people with whom we populate our universes are the shadows of whole other universes intersecting with our own.",
+        source: "- The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+        text: "The mind can go either direction under stress - toward positive or toward negative: on or off. Think of it as a spectrum whose extremes are unconsciousness at the negative end and hyperconsciousness at the positive end. The way the mind will lean under stress is strongly influenced by training.",
+        source: "- Dune"
+    },
+    {
+        text: "It occured to her that mercy was the ability to stop, if only for a moment. There was no mercy where there could be no stopping.",
+        source: "- Dune"
+    },
+    {
+        text: "The mystery of life isn't a problem to solve, but a reality to experience.",
+        source: "- Dune"
+    },
+    {
+        text: "The most persistent principles of the universe were accident and error.",
+        source: "- Dune"
+    },
+    {
+        text: "I learned this, at least, by my experiment: that if one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.",
+        source: "- Henry David Thoreau, Walden: Or, Life in the Woods"
+    }
+];
+
+const ScrollingQuotes = () => {
+    const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+        }, 10000); // Change quote every 10 seconds
+
+        return () => clearInterval(intervalId); // Clear interval on component unmount
+    }, []);
+
+    return (
+        <div className="scrolling-quotes">
+            <p className="quote-text">{quotes[currentQuoteIndex].text}</p>
+            <p className="quote-source">{quotes[currentQuoteIndex].source}</p>
         </div>
     );
 };
@@ -70,7 +129,7 @@ const Card = ({ icon, title, description }) => {
 
 const About = () => {
     return (
-        <div className="body">
+        <div className="about-body">
             <div >
                 <ScrollingQuotes/>
             </div>

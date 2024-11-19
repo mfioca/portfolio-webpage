@@ -1,4 +1,5 @@
-.body {
+.about-body {
+    padding-top: 120px;
     margin: 5px;
     padding: 5px;
 }
@@ -16,6 +17,31 @@
     text-align: center; /* Center the text */
     font-style: italic; /* Italics for quotes */
     transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    /* Set a fixed height and width */
+    
+    height: 125px; /* Set a fixed height for consistent size */
+    overflow: hidden; /* Hide overflow content if it exceeds */
+    box-sizing: border-box; /* Include padding and borders in element's total width/height */
+    
+    font-weight: bold; /* Bold the font to make it stand out more */
+    color: #333; /* Darker text color for better contrast */
+    text-transform: uppercase; /* Optional: makes text all caps for emphasis */
+    letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+
+}
+
+.scrolling-quotes .quote-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.scrolling-quotes .quote-source {
+    font-size: 18px;
+    font-weight: 600;
+    color: #007bff; /* Lighter color for the source */
+    margin-top: 5px;
+    text-transform: capitalize;
 }
 
 .swiper {
@@ -24,9 +50,9 @@
   }
   
   .swiper-slide {
-    text-align: center;
+    /*text-align: center; */
     font-size: 18px;
-    background: #fff;
+    /*background: #fff;*/
     height: 100%;
     /*height: 100%; /* Full height of the viewport */
     /* Center slide text vertically */
@@ -50,20 +76,26 @@
 .about-card {
     display: flex;
     height: 100%;
-
     flex-direction: column; /* Stack children vertically */
     justify-content: space-between; /* Distribute space between top and bottom */
     
-
-
-    background-color: #ffffff; /* Card background */
-    border: 1px solid #ddd; /* Light gray border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    border-radius: 8px; /* Rounded corners */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    border: 2px;
+    border-radius: 10px; /* Slightly more rounded corners for a modern feel */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    /*border-radius: 8px; /* Rounded corners */
     padding: 50px; /* Padding inside the card */
     margin: 20px auto; /* Centered card */
     max-width: 1500px;  /*Max width for the card */
-    text-align: center; /* Center text inside the card */
+    /*text-align: center; /* Center text inside the card */
+   
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+
+}
+.about-card:hover {
+    transform: translateY(-5px); /* Lift the card a little on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 .about-section {
@@ -71,9 +103,13 @@
     /*flex-direction: column; /* Stack children vertically */
     /*justify-content: space-between; /* Distribute space */
     flex: 1; /* Allow sections to take up available space */
-    margin-bottom: 20px; /* Space between sections */
+    margin-bottom: 40px; /* Space between sections */
     margin-right: 40px;
     margin-left: 40px;
+    padding: 30px;
+    
+    /*border-radius: 8px; /* Soft rounded corners */
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .about-section .body {
@@ -90,6 +126,7 @@
     font-size: 40px; /* Adjust icon size */
     color: #282c34; /* Match header color */
     padding-top: 20px;
+    text-align: center;
 }
 
 .about-section .bottom-icon {
@@ -97,19 +134,21 @@
     color: #282c34; /* Match header color */
     padding-top: auto;
     padding-bottom: 20px; /* Add padding at the bottom */
+    text-align: center;
     
 }
 
 .about-section h2 {
+    font-family: 'Roboto', sans-serif;
     text-align: center; /* Center the title */
-    color: #007bff; /* Primary color for section headings */
-    font-size: 32px; /* Section heading font size */
-    margin-bottom: 10px; /* Space below section headings */
+    font-weight: 600; /* Semi-bold */
+    font-size: 28px;
+    color: #333; /* Darker text for better contrast */
+    margin-bottom: 20px; /* Space below section headings */
 }
 
 .about-section p,
 .about-section ul {
-    
     font-size: 16px; /* Standard text size */
     line-height: 1.6; /* Increased line height for readability */
 }
