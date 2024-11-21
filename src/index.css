@@ -1,5 +1,7 @@
 
 body {
+  display: flex;
+  flex-direction: column;
   padding-top: 120px;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -90,32 +92,22 @@ code {
 }
 
 .home-body  {
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   font-family: 'Courier New'; /* A clean sans-serif font */
-  height: 100vh;
 }
 
 .home-body h2 {
   font-family: 'Arial', sans-serif; /* A clean sans-serif font */
 }
 
-/* Footer styling */
-.footer-1 {
-  background-color: #282c34;
-  color: white;
-  margin-right: 0px;
- 
 
-  text-align: center;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
 
 .footer {
   position: relative;
   margin-top: auto; /* Pushes the footer to the bottom of the screen */
-  margin-right: auto;
-  margin-left: auto;
+
   padding: 20px;
   background-color: #282c34;
   color: white;
