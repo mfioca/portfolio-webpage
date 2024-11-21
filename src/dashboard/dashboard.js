@@ -162,7 +162,7 @@ const Dashboard = () => {
  
     return (
         <div className="dashboard-container">
-            <div className="temp">        
+            <div className="dashboard-hub">        
                 <h2>Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
                 
@@ -278,7 +278,7 @@ const Dashboard = () => {
                     )}
                 </div>
             </div>
-            <div className = "temp2">
+            <div className = "dashboard-csv">
                 <div className="filtered-data">
                     {currentData.length > 0 ? (
                         <table className="csv-data">

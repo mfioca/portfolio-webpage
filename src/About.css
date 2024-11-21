@@ -1,5 +1,4 @@
 .about-body {
-    padding-top: 120px;
     margin: 5px;
     padding: 5px;
 }
@@ -7,28 +6,25 @@
 .scrolling-quotes {
     justify-content: center;
     align-items: center;
-    background-color: #f8f9fa; /* Light background for contrast */
+    overflow: hidden; /* Hide overflow content if it exceeds */
+    height: 140px; /* Set a fixed height for consistent size */
     margin-top: 10px;
     margin-right: 50px;
     margin-left: 50px;
     padding: 20px; /* Some padding for comfort */
     border: 1px solid #ddd; /* Border for structure */
     border-radius: 5px; /* Rounded corners */
-    text-align: center; /* Center the text */
+    background-color: #f8f9fa; /* Light background for contrast */
     font-style: italic; /* Italics for quotes */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
-    /* Set a fixed height and width */
-    
-    height: 125px; /* Set a fixed height for consistent size */
-    overflow: hidden; /* Hide overflow content if it exceeds */
-    box-sizing: border-box; /* Include padding and borders in element's total width/height */
-    
+    text-align: center; /* Center the text */
     font-weight: bold; /* Bold the font to make it stand out more */
     color: #333; /* Darker text color for better contrast */
     text-transform: uppercase; /* Optional: makes text all caps for emphasis */
     letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
+    box-sizing: border-box; /* Include padding and borders in element's total width/height */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
 .scrolling-quotes .quote-text {
@@ -49,49 +45,41 @@
     min-height: 80vh;
   }
   
-  .swiper-slide {
-    /*text-align: center; */
-    font-size: 18px;
-    /*background: #fff;*/
-    height: 100%;
-    /*height: 100%; /* Full height of the viewport */
-    /* Center slide text vertically */
+.swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .swiper-slide img {
+    height: 100%;
+    font-size: 18px;
+}
+
+.swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .swiper {
+}
+
+.swiper {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
 .about-card {
     display: flex;
-    height: 100%;
     flex-direction: column; /* Stack children vertically */
     justify-content: space-between; /* Distribute space between top and bottom */
-    
+    height: 100%;
+    max-width: 1500px;  /*Max width for the card */
+    padding: 50px; /* Padding inside the card */
+    margin: 20px auto; /* Centered card */
+    border: 2px;
+    border-radius: 10px; /* Slightly more rounded corners for a modern feel */
     background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
     border: 2px;
     border-radius: 10px; /* Slightly more rounded corners for a modern feel */
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    /*border-radius: 8px; /* Rounded corners */
-    padding: 50px; /* Padding inside the card */
-    margin: 20px auto; /* Centered card */
-    max-width: 1500px;  /*Max width for the card */
-    /*text-align: center; /* Center text inside the card */
-   
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-
 }
 .about-card:hover {
     transform: translateY(-5px); /* Lift the card a little on hover */
@@ -99,17 +87,11 @@
 }
 
 .about-section {
-    /*display: flex; /* Enable flexbox in this section */
-    /*flex-direction: column; /* Stack children vertically */
-    /*justify-content: space-between; /* Distribute space */
     flex: 1; /* Allow sections to take up available space */
     margin-bottom: 40px; /* Space between sections */
     margin-right: 40px;
     margin-left: 40px;
     padding: 30px;
-    
-    /*border-radius: 8px; /* Soft rounded corners */
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .about-section .body {
@@ -123,28 +105,27 @@
 }
 
 .about-section .top-icon {
-    font-size: 40px; /* Adjust icon size */
-    color: #282c34; /* Match header color */
     padding-top: 20px;
     text-align: center;
+    font-size: 40px; /* Adjust icon size */
+    color: #282c34; /* Match header color */
 }
 
 .about-section .bottom-icon {
-    font-size: 40px; /* Adjust icon size */
-    color: #282c34; /* Match header color */
     padding-top: auto;
     padding-bottom: 20px; /* Add padding at the bottom */
     text-align: center;
-    
+    font-size: 40px; /* Adjust icon size */
+    color: #282c34; /* Match header color */
 }
 
 .about-section h2 {
+    margin-bottom: 20px; /* Space below section headings */
     font-family: 'Roboto', sans-serif;
     text-align: center; /* Center the title */
     font-weight: 600; /* Semi-bold */
     font-size: 28px;
     color: #333; /* Darker text for better contrast */
-    margin-bottom: 20px; /* Space below section headings */
 }
 
 .about-section p,
@@ -154,7 +135,6 @@
 }
 
 .about-section ul {
-    
     list-style-type: disc; /* Default bullet points */
     padding-left: 20px; /* Indent the list */
 }
