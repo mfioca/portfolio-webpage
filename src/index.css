@@ -59,6 +59,7 @@ code {
   flex-direction: column; /* Stack the content vertically */
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   font-family: 'Courier New'; /* A clean sans-serif font */
+  margin: 100px;
 }
 
 .home-title {
@@ -96,7 +97,7 @@ code {
   width: 100%; /* Ensures the image scales based on its parent container */
   max-width: 700px; /* Maximum width to avoid the image getting too big */
   height: auto; /* Maintain the aspect ratio */
-  margin-right: 100px;
+  margin-right: 50px;
   margin-left: 100px;
   margin-bottom: 100px;
 }
@@ -129,18 +130,12 @@ code {
     max-width: 500px; /* Resize image further for tablets or smaller devices */
     justify-content: center;
   }
+
 }
 
-@media (max-width: 1200px) {
-  .image {
-    justify-content: center;
-  }
-  .profile-content h2 {
-    text-align: center; /* Center align the text */
-  }
-}
 
-@media (max-width: 1118px) {
+
+@media (max-width: 1400px) { /*1118px*/
   .profile-content {
     display: flex;
     flex-direction: column; /* Stack the content vertically */
