@@ -100,7 +100,12 @@
 }
 
 .about-card img {
-    width: 100%; /* Responsive image */
+    
+    margin: 0 auto; /* Centers the image horizontally */
+    margin-bottom: 100px;
+    flex: 0 0 40%; /* Fixed width for the photo area */
+    max-width: 850px;
+    max-height: 960px;
     border-radius: 8px; /* Round image corners */
 }
 
@@ -130,8 +135,10 @@
 
 .about-section p,
 .about-section ul {
+    letter-spacing: 0.5px; /* Adjust as needed */
+    font-weight: 300; /* Semi-bold */
     font-size: 16px; /* Standard text size */
-    line-height: 1.6; /* Increased line height for readability */
+    line-height: 3; /* Adjust line height for better text flow */
 }
 
 .about-section ul {
@@ -139,7 +146,21 @@
     padding-left: 20px; /* Indent the list */
 }
 
+.profile-content h2 {
+    margin-bottom: 10px; /* Smaller space below the heading */
+    line-height: 5; /* Increase line height for readability */
+    letter-spacing: 0.5px; /* Adjust as needed */
+    font-weight: 600; /* Semi-bold */
+    margin-left: calc(40% - 400px); /* Initially, start with 50% of the screen width minus 200px */
+  }
   
+  
+  .profile-content p {
+    margin-bottom: 5px; /* Smaller space below each paragraph */
+    line-height: 3; /* Adjust line height for better text flow */
+    margin-right: 100px;
+    margin-left: 100px;
+  }
 
 
 

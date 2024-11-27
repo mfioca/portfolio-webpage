@@ -71,7 +71,7 @@ const ScrollingQuotes = () => {
 /*                  Card functional component                      */
 /*******************************************************************/
 
-const Card = ({ icon, title, description }) => {
+const Card = ({ icon, title, description, image }) => {
     return (
         <div className="about-section">
             <div className="top-icon">{icon}</div>
@@ -79,7 +79,7 @@ const Card = ({ icon, title, description }) => {
             <div className='about-title'>
                 <h2>{title}</h2>
             </div>
-            {/*<img src="path/to/your/image.jpg" alt="Personal" /> */}
+            {image && <img src={image} alt="Card visual" className="img"/>}
             {description}
             </div>
             <div className="bottom-icon">{icon}</div>
@@ -199,7 +199,29 @@ const About = () => {
                     }
                 />
                 </SwiperSlide>
-                <SwiperSlide>Slide 6
+                <SwiperSlide>
+                    <Card
+                        icon="🐉"
+                        title="Computers and UI Design"
+                        image="/skyrim_theme.jpg"
+                        description={
+                            <>
+                                <p>
+                                    My journey into UI design began with exploring Rainmeter, a powerful customization platform. Through extensive work with .ini and .inc files, 
+                                    I developed a highly intricate custom UI theme, featuring advanced widgets and a centralized setup tool that controls nearly all variables. 
+                                    This setup spans almost 10,000 lines of meticulously crafted code, showcasing my ability to create cohesive, functional, dynamic, 
+                                    and visually compelling interfaces. The theme was uploaded to DeviantArt, where it received over 500 downloads within a few months 
+                                    and is available
+                                    <a href="https://www.deviantart.com/franknmullet/art/Skyrim-Theme-1-0-651760185" 
+                                        target="_blank" rel="noopener noreferrer" 
+                                        className="text-body"> here 
+                                    </a> 
+                                    
+                                </p>
+
+                            </>
+                        }
+                    />
 
 
                     
