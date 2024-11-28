@@ -92,8 +92,8 @@ const Card = ({ icon, title, description, image }) => {
 const Card = ({ icon, title, description, image }) => {
     return (
         <div className="section">
-            <div className="header">{icon}</div>
-            <div className="body">
+            <div className="top-icon">{icon}</div>
+            <div className="hippo-body">
                 <div className='about-title'>
                     <h2>{title}</h2>
                 </div>
