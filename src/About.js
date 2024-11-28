@@ -70,20 +70,39 @@ const ScrollingQuotes = () => {
 /*******************************************************************/
 /*                  Card functional component                      */
 /*******************************************************************/
-
+/*
 const Card = ({ icon, title, description, image }) => {
     return (
         <div className="about-section">
             <div className="top-icon">{icon}</div>
-            <div className="body">
-            <div className='about-title'>
-                <h2>{title}</h2>
-            </div>
-            {image && <img src={image} alt="Card visual" className="img"/>}
-            {description}
+            <div className="about-section-body">
+                <div className='about-title'>
+                    <h2>{title}</h2>
+                </div>
+                {image && <img src={image} alt="Card visual" className="img"/>}
+                {description}
             </div>
             <div className="bottom-icon">{icon}</div>
         </div>
+        
+    );
+};
+*/
+
+const Card = ({ icon, title, description, image }) => {
+    return (
+        <div className="section">
+            <div className="header">{icon}</div>
+            <div className="body">
+                <div className='about-title'>
+                    <h2>{title}</h2>
+                </div>
+                {image && <img src={image} alt="Card visual" className="hamburger"/>}
+                {description}
+            </div>
+            <div className="bottom-icon">{icon}</div>
+        </div>
+        
     );
 };
 
