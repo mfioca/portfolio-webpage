@@ -73,10 +73,10 @@ const ScrollingQuotes = () => {
 
 const Card = ({ icon, title, description, image }) => {
     return (
-        <div className="section">
+        <div className="parent-container">
             <div className="top-icon">{icon}</div>
             <div className="card-body">
-                <div className='about-title'>
+                <div>
                     <h2>{title}</h2>
                 </div>
                 {image && <img src={image} alt="Card visual" className="card-image"/>}

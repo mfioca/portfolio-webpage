@@ -175,9 +175,11 @@ code {
 
 
 .footer {
+  /*position: relative;*/
+  /*margin-top: auto; /* Pushes the footer to the bottom of the screen */
   position: relative;
-  margin-top: auto; /* Pushes the footer to the bottom of the screen */
-
+  margin-bottom: 0;
+  width: 100%;
   padding: 20px;
   background-color: #282c34;
   color: white;

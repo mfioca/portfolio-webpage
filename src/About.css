@@ -1,6 +1,13 @@
 .about-body {
     margin: 5px;
     padding: 5px;
+    display: flex;
+  flex-direction: column;
+  /*padding-top: 120px;
+  margin: 0;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
 }
 
 .scrolling-quotes {
@@ -56,114 +63,9 @@
     color: #007bff; /* Lighter color for the source */
 }
 
-/* Swiper Container */
-.swiper {
-    display: flex; /* Flex container for Swiper */
-    flex-direction: column; /* Stack slides vertically if needed */
-    flex: 1 1 auto; /* Allow Swiper to grow and shrink within the layout */
-    width: 100%;
-    min-height: 80vh; /* Keep the swiper responsive */
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box; /* Include padding/borders in size calculations */
-}
 
-/* Swiper Slides */
-.swiper-slide {
-    display: flex;
-    flex-direction: column; /* Ensure internal content stacks vertically */
-    flex: 1 1 auto; /* Ensure each slide can grow and shrink as needed */
-    justify-content: center; /* Center slide content horizontally */
-    align-items: center; /* Center slide content vertically */
-    height: auto; /* Allow slides to size dynamically based on content */
-    padding: 20px; /* Optional: Add padding to the slide */
-    box-sizing: border-box;
-}
 
-/* About Card Layout */
-.about-card {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    flex: 1 1 auto; /* Allow the card to grow and shrink as needed */
-    max-width: 1500px; /* Max width for the card */
-    min-height: 80vh; /* Ensure the card takes up all available height */
-    padding: 50px; /* Padding inside the card */
-    margin: 20px auto; /* Center the card */
-    border-radius: 10px; /* Slightly more rounded corners for a modern feel */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-    box-sizing: border-box; /* Include padding and borders in height calculations */
-}
 
-.section {
-    display: flex;
-    flex-direction: column;
-    content: space-between;
-    min-height: 80vh; /* Minimum height for the section */
-    height: 100%; /* Full viewport height */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding and borders in height calculation */
-}
-
-.section p,
-.section ul {
-    letter-spacing: 0.5px; /* Adjust as needed */
-    font-weight: 300; /* Semi-bold */
-    font-size: 16px; /* Standard text size */
-    line-height: 1.6; /* Increased line height for readability */
-    line-height: 3; /* Adjust line height for better text flow */
-}
-
-.section ul {
-    list-style-type: disc; /* Default bullet points */
-    padding-left: 20px; /* Indent the list */
-}
-
-.section h2 {
-    margin: 10px; /* Space below section headings */
-    font-family: 'Roboto', sans-serif;
-    text-align: center; /* Center the title */
-    color: #007bff; /* Primary color for section headings */
-    font-size: 32px; /* Section heading font size */
-    font-weight: 600; /* Semi-bold */
-    font-size: 28px;
-    color: #333; /* Darker text for better contrast */
-}
-
-.top-icon {
-    position: relative;
-    flex-shrink: 0; /* Prevent footer from shrinking */
-    height: 50px; /* Fixed height for the footer */
-    margin-bottom: auto; /* Pushes the footer to the bottom of the screen */
-    padding-bottom: auto;
-    padding: 10px; /* Add padding at the bottom */
-    margin: 10px;
-    text-align: center;
-    font-size: 40px; /* Adjust icon size */
-    line-height: 50px; /* Vertically center text */
-}
-
-.card-body {
-    flex: 1 1 auto; /* Allow body to grow and shrink */
-    min-height: 110vh; /* Set a minimum height (adjust as needed) */
-    padding: 20px; /* Add padding for content */
-    background-color: #f5f5f5; /* Example background color */
-}
-
-.bottom-icon {
-    position: relative;
-    flex-shrink: 0; /* Prevent footer from shrinking */
-    height: 50px; /* Fixed height for the footer */
-    margin-top: auto; /* Pushes the footer to the bottom of the screen */
-    padding-top: auto;
-    padding: 10px; /* Add padding at the bottom */
-    margin: 10px;
-    text-align: center;
-    font-size: 40px; /* Adjust icon size */
-    line-height: 50px; /* Vertically center text */
-}
 
 /* Swiper Slide Images */
 .swiper-slide img {
@@ -176,7 +78,7 @@
 .card-image {
     flex-shrink: 1; /* Allow the image to shrink within its container */
     margin: 0 auto; /* Center the image horizontally */
-    margin-bottom: 100px; /* Space below the image */
+    margin-bottom: 50px; /* Space below the image */
     width: 40%; /* Make the image responsive */
     max-width: 300px; /* Cap the width */
     height: auto; /* Keep the aspect ratio intact */
@@ -184,4 +86,116 @@
     border-radius: 8px; /* Round image corners */
     object-fit: cover; /* Ensure the image fits neatly within bounds */
     box-sizing: border-box; /* Include padding/borders in size calculations */
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Content starts at the top */
+    align-items: stretch; /* Ensure full width for child elements */
+    max-width: 80%;
+    height: 80vh;
+    padding: 20px;
+    margin: auto;
+    box-sizing: border-box; /* Include padding in size calculations */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    box-sizing: border-box; /* Include padding and borders in height calculations */
+}
+
+.about-card p,
+.about-card ul {
+    margin-right: 100px;
+    margin-left: 100px;
+    letter-spacing: 0.5px; /* Adjust as needed */
+    font-weight: 300; /* Semi-bold */
+    font-size: 16px; /* Standard text size */
+    line-height: 1.6; /* Increased line height for readability */
+    line-height: 3; /* Adjust line height for better text flow */
+}
+
+.about-card ul {
+    list-style-type: disc; /* Default bullet points */
+    padding-left: 20px; /* Indent the list */
+}
+
+.about-card h2 {
+    margin: 10px; /* Space below section headings */
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* Center the title */
+    color: #007bff; /* Primary color for section headings */
+    font-size: 32px; /* Section heading font size */
+    font-weight: 600; /* Semi-bold */
+    font-size: 28px;
+    color: #333; /* Darker text for better contrast */
+}
+
+.top-icon {
+    flex: 0 0 auto; /* Prevents shrinking or growing */
+    height: 50px; /* Fixed height for the footer */
+    width: 100%; /* Full width */
+    margin-bottom: auto; /* Pushes the footer to the bottom of the screen */
+    padding-bottom: auto;
+    padding: 10px; /* Add padding at the bottom */
+    margin: 10px;
+    text-align: center;
+    font-size: 40px; /* Adjust icon size */
+    line-height: 50px; /* Vertically center text */
+}
+
+.bottom-icon {
+    margin-top: auto; /* Pushes the footer to the bottom */
+    align-self: center; /* Centers the icon horizontally (optional) */
+    width: 40px; /* Example fixed width for the icon */
+    height: 40px; /* Example fixed height for the icon */
+    font-size: 40px; /* Adjust icon size */
+    line-height: 50px; /* Vertically center text */
+    padding-bottom: 30px; /* Add padding at the bottom */
+    margin-bottom: 30px;
+}
+
+
+.parent-container {
+    display: flex; /* Optional: if using flex for layout */
+    flex-direction: column; /* Stack children vertically */
+    height: 100%; /* Ensure it occupies the full viewport */
+    width: 100%;
+    box-sizing: border-box; /* Include padding/borders */
+}
+
+
+
+.card-body {
+    flex: 1; /* Fills the available vertical space in the parent */
+    width: 100%; /* Ensures it spans the full width of the about-card */
+    box-sizing: border-box; /* Include padding/borders */
+}
+
+
+@media (max-width: 1000px) {
+    .about-card {
+        height: 100vh; /* Extend the height for smaller screens */
+        max-width: 100%; /* Ensure it fits within smaller screens */
+        padding: 10px; /* Reduce padding for tighter spaces */
+        margin: 0 auto; /* Center it horizontally */
+    }
+}
+
+@media (max-width: 800px) {
+    .about-card {
+        height: 120vh; /* Extend the height for smaller screens */
+        max-width: 100%; /* Ensure it fits within smaller screens */
+        padding: 10px; /* Reduce padding for tighter spaces */
+        margin: 0 auto; /* Center it horizontally */
+    }
+}
+
+@media (max-width: 500px) {
+    .about-card {
+        height: 160vh; /* Extend the height for smaller screens */
+        max-width: 100%; /* Ensure it fits within smaller screens */
+        padding: 10px; /* Reduce padding for tighter spaces */
+        margin: 0 auto; /* Center it horizontally */
+    }
 }
