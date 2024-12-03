@@ -1,4 +1,4 @@
-.App {
+.Dashboard {
   text-align: center;
 }
 
@@ -22,6 +22,10 @@ header .footer-text {
   text-align: center; /* Center the text */
   font-size: 1em; /* Makes the text smaller */
   color: #666; /* A lighter color for a subtle appearance */
+}
+
+.shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
 /*******************************************************************/

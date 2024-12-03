@@ -58,7 +58,7 @@ const Graph2 = () => {
 
     return (
         <div className="chart-container">
-            <h2>Job Focus and Activities Over Time by Month</h2>
+            <h2 className="shadow">Job Focus and Activities Over Time by Month</h2>
             <Line data={graphData} options={options} /> {/* Use Redux graph data */}
         </div>
     );

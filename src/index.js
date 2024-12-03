@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
 import './index.css';
 import Home from './Home'; // Import your Home component if you create one
-import App from './App';
+import Dashboard from './Dashboard';
 import AboutPage from './About'; // Import your Home component if you create one
 import reportWebVitals from './reportWebVitals';
 
@@ -21,7 +21,7 @@ const Navigation = () => {
       case '/About':
       title = 'About Me';
       break;
-    case '/App':
+    case '/Dashboard':
       title = 'Dashboard Layout';
       break;
     default:
@@ -39,7 +39,7 @@ const Navigation = () => {
                   <Link to="/About" className="nav-link">About</Link>
               </li>
               <li>
-                  <Link to="/App" className="nav-link">Dashboard</Link>
+                  <Link to="/Dashboard" className="nav-link">Dashboard</Link>
               </li>
               {/* Add more links as needed */}
           </ul>
@@ -72,7 +72,7 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} /> {/* Your home page */}
           <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
-          <Route path="/App" element={<App />} /> {/* Your dashboard page */}
+          <Route path="/Dashboard" element={<Dashboard />} /> {/* Your dashboard page */}
         </Routes>
       </div>
       <Footer />

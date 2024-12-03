@@ -57,7 +57,7 @@ const createBarChartData = (top5ActivitySubtypes) => {
 /* Main dashboard functions and display   */
 /******************************************/
 
-const Dashboard = () => {
+const CSVdata = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.rawData); // Access rawData from Redux
     const [selectedActivityType, setSelectedActivityType] = useState('');
@@ -163,7 +163,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <div className="dashboard-hub">        
-                <h2>Dashboard</h2>
+                <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
                 
                 <p><strong>How to Use:</strong></p>
@@ -329,4 +329,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default CSVdata;

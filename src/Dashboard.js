@@ -1,10 +1,10 @@
-import './App.css';
+import './Dashboard.css';
 import { Provider } from 'react-redux'; // Import Provider
 import store from './store'; // Adjust the path to your store file
 import Graph from './dashboard/Graph';
 import SecondGraph from './dashboard/Graph2'; // Import your new graph component
 import ThirdGraph from './dashboard/Graph3'; // Import your new graph component
-import Dashboard from './dashboard/dashboard'; // Import your new graph component
+import CSVdata from './dashboard/CSVdata'; // Import your new graph component
 
 
 /*****************************************************/
@@ -23,19 +23,38 @@ const TextSection = ({ content }) => {
 /*                  Main Display                     */
 /*****************************************************/
 
-function App() {
+function Dashboard() {
     return (
         // Wrap the App component with Provider for Redoux functions
         <Provider store={store}> 
-            <div className="App">
+            <div className="Dashboard">
                 <div className="context-box">
-                    <h2>Dashboard Overview</h2>
-                    <p><strong>Purpose:</strong>&nbsp;&nbsp;This dashboard offers a dynamic visualization of activity data accumulated over four years, 
-                        expertly showcasing trends in job focus and providing valuable insights into time allocation across various activities. 
-                        Designed with user experience in mind, it transforms raw CSV data into a sleek, spreadsheet-like display, 
-                        eliminating the overwhelming noise of traditional excel formats. The integration of responsive graphs, intuitive pagination, 
-                        and interactive drop-down filters allows for seamless navigation and analysis, empowering users to easily explore their activity 
-                        data and make informed decisions.
+                    <h2 className="shadow">Dashboard Overview</h2>
+                    <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard presents a comprehensive visualization of activity data collected over 
+                        four years with a single organization. By highlighting trends in job focus and time allocation, it offers valuable insights into 
+                        how various activities contribute to overall performance. The design prioritizes user experience, transforming complex CSV data 
+                        into an organized, visually appealing format that moves beyond the clutter of traditional spreadsheets. Equipped with responsive graphs, 
+                        interactive pagination, and customizable drop-down filters, the dashboard enables users to explore their data effortlessly. 
+                        This intuitive tool empowers decision-making through clear, accessible insights.
+                    </p>
+                    <hr style={{ 
+                        width: '30%', 
+                        margin: '10px auto', 
+                        border: '1px solid #ccc', 
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
+                    }} />
+                    <p><strong className="shadow">Description:</strong>&nbsp;&nbsp;The first section of the dashboard offers a comprehensive analysis of application usage and 
+                        job focus trends over time. Through graphs, it reveals how tools like “Mode” and Google Sheets have been utilized monthly, 
+                        alongside shifts in job activities such as analytics and customer relations. The data also highlights total recorded hours, 
+                        the proportion dedicated to analytics, and year-over-year changes in focus areas. Together, these visualizations provide a clear 
+                        understanding of workflow priorities and evolving patterns, enabling users to assess productivity and refine strategies.
+                    </p>
+                    <p>
+                        The second section of the dashboard shifts focus to detailed CSV data, offering powerful filtering capabilities and dynamic visualizations. 
+                        Users can refine the dataset using three intuitive dropdown filters for activity type, month, and year, tailoring the view to their specific 
+                        needs. Based on these selections, a donut chart highlights the top applications by hours, providing a clear snapshot of tool usage. 
+                        As selections are made, a bar chart appears to showcase the most time-intensive activity subtypes. Below these visualizations, the raw CSV data 
+                        is displayed in a clean, spreadsheet-like format, allowing users to explore the data in detail while maintaining ease of navigation and clarity.
                     </p>
                 </div>
                 <div className="graph-flexbox">
@@ -117,10 +136,10 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <Dashboard />
+                <CSVdata />
             </div>
         </Provider>
     );
 }
 
-export default App;
+export default Dashboard;
