@@ -180,7 +180,7 @@ code {
   /*margin-top: auto; /* Pushes the footer to the bottom of the screen */
   position: relative;
   margin-bottom: 0;
-  width: 100%;
+  /*width: 100%;*/
   padding: 20px;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
   background-color: #282c34;

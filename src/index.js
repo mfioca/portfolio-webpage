@@ -16,17 +16,17 @@ const Navigation = () => {
   let title;
   switch (location.pathname) {
     case '/':
-      title = 'My Home Page';
-      break;
-      case '/About':
-      title = 'About Me';
-      break;
+        title = 'Introduction Page';
+        break;
+    case '/About':
+        title = 'Learn More About Me';
+        break;
     case '/Dashboard':
-      title = 'Dashboard Layout';
-      break;
+        title = 'Activity Analysis Dashboard';
+        break;
     default:
-      title = 'My Dashboard'; // Fallback title
-  }
+        title = 'Explore My Web Page'; // A more general fallback title
+}
 
   return (
       <nav className="navbar">
@@ -39,7 +39,7 @@ const Navigation = () => {
                   <Link to="/About" className="nav-link">About</Link>
               </li>
               <li>
-                  <Link to="/Dashboard" className="nav-link">Dashboard</Link>
+                  <Link to="/Dashboard" className="nav-link">Activity Analysis</Link>
               </li>
               {/* Add more links as needed */}
           </ul>
