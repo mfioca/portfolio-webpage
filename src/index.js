@@ -6,6 +6,7 @@ import './index.css';
 import Home from './Home'; // Import your Home component if you create one
 import Dashboard from './Dashboard';
 import AboutPage from './About'; // Import your Home component if you create one
+import AIShowcase from './ai_showcase';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -24,6 +25,9 @@ const Navigation = () => {
     case '/Dashboard':
         title = 'Activity Analysis Dashboard';
         break;
+    case '/AIShowcase':
+      title = 'AI Showcase';
+      break;
     default:
         title = 'Explore My Web Page'; // A more general fallback title
 }
@@ -40,6 +44,9 @@ const Navigation = () => {
               </li>
               <li>
                   <Link to="/Dashboard" className="nav-link">Activity Analysis</Link>
+              </li>
+              <li>
+                <Link to="/AIShowcase" className="nav-link">AI Showcase</Link>
               </li>
               {/* Add more links as needed */}
           </ul>
@@ -73,6 +80,7 @@ root.render(
           <Route path="/" element={<Home />} /> {/* Your home page */}
           <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
           <Route path="/Dashboard" element={<Dashboard />} /> {/* Your dashboard page */}
+          <Route path="/AIShowcase" element={<AIShowcase />} />
         </Routes>
       </div>
       <Footer />
