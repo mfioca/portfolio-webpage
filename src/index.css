@@ -8,10 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*/
 
 .navbar {
   display: flex;
@@ -26,6 +28,7 @@ code {
   min-height: 100px;
   color: white;
   background-color: #282c34;
+  font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
 
 .navbar-brand {
@@ -49,6 +52,9 @@ code {
   color: #e0e0e0; /* Change color on hover */
 }
 
+.shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
 
 /***********************************************************************************/
 /*                            Home Page Section                                    */
@@ -59,14 +65,17 @@ code {
   flex-direction: column; /* Stack the content vertically */
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   font-family: 'Courier New'; /* A clean sans-serif font */
-  margin: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 
 .home-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%; 
+  width: 100%;
   text-align: center;
   /*font-family: 'Arial', sans-serif; /* A clean sans-serif font */
   font-family: 'Courier New'; /* A clean sans-serif font */
@@ -89,8 +98,6 @@ code {
   border-radius: 8px; /* Rounded corners for the photo */
 }
 
-
-
 .image {
   float: right;
   /*margin: 0px 0px 15px 20px;*/
@@ -109,7 +116,6 @@ code {
   font-weight: 600; /* Semi-bold */
   margin-left: calc(40% - 400px); /* Initially, start with 50% of the screen width minus 200px */
 }
-
 
 .profile-content p {
   margin-bottom: 5px; /* Smaller space below each paragraph */
@@ -132,8 +138,6 @@ code {
   }
 
 }
-
-
 
 @media (max-width: 1400px) { /*1118px*/
   .profile-content {
@@ -171,9 +175,6 @@ code {
   }
 }
 
-
-
-
 .footer {
   /*position: relative;*/
   /*margin-top: auto; /* Pushes the footer to the bottom of the screen */
@@ -181,6 +182,7 @@ code {
   margin-bottom: 0;
   width: 100%;
   padding: 20px;
+  font-family: 'Roboto', sans-serif; /* A clean, modern font */
   background-color: #282c34;
   color: white;
   text-align: center;

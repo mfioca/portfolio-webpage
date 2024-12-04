@@ -56,6 +56,16 @@ function Dashboard() {
                         As selections are made, a bar chart appears to showcase the most time-intensive activity subtypes. Below these visualizations, the raw CSV data 
                         is displayed in a clean, spreadsheet-like format, allowing users to explore the data in detail while maintaining ease of navigation and clarity.
                     </p>
+                    <hr style={{ 
+                        width: '30%', 
+                        margin: '10px auto', 
+                        border: '1px solid #ccc', 
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
+                    }} />
+                    <p className="data-source ">Data insights in this dashboard were made possible through the use of <a href="https://www.rescuetime.com" target="_blank" rel="noopener noreferrer">RescueTime.com</a>, 
+                        a powerful productivity and time management tool.
+                    </p>
+
                 </div>
                 <div className="graph-flexbox">
                     <div className="graph-box">
