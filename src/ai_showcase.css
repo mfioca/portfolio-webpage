@@ -13,9 +13,38 @@
   
 }
 
-
-
 .ai-showcase-container {
+    padding: 20px; /* Add spacing inside the container */
+    margin: 0 auto; /* Center the container on the page */
+   
+
+    background-color: #ffffff; /* White background for a clean look */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding and border in size */
+}
+
+.ai-showcase-container h1 {
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
+    font-size: 32px; /* Large, prominent title */
+    font-weight: bold; /* Make the title stand out */
+    margin-bottom: 20px; /* Space below the title */
+    color: #24292f; /* Neutral dark text color */
+    text-align: center; /* Center the title */
+}
+
+@media (max-width: 768px) {
+    .ai-showcase-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .ai-showcase-container h1 {
+        font-size: 24px; /* Adjust title size for smaller screens */
+    }
+}
+
+
+.example-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,6 +87,9 @@
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chat window */
     transition: all 0.3s ease-in-out; /* Optional smooth transition for visual changes */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    max-height: 100%; /* Ensures the content doesn’t exceed the container height */
 }
 
 .next-message-btn {
@@ -120,14 +152,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
 /***** Chat Bubble Styles *****/
 .chat-bubble {
     max-width: 75%; /* Prevent bubbles from stretching too wide */
@@ -175,4 +199,68 @@
     margin: 10px 0;
     font-size: 14px;
     color: #888;
+}
+
+
+/***********************************************************************************/
+/*                            Prompt section                                       */
+/***********************************************************************************/
+
+.markdown-container {
+    background-color: #f6f8fa; /* Light gray background */
+    padding: 20px; /* Space around the content */
+    border-radius: 10px; /* Rounded corners */
+    font-family: 'Courier New', monospace; /* Monospaced font for Markdown look */
+    color: #24292f; /* GitHub-like dark text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1500px; /* Limit width for readability */
+    margin: 20px auto; /* Center the container */
+    overflow-x: auto; /* Enable horizontal scrolling for long lines */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    max-height: 900px; /* Ensures the content doesn’t exceed the container height */
+}
+
+.markdown-container h1, 
+.markdown-container h2, 
+.markdown-container h3 {
+    font-family: 'Arial', sans-serif; /* Clean font for headings */
+    color: #0366d6; /* GitHub blue for headings */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.markdown-container pre {
+    background-color: #eeeeee; /* Light background for code blocks */
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace; /* Monospaced font for code blocks */
+    overflow-x: auto; /* Horizontal scrolling for long code */
+}
+
+.markdown-container code {
+    background-color: #eeeeee; /* Inline code background */
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #d73a49; /* Red for inline code */
+    font-family: 'Courier New', monospace;
+}
+
+.markdown-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.markdown-container li {
+    margin-bottom: 5px;
+}
+
+.markdown-container a {
+    color: #0366d6; /* GitHub link color */
+    text-decoration: none;
+}
+
+.markdown-container a:hover {
+    text-decoration: underline;
 }

@@ -13,7 +13,7 @@ const Home = () => {
                 </p>
                 <p>
                     Nearly every feature on this page was developed in close collaboration with ChatGPT, with adjustments and customizations made by me. 
-                    Through this process, I integrated several advanced libraries, including React Router DOM, React Redux, PapaParse, React Charts, and Swiper. 
+                    Through this process, I integrated several advanced libraries, including React Router DOM, React Redux, PapaParse, React Charts, react-tabs and Swiper. 
                     Before starting this project, I had no prior experience with those tools, which highlights how effective proper collaboration and customization 
                     can be when working with ChatGPT.
                 </p>
@@ -30,7 +30,7 @@ const Home = () => {
                     }} />
             <div className="profile-content">
                 <h2 className="shadow" >Professional Profile</h2>
-                <p><img src="/IMG_0199.jpeg" alt="Your Name" className="image"/><br/>
+                <p><img src="/headshot.png" alt="Your Name" className="image"/><br/>
                     With over 20 years across diverse industries, I bring a balanced blend of analytical rigor and collaborative leadership to every role. 
                     Known for my precision, integrity, and dedication to detail, I’m deeply motivated by the potential for data-driven solutions to streamline 
                     processes and support effective decision-making. My colleagues often describe me as adaptable and reliable, someone who can be counted on 

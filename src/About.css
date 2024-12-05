@@ -3,6 +3,8 @@
     padding: 5px;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    width: 90%;
     /*padding-top: 120px;
     margin: 0;*/
     -webkit-font-smoothing: antialiased;
@@ -65,36 +67,14 @@
 
 
 
-
-
-/* Swiper Slide Images */
-.swiper-slide img {
-    display: block;
-    max-width: 100%; /* Keep images responsive */
-    max-height: 100%; /* Prevent images from overflowing */
-    object-fit: cover; /* Ensure proper scaling of images */
-}
-
-.card-image {
-    flex-shrink: 1; /* Allow the image to shrink within its container */
-    margin: 0 auto; /* Center the image horizontally */
-    margin-bottom: 50px; /* Space below the image */
-    width: 40%; /* Make the image responsive */
-    max-width: 300px; /* Cap the width */
-    height: auto; /* Keep the aspect ratio intact */
-    max-height: 400px; /* Cap the height */
-    border-radius: 8px; /* Round image corners */
-    object-fit: cover; /* Ensure the image fits neatly within bounds */
-    box-sizing: border-box; /* Include padding/borders in size calculations */
-}
-
 .about-card {
     display: flex;
     flex-direction: column; /* Stack children vertically */
     justify-content: flex-start; /* Content starts at the top */
     align-items: stretch; /* Ensure full width for child elements */
-    max-width: 80%;
-    height: 80vh;
+    width: 100%; /* Make the card responsive to parent container */
+    max-width: 1500px; /* Cap the maximum width */
+    min-height: 80vh; /* Ensure a minimum height for the card */
     padding: 20px;
     margin: auto;
     font-family: 'Courier New'; /* A clean sans-serif font */
@@ -102,8 +82,12 @@
     background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-    box-sizing: border-box; /* Include padding and borders in height calculations */
+    line-height: 3; /* Adjust line height for better spacing */
+    letter-spacing: 0.5px; /* Adjust as needed */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
+
+
 
 .about-card p,
 .about-card ul {
@@ -112,8 +96,8 @@
     letter-spacing: 0.5px; /* Adjust as needed */
     font-weight: 300; /* Semi-bold */
     font-size: 16px; /* Standard text size */
-    line-height: 1.6; /* Increased line height for readability */
-    line-height: 3; /* Adjust line height for better text flow */
+
+
 }
 
 .about-card ul {
@@ -174,29 +158,28 @@
 }
 
 
-@media (max-width: 1000px) {
-    .about-card {
-        height: 100vh; /* Extend the height for smaller screens */
-        max-width: 100%; /* Ensure it fits within smaller screens */
-        padding: 10px; /* Reduce padding for tighter spaces */
-        margin: 0 auto; /* Center it horizontally */
-    }
+
+/* Swiper Slide Images */
+.swiper-slide img {
+    display: block;
+    max-width: 100%; /* Make the image responsive to its container */
+    max-height: 700px; /* Prevent the image from growing too tall */
+    object-fit: contain; /* Scale the image to fit without cropping */
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 8px; /* Match card styling if needed */
 }
 
-@media (max-width: 800px) {
-    .about-card {
-        height: 120vh; /* Extend the height for smaller screens */
-        max-width: 100%; /* Ensure it fits within smaller screens */
-        padding: 10px; /* Reduce padding for tighter spaces */
-        margin: 0 auto; /* Center it horizontally */
-    }
+/* Card Image */
+.card-image {
+    flex-shrink: 1; /* Allow the image to shrink if necessary */
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 100%; /* Ensure the image stays within its container */
+    /*max-height: 500px; /* Restrict the maximum height */
+    height: auto; /* Maintain the aspect ratio */
+    width: auto; /* Maintain the aspect ratio */
+    margin-bottom: 20px; /* Add space below the image */
+    border-radius: 8px; /* Add rounded corners */
+    object-fit: contain; /* Prevent cropping while fitting the container */
+    box-sizing: border-box; /* Include padding/borders in size calculations */
 }
 
-@media (max-width: 500px) {
-    .about-card {
-        height: 160vh; /* Extend the height for smaller screens */
-        max-width: 100%; /* Ensure it fits within smaller screens */
-        padding: 10px; /* Reduce padding for tighter spaces */
-        margin: 0 auto; /* Center it horizontally */
-    }
-}
