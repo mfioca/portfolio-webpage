@@ -12,6 +12,10 @@
   
 }
 
+/***********************************************************************************/
+/*                            Scrolling quotes                                     */
+/***********************************************************************************/
+
 .scrolling-quotes {
     display: flex; /* Flex container for Swiper */
     flex-direction: column; /* Stack slides vertically if needed */
@@ -65,7 +69,9 @@
     color: #007bff; /* Lighter color for the source */
 }
 
-
+/***********************************************************************************/
+/*                            Swiper Section                                       */
+/***********************************************************************************/
 
 .about-card {
     display: flex;
@@ -87,8 +93,6 @@
     overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
 
-
-
 .about-card p,
 .about-card ul {
     margin-right: 100px;
@@ -96,8 +100,6 @@
     letter-spacing: 0.5px; /* Adjust as needed */
     font-weight: 300; /* Semi-bold */
     font-size: 16px; /* Standard text size */
-
-
 }
 
 .about-card ul {
@@ -116,6 +118,14 @@
     color: #333; /* Darker text for better contrast */
 }
 
+.card-container {
+    display: flex; /* Optional: if using flex for layout */
+    flex-direction: column; /* Stack children vertically */
+    height: 100%; /* Ensure it occupies the full viewport */
+    width: 100%;
+    box-sizing: border-box; /* Include padding/borders */
+}
+
 .top-icon {
     flex: 0 0 auto; /* Prevents shrinking or growing */
     height: 50px; /* Fixed height for the footer */
@@ -129,35 +139,11 @@
     line-height: 50px; /* Vertically center text */
 }
 
-.bottom-icon {
-    margin-top: auto; /* Pushes the footer to the bottom */
-    align-self: center; /* Centers the icon horizontally (optional) */
-    width: 40px; /* Example fixed width for the icon */
-    height: 40px; /* Example fixed height for the icon */
-    font-size: 40px; /* Adjust icon size */
-    line-height: 50px; /* Vertically center text */
-    padding-bottom: 30px; /* Add padding at the bottom */
-    margin-bottom: 30px;
-}
-
-
-.parent-container {
-    display: flex; /* Optional: if using flex for layout */
-    flex-direction: column; /* Stack children vertically */
-    height: 100%; /* Ensure it occupies the full viewport */
-    width: 100%;
-    box-sizing: border-box; /* Include padding/borders */
-}
-
-
-
 .card-body {
     flex: 1; /* Fills the available vertical space in the parent */
     width: 100%; /* Ensures it spans the full width of the about-card */
     box-sizing: border-box; /* Include padding/borders */
 }
-
-
 
 /* Swiper Slide Images */
 .swiper-slide img {

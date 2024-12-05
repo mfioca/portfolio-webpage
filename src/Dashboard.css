@@ -34,9 +34,9 @@ header .footer-text {
   text-align: center; /* Center the citation text */
 }
 
-/*******************************************************************/
-/*               app.js or main dashboard page                     */
-/*******************************************************************/
+/***********************************************************************************/
+/*                            main dashboard page                                  */
+/***********************************************************************************/
 
 .context-box {
   padding: 15px;
@@ -83,9 +83,9 @@ header .footer-text {
   color: #333; /* Dark gray text for readability */
 }
 
-/*******************************************************************/
-/*Secton of Dashboard that contains the graphs in a flexbox layout */
-/*******************************************************************/
+/***********************************************************************************/
+/*    Secton of Dashboard that contains the graphs in a flexbox layout             */
+/***********************************************************************************/
 
 .graph-flexbox {
   display: flex; /* Enable flexbox for layout */
@@ -315,7 +315,6 @@ header .footer-text {
   .graph-wrapper {
     flex-direction: column; /* Stack graphs in a column */
   }
-
   .donut-chart,
   .bar-chart {
     width: 100%; /* Full width for each graph */

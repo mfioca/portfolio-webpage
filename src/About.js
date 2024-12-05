@@ -101,7 +101,7 @@ const ScrollingQuotes = () => {
 
 const Card = ({ icon, title, description, image }) => {
     return (
-        <div className="parent-container">
+        <div className="card-container">
             <div className="top-icon">{icon}</div>
             <div className="card-body">
                 <div>
@@ -125,8 +125,6 @@ const About = () => {
             <div >
                 <ScrollingQuotes/>
             </div>
-
-            
             <WindowWidthDisplay/>
             <Swiper
                 slidesPerView={1}
@@ -242,10 +240,10 @@ const About = () => {
                                     I developed a highly intricate custom UI theme, featuring advanced widgets and a centralized setup tool that controls nearly all variables. 
                                     This setup spans almost 10,000 lines of meticulously crafted code, showcasing my ability to create cohesive, functional, dynamic, 
                                     and visually compelling interfaces. The theme was uploaded to DeviantArt, where it received over 500 downloads within a few months 
-                                    and is available
+                                    and is available&nbsp;
                                     <a href="https://www.deviantart.com/franknmullet/art/Skyrim-Theme-1-0-651760185" 
                                         target="_blank" rel="noopener noreferrer" 
-                                        className="text-body"> here 
+                                        className="text-body">here 
                                     </a> 
                                     
                                 </p>

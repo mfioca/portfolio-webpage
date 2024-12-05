@@ -6,34 +6,51 @@ import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 const AIShowcase = () => {
     return (
-        
-        <div className="ai-showcase-container">
-            <h1>AI Showcase</h1>
-            <Tabs>
-                <TabList>
-                    <Tab>Tarot Reader 1</Tab>
-                    <Tab>Placeholder 1</Tab>
-                    <Tab>Placeholder 2</Tab>
-                </TabList>
+        <div>
+            <div className="title123">
+            <h1 className="shadow">AI Showcase</h1>
+            <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI collaboration 
+                techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with 
+                creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
+                </p>
+                <p>
+                    By exploring this page, you’ll gain insight into how carefully crafted prompts can shape AI behavior, enabling applications in storytelling, education, 
+                    decision support, and more. The AI Showcase is not just a testament to the potential of AI but also a reflection of the innovative approaches used to push 
+                    its boundaries.
+                </p>
+            </div>
+            <hr style={{ 
+                        width: '80%', 
+                        margin: '10px auto', 
+                        border: '1px solid #ccc', 
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
+                    }} />
+            <div className="ai-showcase-container">
+                <Tabs>
+                    <TabList>
+                        <Tab>Tarot Reader 1</Tab>
+                        <Tab>Placeholder 1</Tab>
+                        <Tab>Placeholder 2</Tab>
+                    </TabList>
 
-                <TabPanel>
-                    <TarotReader1 />
-                </TabPanel>
-                <TabPanel>
-                    <div>
-                        <h2>Placeholder Example 1</h2>
-                        <p>This is a placeholder for another AI example.</p>
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div>
-                        <h2>Placeholder Example 2</h2>
-                        <p>This is a placeholder for a different AI example.</p>
-                    </div>
-                </TabPanel>
-            </Tabs>
+                    <TabPanel>
+                        <TarotReader1 />
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <h2>Placeholder Example 1</h2>
+                            <p>This is a placeholder for another AI example.</p>
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div>
+                            <h2>Placeholder Example 2</h2>
+                            <p>This is a placeholder for a different AI example.</p>
+                        </div>
+                    </TabPanel>
+                </Tabs>
+            </div>
         </div>
-        
     );
 };
 
