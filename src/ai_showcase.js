@@ -34,6 +34,8 @@ const AIShowcase = () => {
                     </TabList>
 
                     <TabPanel>
+                
+                   
                         <TarotReader1 />
                     </TabPanel>
                     <TabPanel>

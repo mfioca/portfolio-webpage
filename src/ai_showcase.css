@@ -29,8 +29,6 @@
 .ai-showcase-container {
     padding: 20px; /* Add spacing inside the container */
     margin: 0 auto; /* Center the container on the page */
-   
-
     background-color: #ffffff; /* White background for a clean look */
     border-radius: 10px; /* Rounded corners for the container */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -56,7 +54,7 @@
     }
 }
 
-.example-container {
+.example-container1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,21 +67,23 @@
     overflow: hidden; /* Prevent elements from overflowing the container */
 }
 
-/***** Chat Window Styles *****/
-.chat-window1 {
+.example-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 600px; /* Keep the chat window at a reasonable width */
-    height: 100%;
-    overflow-y: auto; /* Enable scrolling if the chat exceeds the container height */
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chat window */
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1500px;
+    height: 80vh; /* Adjust as needed */
+    padding: 20px;
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for a cohesive look */
+    border: 5px solid transparent; /* Match border style */
+    border-radius: 10px; /* Rounded edges for consistency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    overflow: hidden; /* Prevent elements from overflowing the container */
 }
+
 
 .chat-window {
     display: flex;
@@ -103,6 +103,8 @@
     overflow-x: hidden; /* Prevents horizontal scrolling */
     max-height: 100%; /* Ensures the content doesn’t exceed the container height */
 }
+
+
 
 .next-message-btn {
     margin-top: 20px; /* Space above the button */
@@ -218,7 +220,7 @@
 /*                            Prompt section                                       */
 /***********************************************************************************/
 
-.markdown-container {
+.markdown-container1 {
     background-color: #f6f8fa; /* Light gray background */
     padding: 20px; /* Space around the content */
     border-radius: 10px; /* Rounded corners */
@@ -230,6 +232,20 @@
     overflow-x: auto; /* Enable horizontal scrolling for long lines */
     overflow-y: auto; /* Enables vertical scrolling */
     overflow-x: hidden; /* Prevents horizontal scrolling */
+    max-height: 900px; /* Ensures the content doesn’t exceed the container height */
+}
+
+.markdown-container {
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Gradient to match sections */
+    padding: 20px;
+    border: 5px solid transparent; /* Transparent border for cohesion */
+    border-radius: 10px; /* Rounded corners for consistency */
+    font-family: 'Courier New', monospace; /* Keep the monospaced font */
+    color: #24292f; /* GitHub-like dark text color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Match shadow style */
+    max-width: 1500px; /* Limit width for readability */
+    margin: 20px auto; /* Center the container */
+    overflow-y: auto; /* Enables vertical scrolling */
     max-height: 900px; /* Ensures the content doesn’t exceed the container height */
 }
 

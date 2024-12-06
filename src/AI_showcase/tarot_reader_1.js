@@ -55,8 +55,33 @@ const TarotReader1 = () => {
 
     return (
         <div className="ugh">
+            <section className="title123">
+                        <h2 className="shadow">System Engineering Prompt</h2>
+                        <p>
+                            This section demonstrates a structured engineering prompt designed to guide system development and interactions. It highlights OpenAI's capabilities in managing complex instructions with precision and clarity.
+                        </p>
+            </section>
+            <hr style={{ 
+                        width: '80%', 
+                        margin: '10px auto', 
+                        border: '1px solid #ccc', 
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
+                    }} />
             <TarotReaderPrompt />
+            <section className="title123">
+                <h2 className="shadow">Simulated Chat Conversation</h2>
+                <p>
+                    This section showcases an interactive chat simulation, illustrating a dynamic exchange between the system and the user. It mimics real-time messaging for a seamless and intuitive conversational experience.
+                </p>
+            </section>
+            <hr style={{ 
+                        width: '80%', 
+                        margin: '10px auto', 
+                        border: '1px solid #ccc', 
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
+                    }} />
             <div className="example-container">
+            
                 <div
                     className="chat-window"
                     onMouseEnter={() => setIsHovered(true)} // Activate hover state
