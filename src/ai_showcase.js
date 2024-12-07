@@ -1,17 +1,18 @@
 import React from 'react';
 import './ai_showcase.css';
+import { DividerLine } from './SharedComponents.js'; 
 import TarotReader1 from './AI_showcase/tarot_reader_1.js';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 const AIShowcase = () => {
     return (
-        <div>
-            <div className="title123">
-            <h1 className="shadow">AI Showcase</h1>
-            <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI collaboration 
-                techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with 
-                creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
+        <div className="ai-body">
+            <div className="intro">
+                <h1 className="shadow">AI Showcase</h1>
+                <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI collaboration 
+                    techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with 
+                    creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
                 </p>
                 <p>
                     By exploring this page, you’ll gain insight into how carefully crafted prompts can shape AI behavior, enabling applications in storytelling, education, 
@@ -19,23 +20,15 @@ const AIShowcase = () => {
                     its boundaries.
                 </p>
             </div>
-            <hr style={{ 
-                        width: '80%', 
-                        margin: '10px auto', 
-                        border: '1px solid #ccc', 
-                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
-                    }} />
+            <DividerLine />
             <div className="ai-showcase-container">
                 <Tabs>
                     <TabList>
-                        <Tab>Tarot Reader 1</Tab>
+                        <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Placeholder 1</Tab>
                         <Tab>Placeholder 2</Tab>
                     </TabList>
-
                     <TabPanel>
-                
-                   
                         <TarotReader1 />
                     </TabPanel>
                     <TabPanel>

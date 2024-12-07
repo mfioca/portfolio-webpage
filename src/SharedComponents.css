@@ -1,0 +1,29 @@
+
+
+
+.divider-line {
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  }
+
+
+.Intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    /*font-family: 'Arial', sans-serif; /* A clean sans-serif font */
+    font-family: 'Courier New'; /* A clean sans-serif font */
+  }
+
+  .Intro p {
+    margin: 5px 0; /* Reduce vertical spacing between paragraphs */
+    line-height: 1.5; /* Adjust line spacing for readability */
+}
+

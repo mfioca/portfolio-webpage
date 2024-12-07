@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { DividerLine } from '../SharedComponents.js'; 
 import tarotData from './tarot_reader_1.json';
 import TarotReaderPrompt from './tarot_reader_1_prompt.js';
 
@@ -55,31 +56,25 @@ const TarotReader1 = () => {
 
     return (
         <div className="ugh">
-            <section className="title123">
+            <section className="intro">
                         <h2 className="shadow">System Engineering Prompt</h2>
                         <p>
-                            This section demonstrates a structured engineering prompt designed to guide system development and interactions. It highlights OpenAI's capabilities in managing complex instructions with precision and clarity.
+                            This prompt creates a burnt out salesman working in a herb shop that also provides tarot card reading.  
                         </p>
             </section>
-            <hr style={{ 
-                        width: '80%', 
-                        margin: '10px auto', 
-                        border: '1px solid #ccc', 
-                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
-                    }} />
+            <DividerLine />
             <TarotReaderPrompt />
-            <section className="title123">
+            <DividerLine />
+            <section className="intro">
                 <h2 className="shadow">Simulated Chat Conversation</h2>
                 <p>
-                    This section showcases an interactive chat simulation, illustrating a dynamic exchange between the system and the user. It mimics real-time messaging for a seamless and intuitive conversational experience.
+                    The chat box below shows an example of a chat simulation between a "customer" and the salesman.
+                </p>
+                <p>
+                    You can hover over the chat box and scroll with your mouse wheel or use the "next Message" button below.
                 </p>
             </section>
-            <hr style={{ 
-                        width: '80%', 
-                        margin: '10px auto', 
-                        border: '1px solid #ccc', 
-                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
-                    }} />
+            <DividerLine />
             <div className="example-container">
             
                 <div

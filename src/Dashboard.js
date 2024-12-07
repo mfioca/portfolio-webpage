@@ -5,7 +5,7 @@ import Graph from './dashboard/Graph';
 import SecondGraph from './dashboard/Graph2'; // Import your new graph component
 import ThirdGraph from './dashboard/Graph3'; // Import your new graph component
 import CSVdata from './dashboard/CSVdata'; // Import your new graph component
-
+import { DividerLine } from './SharedComponents.js';
 
 /*****************************************************/
 /* Custom sections to insert into the Main Display   */
@@ -37,12 +37,7 @@ function Dashboard() {
                         interactive pagination, and customizable drop-down filters, the dashboard enables users to explore their data effortlessly. 
                         This intuitive tool empowers decision-making through clear, accessible insights.
                     </p>
-                    <hr style={{ 
-                        width: '30%', 
-                        margin: '10px auto', 
-                        border: '1px solid #ccc', 
-                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
-                    }} />
+                    <DividerLine width="30%" />
                     <p><strong className="shadow">Description:</strong>&nbsp;&nbsp;The first section of the dashboard offers a comprehensive analysis of application usage and 
                         job focus trends over time. Through graphs, it reveals how tools like “Mode” and Google Sheets have been utilized monthly, 
                         alongside shifts in job activities such as analytics and customer relations. The data also highlights total recorded hours, 
@@ -56,12 +51,7 @@ function Dashboard() {
                         As selections are made, a bar chart appears to showcase the most time-intensive activity subtypes. Below these visualizations, the raw CSV data 
                         is displayed in a clean, spreadsheet-like format, allowing users to explore the data in detail while maintaining ease of navigation and clarity.
                     </p>
-                    <hr style={{ 
-                        width: '30%', 
-                        margin: '10px auto', 
-                        border: '1px solid #ccc', 
-                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' 
-                    }} />
+                    <DividerLine width="30%" />
                     <p className="data-source ">Data insights in this dashboard were made possible through the use of <a href="https://www.rescuetime.com" target="_blank" rel="noopener noreferrer">RescueTime.com</a>, 
                         a powerful productivity and time management tool.
                     </p>

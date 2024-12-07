@@ -30,7 +30,7 @@ const Navigation = () => {
       break;
     default:
         title = 'Explore My Web Page'; // A more general fallback title
-}
+  }
 
   return (
       <nav className="navbar">

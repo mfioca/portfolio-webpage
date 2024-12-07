@@ -1,5 +1,6 @@
 import React, { useState, useEffect  } from 'react';
-import './About.css'; // Importing the CSS for styling 
+import './About.css'; // Importing the CSS for styling
+import { DividerLine } from './SharedComponents.js';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -9,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 
-
+/*  Was constructed when I was trying to manually control flex sizing through @media references
 const WindowWidthDisplay = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -36,6 +37,7 @@ const WindowWidthDisplay = () => {
         </div>
     );
 };
+*/
 
 /*******************************************************************/
 /*                  Scrolling quote section                        */
@@ -122,10 +124,18 @@ const Card = ({ icon, title, description, image }) => {
 const About = () => {
     return (
         <div className="about-body">
-            <div >
-                <ScrollingQuotes/>
+            <div className="intro">
+                <h1>Welcome to My Story</h1>
+                <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
+                    This page is a window into who I am—my passions, skills, and philosophies. Whether it’s through my projects, gaming insights, 
+                    or the creative journeys I’ve embarked on, you’ll find the threads that connect my curiosity, dedication, and love for building 
+                    meaningful experiences. Dive in to learn more!
+                </p>
             </div>
-            <WindowWidthDisplay/>
+<DividerLine />
+            
+                <ScrollingQuotes/>
+            
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
