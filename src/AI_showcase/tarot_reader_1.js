@@ -76,7 +76,6 @@ const TarotReader1 = () => {
             </section>
             <DividerLine />
             <div className="example-container">
-            
                 <div
                     className="chat-window"
                     onMouseEnter={() => setIsHovered(true)} // Activate hover state
