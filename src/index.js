@@ -75,7 +75,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HashRouter>
-    <BrowserRouter>
+    
       <Navigation /> {/* Place Navigation here */}
       <div className="body">
         <Routes>
@@ -86,7 +86,7 @@ root.render(
         </Routes>
       </div>
       <Footer />
-    </BrowserRouter>
+    
     </HashRouter>
   </React.StrictMode>
 );
