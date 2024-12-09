@@ -26,7 +26,7 @@ const Home = () => {
             <DividerLine />
             <div className="home-content">
                 <h2 className="shadow" >Professional Profile</h2>
-                <p><img src="/headshot.png" alt="Your Name" className="home-image"/><br/>
+                <p><img src={`${process.env.PUBLIC_URL}//headshot.png`} alt="Your Name" className="home-image" /><br/>
                     With over 20 years across diverse industries, I bring a balanced blend of analytical rigor and collaborative leadership to every role. 
                     Known for my precision, integrity, and dedication to detail, I’m deeply motivated by the potential for data-driven solutions to streamline 
                     processes and support effective decision-making. My colleagues often describe me as adaptable and reliable, someone who can be counted on 

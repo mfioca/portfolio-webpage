@@ -80,7 +80,13 @@ const Card = ({ icon, title, description, image }) => {
                 <div>
                     <h2>{title}</h2>
                 </div>
-                {image && <img src={image} alt="Card visual" className="card-image"/>}
+                {image && (
+                    <img 
+                        src={`${process.env.PUBLIC_URL}/${image}`} 
+                        alt="Card visual" 
+                        className="card-image" 
+                    />
+                )}
                 {description}
             </div>
         </div>
