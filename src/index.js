@@ -73,6 +73,7 @@ const Footer = () =>{
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter basename="/test-webpage"></BrowserRouter>
     <BrowserRouter>
       <Navigation /> {/* Place Navigation here */}
       <div className="body">
