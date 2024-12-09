@@ -3,15 +3,6 @@
     margin-right: 50px;
     margin-top: 20px;
     padding: 5px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 90%;
-    /*padding-top: 120px;
-    margin: 0;*/
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  
 }
 
 /***********************************************************************************/
@@ -44,18 +35,6 @@
     transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
-@media (min-width: 1000px) {
-    .scrolling-quotes {
-        height: 140px; /* Adjust height for smaller viewports */
-    }
-}
-
-@media (max-width: 1000px) {
-    .scrolling-quotes {
-        height: 240px; /* Adjust height for smaller viewports */
-    }
-}
-
 .scrolling-quotes .quote-text {
     margin-bottom: 10px;
     font-size: 16px;
@@ -69,6 +48,18 @@
     font-size: 18px;
     font-weight: 600;
     color: #007bff; /* Lighter color for the source */
+}
+
+@media (min-width: 1000px) {
+    .scrolling-quotes {
+        height: 140px; /* Adjust height for smaller viewports */
+    }
+}
+
+@media (max-width: 1000px) {
+    .scrolling-quotes {
+        height: 240px; /* Adjust height for smaller viewports */
+    }
 }
 
 /***********************************************************************************/
@@ -154,20 +145,18 @@
     max-width: 100%; /* Make the image responsive to its container */
     max-height: 700px; /* Prevent the image from growing too tall */
     object-fit: contain; /* Scale the image to fit without cropping */
-    margin: 0 auto; /* Center the image horizontally */
     border-radius: 8px; /* Match card styling if needed */
 }
 
 /* Card Image */
 .card-image {
     flex-shrink: 1; /* Allow the image to shrink if necessary */
-    margin: 0 auto; /* Center the image horizontally */
+    margin: auto; /* Center the image horizontally */
     max-width: 100%; /* Ensure the image stays within its container */
-    /*max-height: 500px; /* Restrict the maximum height */
     height: auto; /* Maintain the aspect ratio */
     width: auto; /* Maintain the aspect ratio */
     margin-bottom: 20px; /* Add space below the image */
-    border-radius: 8px; /* Add rounded corners */
+    padding: 20px;
     object-fit: contain; /* Prevent cropping while fitting the container */
     box-sizing: border-box; /* Include padding/borders in size calculations */
 }

@@ -1,28 +1,10 @@
 .Dashboard {
   text-align: center;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100px;
-  background-color: #282c34;
-  color: white;
-}
-
-header h1 {
-  font-size: calc(10px + 2vmin); /* Responsive font size */
-}
-
-header .footer-text {
-  margin-top: 20px; /* Add some space above the footer */
-  padding: 10px; /* Add some padding for better spacing */
-  text-align: center; /* Center the text */
-  font-size: 1em; /* Makes the text smaller */
-  color: #666; /* A lighter color for a subtle appearance */
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 
 .data-source {
@@ -32,6 +14,24 @@ header .footer-text {
   font-size: 16px; /* Slightly larger for emphasis */
   color: #333; /* Darker color for better contrast */
   text-align: center; /* Center the citation text */
+}
+
+.loading-overlay {
+  position: fixed; /* Fix to viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter semi-transparent background */
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.loading-overlay p {
+  color: white; /* Text color */
+  font-size: 1.5em; /* Adjust font size */
 }
 
 /***********************************************************************************/
@@ -50,26 +50,6 @@ header .footer-text {
   max-width: 2000px; /* Adjust the max width as needed */
   margin: 0 auto; /* Center the paragraph */
   padding: 10px; /* Add some padding if needed */
-}
-
-.context-box ul {
-  list-style-position: inside;
-  text-align: center;
-}
-
-.context-box li {
-  margin-bottom: 5px; /* Space between list items */
-  line-height: 1.5; /* Increase line height for readability */
-}
-
-.dashboard-container ul {
-  list-style-position: inside;
-  text-align: center;
-}
-
-.dashboard-container li {
-  margin-bottom: 5px; /* Space between list items */
-  line-height: 1.5; /* Increase line height for readability */
 }
 
 .text-section {
@@ -170,6 +150,16 @@ header .footer-text {
   flex-direction: column; /* Stack elements vertically */
   padding: 10px; /* Add padding for spacing */
   margin: 20px; /* Add margin to prevent overlap */
+}
+
+.dashboard-container ul {
+  list-style-position: inside;
+  text-align: center;
+}
+
+.dashboard-container li {
+  margin-bottom: 5px; /* Space between list items */
+  line-height: 1.5; /* Increase line height for readability */
 }
 
 .dashboard-hub {
@@ -273,24 +263,6 @@ header .footer-text {
 
 .pagination button:hover {
   background-color: #0056b3; /* Darker on hover */
-}
-
-.loading-overlay {
-  position: fixed; /* Fix to viewport */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Lighter semi-transparent background */
-  display: flex; /* Flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  z-index: 1000; /* Ensure it sits above other content */
-}
-
-.loading-overlay p {
-  color: white; /* Text color */
-  font-size: 1.5em; /* Adjust font size */
 }
 
 @media (max-width: 800px) { /* Adjust this breakpoint as needed */

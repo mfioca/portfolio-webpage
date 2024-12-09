@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-const TarotReaderPrompt = () => {
+const TarotReaderPrompt1 = () => {
     const prompt = `
 ### PERSONALITY
 
@@ -92,4 +92,4 @@ Ask one question at a time. Do not make it obvious that you are trying to sell y
   );
 };
 
-export default TarotReaderPrompt;
+export default TarotReaderPrompt1;

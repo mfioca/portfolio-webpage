@@ -10,35 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 
-/*  Was constructed when I was trying to manually control flex sizing through @media references
-const WindowWidthDisplay = () => {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        // Cleanup listener on component unmount
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    return (
-        <div style={{
-            width: `${window.innerWidth - 50}px`, // Dynamically set width to the window's width minus 10px
-            margin: 'auto',
-            border: '2px solid black', // Adds a black border with a thickness of 2px
-            textAlign: 'center', // Center-align the text inside the div
-            padding: '10px' // Add padding for better spacing
-        }}>
-            <p>{`Window width: ${windowWidth}px`}</p>
-        </div>
-    );
-};
-*/
-
 /*******************************************************************/
 /*                  Scrolling quote section                        */
 /*******************************************************************/
@@ -124,18 +95,16 @@ const Card = ({ icon, title, description, image }) => {
 const About = () => {
     return (
         <div className="about-body">
-            <div className="intro">
-                <h1>Welcome to My Story</h1>
+            <div className="Intro">
+                <h1 className="shadow">Welcome to My Story</h1>
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
                     This page is a window into who I am—my passions, skills, and philosophies. Whether it’s through my projects, gaming insights, 
                     or the creative journeys I’ve embarked on, you’ll find the threads that connect my curiosity, dedication, and love for building 
                     meaningful experiences. Dive in to learn more!
                 </p>
             </div>
-<DividerLine />
-            
-                <ScrollingQuotes/>
-            
+            <DividerLine />
+            <ScrollingQuotes/>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}

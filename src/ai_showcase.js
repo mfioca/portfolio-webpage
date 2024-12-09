@@ -8,7 +8,7 @@ import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 const AIShowcase = () => {
     return (
         <div className="ai-body">
-            <div className="intro">
+            <div className="Intro">
                 <h1 className="shadow">AI Showcase</h1>
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI collaboration 
                     techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with 

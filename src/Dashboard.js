@@ -28,7 +28,7 @@ function Dashboard() {
         // Wrap the App component with Provider for Redoux functions
         <Provider store={store}> 
             <div className="Dashboard">
-                <div className="context-box">
+                <div className="Intro">
                     <h2 className="shadow">Dashboard Overview</h2>
                     <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard presents a comprehensive visualization of activity data collected over 
                         four years with a single organization. By highlighting trends in job focus and time allocation, it offers valuable insights into 
@@ -55,8 +55,8 @@ function Dashboard() {
                     <p className="data-source ">Data insights in this dashboard were made possible through the use of <a href="https://www.rescuetime.com" target="_blank" rel="noopener noreferrer">RescueTime.com</a>, 
                         a powerful productivity and time management tool.
                     </p>
-
                 </div>
+                <DividerLine />
                 <div className="graph-flexbox">
                     <div className="graph-box">
                         <div className="graph-container">
