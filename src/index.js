@@ -62,7 +62,7 @@ const Footer = () =>{
           <p>Contact Me: <a href="mailto:mfioca@gmail.com" className="contact-link">mfioca@gmail.com</a></p>
           <p>
               <a href="https://www.linkedin.com/in/mark-fioca/" target="_blank" rel="noopener noreferrer" className="linkedin-link">
-                  <img src={`${process.env.PUBLIC_URL}/https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png`} alt="LinkedIn" className="linkedin-icon" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" alt="LinkedIn" className="linkedin-icon" />
                   LinkedIn Profile
               </a>
           </p>
