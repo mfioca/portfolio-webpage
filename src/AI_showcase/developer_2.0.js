@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { DividerLine } from '../SharedComponents.js'; 
-import developerData from './developer.json';
-import DeveloperPrompt from './developer_prompt.js';
+import developerData from './developer_2.0.json';
+import DeveloperPrompt from './developer_2.0_prompt.js';
 
-const Developer = () => {
+const DeveloperV2 = () => {
 
     const [messages] = useState(developerData[0].messages);
     const [visibleCount, setVisibleCount] = useState(1); // Number of messages visible initially
@@ -59,7 +59,7 @@ const Developer = () => {
             <section className="Intro">
                 <h2 className="shadow">System Engineering Prompt</h2>
                 <p>
-                    This prompt was meticulously crafted to reflect my communication style and systematic thinking, aiming to provide tailored support for technical projects. As part of an innovative approach, I incorporated examples of negative and positive reinforcement through the use of “Negative.pdf” and “Positive.pdf” files, intending to help the system learn my preferences and expectations. Additionally, detailed troubleshooting instructions were included to facilitate effective technical problem-solving. Unfortunately, this model did not meet the intended guidelines, requiring more effort to correct its responses than to utilize its assistance effectively.    
+                    The Developer v2 prompt builds on the foundation of its predecessor, which is also available for viewing on this page. This updated version was meticulously refined to better reflect my communication style and systematic approach, providing enhanced support for technical projects. The v2 prompt introduces a comprehensive talk track, offering structured guidelines for how-to instructions, troubleshooting scenarios, and casual conversational interactions. These improvements make the v2 prompt more versatile and effective, ensuring a seamless and collaborative user experience.    
                 </p>
             </section>
             <DividerLine />
@@ -68,7 +68,7 @@ const Developer = () => {
             <section className="Intro">
                 <h2 className="shadow">Simulated Chat Conversation</h2>
                 <p>
-                    The chat box below showcases highlights of the successful collaboration with the model during the development of this web page.
+                    The chat box below highlights the testing phases conducted to refine and finalize the new version before its publication.
                 </p>
                 <p>
                     You can hover over the chat box and scroll with your mouse wheel or use the "next Message" button below.
@@ -106,4 +106,4 @@ const Developer = () => {
     );
 };
 
-export default Developer;
+export default DeveloperV2;

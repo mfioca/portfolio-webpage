@@ -2,7 +2,8 @@ import React from 'react';
 import './ai_showcase.css';
 import { DividerLine } from './SharedComponents.js'; 
 import TarotReader1 from './AI_showcase/tarot_reader_1.js';
-import Developer from './AI_showcase/developer.js'
+import Developer from './AI_showcase/developer.js';
+import DeveloperV2 from './AI_showcase/developer_2.0.js'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
@@ -28,7 +29,7 @@ const AIShowcase = () => {
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Developer Prompt</Tab>
-                        <Tab>Placeholder 2</Tab>
+                        <Tab>Developer 2.0</Tab>
                     </TabList>
                     <TabPanel>
                         <TarotReader1 />
@@ -37,10 +38,7 @@ const AIShowcase = () => {
                         <Developer />
                     </TabPanel>
                     <TabPanel>
-                        <div>
-                            <h2>Placeholder Example 2</h2>
-                            <p>This is a placeholder for a different AI example.</p>
-                        </div>
+                        <DeveloperV2 />
                     </TabPanel>
                 </Tabs>
             </div>
