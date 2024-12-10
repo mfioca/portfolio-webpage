@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
 import './index.css';
 import Home from './Home'; // Import your Home component if you create one

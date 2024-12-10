@@ -7,7 +7,7 @@ import { setGraphData, setRawData } from './actions'; // Include setRawData acti
 
 const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
     try {
-        const response = await fetch('/cleaned_data_1.csv'); 
+        const response = await fetch(`${process.env.PUBLIC_URL}/cleaned_data_1.csv`); 
         const text = await response.text(); 
 
         Papa.parse(text, {
