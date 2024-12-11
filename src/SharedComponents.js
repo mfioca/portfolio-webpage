@@ -31,7 +31,7 @@ export const WindowWidthDisplay = () => {
             margin: 'auto',
             border: '2px solid black', // Adds a black border with a thickness of 2px
             textAlign: 'center', // Center-align the text inside the div
-            padding: '10px' // Add padding for better spacing
+            /*padding: '10px' // Add padding for better spacing*/
         }}>
             <p>{`Window width: ${windowWidth}px`}</p>
         </div>

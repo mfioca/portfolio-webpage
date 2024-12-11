@@ -7,6 +7,16 @@ import loadDataForGraphs from '../dataloader'; // Import your data loader functi
 
 Chart.register(CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend);
 
+
+const TextSection = ({ content }) => {
+    return (
+        <div className="text-section-new">
+            { content }
+        </div>
+    );
+};
+
+
 const Graph = () => {
     const dispatch = useDispatch();
     const graphData = useSelector((state) => state.graphData.graph1); // Adjust as needed
@@ -57,9 +67,36 @@ const Graph = () => {
     console.log('Graph Data:', graphData); // Log the graph data to verify
     
     return (
-        <div className="chart-container">
+        <div className="test">
+        <div className="chart-container-1">
+            <div>
             <h2 className="shadow">Application Usage Over Time by Month</h2>
             <Line data={graphData} options={options} />
+            </div>
+        </div>
+            <TextSection
+                                content={
+                                    <>
+                                        <p>
+                                            The graph to the left displays the total usage time for selected applications, 
+                                            plotted by month. There was a shift in focus from daily operations to functioning 
+                                            like subject matter expertise in June of 2022.
+                                        </p>
+                                        <p>
+                                            Before the job title change, I used Google Sheets to help manage a pool of 
+                                            customers and process analytical data on their status in each phase of the 
+                                            life cycle funnel. After the job title change, I took on more of an analyst 
+                                            and auditor type of role. I used Google Sheets more to look at specific 
+                                            issues in our operations systems that needed to be fixed.
+                                        </p>
+                                        <p>
+                                            Key insights to look for in the graph include potential shifts in application 
+                                            usage corresponding to the job title change, as well as any notable trends in 
+                                            specific applications that reflect the evolving focus of the work.
+                                        </p>
+                                    </>
+                                }
+                            />
         </div>
     );
 };

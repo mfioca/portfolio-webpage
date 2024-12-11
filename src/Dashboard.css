@@ -1,10 +1,16 @@
-.Dashboard {
+.Dashboard-original {
   text-align: center;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
   margin-right: 100px;
   margin-left: 100px;
   margin-bottom: 100px;
   margin-top: 50px;
+}
+
+.Dashboard {
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* A clean, modern font */
+  margin: auto;
 }
 
 .data-source {
@@ -52,7 +58,7 @@
   padding: 10px; /* Add some padding if needed */
 }
 
-.text-section {
+.text-section-original {
   flex-grow: 1;
   padding: 10px; /* Padding for inner spacing */
   margin: 10px auto; /* Reset margin if necessary */
@@ -63,6 +69,48 @@
   color: #333; /* Dark gray text for readability */
 }
 
+.text-section {
+  width: 300px;
+  padding: 10px; /* Padding for inner spacing */
+  margin: 10px auto; /* Reset margin if necessary */
+  border: 1px solid #ddd; /* Subtle light border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #f8f9fa; /* Light beige or cream */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  color: #333; /* Dark gray text for readability */
+}
+
+
+.test {
+  display: flex; /* Enable flexbox for its children */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-between; /* Distribute items evenly */
+  gap: 10px; /* Add space between items */
+  padding: 10px; /* Padding for inner spacing */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slight rounding */
+  background-color: #ffffff; /* White */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+
+.chart-container-1 {
+  flex: 1; /* Allow the graph to take available space */
+  
+  min-width: 400px;
+  max-width: 600px;
+  padding: 10px; /* Padding for inner spacing */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slight rounding */
+  background-color: #ffffff; /* White */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.text-section-new {
+  flex-shrink: 1; /* Allow the text to take available space */
+  max-width: 300px;
+}
 /***********************************************************************************/
 /*    Secton of Dashboard that contains the graphs in a flexbox layout             */
 /***********************************************************************************/
@@ -71,8 +119,8 @@
   display: flex; /* Enable flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping if there's not enough space */
   justify-content: center; /* Center items horizontally */
-  margin: 30px;
-  padding: 10px; /* Padding inside the wrapper */
+  margin: auto;
+  max-width: 1600px;
   border: 5px solid transparent; /* Add a transparent border */
   border-radius: 10px; /* Rounded corners for a smoother look */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
@@ -81,10 +129,9 @@
 
 .graph-box {
   display: flex; /* Enable flexbox for contents inside */
-  flex-direction: column; /* Arrange children vertically */
+  width: 700px;
+  justify-content: space-between; /* Space between the two containers */
   gap: 5px;
-  max-height: 875px;
-  width: 1250px;
   padding: 5px; /* Keep 5px margin */
   margin: 5px;
   border: 1px solid #dee2e6; /* Light gray border */
@@ -92,21 +139,21 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+
+
 .graph-container {
   display: grid; /* Enable grid layout */
   flex-wrap: wrap;
   flex-grow: 1;
   grid-template-columns: 1fr 300px; /* Default to a single column layout */
   gap: 5px; /* Space between the chart and text section */
-  max-height: 1350px; /* Set a maximum height */
   padding: 10px; /* Padding for internal spacing */
 }
 
 .chart-container {
-  flex-shrink: 1;
-  min-width: 700px; /* Set a minimum width */
-  max-width: 1700px; /* Set a maximum width */
-  max-height: 1350px; /* Set a maximum height */
+  flex-grow: 1;
+  min-width: 400px;
+  max-width: 600px;
   padding: 10px; /* Padding for inner spacing */
   border: 1px solid #ccc; /* Light gray border */
   border-radius: 4px; /* Slight rounding */
@@ -114,28 +161,12 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.chart3-header {
-  display: flex; /* Enable flexbox layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  width: 100%; /* Full width of the container */
-  margin-bottom: 10px; /* Optional: Add spacing below */
-  padding: 5px; /* Optional: Add padding */
-}
-
-.chart3-header-content {
-  width: 80%; /* Width for the header content */
-  text-align: center; /* Center text within the header */
-}
-
 .chart3-data-box {
-  display: flex; /* Enable flexbox for the data box */
   justify-content: center; /* Center the content within the data box */
   align-items: center; /* Center vertically */
   height: 40px; /* Set height */
-  min-width: 250px; /* Set a maximum width */
-  width: 90%; /* Ensure it takes full width */
-  padding: 10px; /* Adjust padding */
+  padding: 20px; /* Adjust padding */
+  margin-bottom: 20px;
   border-radius: 4px; /* Rounded corners */
   background-color: #f9f9f9; /* Background color */
   font-size: 14px; /* Font size */
@@ -149,7 +180,8 @@
   display: flex; /* or block, depending on your layout needs */
   flex-direction: column; /* Stack elements vertically */
   padding: 10px; /* Add padding for spacing */
-  margin: 20px; /* Add margin to prevent overlap */
+  margin: auto;
+  max-width: 1600px;
 }
 
 .dashboard-container ul {
@@ -171,23 +203,25 @@
 }
 
 .graph-wrapper {
-  display: flex; /* Enable flexbox */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: space-around; /* Space between the graphs */
-  align-items: flex-start; /* Align items at the start */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .donut-chart {
+  flex-shrink: 1;
   flex: 0 0 40%; /* Set a fixed basis for the donut chart (60% of the width) */
   max-width: 400px; /* Control the maximum size of the donut chart */
-  margin: 10px; /* Add some spacing around the chart */
+  margin: auto; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
 
 .bar-chart {
-  flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
-  min-width: 600px; /* Control the maximum size of the bar chart */
-  margin: 10px; /* Add some spacing around the chart */
+  flex-shrink: 1;
+  /*flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
+  min-width: 400px; /* Control the maximum size of the bar chart */
+  max-width: 1000px;
+  margin: auto; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
 
@@ -208,22 +242,80 @@
   border-radius: 5px; /* Rounded corners */
 }
 
-.dropdowns {
+.dropdowns-original {
   display: flex; /* Use flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping if there's not enough space */
   justify-content: space-between; /* Space out dropdowns evenly */
-  margin: 20px 0; /* Optional margin for spacing */
+  margin: auto; /* Optional margin for spacing */
+}
+
+.dropdowns-original > div {
+  flex: 1; /* Allow dropdowns to grow equally */
+  margin-right: auto; /* Space between each dropdown */
+  width: 100px;
+}
+
+.dropdowns {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: stretch; /* Make all items the same height */
+  margin: auto; /* Center the container */
+  gap: 20px; /* Add consistent spacing between items */
 }
 
 .dropdowns > div {
-  flex: 1; /* Allow dropdowns to grow equally */
-  margin-right: 20px; /* Space between each dropdown */
+  flex: 1 1 200px; /* Equal width with a minimum size */
+  text-align: center; /* Center-align text inside each div */
 }
+
+/* Optional: Normalize the size of h2 tags */
+.dropdowns h2 {
+  font-size: 16px; /* Adjust to a consistent size */
+  margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.csv-data-old {
+  width: 100%; /* Make the table full width */
+  border-collapse: collapse; /* Collapse borders for cleaner look */
+  table-layout: fixed; /* Ensure fixed layout for consistent column widths */
+}
+
+.csv-data-old th,
+.csv-data-old td {
+  border: 1px solid #ddd; /* Cell borders */
+  padding: 12px; /* Increased cell padding for better spacing */
+  text-align: left; /* Align text to the left */
+  min-width: 100px; /* Set a minimum width for columns */
+}
+
+.csv-data-old th {
+  position: sticky; /* Enable sticky positioning */
+  top: 0; /* Stick to the top */
+  z-index: 10; /* Ensure it appears above other content */
+  background-color: #f2f2f2; /* Header background color */
+  font-weight: bold; /* Make header text bold */
+}
+
+.csv-data-old tr:hover {
+  background-color: #f5f5f5; /* Highlight row on hover */
+}
+
 
 .csv-data {
   width: 100%; /* Make the table full width */
   border-collapse: collapse; /* Collapse borders for cleaner look */
-  table-layout: fixed; /* Ensure fixed layout for consistent column widths */
+  table-layout: fixed; /* Ensure consistent column widths */
+  word-wrap: break-word; /* Ensure text wraps within cells */
+}
+
+.csv-data thead tr th {
+  white-space: normal; /* Allow wrapping of text */
+  word-break: break-word; /* Break long words to fit within the cell */
+  text-align: center; /* Optional: Center-align header text for better aesthetics */
+  padding: 12px; /* Maintain consistent padding */
+  background-color: #f2f2f2; /* Header background color */
+  font-weight: bold; /* Bold text for headers */
 }
 
 .csv-data th,
@@ -232,6 +324,9 @@
   padding: 12px; /* Increased cell padding for better spacing */
   text-align: left; /* Align text to the left */
   min-width: 100px; /* Set a minimum width for columns */
+  overflow: hidden; /* Hide any overflow text */
+  text-overflow: ellipsis; /* Add ellipsis (...) for truncated text */
+  white-space: nowrap; /* Prevent text wrapping unless specified otherwise */
 }
 
 .csv-data th {
@@ -245,6 +340,15 @@
 .csv-data tr:hover {
   background-color: #f5f5f5; /* Highlight row on hover */
 }
+
+/* Optional: Wrap long text (instead of ellipsis) */
+.csv-data-optional th,
+.csv-data-optional td {
+  white-space: normal; /* Allow wrapping of text */
+  word-break: break-word; /* Ensure words break to fit the cell */
+}
+
+
 
 .pagination {
   display: flex; /* Align pagination items in a row */
@@ -269,7 +373,8 @@
   .graph-container {
       grid-template-columns: 1fr; /* Switch to a single column layout */
   }
-  .text-section {
+  .text-section,
+  .text-section-new {
     width: 95%; /* Make it full width below the graph */
     max-width: 95%; /* Ensure it doesn't exceed the width of its container */
     margin: 5px; /* Reset margin if necessary */
@@ -281,16 +386,6 @@
       max-width: 300px; /* Remove max-width constraint */
       min-width: 200px;
   }
-}
 
-@media (max-width: 768px) {
-  .graph-wrapper {
-    flex-direction: column; /* Stack graphs in a column */
-  }
-  .donut-chart,
-  .bar-chart {
-    width: 100%; /* Full width for each graph */
-    max-width: none; /* Remove max-width for responsive design */
-  }
 }
 

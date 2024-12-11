@@ -50,7 +50,7 @@ const Graph3 = () => {
                 anchor: 'end', // Anchor the labels to the end of the bars
                 formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label
             },
-        },
+        }
     }), [percentages]); // Dependency on percentages
 
     useEffect(() => {
@@ -96,6 +96,19 @@ const Graph3 = () => {
 
     return (
         <div className="chart-container">
+            <h2 className="shadow">Application Usage Over Time by Month</h2>
+            <div className="chart3-data-box">
+                    {textBoxContent}
+                </div>
+            <Bar data={graphData} options={options} /> 
+        </div>
+    );
+};
+
+export default Graph3;
+
+/*
+<div className="chart-container">
             <div className="chart3-header">
                 <div className="chart3-header-content">
                     <h2 className="shadow">Application Usage Over Time by Month</h2>
@@ -104,9 +117,6 @@ const Graph3 = () => {
                     {textBoxContent}
                 </div>
             </div>
-            <Bar data={graphData} options={options} /> {/* Use Redux graph data */}
-        </div>
-    );
-};
-
-export default Graph3;
+            <Bar data={graphData} options={options} /> 
+            </div>
+            */

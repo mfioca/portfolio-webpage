@@ -3,17 +3,21 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 120px;
-  margin: 0;
+  margin: auto;
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  justify-content: center;
 }
 
 .Intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 98%;
+  border: 5px;
+  padding: 3px;
   text-align: center;
   /*font-family: 'Arial', sans-serif; /* A clean sans-serif font */
   font-family: 'Courier New'; /* A clean sans-serif font */
@@ -57,6 +61,7 @@ body {
   list-style: none; /* Remove bullet points */
   display: flex;
   gap: 20px; /* Space between links */
+  padding: 2px;
 }
 
 .nav-link {
@@ -74,13 +79,14 @@ body {
   /*margin-top: auto; /* Pushes the footer to the bottom of the screen */
   position: relative;
   margin-bottom: 0;
-  /*width: 100%;*/
+  width: auto;
   padding: 20px;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
   background-color: #282c34;
   color: white;
   text-align: center;
 }
+
 
 .footer-content {
   max-width: 1200px;
@@ -118,37 +124,56 @@ body {
 /*                            Home Page Section                                    */
 /***********************************************************************************/
 
-.home-body  {
+.home-body1  {
   font-family: 'Courier New'; /* A clean sans-serif font */
   margin-right: 100px;
   margin-left: 100px;
   margin-bottom: 100px;
   margin-top: 50px;
 }
+.home-body  {
+  flex-grow: 1; /* Allow the content to take the remaining space */
+  font-family: 'Courier New'; /* A clean sans-serif font */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin: auto;
+  min-height: 1600px;
+  justify-content: center;
+}
 
 .home-content {
-  flex: 1; /* Allow the content to take the remaining space */
+  max-width: 1600px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  max-width: 2000px;
   margin: 0 auto; /* This will center the element horizontally */
+  padding: 10px;
 }
 
 .home-content h2 {
+  display: flex;
   margin-bottom: 10px; /* Smaller space below the heading */
+  margin: 0 auto;
   line-height: 5; /* Increase line height for readability */
   letter-spacing: 0.5px; /* Adjust as needed */
   font-weight: 600; /* Semi-bold */
-  margin-left: calc(40% - 400px); /* Initially, start with 50% of the screen width minus 200px */
+  justify-content: center; /* Centers horizontally */
+  /*margin-left: calc(40% - 400px); /* Initially, start with 50% of the screen width minus 200px */
 }
 
 .home-content p {
   margin-bottom: 5px; /* Smaller space below each paragraph */
   line-height: 3; /* Adjust line height for better text flow */
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.home-image {
+
+.home-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Space between the image and text */
+}
+
+.home-image-original {
   float: right;
   /*margin: 0px 0px 15px 20px;*/
   width: 100%; /* Ensures the image scales based on its parent container */
@@ -159,56 +184,31 @@ body {
   margin-bottom: 100px;
 }
 
-/* Responsive styling */
-@media (max-width: 1700px) {
-  .image {
-    max-width: 600px; /* Resize image for smaller screens */
-  }
+
+.home-image {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  width: 100%; /* Ensures the image scales based on its parent container */
+  max-width: 700px; /* Maximum width to avoid the image getting too big */
+  height: auto; /* Maintain the aspect ratio */
+ 
 }
 
-@media (max-width: 1550px) {
-  .image {
-    max-width: 500px; /* Resize image further for tablets or smaller devices */
-    justify-content: center;
-  }
-
+.home-text {
+  flex: 1; /* Allow the text to grow and take available space */
 }
 
-@media (max-width: 1440px) { /*1118px*/
-  .home-content {
-    display: flex;
-    flex-direction: column; /* Stack the content vertically */
-    justify-content: flex-start; /* Keeps content at the top */
-    align-items: center; /* Centers the content horizontally */
-    text-align: center; /* Centers the text */
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    /*margin: 100px 20px; /* Adds margin to left and right to prevent sticking to the edges */
-    padding: 0; /* Removes padding */
-    max-width: 100%; /* This was added to ensure the container doesn't overflow */
+/* Media query for small screens */
+@media (max-width: 1400px) {
+  .home-container {
+    flex-direction: column; /* Stack items vertically */
   }
 
   .home-image {
-    width: 100%;  /* Ensures the image takes up 100% of the available width */
-    /*max-width: 600px;  /* Maximum width to prevent it from getting too large */
-    height: auto;  /* Maintain aspect ratio */
-    margin: 0 auto 100px auto;  /* Centers the image horizontally and adds a bottom margin */
-    display: block;  /* Makes the image behave as a block-level element */
-    float:none;
+    order: 1; /* Ensure the image appears above the text */
+    margin: 0 auto; /* Center the image within the container */
   }
 
-  .home-content1 h2 {
-    text-align: center; /* Ensure the heading is centered */
-    margin: 0; /* Removes any default margins */
-    padding: 10px 0; /* Adds some spacing for clarity */
-    width: 100%; /* Ensures it takes up full width */
-    font-size: 24px; /* Adjust font size if needed */
-  }
-
-  .home-content1 p {
-    text-align: left; /* Centers paragraphs */
-    margin-bottom: 20px; /* Adds space between paragraphs */
-    width: 100%; /* Ensures paragraphs span full width */
+  .home-text {
+    order: 2; /* Ensure the text appears below the image */
   }
 }

@@ -55,7 +55,7 @@ const ScrollingQuotes = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-        }, 40000); // Change quote every 40 seconds
+        }, 10000); // Change quote every 40 seconds
 
         return () => clearInterval(intervalId); // Clear interval on component unmount
     }, []);
@@ -120,7 +120,7 @@ const About = () => {
                 }}
                 navigation={true}
                 modules={[Pagination, Navigation]}
-                className="about-card"
+                className="about-swiper"
             >
                 <SwiperSlide>
                     <Card 
