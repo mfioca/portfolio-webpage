@@ -38,6 +38,7 @@ body {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
   justify-content: space-between;
   align-items: center;
   position: fixed; /* Fix the navbar to the top */
@@ -60,6 +61,7 @@ body {
 .navbar-links {
   list-style: none; /* Remove bullet points */
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
   gap: 20px; /* Space between links */
   padding: 2px;
 }
