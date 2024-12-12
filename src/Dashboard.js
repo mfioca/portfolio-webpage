@@ -13,7 +13,7 @@ import { DividerLine } from './SharedComponents.js';
 
 const TextSection = ({ content }) => {
     return (
-        <div className="text-section">
+        <div className="text-section-new">
             { content }
         </div>
     );
@@ -58,14 +58,34 @@ function Dashboard() {
                 </div>
                 <DividerLine />
                 <div className="graph-flexbox">
-                    <div className="graph-box-new">
-                        
-                            <Graph />
-                            
-                        
+                    <div className="test">
+                        <Graph />
+                        <TextSection
+                            content={
+                                <>
+                                    <p>
+                                        The graph to the left displays the total usage time for selected applications, 
+                                        plotted by month. There was a shift in focus from daily operations to functioning 
+                                        like subject matter expertise in June of 2022.
+                                    </p>
+                                    <p>
+                                        Before the job title change, I used Google Sheets to help manage a pool of 
+                                        customers and process analytical data on their status in each phase of the 
+                                        life cycle funnel. After the job title change, I took on more of an analyst 
+                                        and auditor type of role. I used Google Sheets more to look at specific 
+                                        issues in our operations systems that needed to be fixed.
+                                    </p>
+                                    <p>
+                                        Key insights to look for in the graph include potential shifts in application 
+                                        usage corresponding to the job title change, as well as any notable trends in 
+                                        specific applications that reflect the evolving focus of the work.
+                                    </p>
+                                </>
+                            }
+                        />
                     </div>
-                    <div className="graph-box">
-                        <div className="graph-container">
+                    
+                        <div className="test">
                             <SecondGraph />
                             <TextSection
                                 content={
@@ -86,9 +106,9 @@ function Dashboard() {
                                 }
                             />
                         </div>
-                    </div>
-                    <div className="graph-box">
-                        <div className="graph-container">
+                    
+                    
+                        <div className="test">
                             <ThirdGraph />
                             <TextSection
                                 content={
@@ -112,7 +132,7 @@ function Dashboard() {
                                 }
                             />
                         </div>
-                    </div>
+                    
                 </div>
                 <CSVdata />
             </div>

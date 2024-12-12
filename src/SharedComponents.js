@@ -40,7 +40,31 @@ export const WindowWidthDisplay = () => {
 
 
 
-
+export const WindowHeightDisplay = () => {
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowHeight(window.innerHeight);
+        };
+  
+        window.addEventListener('resize', handleResize);
+  
+        // Cleanup listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return (
+        <div style={{
+            width: '80%',
+            margin: 'auto',
+            border: '2px solid black', // Adds a black border with a thickness of 2px
+            textAlign: 'center', // Center-align the text inside the div
+        }}>
+            <p>{`Window height: ${windowHeight}px`}</p>
+        </div>
+    );
+  };
 
 
 

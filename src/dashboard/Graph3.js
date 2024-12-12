@@ -98,8 +98,8 @@ const Graph3 = () => {
         <div className="chart-container">
             <h2 className="shadow">Application Usage Over Time by Month</h2>
             <div className="chart3-data-box">
-                    {textBoxContent}
-                </div>
+                {textBoxContent}
+            </div>
             <Bar data={graphData} options={options} /> 
         </div>
     );

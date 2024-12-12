@@ -84,7 +84,7 @@ const DeveloperV2 = () => {
                     {messages.slice(0, visibleCount).map((msg, index) => (
                         <div
                             key={index}
-                            className={`chat-bubble ${msg.sender === 'assistant' ? 'user-bubble' : 'ai-bubble'}`}
+                            className={`chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'ai-bubble'}`}
                         >
                             {msg.text}
                         </div>

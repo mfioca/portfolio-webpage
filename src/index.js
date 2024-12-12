@@ -8,63 +8,8 @@ import Home from './Home'; // Import your Home component if you create one
 import Dashboard from './Dashboard';
 import AboutPage from './About'; // Import your Home component if you create one
 import AIShowcase from './ai_showcase';
-import './SharedComponents.css';
 import reportWebVitals from './reportWebVitals';
 
-
-const WindowWidthDisplay = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-      const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-      };
-
-      window.addEventListener('resize', handleResize);
-
-      // Cleanup listener on component unmount
-      return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return (
-      <div style={{
-          /*width: `${window.innerWidth}px`, // Dynamically set width to the window's width minus 10px*/
-          width: '80%',
-          margin: 'auto',
-          border: '2px solid black', // Adds a black border with a thickness of 2px
-          textAlign: 'center', // Center-align the text inside the div
-          /*padding: '10px' // Add padding for better spacing*/
-      }}>
-          <p>{`Window width: ${windowWidth}px`}</p>
-      </div>
-  );
-};
-
-const WindowHeightDisplay = () => {
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-      const handleResize = () => {
-          setWindowHeight(window.innerHeight);
-      };
-
-      window.addEventListener('resize', handleResize);
-
-      // Cleanup listener on component unmount
-      return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return (
-      <div style={{
-          width: '80%',
-          margin: 'auto',
-          border: '2px solid black', // Adds a black border with a thickness of 2px
-          textAlign: 'center', // Center-align the text inside the div
-      }}>
-          <p>{`Window height: ${windowHeight}px`}</p>
-      </div>
-  );
-};
 
 
 const Navigation = () => {
@@ -133,8 +78,6 @@ root.render(
     <HashRouter>
       <Navigation /> {/* Place Navigation here */}
       <div className="body">
-      <WindowWidthDisplay />
-      <WindowHeightDisplay />
           <Routes>
             <Route path="/" element={<Home />} /> {/* Your home page */}
             <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
