@@ -189,6 +189,28 @@ const About = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Card
+                        icon="🐉"
+                        title="Computers and UI Design"
+                        image="/skyrim_theme.jpg"
+                        description={
+                            <>
+                                <p>
+                                    My journey into UI design began with exploring Rainmeter, a powerful customization platform. Through extensive work with .ini and .inc files, 
+                                    I developed a highly intricate custom UI theme, featuring advanced widgets and a centralized setup tool that controls nearly all variables. 
+                                    This setup spans almost 10,000 lines of meticulously crafted code, showcasing my ability to create cohesive, functional, dynamic, 
+                                    and visually compelling interfaces. The theme was uploaded to DeviantArt, where it received over 500 downloads within a few months 
+                                    and is available&nbsp;
+                                    <a href="https://www.deviantart.com/franknmullet/art/Skyrim-Theme-1-0-651760185" 
+                                        target="_blank" rel="noopener noreferrer" 
+                                        className="text-body">here 
+                                    </a> 
+                                </p>
+                            </>
+                        }
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Card
                         icon="🎮" 
                         title="My Gaming Philosophy" 
                         description={
@@ -216,20 +238,15 @@ const About = () => {
                 <SwiperSlide>
                     <Card
                         icon="🐉"
-                        title="Computers and UI Design"
-                        image="/skyrim_theme.jpg"
+                        title="Whiterun in Minecraft: A Year and a Half in the Making"
+                        image="/minecraft_whiterun.png"
                         description={
                             <>
                                 <p>
-                                    My journey into UI design began with exploring Rainmeter, a powerful customization platform. Through extensive work with .ini and .inc files, 
-                                    I developed a highly intricate custom UI theme, featuring advanced widgets and a centralized setup tool that controls nearly all variables. 
-                                    This setup spans almost 10,000 lines of meticulously crafted code, showcasing my ability to create cohesive, functional, dynamic, 
-                                    and visually compelling interfaces. The theme was uploaded to DeviantArt, where it received over 500 downloads within a few months 
-                                    and is available&nbsp;
-                                    <a href="https://www.deviantart.com/franknmullet/art/Skyrim-Theme-1-0-651760185" 
-                                        target="_blank" rel="noopener noreferrer" 
-                                        className="text-body">here 
-                                    </a> 
+                                    As a fan of The Elder Scrolls V: Skyrim, I decided to take on the challenge of recreating the iconic town of Whiterun in Minecraft. This project took me about a year and a half, during which I spent time running both games simultaneously, using my character in Skyrim to study the scale, architectural details, and other nuances, ensuring every element was accurately represented in the Minecraft version. 
+                                </p>
+                                <p>
+                                    This project highlights my ability to approach challenges with precision, patience, and thorough planning. By meticulously studying the scale and design of Whiterun and translating it into Minecraft, I honed skills such as attention to detail, spatial awareness, and creative problem-solving. The process required persistence and the ability to adapt, as I constantly refined my work to match the original design. These traits—along with my passion for tackling complex tasks—reflect how I approach professional challenges, striving for accuracy and excellence in every detail.
                                 </p>
                             </>
                         }

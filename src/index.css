@@ -7,7 +7,6 @@ body {
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
   justify-content: center;
 }
 
@@ -17,7 +16,7 @@ body {
   justify-content: center;
   width: 98%;
   border: 5px;
-  padding: 3px;
+  padding: 5px;
   text-align: center;
   /*font-family: 'Arial', sans-serif; /* A clean sans-serif font */
   font-family: 'Courier New'; /* A clean sans-serif font */
@@ -126,19 +125,13 @@ body {
 /*                            Home Page Section                                    */
 /***********************************************************************************/
 
-.home-body1  {
-  font-family: 'Courier New'; /* A clean sans-serif font */
-  margin-right: 100px;
-  margin-left: 100px;
-  margin-bottom: 100px;
-  margin-top: 50px;
-}
 .home-body  {
   flex-grow: 1; /* Allow the content to take the remaining space */
   font-family: 'Courier New'; /* A clean sans-serif font */
   margin-top: 50px;
   margin-bottom: 50px;
   margin: auto;
+  padding: 5px;
   min-height: 1600px;
   justify-content: center;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
@@ -14,6 +14,11 @@ import reportWebVitals from './reportWebVitals';
 
 const Navigation = () => {
   const location = useLocation(); // Get the current location
+
+  // Scroll to the top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   // Determine the title based on the current path
   let title;
@@ -80,12 +85,11 @@ root.render(
       <div className="body">
           <Routes>
             <Route path="/" element={<Home />} /> {/* Your home page */}
-            <Route path="/About" element={<AboutPage />} /> {/* Your home page */}
+            <Route path="/About" element={<AboutPage />} /> {/* Your About page */}
             <Route path="/Dashboard" element={<Dashboard />} /> {/* Your dashboard page */}
             <Route path="/AIShowcase" element={<AIShowcase />} />
           </Routes>
       </div>
-      
     </HashRouter>
     <Footer />
   </React.StrictMode>
