@@ -7,7 +7,6 @@ import loadDataForGraphs from '../dataloader'; // Import your data loader functi
 
 Chart.register(CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend);
 
-
 const Graph = () => {
     const dispatch = useDispatch();
     const graphData = useSelector((state) => state.graphData.graph1); // Adjust as needed

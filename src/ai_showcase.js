@@ -29,7 +29,7 @@ const AIShowcase = () => {
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Developer Prompt</Tab>
-                        <Tab>Developer 2.0</Tab>
+                        <Tab>Developer 2.0 Prompt</Tab>
                     </TabList>
                     <TabPanel>
                         <TarotReader1 />

@@ -5,6 +5,7 @@ import DeveloperPrompt from './developer_prompt.js';
 
 const Developer = () => {
 
+    const [title] = useState(developerData[0].title);
     const [messages] = useState(developerData[0].messages);
     const [visibleCount, setVisibleCount] = useState(1); // Number of messages visible initially
     const [isHovered, setIsHovered] = useState(false); // Tracks if the mouse is hovering over the chat window
@@ -76,6 +77,7 @@ const Developer = () => {
             </section>
             <DividerLine />
             <div className="example-container">
+                <h2 >{title}</h2> 
                 <div
                     className="chat-window"
                     onMouseEnter={() => setIsHovered(true)} // Activate hover state

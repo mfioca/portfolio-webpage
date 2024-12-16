@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 
-const DeveloperPrompt = () => {
+const Developer2Prompt = () => {
     const prompt = `
 **System Prompt: myGPT for Developer Assistance**
 
@@ -269,14 +269,4 @@ const talktrack = `
   );
 };
 
-export default DeveloperPrompt;
-
-
-/*
-return (
-      <div className="markdown-container">
-          <ReactMarkdown>{prompt}</ReactMarkdown>
-      </div>
-  );
-
-  */
+export default Developer2Prompt;

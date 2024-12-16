@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react';
-import './About.css'; // Importing the CSS for styling
+import './About.css'; 
 import { DividerLine } from './SharedComponents.js';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -55,7 +55,7 @@ const ScrollingQuotes = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-        }, 10000); // Change quote every 40 seconds
+        }, 40000); // Change quote every 40 seconds
 
         return () => clearInterval(intervalId); // Clear interval on component unmount
     }, []);
@@ -237,16 +237,21 @@ const About = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Card
-                        icon="🐉"
+                        icon="⛏️ "
                         title="Whiterun in Minecraft: A Year and a Half in the Making"
                         image="/minecraft_whiterun.png"
                         description={
                             <>
                                 <p>
-                                    As a fan of The Elder Scrolls V: Skyrim, I decided to take on the challenge of recreating the iconic town of Whiterun in Minecraft. This project took me about a year and a half, during which I spent time running both games simultaneously, using my character in Skyrim to study the scale, architectural details, and other nuances, ensuring every element was accurately represented in the Minecraft version. 
+                                    As a fan of The Elder Scrolls V: Skyrim, I decided to take on the challenge of recreating the iconic town of Whiterun in Minecraft. 
+                                    This project took me about a year and a half, during which I spent time running both games simultaneously, using my character in Skyrim 
+                                    to study the scale, architectural details, and other nuances, ensuring every element was accurately represented in the Minecraft version. 
                                 </p>
                                 <p>
-                                    This project highlights my ability to approach challenges with precision, patience, and thorough planning. By meticulously studying the scale and design of Whiterun and translating it into Minecraft, I honed skills such as attention to detail, spatial awareness, and creative problem-solving. The process required persistence and the ability to adapt, as I constantly refined my work to match the original design. These traits—along with my passion for tackling complex tasks—reflect how I approach professional challenges, striving for accuracy and excellence in every detail.
+                                    This project highlights my ability to approach challenges with precision, patience, and thorough planning. By meticulously studying the scale 
+                                    and design of Whiterun and translating it into Minecraft, I honed skills such as attention to detail, spatial awareness, and creative problem-solving. 
+                                    The process required persistence and the ability to adapt, as I constantly refined my work to match the original design. These traits—along with my passion 
+                                    for tackling complex tasks—reflect how I approach professional challenges, striving for accuracy and excellence in every detail.
                                 </p>
                             </>
                         }

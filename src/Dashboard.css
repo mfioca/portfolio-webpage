@@ -1,12 +1,3 @@
-.Dashboard-original {
-  text-align: center;
-  font-family: 'Roboto', sans-serif; /* A clean, modern font */
-  margin-right: 100px;
-  margin-left: 100px;
-  margin-bottom: 100px;
-  margin-top: 50px;
-}
-
 .Dashboard {
   text-align: center;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
@@ -41,83 +32,7 @@
 }
 
 /***********************************************************************************/
-/*                            main dashboard page                                  */
-/***********************************************************************************/
-
-.context-box {
-  padding: 15px;
-  margin: 20px 0; /* Space above and below */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light background color */
-}
-
-.context-box p {
-  max-width: 2000px; /* Adjust the max width as needed */
-  margin: 0 auto; /* Center the paragraph */
-  padding: 10px; /* Add some padding if needed */
-}
-
-.text-section-original {
-  flex-grow: 1;
-  padding: 10px; /* Padding for inner spacing */
-  margin: 10px auto; /* Reset margin if necessary */
-  border: 1px solid #ddd; /* Subtle light border */
-  border-radius: 4px; /* Rounded corners */
-  background-color: #f8f9fa; /* Light beige or cream */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  color: #333; /* Dark gray text for readability */
-}
-
-.text-section {
-  width: 300px;
-  padding: 10px; /* Padding for inner spacing */
-  margin: 10px auto; /* Reset margin if necessary */
-  border: 1px solid #ddd; /* Subtle light border */
-  border-radius: 4px; /* Rounded corners */
-  background-color: #f8f9fa; /* Light beige or cream */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  color: #333; /* Dark gray text for readability */
-}
-
-
-.test {
-  display: flex; /* Enable flexbox for its children */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: space-between; /* Distribute items evenly */
-  gap: 10px; /* Add space between items */
-  padding: 10px; /* Padding for inner spacing */
-  margin: 10px;
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Slight rounding */
-  background-color: #ffffff; /* White */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-
-
-.chart-container {
-  flex: 1; /* Allow the graph to take available space */
-  max-width: 425px;
-  padding: 10px; /* Padding for inner spacing */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Slight rounding */
-  background-color: #ffffff; /* White */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.text-section-new {
-  flex-shrink: 1; /* Allow the text to take available space */
-  max-width: 250px;
-  padding: 10px;
-  border: 1px solid #ddd; /* Subtle light border */
-  border-radius: 4px; /* Rounded corners */
-  background-color: #f8f9fa; /* Light beige or cream */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  color: #333; /* Dark gray text for readability */
-}
-/***********************************************************************************/
-/*    Secton of Dashboard that contains the graphs in a flexbox layout             */
+/*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
 
 .graph-flexbox {
@@ -133,27 +48,38 @@
   background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
 }
 
-.graph-box {
-  display: flex; /* Enable flexbox for contents inside */
-  width: 750px;
-  justify-content: space-between; /* Space between the two containers */
-  gap: 5px;
-  padding: 5px; /* Keep 5px margin */
-  margin: 5px;
-  border: 1px solid #dee2e6; /* Light gray border */
+.graph-container {
+  display: flex; /* Enable flexbox for its children */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-between; /* Distribute items evenly */
+  gap: 10px; /* Add space between items */
+  padding: 10px; /* Padding for inner spacing */
+  margin: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slight rounding */
   background-color: #ffffff; /* White */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+.text-section {
+  flex-shrink: 1; /* Allow the text to take available space */
+  max-width: 250px;
+  padding: 10px;
+  border: 1px solid #ddd; /* Subtle light border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #f8f9fa; /* Light beige or cream */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  color: #333; /* Dark gray text for readability */
+}
 
-
-.graph-container {
-  display: grid; /* Enable grid layout */
-  flex-wrap: wrap;
-  flex-grow: 1;
-  grid-template-columns: 1fr 300px; /* Default to a single column layout */
-  gap: 5px; /* Space between the chart and text section */
-  padding: 10px; /* Padding for internal spacing */
+.chart-container {
+  flex: 1; /* Allow the graph to take available space */
+  max-width: 425px;
+  padding: 10px; /* Padding for inner spacing */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slight rounding */
+  background-color: #ffffff; /* White */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .chart3-data-box {
@@ -167,8 +93,29 @@
   font-size: 14px; /* Font size */
 }
 
+@media (max-width: 800px) { /* Adjust this breakpoint as needed */
+  .chart-container {
+      grid-template-columns: 1fr; /* Switch to a single column layout */
+      justify-content: center; /* Center the pagination controls */
+      margin: auto;
+  }
+  .text-section {
+    width: 95%; /* Make it full width below the graph */
+    max-width: 95%; /* Ensure it doesn't exceed the width of its container */
+    margin: 5px; /* Reset margin if necessary */
+    padding: 10px;
+}
+  .chart3-data-box {
+      margin: 10px 0; /* Add margin to separate it from the title */
+      width: 100%; /* Full width in small screens */
+      max-width: 300px; /* Remove max-width constraint */
+      min-width: 200px;
+  }
+
+}
+
 /***********************************************************************************/
-/*this section is for displaying the section with the dropdown lists and csv data. */
+/*               CSV data display with 2 responsive charts                         */
 /***********************************************************************************/
 
 .dashboard-container {
@@ -177,6 +124,10 @@
   padding: 10px; /* Add padding for spacing */
   margin: auto;
   max-width: 1600px;
+  border: 5px solid transparent; /* Add a transparent border */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
 }
 
 .dashboard-container ul {
@@ -193,8 +144,28 @@
   padding: 10px; /* Padding inside the wrapper */
   border: 5px solid transparent; /* Add a transparent border */
   border-radius: 10px; /* Rounded corners for a smoother look */
-  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+  background-color: #e0e0e0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.dropdowns {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: stretch; /* Make all items the same height */
+  margin: auto; /* Center the container */
+  gap: 20px; /* Add consistent spacing between items */
+}
+
+.dropdowns > div {
+  flex: 1 1 200px; /* Equal width with a minimum size */
+  text-align: center; /* Center-align text inside each div */
+}
+
+/* Optional: Normalize the size of h2 tags */
+.dropdowns h2 {
+  font-size: 16px; /* Adjust to a consistent size */
+  margin-bottom: 10px; /* Add spacing below the title */
 }
 
 .graph-wrapper {
@@ -224,12 +195,13 @@
   border: 5px solid transparent; /* Add a transparent border */
   border-radius: 10px; /* Rounded corners for a smoother look */
   padding: 10px; /* Padding inside the wrapper */
+  margin-top: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .filtered-data {
   overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 400px; /* Set a maximum height for the div */
+  max-height: 500px; /* Set a maximum height for the div */
   padding: 10px; /* Remove inner padding to allow for fixed header */
   padding-top: 0; /* Adjust padding to match the header height */
   margin: 20px 0; /* Add margin for spacing */
@@ -238,66 +210,6 @@
   overflow-x: auto; /* Enable horizontal scrolling */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
 }
-
-.dropdowns-original {
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
-  justify-content: space-between; /* Space out dropdowns evenly */
-  margin: auto; /* Optional margin for spacing */
-}
-
-.dropdowns-original > div {
-  flex: 1; /* Allow dropdowns to grow equally */
-  margin-right: auto; /* Space between each dropdown */
-  width: 100px;
-}
-
-.dropdowns {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping if needed */
-  justify-content: space-between; /* Distribute items evenly */
-  align-items: stretch; /* Make all items the same height */
-  margin: auto; /* Center the container */
-  gap: 20px; /* Add consistent spacing between items */
-}
-
-.dropdowns > div {
-  flex: 1 1 200px; /* Equal width with a minimum size */
-  text-align: center; /* Center-align text inside each div */
-}
-
-/* Optional: Normalize the size of h2 tags */
-.dropdowns h2 {
-  font-size: 16px; /* Adjust to a consistent size */
-  margin-bottom: 10px; /* Add spacing below the title */
-}
-
-.csv-data-old {
-  width: 100%; /* Make the table full width */
-  border-collapse: collapse; /* Collapse borders for cleaner look */
-  table-layout: fixed; /* Ensure fixed layout for consistent column widths */
-}
-
-.csv-data-old th,
-.csv-data-old td {
-  border: 1px solid #ddd; /* Cell borders */
-  padding: 12px; /* Increased cell padding for better spacing */
-  text-align: left; /* Align text to the left */
-  min-width: 100px; /* Set a minimum width for columns */
-}
-
-.csv-data-old th {
-  position: sticky; /* Enable sticky positioning */
-  top: 0; /* Stick to the top */
-  z-index: 10; /* Ensure it appears above other content */
-  background-color: #f2f2f2; /* Header background color */
-  font-weight: bold; /* Make header text bold */
-}
-
-.csv-data-old tr:hover {
-  background-color: #f5f5f5; /* Highlight row on hover */
-}
-
 
 .csv-data {
   width: 100%; /* Make the table full width */
@@ -345,8 +257,6 @@
   word-break: break-word; /* Ensure words break to fit the cell */
 }
 
-
-
 .pagination {
   display: flex; /* Align pagination items in a row */
   justify-content: center; /* Center the pagination controls */
@@ -366,25 +276,4 @@
   background-color: #0056b3; /* Darker on hover */
 }
 
-@media (max-width: 800px) { /* Adjust this breakpoint as needed */
-  .chart-container {
-      grid-template-columns: 1fr; /* Switch to a single column layout */
-      justify-content: center; /* Center the pagination controls */
-      margin: auto;
-  }
-  .text-section,
-  .text-section-new {
-    width: 95%; /* Make it full width below the graph */
-    max-width: 95%; /* Ensure it doesn't exceed the width of its container */
-    margin: 5px; /* Reset margin if necessary */
-    padding: 10px;
-}
-  .chart3-data-box {
-      margin: 10px 0; /* Add margin to separate it from the title */
-      width: 100%; /* Full width in small screens */
-      max-width: 300px; /* Remove max-width constraint */
-      min-width: 200px;
-  }
-
-}
 

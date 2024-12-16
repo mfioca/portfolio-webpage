@@ -7,13 +7,10 @@ import ThirdGraph from './dashboard/Graph3'; // Import your new graph component
 import CSVdata from './dashboard/CSVdata'; // Import your new graph component
 import { DividerLine } from './SharedComponents.js';
 
-/*****************************************************/
-/* Custom sections to insert into the Main Display   */
-/*****************************************************/
 
 const TextSection = ({ content }) => {
     return (
-        <div className="text-section-new">
+        <div className="text-section">
             { content }
         </div>
     );
@@ -58,7 +55,7 @@ function Dashboard() {
                 </div>
                 <DividerLine />
                 <div className="graph-flexbox">
-                    <div className="test">
+                    <div className="graph-container">
                         <Graph />
                         <TextSection
                             content={
@@ -84,55 +81,51 @@ function Dashboard() {
                             }
                         />
                     </div>
-                    
-                        <div className="test">
-                            <SecondGraph />
-                            <TextSection
-                                content={
-                                    <>
-                                        <p>
-                                            In this section, we analyze the usage of different applications over time based on job focus. 
-                                            The goal is to identify trends and patterns in application usage based on the focus between 
-                                            customer relations and Analytics driven activities.
-                                        </p>
-                                        <p>
-                                            The graph to the left displays the total usage time for applications with different activity subtypes, 
-                                            plotted by month. As in the last graph, a change in focus occurred in June of 2022.
-                                        </p>
-                                        <p>
-                                            Key insights to look for in the graph include a very distinct shift in activities due to the job title change.
-                                        </p>
-                                    </>
-                                }
-                            />
-                        </div>
-                    
-                    
-                        <div className="test">
-                            <ThirdGraph />
-                            <TextSection
-                                content={
-                                    <>
-                                        <p>
-                                            In this section, we provide a comprehensive visual representation of the time allocated to various job activities over 
-                                            the years, specifically highlighting the focus on analytics. The graph displays two key datasets: the total hours 
-                                            worked each year and the specific hours dedicated to analytics tasks.
-                                        </p>
-                                        <p>
-                                            Each bar on the graph represents the total duration of work for that year, allowing for a clear comparison of overall productivity. 
-                                            Overlaying this, the percentage of time spent on analytics activities is also depicted, offering valuable insights into how analytics 
-                                            efforts evolve relative to total work hours.
-                                        </p>
-                                        <p>
-                                            By examining this graph, viewers can quickly grasp trends in workload and the significance of analytics within the broader context of job 
-                                            responsibilities. This dual representation not only illustrates raw data but also contextualizes the impact of analytics activities,
-                                            making it easier to identify shifts in focus and the growing importance of data-driven decision-making over time.
-                                        </p>
-                                    </>
-                                }
-                            />
-                        </div>
-                    
+                    <div className="graph-container">
+                        <SecondGraph />
+                        <TextSection
+                            content={
+                                <>
+                                    <p>
+                                        In this section, we analyze the usage of different applications over time based on job focus. 
+                                        The goal is to identify trends and patterns in application usage based on the focus between 
+                                        customer relations and Analytics driven activities.
+                                    </p>
+                                    <p>
+                                        The graph to the left displays the total usage time for applications with different activity subtypes, 
+                                        plotted by month. As in the last graph, a change in focus occurred in June of 2022.
+                                    </p>
+                                    <p>
+                                        Key insights to look for in the graph include a very distinct shift in activities due to the job title change.
+                                    </p>
+                                </>
+                            }
+                        />
+                    </div>
+                    <div className="graph-container">
+                        <ThirdGraph />
+                        <TextSection
+                            content={
+                                <>
+                                    <p>
+                                        In this section, we provide a comprehensive visual representation of the time allocated to various job activities over 
+                                        the years, specifically highlighting the focus on analytics. The graph displays two key datasets: the total hours 
+                                        worked each year and the specific hours dedicated to analytics tasks.
+                                    </p>
+                                    <p>
+                                        Each bar on the graph represents the total duration of work for that year, allowing for a clear comparison of overall productivity. 
+                                        Overlaying this, the percentage of time spent on analytics activities is also depicted, offering valuable insights into how analytics 
+                                        efforts evolve relative to total work hours.
+                                    </p>
+                                    <p>
+                                        By examining this graph, viewers can quickly grasp trends in workload and the significance of analytics within the broader context of job 
+                                        responsibilities. This dual representation not only illustrates raw data but also contextualizes the impact of analytics activities,
+                                        making it easier to identify shifts in focus and the growing importance of data-driven decision-making over time.
+                                    </p>
+                                </>
+                            }
+                        />
+                    </div>
                 </div>
                 <CSVdata />
             </div>
@@ -141,30 +134,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
-/*
-<TextSection
-                                content={
-                                    <>
-                                        <p>
-                                            The graph to the left displays the total usage time for selected applications, 
-                                            plotted by month. There was a shift in focus from daily operations to functioning 
-                                            like subject matter expertise in June of 2022.
-                                        </p>
-                                        <p>
-                                            Before the job title change, I used Google Sheets to help manage a pool of 
-                                            customers and process analytical data on their status in each phase of the 
-                                            life cycle funnel. After the job title change, I took on more of an analyst 
-                                            and auditor type of role. I used Google Sheets more to look at specific 
-                                            issues in our operations systems that needed to be fixed.
-                                        </p>
-                                        <p>
-                                            Key insights to look for in the graph include potential shifts in application 
-                                            usage corresponding to the job title change, as well as any notable trends in 
-                                            specific applications that reflect the evolving focus of the work.
-                                        </p>
-                                    </>
-                                }
-                            />
-                        */

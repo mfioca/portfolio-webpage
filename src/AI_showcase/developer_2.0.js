@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { DividerLine } from '../SharedComponents.js'; 
-import developerData from './developer_2.0.json';
-import DeveloperPrompt from './developer_2.0_prompt.js';
+import developer2Data from './developer_2.0.json';
+import Developer2Prompt from './developer_2.0_prompt.js';
 
 const DeveloperV2 = () => {
 
-    const [messages] = useState(developerData[0].messages);
+    const [title] = useState(developer2Data[0].title);
+    const [messages] = useState(developer2Data[0].messages);
     const [visibleCount, setVisibleCount] = useState(1); // Number of messages visible initially
     const [isHovered, setIsHovered] = useState(false); // Tracks if the mouse is hovering over the chat window
 
@@ -63,7 +64,7 @@ const DeveloperV2 = () => {
                 </p>
             </section>
             <DividerLine />
-            <DeveloperPrompt />
+            <Developer2Prompt />
             <DividerLine />
             <section className="Intro">
                 <h2 className="shadow">Simulated Chat Conversation</h2>
@@ -76,6 +77,7 @@ const DeveloperV2 = () => {
             </section>
             <DividerLine />
             <div className="example-container">
+                <h2 >{title}</h2> 
                 <div
                     className="chat-window"
                     onMouseEnter={() => setIsHovered(true)} // Activate hover state

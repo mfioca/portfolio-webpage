@@ -176,8 +176,6 @@ const CSVdata = () => {
                         <li>The Donut Chart displays the proportion of time spent on different applications.</li>
                         <li>The Bar Chart shows detailed breakdowns of activity subtypes, enabling you to identify trends and focus areas.</li>
                     </ul>
-
-                
                 <div className="dropdowns">
                     <div>
                         <h2>Select Activity Type</h2>

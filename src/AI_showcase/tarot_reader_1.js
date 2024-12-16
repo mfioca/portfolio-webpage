@@ -5,6 +5,7 @@ import TarotReaderPrompt1 from './tarot_reader_1_prompt.js';
 
 const TarotReader1 = () => {
 
+    const [title] = useState(tarotData[0].title);
     const [messages] = useState(tarotData[0].messages);
     const [visibleCount, setVisibleCount] = useState(1); // Number of messages visible initially
     const [isHovered, setIsHovered] = useState(false); // Tracks if the mouse is hovering over the chat window
@@ -76,6 +77,7 @@ const TarotReader1 = () => {
             </section>
             <DividerLine />
             <div className="example-container">
+                <h2 >{title}</h2> 
                 <div
                     className="chat-window"
                     onMouseEnter={() => setIsHovered(true)} // Activate hover state

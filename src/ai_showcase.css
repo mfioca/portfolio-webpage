@@ -1,13 +1,6 @@
-.ai-body-original {
-    margin-right: 100px;
-    margin-left: 100px;
-    margin-bottom: 100px;
-    margin-top: 50px;
-}
-
 .ai-body {
     margin-bottom: 100px;
-    margin-top: 50px;
+    margin-top: 10px;
     padding: 10px;
 }
 
@@ -76,6 +69,8 @@
     overflow-x: hidden; /* Prevents horizontal scrolling */
     max-height: 100%; /* Ensures the content doesn’t exceed the container height */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+    scroll-snap-type: y mandatory; /* Standard syntax */
+    -webkit-scroll-snap-type: y mandatory; /* WebKit compatibility */
 }
 
 .next-message-btn {

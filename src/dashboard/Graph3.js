@@ -107,16 +107,3 @@ const Graph3 = () => {
 
 export default Graph3;
 
-/*
-<div className="chart-container">
-            <div className="chart3-header">
-                <div className="chart3-header-content">
-                    <h2 className="shadow">Application Usage Over Time by Month</h2>
-                </div>
-                <div className="chart3-data-box">
-                    {textBoxContent}
-                </div>
-            </div>
-            <Bar data={graphData} options={options} /> 
-            </div>
-            */
