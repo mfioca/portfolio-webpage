@@ -58,19 +58,16 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    max-width: 600px; /* Maintain a reasonable width */
-    height: 100%; /* Consistent height within the container */
+    max-width: 600px;
+    height: 100%; 
     padding: 10px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the chat window */
-    transition: all 0.3s ease-in-out; /* Optional smooth transition for visual changes */
-    overflow-y: auto; /* Enables vertical scrolling */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    max-height: 100%; /* Ensures the content doesn’t exceed the container height */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
-    scroll-snap-type: y mandatory; /* Standard syntax */
-    -webkit-scroll-snap-type: y mandatory; /* WebKit compatibility */
+    scroll-snap-type: y mandatory; /* Optional: Snaps messages cleanly */
 }
 
 .next-message-btn {
@@ -186,21 +183,6 @@
 /***********************************************************************************/
 /*                            Prompt section                                       */
 /***********************************************************************************/
-
-.markdown-container1 {
-    background-color: #f6f8fa; /* Light gray background */
-    padding: 20px; /* Space around the content */
-    border-radius: 10px; /* Rounded corners */
-    font-family: 'Courier New', monospace; /* Monospaced font for Markdown look */
-    color: #24292f; /* GitHub-like dark text color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 1500px; /* Limit width for readability */
-    margin: 20px auto; /* Center the container */
-    overflow-x: auto; /* Enable horizontal scrolling for long lines */
-    overflow-y: auto; /* Enables vertical scrolling */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    max-height: 900px; /* Ensures the content doesn’t exceed the container height */
-}
 
 .markdown-container {
     background-image: linear-gradient(#e0e0e0, #ffffff); /* Gradient to match sections */
