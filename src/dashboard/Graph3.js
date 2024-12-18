@@ -17,6 +17,14 @@ const Graph3 = () => {
     // Chart options configuration
     const options = useMemo(() => ({
         responsive: true,
+        layout: {
+            padding: {
+                top: 10, // Add padding at the top
+                bottom: 10, // Add padding at the bottom
+                left: 10, // Add padding to the left
+                right: 10, // Add padding to the right
+            },
+        },
         scales: {
             x: {
                 title: {
@@ -48,9 +56,18 @@ const Graph3 = () => {
             datalabels: {
                 align: 'end', // Position the labels
                 anchor: 'end', // Anchor the labels to the end of the bars
-                formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label
-            },
+                font: {
+                    size: window.innerWidth < 768 ? 8 : 12, // Smaller font for data labels on smaller screens
+                },
+                formatter: (value) => {
+                    if (typeof value === 'number') {
+                        return `${value.toFixed(2)} hours`; // Ensure only 2 decimal points
+                    }
+                    return value; // Fallback in case value isn't a number
+                },
+            }
         }
+        
     }), [percentages]); // Dependency on percentages
 
     useEffect(() => {

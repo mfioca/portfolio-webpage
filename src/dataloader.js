@@ -148,8 +148,8 @@ const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
 
     // Calculate total work and analytics durations
     const years = Object.keys(totalWorkByYear);
-    const totalWorkDurations = years.map(year => totalWorkByYear[year]);
-    const analyticsDurations = years.map(year => analyticsByYear[year] || 0);
+    const totalWorkDurations = years.map(year => parseFloat(totalWorkByYear[year].toFixed(2))); // Format to 2 decimal points
+    const analyticsDurations = years.map(year => parseFloat((analyticsByYear[year] || 0).toFixed(2))); // Format to 2 decimal points
 
     // Calculate the percentage of analytics time relative to total work time per year
     tempPercentages = analyticsDurations.map((duration, index) => {
@@ -172,12 +172,12 @@ const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
         datasets: [
             {
                 label: 'Total Work',
-                data: totalWorkDurations,
+                data: totalWorkDurations, // Already formatted
                 backgroundColor: 'gray',
             },
             {
                 label: 'Analytics',
-                data: analyticsDurations,
+                data: analyticsDurations, // Already formatted
                 backgroundColor: 'blue',
             },
         ],
