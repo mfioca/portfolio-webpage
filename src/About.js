@@ -126,6 +126,7 @@ const About = () => {
                     <Card 
                         icon="💡"
                         title="About Me"
+                        image="/professional_headshot.png"
                         description={
                             <>
                                 <p>
@@ -154,6 +155,7 @@ const About = () => {
                     <Card
                         icon="⚙️"
                         title="Developer Learning Projects"
+                        image="/image2.png"
                         description={
                             <>
                                 <ul>
@@ -212,7 +214,8 @@ const About = () => {
                 <SwiperSlide>
                     <Card
                         icon="🎮" 
-                        title="My Gaming Philosophy" 
+                        title="My Gaming Philosophy"
+                        image="/gaming1.jpg"
                         description={
                             <>
                                 <p>

@@ -189,8 +189,8 @@
 .bar-chart {
   flex-shrink: 1;
   /*flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
-  min-width: 400px; /* Control the maximum size of the bar chart */
-  max-width: 1000px;
+  /*min-width: 400px; /* Control the maximum size of the bar chart */
+  max-width: 400px;
   margin: auto; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
@@ -203,62 +203,62 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
+
 .filtered-data {
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 500px; /* Set a maximum height for the div */
-  padding: 10px; /* Remove inner padding to allow for fixed header */
-  padding-top: 0; /* Adjust padding to match the header height */
+  max-height: 500px; /* Set a maximum height for the container */
+  padding: 10px; /* Inner padding */
+  padding-top: 0; /* Align with sticky header */
   margin: 20px 0; /* Add margin for spacing */
-  border: 1px solid #ccc; /* Optional border for visibility */
+  border: 1px solid #ccc; /* Light border for structure */
   border-radius: 5px; /* Rounded corners */
   overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
 }
 
 .csv-data {
-  width: 100%; /* Make the table full width */
-  border-collapse: collapse; /* Collapse borders for cleaner look */
-  table-layout: fixed; /* Ensure consistent column widths */
-  word-wrap: break-word; /* Ensure text wraps within cells */
-}
-
-.csv-data thead tr th {
-  white-space: normal; /* Allow wrapping of text */
-  word-break: break-word; /* Break long words to fit within the cell */
-  text-align: center; /* Optional: Center-align header text for better aesthetics */
-  padding: 12px; /* Maintain consistent padding */
-  background-color: #f2f2f2; /* Header background color */
-  font-weight: bold; /* Bold text for headers */
+  width: 120%; /* Ensure the table overflows horizontally */
+  min-width: 800px; /* Set a minimum width for the table to ensure scrolling */
+  border-collapse: collapse; /* Collapse borders for a clean look */
+  table-layout: auto; /* Allow dynamic column widths */
+  word-wrap: break-word; /* Wrap long words within cells */
 }
 
 .csv-data th,
 .csv-data td {
-  border: 1px solid #ddd; /* Cell borders */
-  padding: 12px; /* Increased cell padding for better spacing */
+  border: 1px solid #ddd; /* Add cell borders */
+  padding: 8px; /* Tighter padding for compactness */
   text-align: left; /* Align text to the left */
-  min-width: 100px; /* Set a minimum width for columns */
-  overflow: hidden; /* Hide any overflow text */
-  text-overflow: ellipsis; /* Add ellipsis (...) for truncated text */
-  white-space: nowrap; /* Prevent text wrapping unless specified otherwise */
+  min-width: 100px; /* Ensure minimum column width */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Add ellipsis for truncated text */
+  white-space: nowrap; /* Prevent wrapping for consistent spacing */
 }
 
-.csv-data th {
-  position: sticky; /* Enable sticky positioning */
-  top: 0; /* Stick to the top */
-  z-index: 10; /* Ensure it appears above other content */
-  background-color: #f2f2f2; /* Header background color */
-  font-weight: bold; /* Make header text bold */
+.csv-data thead tr th {
+  position: sticky; /* Sticky header on scroll */
+  top: 0; /* Stick to the top of the container */
+  z-index: 10; /* Ensure header stays above other content */
+  background-color: #444444; /* Darker header background color */
+  color: #ffffff; /* White text for contrast */
+  font-weight: bold; /* Bold text for headers */
+  text-align: center; /* Center-align header text */
 }
+
 
 .csv-data tr:hover {
   background-color: #f5f5f5; /* Highlight row on hover */
 }
 
-/* Optional: Wrap long text (instead of ellipsis) */
-.csv-data-optional th,
-.csv-data-optional td {
-  white-space: normal; /* Allow wrapping of text */
-  word-break: break-word; /* Ensure words break to fit the cell */
+@media (max-width: 768px) {
+  .csv-data {
+    width: 200%; /* Force the table to overflow horizontally for small screens */
+  }
+
+  .csv-data th,
+  .csv-data td {
+    min-width: 120px; /* Adjust column width for readability */
+  }
 }
 
 .pagination {
