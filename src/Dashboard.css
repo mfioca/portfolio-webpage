@@ -74,9 +74,9 @@
 }
 
 .chart-container {
-  flex: 1; /* Allow the graph to take available space */
-  max-width: 425px;
-  max-height: 400px;
+  /*flex: 1; /* Allow the graph to take available space */
+  width: 350px;
+  height: 350px;
   padding: 10px; /* Padding for inner spacing */
   border: 1px solid #ccc; /* Light gray border */
   border-radius: 4px; /* Slight rounding */
@@ -87,9 +87,9 @@
 .chart3-data-box {
   justify-content: center; /* Center the content within the data box */
   align-items: center; /* Center vertically */
-  height: 40px; /* Set height */
+  height: 10px; /* Set height */
   padding: 5px; /* Adjust padding */
-  margin-bottom: 5px;
+  margin-bottom: 5px; 
   border-radius: 4px; /* Rounded corners */
   background-color: #f9f9f9; /* Background color */
   font-size: 14px; /* Font size */

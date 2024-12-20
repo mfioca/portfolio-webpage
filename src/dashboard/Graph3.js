@@ -16,14 +16,15 @@ const Graph3 = () => {
 
     // Chart options configuration
     const options = useMemo(() => ({
-        responsive: true,
+        responsive: false,
         layout: {
             padding: {
-                top: 10, // Add padding at the top
-                bottom: 10, // Add padding at the bottom
+                top: 30, // Add padding at the top
+                bottom: 20, // Add padding at the bottom
                 left: 10, // Add padding to the left
                 right: 10, // Add padding to the right
             },
+            margin: 10,
         },
         scales: {
             x: {
@@ -56,6 +57,9 @@ const Graph3 = () => {
             datalabels: {
                 align: 'end', // Position the labels
                 anchor: 'end', // Anchor the labels to the end of the bars
+                labels: {
+                    padding: 15, // Space between items in the legend
+                },
                 font: {
                     size: window.innerWidth < 768 ? 8 : 12, // Smaller font for data labels on smaller screens
                 },
@@ -65,8 +69,8 @@ const Graph3 = () => {
                     }
                     return value; // Fallback in case value isn't a number
                 },
-            }
-        }
+            },
+        },
         
     }), [percentages]); // Dependency on percentages
 
@@ -117,7 +121,7 @@ const Graph3 = () => {
             <div className="chart3-data-box">
                 {textBoxContent}
             </div>
-            <Bar data={graphData} options={options} /> 
+            <Bar data={graphData} options={options} width={350} height={250} /> 
         </div>
     );
 };

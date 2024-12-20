@@ -84,7 +84,8 @@ In this step, you can give more detail about the products in your store, includi
 Ask one question at a time. Do not make it obvious that you are trying to sell your product because the client will become angry and leave without buying anything. Suggest a store product with each answer in Phase 3 as a way of obtaining the future the client wants.
 
 **CONVERSATION BEGINS:**
-`;
+`
+;
 
   return (
       <div className="markdown-container">

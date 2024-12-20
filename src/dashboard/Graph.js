@@ -13,7 +13,16 @@ const Graph = () => {
     const [isLoading, setIsLoading] = useState(true); // Initialize loading state
 
     const options = useMemo(() => ({
-        responsive: true,
+        responsive: false,
+        layout: {
+            padding: {
+                top: 30, // Add padding at the top
+                bottom: 20, // Add padding at the bottom
+                left: 10, // Add padding to the left
+                right: 10, // Add padding to the right
+            },
+            margin: 10,
+        },
         scales: {
             x: {
                 title: {
@@ -59,7 +68,7 @@ const Graph = () => {
     return (
         <div className="chart-container">
             <h2 className="shadow">Application Usage Over Time by Month</h2>
-            <Line data={graphData} options={options} />
+            <Line data={graphData} options={options} width={350} height={250} />
         </div>
     );
 };
