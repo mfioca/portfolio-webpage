@@ -152,7 +152,12 @@ export const WindowHeightDisplay = () => {
                         key={index}
                         className={`chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'ai-bubble'}`}
                     >
-                        {msg.text}
+                        {msg.text.split("\n").map((line, lineIndex) => (
+                            <React.Fragment key={lineIndex}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
                     </div>
                 ))}
             </div>
@@ -178,3 +183,20 @@ export const WindowHeightDisplay = () => {
 };
 
 
+/*
+<div
+                className="chat-window"
+                ref={chatWindowRef}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {messages.slice(0, visibleCount).map((msg, index) => (
+                    <div
+                        key={index}
+                        className={`chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'ai-bubble'}`}
+                    >
+                        {msg.text}
+                    </div>
+                ))}
+            </div>
+*/

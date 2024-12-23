@@ -4,6 +4,7 @@ import { DividerLine } from './SharedComponents.js';
 import TarotReader1 from './AI_showcase/tarot_reader_1.js';
 import Developer from './AI_showcase/developer.js';
 import DeveloperV2 from './AI_showcase/developer_2.0.js'
+import DisenchantedOracle from './AI_showcase/disenchanted_oracle.js'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
@@ -28,11 +29,15 @@ const AIShowcase = () => {
                 <Tabs>
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>
+                        <Tab>Disenchanted Oracle</Tab>
                         <Tab>Developer Prompt</Tab>
                         <Tab>Developer 2.0 Prompt</Tab>
                     </TabList>
                     <TabPanel>
                         <TarotReader1 />
+                    </TabPanel>
+                    <TabPanel>
+                        <DisenchantedOracle />
                     </TabPanel>
                     <TabPanel>
                         <Developer />

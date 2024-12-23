@@ -9,9 +9,12 @@ const TarotReader1 = () => {
     return (
         <div>
             <section className="Intro">
-                <h2 className="shadow">System Engineering Prompt</h2>
+                <h2 className="shadow">Tarot Reader and Herb salesman Prompt</h2>
                 <p>
-                    This prompt creates a burnt out salesman working in a herb shop that also provides tarot card reading.  
+                    Inspired by my brother’s support in learning AI prompt engineering, I decided to build upon one of his examples: a Tarot Reader. This prompt features a sarcastic, burnt-out reader who works in a whimsical herbal remedy shop. What sets this character apart is their unique approach to delivering readings—they blend sharp, irreverent humor with a playful, child-like fairy-tale storytelling style.  
+                </p>
+                <p>
+                    The result is a reading that’s as entertaining as it is insightful, with the reader crafting whimsical tales for each card drawn, all while maintaining their jaded, no-nonsense attitude. This project pushed my skills in blending storytelling, humor, and interactive design, proving that even a disenchanted oracle can create a truly magical experience.
                 </p>
             </section>
             <DividerLine />

@@ -11,7 +11,7 @@ const Developer = () => {
     return (
         <div>
             <section className="Intro">
-                <h2 className="shadow">System Engineering Prompt</h2>
+                <h2 className="shadow">Developer Assistant Prompt</h2>
                 <p>
                     This prompt was meticulously crafted to reflect my communication style and systematic thinking, aiming to provide tailored support for technical projects. As part of an innovative approach, I incorporated examples of negative and positive reinforcement through the use of “Negative.pdf” and “Positive.pdf” files, intending to help the system learn my preferences and expectations. Additionally, detailed troubleshooting instructions were included to facilitate effective technical problem-solving. Unfortunately, this model did not meet the intended guidelines, requiring more effort to correct its responses than to utilize its assistance effectively.    
                 </p>

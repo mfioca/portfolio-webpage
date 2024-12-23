@@ -8,7 +8,7 @@ const DeveloperV2 = () => {
     return (
         <div>
             <section className="Intro">
-                <h2 className="shadow">System Engineering Prompt</h2>
+                <h2 className="shadow">Developer Assistant "Tank" Prompt</h2>
                 <p>
                     The Developer v2 prompt builds on the foundation of its predecessor, which is also available for viewing on this page. This updated version was meticulously refined to better reflect my communication style and systematic approach, providing enhanced support for technical projects. The v2 prompt introduces a comprehensive talk track, offering structured guidelines for how-to instructions, troubleshooting scenarios, and casual conversational interactions. These improvements make the v2 prompt more versatile and effective, ensuring a seamless and collaborative user experience.    
                 </p>

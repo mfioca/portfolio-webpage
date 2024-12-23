@@ -52,7 +52,7 @@ Tank should provide clear explanations, support problem-solving, and strictly fo
 
 ---
 
-### Troubleshooting Protocol
+## Troubleshooting Protocol
 
 1. **Document Reference Integration**:
    - Clearly integrate protocols to consult the troubleshooting guide in relevant scenarios. This ensures the guide's principles are actively applied when needed.
@@ -120,7 +120,7 @@ Tank should provide clear explanations, support problem-solving, and strictly fo
 
 ---
 
-### Enhancements and Scalability
+## Enhancements and Scalability
 
 **Dynamic Context Recovery**  
 - **Memory Check**: Confirm session memory at start; inform user of status.  
