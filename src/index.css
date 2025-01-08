@@ -207,3 +207,153 @@ body {
     order: 2; /* Ensure the text appears below the image */
   }
 }
+
+/***********************************************************************************/
+/*                            TV Maze                                              */
+/***********************************************************************************/
+
+/* Container for the entire search section */
+.tvmaze-container {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+  font-family: 'Courier New', sans-serif; /* Match the font style in index.css */
+  color: #333;
+  padding: 20px;
+  background-color: #ffffff; /* White background for contrast */
+  border: 1px solid #ccc; /* Subtle border for separation */
+  border-radius: 8px; /* Rounded corners for consistency */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Title styles */
+.tvmaze-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0078d4; /* Theme color for the title */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Search bar input */
+.tvmaze-container input[type="text"] {
+  width: 90%; /* Wider input box for easier typing */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.tvmaze-container input[type="text"]:focus {
+  border-color: #0078d4; /* Highlighted border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Search button */
+.tvmaze-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0078d4; /* Theme color for button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tvmaze-container button:hover {
+  background-color: #005a9e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Results list */
+.tvmaze-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px; /* Limit height to avoid long scrolling */
+  overflow-y: auto; /* Enable vertical scrolling for long lists */
+  border: 1px solid #ddd; /* Add a border for separation */
+  border-radius: 5px;
+}
+
+.tvmaze-container ul li {
+  padding: 10px;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.tvmaze-container ul li:hover {
+  background-color: #f5f5f5; /* Light hover effect */
+  cursor: pointer;
+}
+
+.tvmaze-container ul li:last-child {
+  border-bottom: none; /* Remove the border from the last item */
+}
+
+/* Container for the search results */
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  gap: 10px; /* Space between the result items */
+  justify-content: center; /* Center the items */
+  padding: 20px;
+  margin: 20px auto; /* Center the container on the page */
+  max-width: 800px; /* Optional: constrain width */
+}
+
+/* Individual result box */
+.result-box {
+  border: 1px solid #ccc; /* Light border around each result */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px;
+  width: 150px; /* Set a fixed width for each box */
+  text-align: center; /* Center-align the content */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s ease; /* Smooth animation on hover */
+}
+
+.result-box:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* tv maze results page */
+
+.tvmaze-results-body  {
+  flex-grow: 1; /* Allow the content to take the remaining space */
+  font-family: 'Courier New'; /* A clean sans-serif font */
+  margin: 10px;
+    padding: 5px;
+  min-height: 80vh;
+  justify-content: center;
+}
+
+.tvmaze-results-container {
+  margin: 20px auto;
+  max-width: 800px;
+  font-family: 'Courier New', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tvmaze-results-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0078d4;
+}
+
+.tvmaze-results-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}

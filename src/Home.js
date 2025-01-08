@@ -14,8 +14,8 @@ const Home = () => {
                 </p>
                 <p>
                     Nearly every feature on this page was developed in close collaboration with ChatGPT, with adjustments and customizations made by me. 
-                    Through this process, I integrated several advanced libraries, including React Router DOM, React Redux, PapaParse, React Charts, react-tabs and Swiper. 
-                    Before starting this project, I had no prior experience with those tools, which highlights how effective proper collaboration and customization 
+                    During this process, I integrated several advanced libraries, including React Router DOM, React Redux, PapaParse, React Charts, react-tabs, Axios for API handling, and Swiper. 
+                    Prior to this project, I had no experience with these tools, which underscores how effective proper collaboration and customization 
                     can be when working with ChatGPT.
                 </p>
                 <p>

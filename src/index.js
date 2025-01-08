@@ -9,6 +9,8 @@ import Dashboard from './Dashboard';
 import AboutPage from './About'; // Import your Home component if you create one
 import AIShowcase from './ai_showcase';
 import reportWebVitals from './reportWebVitals';
+import TvMaze from './tv_maze'
+import TvMazeResults from './tv_maze_results'
 
 
 
@@ -35,6 +37,9 @@ const Navigation = () => {
     case '/AIShowcase':
       title = 'AI Showcase';
       break;
+    case '/tv_maze':
+      title = 'TV Maze';
+      break;
     default:
         title = 'Explore My Web Page'; // A more general fallback title
   }
@@ -48,6 +53,9 @@ const Navigation = () => {
               </li>
               <li>
                   <Link to="/About" className="nav-link">About</Link>
+              </li>
+              <li>
+                <Link to="/tv_maze" className="nav-link">TV Maze</Link>
               </li>
               <li>
                   <Link to="/Dashboard" className="nav-link">Activity Analysis</Link>
@@ -86,6 +94,8 @@ root.render(
           <Routes>
             <Route path="/" element={<Home />} /> {/* Your home page */}
             <Route path="/About" element={<AboutPage />} /> {/* Your About page */}
+            <Route path="/tv_maze" element={<TvMaze />} />
+            <Route path="/show/:id" element={<TvMazeResults />} />
             <Route path="/Dashboard" element={<Dashboard />} /> {/* Your dashboard page */}
             <Route path="/AIShowcase" element={<AIShowcase />} />
           </Routes>
