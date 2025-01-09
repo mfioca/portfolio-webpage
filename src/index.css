@@ -304,7 +304,7 @@ body {
   justify-content: center; /* Center the items */
   padding: 20px;
   margin: 20px auto; /* Center the container on the page */
-  max-width: 800px; /* Optional: constrain width */
+  max-width: 1600px; /* Optional: constrain width */
 }
 
 /* Individual result box */
@@ -326,7 +326,7 @@ body {
 
 /* tv maze results page */
 
-.tvmaze-results-body  {
+.tvmaze-body  {
   flex-grow: 1; /* Allow the content to take the remaining space */
   font-family: 'Courier New'; /* A clean sans-serif font */
   margin: 10px;

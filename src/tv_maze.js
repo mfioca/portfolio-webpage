@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link from React Router
+import { DividerLine } from './SharedComponents.js';
 
 const TvMaze = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -41,7 +42,7 @@ const TvMaze = () => {
     };
 
     return (
-        <div>
+        <div className="tvmaze-body">
             <div className="Intro">
             <h1 className="shadow">TV Show Explorer</h1>
             <p>
@@ -54,6 +55,8 @@ const TvMaze = () => {
                 deliver an intuitive and engaging experience, blending technical functionality with a clean and accessible design.
             </p>
         </div>
+        <DividerLine />
+        <div className="tvmaze-container">
             <h1>TV Show Search</h1>
             <form onSubmit={handleSearch}>
                 <input
@@ -66,6 +69,7 @@ const TvMaze = () => {
                 <button type="submit">Search</button>
             </form>
             {error && <p style={{ color: 'red' }}>{error}</p>}
+        </div>
             <div className="search-results-container">
                 {shows.map((show) => (
                     <div key={show.id} className="result-box">
