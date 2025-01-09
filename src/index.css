@@ -268,7 +268,9 @@ body {
   transform: scale(1.05); /* Slight scale-up effect on hover */
 }
 
-/* Results list */
+/* Results list 
+tvmaze container used for show detals on results and search bar
+*/
 .tvmaze-container ul {
   list-style: none;
   padding: 0;
