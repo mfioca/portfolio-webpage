@@ -339,7 +339,7 @@ tvmaze container used for show detals on results and search bar
 
 .tvmaze-results-container {
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 1600px;
   font-family: 'Courier New', sans-serif;
   color: #333;
   padding: 20px;
@@ -437,7 +437,7 @@ tvmaze container used for show detals on results and search bar
 
 .tvmaze-episodes-container {
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 1600px;
   font-family: 'Courier New', sans-serif;
   color: #333;
   padding: 20px;
@@ -485,4 +485,61 @@ tvmaze container used for show detals on results and search bar
 /* Tabs container */
 .tabs-container {
   scroll-margin-top: 100px; /* Adjust to match your navbar or header height */
+}
+
+
+/*show info flex box */
+.tvmaze-results-wrapper {
+  display: flex;
+  flex-direction: row; /* Arrange children in a row */
+  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  gap: 20px; /* Add space between the columns */
+  max-width: 1600px; /* Limit the total width of the container */
+  margin: 20px auto; /* Center the container on the page */
+  padding: 20px; /* Add padding for spacing */
+  font-family: 'Courier New', sans-serif; /* Consistent font */
+  align-items: flex-start; /* Align items to the top of the row */
+}
+
+.main-info {
+  flex: 1; /* Let this column take up one part of the available space */
+  display: flex;
+  flex-direction: column; /* Stack title, image, and other details */
+  gap: 15px; /* Add spacing between elements in this column */
+}
+
+.main-info img {
+  width: 100%; /* Ensure the image scales to fit the column */
+  max-width: 500px; /* Limit the maximum width of the image */
+  border-radius: 10px; /* Add rounded corners to the image */
+}
+
+.show-details-extra {
+  flex: 1; /* Let this column take up one part of the available space */
+  background-color: #f9f9f9; /* Light background color */
+  padding: 15px; /* Add padding for spacing */
+  border: 1px solid #ccc; /* Optional border for separation */
+  border-radius: 10px; /* Rounded corners for consistency */
+  max-width: 500px; /* Explicit max width to prevent wrapping */
+}
+
+.show-summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 20px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .tvmaze-results-wrapper {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .main-info img {
+    margin: 0 auto; /* Center the image for better alignment */
+  }
+}
+
+.additional-info {
+  margin-top: 20px; /* Add spacing above the summary and link */
 }

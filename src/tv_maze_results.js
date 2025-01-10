@@ -53,30 +53,37 @@ const TvMazeResults = () => {
                     We’re still building out this section. Please check back soon for more details!
                 </p>
             </div>
-        {/*<div className="tvmaze-results-container"> */}
-            <div>
-                <h1>{showDetails.name}</h1>
+        
+            <h1>{showDetails.name}</h1>
+        <div className="tvmaze-results-wrapper">
+            <div className="main-info">
+                
                 {showDetails.image && showDetails.image.original && (
-                <img
-                    src={showDetails.image.original}
-                    alt={showDetails.name}
-                    style={{ width: '100%', maxWidth: '500px', borderRadius: '10px', margin: '20px 0' }}
-                />
+                    <img
+                        src={showDetails.image.original}
+                        alt={showDetails.name}
+                    />
                 )}
-                <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
             </div>
-
-            {showDetails && (
-            /*<div className="show-details-extra">*/
-            <div className="tvmaze-container">
+            <div className="show-details-extra">
                 <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
                 <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
                 <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>
                 <p><strong>Network:</strong> {showDetails.network ? `${showDetails.network.name} (${showDetails.network.country.code})` : 'N/A'}</p>
                 <p><strong>Premiered:</strong> {showDetails.premiered || 'N/A'}</p>
                 <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
+                {showDetails.url && (
+                    <p>
+                        More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">{showDetails.url}</a>
+                    </p>
+                )}
             </div>
-            )}
+            <div className="show-summary">
+                <h2>Summary</h2>
+                <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
+            </div>
+            </div>
+
             <div className="tabs-container">
                 <Tabs
                     forceRenderTabPanel
@@ -98,6 +105,7 @@ const TvMazeResults = () => {
                 </Tabs>
             </div>
         </div>
+        
     );
 };
 

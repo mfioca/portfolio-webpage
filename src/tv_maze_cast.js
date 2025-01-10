@@ -44,6 +44,22 @@ const TvMazeCast = ({ id }) => {
                             <p>No Image Available</p>
                         )}
                         <p>As: {person.character.name}</p>
+                        {person.person.url && (
+                            <a 
+                                href={person.person.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                style={{
+                                display: 'block', 
+                                marginTop: '10px', 
+                                fontSize: '0.9rem', 
+                                color: '#0078d4', 
+                                textDecoration: 'none'
+                                }}
+                            >
+                                View on TVmaze
+                            </a>
+                        )}
                     </div>
                 ))}
             </div>
