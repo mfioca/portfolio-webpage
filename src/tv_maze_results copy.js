@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
-import TvMazeCast from './tv_maze_cast';
-import TvMazeEpisodes from './tv_maze_episodes';
 
 const TvMazeResults = () => {
     const { id } = useParams(); // Get the show ID from the URL
@@ -77,26 +73,6 @@ const TvMazeResults = () => {
                 <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
             </div>
             )}
-            <div className="tabs-container">
-                <Tabs
-                    forceRenderTabPanel
-                    onSelect={(index) => {
-                        // Log the selected tab index if needed
-                        console.log('Selected tab:', index);
-                    }}
-                >
-                    <TabList>
-                        <Tab>Cast</Tab>
-                        <Tab>Episodes</Tab>
-                    </TabList>
-                    <TabPanel>
-                        <TvMazeCast id={id} />
-                    </TabPanel>
-                    <TabPanel>
-                        <TvMazeEpisodes showId={id} />
-                    </TabPanel>
-                </Tabs>
-            </div>
         </div>
     );
 };

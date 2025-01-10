@@ -359,3 +359,130 @@ tvmaze container used for show detals on results and search bar
   font-size: 1rem;
   line-height: 1.5;
 }
+
+
+
+/* TV Maze Cast
+
+/* Container for the entire cast section */
+.cast-container {
+  margin: 20px auto;
+  max-width: 800px;
+  font-family: 'Courier New', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title for the cast section */
+.cast-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0078d4;
+  text-align: center;
+}
+
+/* Grid layout for cast members */
+.cast-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 15px; /* Space between items */
+  justify-content: center; /* Center items in the grid */
+}
+
+/* Individual cast member card */
+.cast-member {
+  border: 1px solid #ccc; /* Light border around each member */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px;
+  width: 150px; /* Fixed width for uniformity */
+  text-align: center; /* Center-align the content */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for cast member cards */
+.cast-member:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Image styling */
+.cast-member img {
+  width: 100%; /* Ensure the image fits the card width */
+  border-radius: 5px; /* Match the card's rounded corners */
+  margin-bottom: 10px; /* Space between the image and text */
+}
+
+/* Name styling */
+.cast-member h3 {
+  font-size: 1.2rem;
+  margin: 10px 0; /* Add spacing around the name */
+  color: #0078d4; /* Theme color */
+}
+
+/* Character name styling */
+.cast-member p {
+  font-size: 0.9rem;
+  color: #666; /* Subtle gray for less emphasis */
+}
+
+
+
+/*tv maze episodes*/
+
+.tvmaze-episodes-container {
+  margin: 20px auto;
+  max-width: 800px;
+  font-family: 'Courier New', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.season-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.season-image {
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.episodes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.episodes-table th,
+.episodes-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.episodes-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.tabs-container :focus {
+  outline: none;
+}
+
+/* Tabs container */
+.tabs-container {
+  scroll-margin-top: 100px; /* Adjust to match your navbar or header height */
+}
