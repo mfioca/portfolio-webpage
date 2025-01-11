@@ -71,7 +71,8 @@ const TvMaze = () => {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
             </div>
             <div className="tvmaze-search-results">
-                {shows.map((show) => (
+            {shows.length > 0 ? (
+                shows.map((show) => (
                     <div key={show.id} className="result-box">
                         <h3>{show.name}</h3>
                         {show.image ? (
@@ -82,7 +83,12 @@ const TvMaze = () => {
                         {/* Use Link to navigate to the details page */}
                         <Link to={show.link}>View Details</Link>
                     </div>
-                ))}
+                ))
+            ) : (
+                <div className="tvmaze-search-placeholder">
+                    <p>No results found. Try searching for a TV show!</p>
+                </div>
+            )}
             </div>
         </div>
     );

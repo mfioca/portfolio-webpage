@@ -29,7 +29,7 @@ const TvMazeCast = ({ id }) => {
 
     return (
         <div className="cast-container">
-            <h2>Cast</h2>
+            <h2 className="section-title">Cast</h2>
             <div className="cast-grid">
                 {cast.map((person, index) => (
                     <div key={index} className="cast-member">

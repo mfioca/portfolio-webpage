@@ -216,11 +216,10 @@ body {
   flex-grow: 1; /* Allow the content to take the remaining space */
   font-family: 'Courier New'; /* A clean sans-serif font */
   margin: 10px;
-    padding: 5px;
+  padding: 5px;
   min-height: 80vh;
   justify-content: center;
 }
-
 
 /* Container for the entire search section */
 .tvmaze-search {
@@ -278,10 +277,8 @@ body {
   transform: scale(1.05); /* Slight scale-up effect on hover */
 }
 
-
-
 /* Container for the search results */
-.tvmaze-search-results {
+.tvmaze-search-results-1 {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping to the next line */
   gap: 10px; /* Space between the result items */
@@ -291,14 +288,51 @@ body {
   max-width: 1600px; /* Optional: constrain width */
 }
 
+.tvmaze-search-results {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  gap: 20px; /* Space between the result items */
+  justify-content: center; /* Center the items */
+  padding: 20px;
+  margin: 20px auto; /* Center the container on the page */
+  max-width: 1600px; /* Optional: constrain width */
+  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  border: 2px solid #ccc; /* Add a border matching the theme */
+
+}
+
+.tvmaze-search-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Set a height for the placeholder */
+  text-align: center; /* Center the text */
+  padding: 50px;
+  
+}
+
 /* Individual result box */
-.result-box {
+.result-box-1 {
   border: 1px solid #ccc; /* Light border around each result */
   border-radius: 5px; /* Rounded corners */
   padding: 15px;
   width: 150px; /* Set a fixed width for each box */
   text-align: center; /* Center-align the content */
   background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s ease; /* Smooth animation on hover */
+}
+
+.result-box {
+  border: 1px solid #ccc; /* Light border around each result */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px;
+  width: 150px; /* Set a fixed width for each box */
+  text-align: center; /* Center-align the content */
+  background-color: #ffffff; /* White background color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   transition: transform 0.2s ease; /* Smooth animation on hover */
 }
@@ -310,7 +344,7 @@ body {
 
 /* tv maze results page */
 
-.tvmaze-results-container {
+.tvmaze-results-container-1 {
   margin: 20px auto;
   max-width: 1600px;
   font-family: 'Courier New', sans-serif;
@@ -320,6 +354,18 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tvmaze-results-container {
+  margin: 20px auto;
+  max-width: 1600px;
+  font-family: 'Courier New', sans-serif;
+  color: #333;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #e0e0e0, #ffffff); /* Light gradient */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .tvmaze-results-container h1 {
@@ -333,8 +379,9 @@ body {
   line-height: 1.5;
 }
 
-/*show info flex box */
-.tvmaze-results-wrapper {
+/*Results Page */
+
+.tvmaze-results-wrapper-1 {
   display: flex;
   flex-direction: row; /* Arrange children in a row */
   flex-wrap: wrap; /* Allow wrapping to the next line if needed */
@@ -346,11 +393,38 @@ body {
   align-items: flex-start; /* Align items to the top of the row */
 }
 
+.section-title {
+  text-align: center;
+  font-size: 2.5rem; /* Emphasized font size */
+  color: #0078d4; /* Theme color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  margin: 20px 0; /* Add spacing above and below */
+  font-family: 'Courier New', monospace; /* Consistent font family */
+}
+
+.tvmaze-results-wrapper {
+  display: flex;
+  flex-direction: row; /* Arrange children in a row */
+  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  gap: 20px; /* Add space between the columns */
+  max-width: 1600px; /* Limit the total width of the container */
+  margin: 20px auto; /* Center the container on the page */
+  padding: 20px; /* Add padding for spacing */
+  font-family: 'Courier New', sans-serif; /* Consistent font */
+  align-items: flex-start; /* Align items to the top of the row */
+  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  border-radius: 8px; /* Rounded corners */
+  border: 2px solid #ccc; /* Add a border matching the theme */
+}
+
 .main-info {
   flex: 1; /* Let this column take up one part of the available space */
   display: flex;
   flex-direction: column; /* Stack title, image, and other details */
   gap: 15px; /* Add spacing between elements in this column */
+
+  
 }
 
 .main-info img {
@@ -368,12 +442,18 @@ body {
   max-width: 500px; /* Explicit max width to prevent wrapping */
 }
 
-.show-summary {
+.show-summary-1 {
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 20px;
   color: #333;
 }
+
+.show-summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 20px;
+  }
 
 @media (max-width: 768px) {
   .tvmaze-results-wrapper {
@@ -388,7 +468,7 @@ body {
 /* TV Maze Cast
 
 /* Container for the entire cast section */
-.cast-container {
+.cast-container-1 {
   margin: 20px auto;
   max-width: 800px;
   font-family: 'Courier New', sans-serif;
@@ -398,6 +478,19 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cast-container {
+  margin: 20px auto; /* Center the container */
+  max-width: 1600px; /* Limit the container width */
+  font-family: 'Courier New', sans-serif; /* Consistent font */
+  color: #333; /* Text color */
+  padding: 20px; /* Add padding inside the container */
+  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for background */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+  border: 1px solid #ccc; /* Subtle border for structure */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Title for the cast section */
@@ -468,14 +561,38 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.season-header {
+.tvmaze-episodes-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0078d4;
+  text-align: center;
+}
+
+.season-header-1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
+.season-header {
+  flex: 1; /* Let this column take up one part of the available space */
+  display: flex;
+  flex-direction: column; /* Stack title, image, and other details */
+  gap: 5px; /* Add spacing between elements in this column */
+}
+
+.season-details-extra {
+  flex: 1; /* Let this column take up one part of the available space */
+  background-color: #f9f9f9; /* Light background color */
+  padding: 15px; /* Add padding for spacing */
+  border: 1px solid #ccc; /* Optional border for separation */
+  border-radius: 10px; /* Rounded corners for consistency */
+  max-width: 500px; /* Explicit max width to prevent wrapping */
+
+}
+
 .season-image {
   max-width: 300px;
-  margin: 0 auto;
+  margin: 15px;
   display: block;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

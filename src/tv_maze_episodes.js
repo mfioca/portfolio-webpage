@@ -45,7 +45,7 @@ const TvMazeEpisodes = ({ showId }) => {
 
     return (
         <div className="tvmaze-episodes-container">
-            <h2>Episodes by Season</h2>
+            <h2 className="section-title">Episodes by Season</h2>
             <Tabs>
                 <TabList>
                     {seasons.map((season) => (
@@ -55,16 +55,21 @@ const TvMazeEpisodes = ({ showId }) => {
 
                 {seasons.map((season) => (
                     <TabPanel key={season.id}>
+
+                    <div className="tvmaze-results-wrapper">
+
                         <div className="season-header">
                             {season.image ? (
                                 <img
-                                    src={season.image.medium}
+                                    src={season.image.original}
                                     alt={`Season ${season.number}`}
                                     className="season-image"
                                 />
                             ) : (
                                 <p>No image available</p>
                             )}
+                        </div>
+                        <div className="season-details-extra">
                             <p><strong>Season {season.number}</strong></p>
                             <p>Premiere Date: {season.premiereDate || 'Unknown'}</p>
                             <p>End Date: {season.endDate || 'Unknown'}</p>
@@ -73,6 +78,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                     View Season on TVMaze
                                 </a>
                             </p>
+                        </div>
                         </div>
                         <table className="episodes-table">
                             <thead>

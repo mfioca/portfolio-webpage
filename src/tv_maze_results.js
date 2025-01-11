@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { DividerLine } from './SharedComponents.js';
 import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
 import TvMazeCast from './tv_maze_cast';
 import TvMazeEpisodes from './tv_maze_episodes';
@@ -35,51 +36,44 @@ const TvMazeResults = () => {
 
     return (
         <div className="tvmaze-body">
-            <div
-                style={{
-                    textAlign: 'center',
-                    margin: '20px auto',
-                    padding: '15px',
-                    border: '1px solid #ccc',
-                    borderRadius: '8px',
-                    backgroundColor: '#f9f9f9',
-                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                    fontFamily: "'Courier New', monospace",
-                    color: '#333',
-                }}
-            >
-                <h2 style={{ color: '#0078d4', marginBottom: '10px' }}>Page Under Construction</h2>
-                <p style={{ fontSize: '1rem', lineHeight: '1.5' }}>
-                    We’re still building out this section. Please check back soon for more details!
+            <div className="Intro">
+                <h1 className="shadow">Explore Your Favorite TV Shows</h1>
+                <p>
+                    <strong className="shadow">Welcome to the Details Page:</strong>&nbsp;&nbsp;Dive deeper into the world of your favorite TV shows. Here you’ll find detailed 
+                    information about casts, episodes, seasons, and more, all sourced from the incredible database at <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a>. Whether you're curious about episode summaries or want to explore a show's rich history, this page has you covered.
+                </p>
+                <p>
+                    This section is designed to be an immersive experience, bringing together clean design and the power of real-time data. Stay tuned as we continue to enhance and expand these features for even more functionality!
                 </p>
             </div>
-            <h1>{showDetails.name}</h1>
-        <div className="tvmaze-results-wrapper">
-            <div className="main-info">
-                {showDetails.image && showDetails.image.original && (
-                    <img
-                        src={showDetails.image.original}
-                        alt={showDetails.name}
-                    />
-                )}
-            </div>
-            <div className="show-details-extra">
-                <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
-                <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
-                <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>
-                <p><strong>Network:</strong> {showDetails.network ? `${showDetails.network.name} (${showDetails.network.country.code})` : 'N/A'}</p>
-                <p><strong>Premiered:</strong> {showDetails.premiered || 'N/A'}</p>
-                <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
-                {showDetails.url && (
-                    <p>
-                        More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">{showDetails.url}</a>
-                    </p>
-                )}
-            </div>
-            <div className="show-summary">
-                <h2>Summary</h2>
-                <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
-            </div>
+            <DividerLine />
+            <h1 className="section-title">{showDetails.name}</h1>
+            <div className="tvmaze-results-wrapper">
+                <div className="main-info">
+                    {showDetails.image && showDetails.image.original && (
+                        <img
+                            src={showDetails.image.original}
+                            alt={showDetails.name}
+                        />
+                    )}
+                </div>
+                <div className="show-details-extra">
+                    <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
+                    <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
+                    <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>
+                    <p><strong>Network:</strong> {showDetails.network ? `${showDetails.network.name} (${showDetails.network.country.code})` : 'N/A'}</p>
+                    <p><strong>Premiered:</strong> {showDetails.premiered || 'N/A'}</p>
+                    <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
+                    {showDetails.url && (
+                        <p>
+                            More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">{showDetails.url}</a>
+                        </p>
+                    )}
+                </div>
+                <div className="show-summary">
+                    <h2>Summary</h2>
+                    <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
+                </div>
             </div>
             <div className="tabs-container">
                 <Tabs
@@ -102,7 +96,6 @@ const TvMazeResults = () => {
                 </Tabs>
             </div>
         </div>
-        
     );
 };
 
