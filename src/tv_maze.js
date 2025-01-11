@@ -56,7 +56,7 @@ const TvMaze = () => {
                 </p>
             </div>
             <DividerLine />
-            <div className="tvmaze-container">
+            <div className="tvmaze-search">
                 <h1>TV Show Search</h1>
                 <form onSubmit={handleSearch}>
                     <input
@@ -70,7 +70,7 @@ const TvMaze = () => {
                 </form>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
             </div>
-            <div className="search-results-container">
+            <div className="tvmaze-search-results">
                 {shows.map((show) => (
                     <div key={show.id} className="result-box">
                         <h3>{show.name}</h3>

@@ -212,8 +212,18 @@ body {
 /*                            TV Maze                                              */
 /***********************************************************************************/
 
+.tvmaze-body  {
+  flex-grow: 1; /* Allow the content to take the remaining space */
+  font-family: 'Courier New'; /* A clean sans-serif font */
+  margin: 10px;
+    padding: 5px;
+  min-height: 80vh;
+  justify-content: center;
+}
+
+
 /* Container for the entire search section */
-.tvmaze-container {
+.tvmaze-search {
   margin: 20px auto;
   max-width: 800px;
   text-align: center;
@@ -227,7 +237,7 @@ body {
 }
 
 /* Title styles */
-.tvmaze-container h1 {
+.tvmaze-search h1 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #0078d4; /* Theme color for the title */
@@ -235,7 +245,7 @@ body {
 }
 
 /* Search bar input */
-.tvmaze-container input[type="text"] {
+.tvmaze-search input[type="text"] {
   width: 90%; /* Wider input box for easier typing */
   padding: 10px;
   font-size: 1rem;
@@ -246,13 +256,13 @@ body {
   transition: border-color 0.3s ease;
 }
 
-.tvmaze-container input[type="text"]:focus {
+.tvmaze-search input[type="text"]:focus {
   border-color: #0078d4; /* Highlighted border on focus */
   outline: none; /* Remove default outline */
 }
 
 /* Search button */
-.tvmaze-container button {
+.tvmaze-search button {
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
@@ -263,43 +273,15 @@ body {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.tvmaze-container button:hover {
+.tvmaze-search button:hover {
   background-color: #005a9e; /* Darker shade on hover */
   transform: scale(1.05); /* Slight scale-up effect on hover */
 }
 
-/* Results list 
-tvmaze container used for show detals on results and search bar
-*/
-.tvmaze-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 300px; /* Limit height to avoid long scrolling */
-  overflow-y: auto; /* Enable vertical scrolling for long lists */
-  border: 1px solid #ddd; /* Add a border for separation */
-  border-radius: 5px;
-}
 
-.tvmaze-container ul li {
-  padding: 10px;
-  font-size: 1rem;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-  transition: background-color 0.3s ease;
-}
-
-.tvmaze-container ul li:hover {
-  background-color: #f5f5f5; /* Light hover effect */
-  cursor: pointer;
-}
-
-.tvmaze-container ul li:last-child {
-  border-bottom: none; /* Remove the border from the last item */
-}
 
 /* Container for the search results */
-.search-results-container {
+.tvmaze-search-results {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping to the next line */
   gap: 10px; /* Space between the result items */
@@ -328,15 +310,6 @@ tvmaze container used for show detals on results and search bar
 
 /* tv maze results page */
 
-.tvmaze-body  {
-  flex-grow: 1; /* Allow the content to take the remaining space */
-  font-family: 'Courier New'; /* A clean sans-serif font */
-  margin: 10px;
-    padding: 5px;
-  min-height: 80vh;
-  justify-content: center;
-}
-
 .tvmaze-results-container {
   margin: 20px auto;
   max-width: 1600px;
@@ -360,7 +333,57 @@ tvmaze container used for show detals on results and search bar
   line-height: 1.5;
 }
 
+/*show info flex box */
+.tvmaze-results-wrapper {
+  display: flex;
+  flex-direction: row; /* Arrange children in a row */
+  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  gap: 20px; /* Add space between the columns */
+  max-width: 1600px; /* Limit the total width of the container */
+  margin: 20px auto; /* Center the container on the page */
+  padding: 20px; /* Add padding for spacing */
+  font-family: 'Courier New', sans-serif; /* Consistent font */
+  align-items: flex-start; /* Align items to the top of the row */
+}
 
+.main-info {
+  flex: 1; /* Let this column take up one part of the available space */
+  display: flex;
+  flex-direction: column; /* Stack title, image, and other details */
+  gap: 15px; /* Add spacing between elements in this column */
+}
+
+.main-info img {
+  width: 100%; /* Ensure the image scales to fit the column */
+  max-width: 500px; /* Limit the maximum width of the image */
+  border-radius: 10px; /* Add rounded corners to the image */
+}
+
+.show-details-extra {
+  flex: 1; /* Let this column take up one part of the available space */
+  background-color: #f9f9f9; /* Light background color */
+  padding: 15px; /* Add padding for spacing */
+  border: 1px solid #ccc; /* Optional border for separation */
+  border-radius: 10px; /* Rounded corners for consistency */
+  max-width: 500px; /* Explicit max width to prevent wrapping */
+}
+
+.show-summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 20px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .tvmaze-results-wrapper {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .main-info img {
+    margin: 0 auto; /* Center the image for better alignment */
+  }
+}
 
 /* TV Maze Cast
 
@@ -431,8 +454,6 @@ tvmaze container used for show detals on results and search bar
   color: #666; /* Subtle gray for less emphasis */
 }
 
-
-
 /*tv maze episodes*/
 
 .tvmaze-episodes-container {
@@ -485,61 +506,4 @@ tvmaze container used for show detals on results and search bar
 /* Tabs container */
 .tabs-container {
   scroll-margin-top: 100px; /* Adjust to match your navbar or header height */
-}
-
-
-/*show info flex box */
-.tvmaze-results-wrapper {
-  display: flex;
-  flex-direction: row; /* Arrange children in a row */
-  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-  gap: 20px; /* Add space between the columns */
-  max-width: 1600px; /* Limit the total width of the container */
-  margin: 20px auto; /* Center the container on the page */
-  padding: 20px; /* Add padding for spacing */
-  font-family: 'Courier New', sans-serif; /* Consistent font */
-  align-items: flex-start; /* Align items to the top of the row */
-}
-
-.main-info {
-  flex: 1; /* Let this column take up one part of the available space */
-  display: flex;
-  flex-direction: column; /* Stack title, image, and other details */
-  gap: 15px; /* Add spacing between elements in this column */
-}
-
-.main-info img {
-  width: 100%; /* Ensure the image scales to fit the column */
-  max-width: 500px; /* Limit the maximum width of the image */
-  border-radius: 10px; /* Add rounded corners to the image */
-}
-
-.show-details-extra {
-  flex: 1; /* Let this column take up one part of the available space */
-  background-color: #f9f9f9; /* Light background color */
-  padding: 15px; /* Add padding for spacing */
-  border: 1px solid #ccc; /* Optional border for separation */
-  border-radius: 10px; /* Rounded corners for consistency */
-  max-width: 500px; /* Explicit max width to prevent wrapping */
-}
-
-.show-summary {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 20px;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .tvmaze-results-wrapper {
-    flex-direction: column; /* Stack elements vertically on small screens */
-  }
-
-  .main-info img {
-    margin: 0 auto; /* Center the image for better alignment */
-  }
-}
-
-.additional-info {
-  margin-top: 20px; /* Add spacing above the summary and link */
 }

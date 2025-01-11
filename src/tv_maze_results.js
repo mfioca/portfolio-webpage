@@ -53,11 +53,9 @@ const TvMazeResults = () => {
                     We’re still building out this section. Please check back soon for more details!
                 </p>
             </div>
-        
             <h1>{showDetails.name}</h1>
         <div className="tvmaze-results-wrapper">
             <div className="main-info">
-                
                 {showDetails.image && showDetails.image.original && (
                     <img
                         src={showDetails.image.original}
@@ -83,7 +81,6 @@ const TvMazeResults = () => {
                 <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
             </div>
             </div>
-
             <div className="tabs-container">
                 <Tabs
                     forceRenderTabPanel
