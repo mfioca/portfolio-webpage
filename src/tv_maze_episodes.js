@@ -52,33 +52,30 @@ const TvMazeEpisodes = ({ showId }) => {
                         <Tab key={season.id}>Season {season.number}</Tab>
                     ))}
                 </TabList>
-
                 {seasons.map((season) => (
                     <TabPanel key={season.id}>
-
-                    <div className="tvmaze-results-wrapper">
-
-                        <div className="season-header">
-                            {season.image ? (
-                                <img
-                                    src={season.image.original}
-                                    alt={`Season ${season.number}`}
-                                    className="season-image"
-                                />
-                            ) : (
-                                <p>No image available</p>
-                            )}
-                        </div>
-                        <div className="season-details-extra">
-                            <p><strong>Season {season.number}</strong></p>
-                            <p>Premiere Date: {season.premiereDate || 'Unknown'}</p>
-                            <p>End Date: {season.endDate || 'Unknown'}</p>
-                            <p>
-                                <a href={season.url} target="_blank" rel="noopener noreferrer">
-                                    View Season on TVMaze
-                                </a>
-                            </p>
-                        </div>
+                        <div className="tvmaze-results-wrapper">
+                            <div className="season-header">
+                                {season.image ? (
+                                    <img
+                                        src={season.image.original}
+                                        alt={`Season ${season.number}`}
+                                        className="season-image"
+                                    />
+                                ) : (
+                                    <p>No image available</p>
+                                )}
+                            </div>
+                            <div className="season-details-extra">
+                                <p><strong>Season {season.number}</strong></p>
+                                <p>Premiere Date: {season.premiereDate || 'Unknown'}</p>
+                                <p>End Date: {season.endDate || 'Unknown'}</p>
+                                <p>
+                                    <a href={season.url} target="_blank" rel="noopener noreferrer">
+                                        View Season on TVMaze
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                         <table className="episodes-table">
                             <thead>

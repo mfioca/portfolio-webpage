@@ -217,7 +217,7 @@ body {
   font-family: 'Courier New'; /* A clean sans-serif font */
   margin: 10px;
   padding: 5px;
-  min-height: 80vh;
+  min-height: 100vh;
   justify-content: center;
 }
 
@@ -278,15 +278,6 @@ body {
 }
 
 /* Container for the search results */
-.tvmaze-search-results-1 {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping to the next line */
-  gap: 10px; /* Space between the result items */
-  justify-content: center; /* Center the items */
-  padding: 20px;
-  margin: 20px auto; /* Center the container on the page */
-  max-width: 1600px; /* Optional: constrain width */
-}
 
 .tvmaze-search-results {
   display: flex;
@@ -305,7 +296,7 @@ body {
 }
 
 .tvmaze-search-placeholder {
-  display: flex;
+  
   justify-content: center;
   align-items: center;
   height: 50px; /* Set a height for the placeholder */
@@ -315,16 +306,6 @@ body {
 }
 
 /* Individual result box */
-.result-box-1 {
-  border: 1px solid #ccc; /* Light border around each result */
-  border-radius: 5px; /* Rounded corners */
-  padding: 15px;
-  width: 150px; /* Set a fixed width for each box */
-  text-align: center; /* Center-align the content */
-  background-color: #f9f9f9; /* Light background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: transform 0.2s ease; /* Smooth animation on hover */
-}
 
 .result-box {
   border: 1px solid #ccc; /* Light border around each result */
@@ -343,18 +324,6 @@ body {
 }
 
 /* tv maze results page */
-
-.tvmaze-results-container-1 {
-  margin: 20px auto;
-  max-width: 1600px;
-  font-family: 'Courier New', sans-serif;
-  color: #333;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .tvmaze-results-container {
   margin: 20px auto;
@@ -381,18 +350,6 @@ body {
 
 /*Results Page */
 
-.tvmaze-results-wrapper-1 {
-  display: flex;
-  flex-direction: row; /* Arrange children in a row */
-  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-  gap: 20px; /* Add space between the columns */
-  max-width: 1600px; /* Limit the total width of the container */
-  margin: 20px auto; /* Center the container on the page */
-  padding: 20px; /* Add padding for spacing */
-  font-family: 'Courier New', sans-serif; /* Consistent font */
-  align-items: flex-start; /* Align items to the top of the row */
-}
-
 .section-title {
   text-align: center;
   font-size: 2.5rem; /* Emphasized font size */
@@ -406,10 +363,10 @@ body {
   display: flex;
   flex-direction: row; /* Arrange children in a row */
   flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-  gap: 20px; /* Add space between the columns */
+  gap: 10px; /* Add space between the columns */
   max-width: 1600px; /* Limit the total width of the container */
-  margin: 20px auto; /* Center the container on the page */
-  padding: 20px; /* Add padding for spacing */
+  margin: 10px; /* Center the container on the page */
+  padding: 10px; /* Add padding for spacing */
   font-family: 'Courier New', sans-serif; /* Consistent font */
   align-items: flex-start; /* Align items to the top of the row */
   background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
@@ -442,43 +399,15 @@ body {
   max-width: 500px; /* Explicit max width to prevent wrapping */
 }
 
-.show-summary-1 {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 20px;
-  color: #333;
-}
-
 .show-summary {
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 20px;
   }
 
-@media (max-width: 768px) {
-  .tvmaze-results-wrapper {
-    flex-direction: column; /* Stack elements vertically on small screens */
-  }
-
-  .main-info img {
-    margin: 0 auto; /* Center the image for better alignment */
-  }
-}
-
 /* TV Maze Cast
 
 /* Container for the entire cast section */
-.cast-container-1 {
-  margin: 20px auto;
-  max-width: 800px;
-  font-family: 'Courier New', sans-serif;
-  color: #333;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .cast-container {
   margin: 20px auto; /* Center the container */
@@ -568,22 +497,18 @@ body {
   text-align: center;
 }
 
-.season-header-1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .season-header {
   flex: 1; /* Let this column take up one part of the available space */
   display: flex;
   flex-direction: column; /* Stack title, image, and other details */
   gap: 5px; /* Add spacing between elements in this column */
-}
+  }
 
 .season-details-extra {
   flex: 1; /* Let this column take up one part of the available space */
   background-color: #f9f9f9; /* Light background color */
   padding: 15px; /* Add padding for spacing */
+  margin: 10px;
   border: 1px solid #ccc; /* Optional border for separation */
   border-radius: 10px; /* Rounded corners for consistency */
   max-width: 500px; /* Explicit max width to prevent wrapping */
@@ -592,7 +517,7 @@ body {
 
 .season-image {
   max-width: 300px;
-  margin: 15px;
+  margin: 10px;
   display: block;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -623,4 +548,35 @@ body {
 /* Tabs container */
 .tabs-container {
   scroll-margin-top: 100px; /* Adjust to match your navbar or header height */
+}
+
+
+@media (max-width: 775px) {
+  .tvmaze-results-wrapper {
+    justify-content: center; /* Center horizontally */
+    margin: 10px auto;
+    display: block;
+  }
+  .season-image,
+  .main-info img{
+    margin: 10px auto;
+  }
+  .season-details-extra,
+  .show-details-extra {
+    justify-content: center; /* Center horizontally */
+    margin: 10px auto;
+    display: block;
+  }
+  .episodes-table {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+    display: block; /* Ensure the table behaves correctly within the container */
+    white-space: nowrap; /* Prevent text wrapping within cells */
+    border-collapse: collapse; /* Maintain clean table styling */
+  }
+
+  .episodes-table th,
+  .episodes-table td {
+    min-width: 120px; /* Optional: Set a minimum width for each column */
+  }
 }

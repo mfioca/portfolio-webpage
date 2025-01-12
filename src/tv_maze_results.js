@@ -66,7 +66,7 @@ const TvMazeResults = () => {
                     <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
                     {showDetails.url && (
                         <p>
-                            More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">{showDetails.url}</a>
+                            More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
                         </p>
                     )}
                 </div>
