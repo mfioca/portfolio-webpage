@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import { DividerLine } from './SharedComponents.js';
+import './Tv_Maze/tv_maze.css';
 
 const TvMaze = () => {
     const [searchTerm, setSearchTerm] = useState('');

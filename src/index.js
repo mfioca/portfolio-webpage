@@ -10,7 +10,7 @@ import AboutPage from './About'; // Import your Home component if you create one
 import AIShowcase from './ai_showcase';
 import reportWebVitals from './reportWebVitals';
 import TvMaze from './tv_maze'
-import TvMazeResults from './tv_maze_results'
+import TvMazeResults from './Tv_Maze/tv_maze_results';
 
 
 

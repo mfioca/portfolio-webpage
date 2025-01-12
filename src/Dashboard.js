@@ -1,4 +1,4 @@
-import './Dashboard.css';
+import './dashboard/Dashboard.css';
 import { Provider } from 'react-redux'; // Import Provider
 import store from './store'; // Adjust the path to your store file
 import Graph from './dashboard/Graph';
@@ -16,9 +16,6 @@ const TextSection = ({ content }) => {
     );
 };
 
-/*****************************************************/
-/*                  Main Display                     */
-/*****************************************************/
 
 function Dashboard() {
     return (

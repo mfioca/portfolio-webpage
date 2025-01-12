@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { DividerLine } from './SharedComponents.js';
+import { DividerLine } from '../SharedComponents.js';
 import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
-import TvMazeCast from './tv_maze_cast';
-import TvMazeEpisodes from './tv_maze_episodes';
+import TvMazeCast from './tv_maze_cast.js';
+import TvMazeEpisodes from './tv_maze_episodes.js';
 
 const TvMazeResults = () => {
     const { id } = useParams(); // Get the show ID from the URL
@@ -48,7 +48,7 @@ const TvMazeResults = () => {
             </div>
             <DividerLine />
             <h1 className="section-title">{showDetails.name}</h1>
-            <div className="tvmaze-results-wrapper">
+            <div className="tvmaze-results-intro">
                 <div className="main-info">
                     {showDetails.image && showDetails.image.original && (
                         <img
@@ -57,7 +57,7 @@ const TvMazeResults = () => {
                         />
                     )}
                 </div>
-                <div className="show-details-extra">
+                <div className="show-details">
                     <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
                     <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
                     <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>

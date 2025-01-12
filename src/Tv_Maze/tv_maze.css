@@ -1,0 +1,340 @@
+.tvmaze-body  {
+    flex-grow: 1; /* Allow the content to take the remaining space */
+    font-family: 'Courier New'; /* A clean sans-serif font */
+    margin: 10px;
+    padding: 5px;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem; /* Emphasized font size */
+    color: #0078d4; /* Theme color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 20px 0; /* Add spacing above and below */
+    font-family: 'Courier New', monospace; /* Consistent font family */
+}
+
+/***********************************************************************************/
+/*                            Search Section                                       */
+/***********************************************************************************/
+  
+.tvmaze-search {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    font-family: 'Courier New', sans-serif; /* Match the font style in index.css */
+    color: #333;
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast */
+    border: 1px solid #ccc; /* Subtle border for separation */
+    border-radius: 8px; /* Rounded corners for consistency */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.tvmaze-search h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0078d4; /* Theme color for the title */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.tvmaze-search input[type="text"] {
+    width: 90%; /* Wider input box for easier typing */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.tvmaze-search input[type="text"]:focus {
+    border-color: #0078d4; /* Highlighted border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.tvmaze-search button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0078d4; /* Theme color for button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tvmaze-search button:hover {
+    background-color: #005a9e; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Container for the search results */
+
+.tvmaze-search-results {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    gap: 20px; /* Space between the result items */
+    justify-content: center; /* Center the items */
+    padding: 20px;
+    margin: 20px auto; /* Center the container on the page */
+    max-width: 1600px; /* Optional: constrain width */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #ccc; /* Add a border matching the theme */
+}
+
+.tvmaze-search-placeholder {
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Set a height for the placeholder */
+    text-align: center; /* Center the text */
+    padding: 50px;
+}
+
+/* Individual result box */
+
+.result-box {
+    border: 1px solid #ccc; /* Light border around each result */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    width: 150px; /* Set a fixed width for each box */
+    text-align: center; /* Center-align the content */
+    background-color: #ffffff; /* White background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease; /* Smooth animation on hover */
+}
+
+.result-box:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+  
+/***********************************************************************************/
+/*                            Results Page                                         */
+/***********************************************************************************/
+
+.tvmaze-results-intro {
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 10px; /* Add space between the columns */
+    max-width: 1600px; /* Limit the total width of the container */
+    margin: 10px; /* Center the container on the page */
+    padding: 10px; /* Add padding for spacing */
+    font-family: 'Courier New', sans-serif; /* Consistent font */
+    align-items: flex-start; /* Align items to the top of the row */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #ccc; /* Add a border matching the theme */
+}
+  
+.main-info {
+    flex: 1; /* Let this column take up one part of the available space */
+    display: flex;
+    flex-direction: column; /* Stack title, image, and other details */
+    gap: 15px; /* Add spacing between elements in this column */
+}
+  
+.main-info img {
+    width: 100%; /* Ensure the image scales to fit the column */
+    max-width: 500px; /* Limit the maximum width of the image */
+    border-radius: 10px; /* Add rounded corners to the image */
+}
+  
+.show-details {
+    flex: 1; /* Let this column take up one part of the available space */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 15px; /* Add padding for spacing */
+    border: 1px solid #ccc; /* Optional border for separation */
+    border-radius: 10px; /* Rounded corners for consistency */
+    max-width: 500px; /* Explicit max width to prevent wrapping */
+}
+  
+.show-summary {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.tabs-container :focus {
+    outline: none;
+}
+  
+/* Tabs container */
+.tabs-container {
+    scroll-margin-top: 100px; /* Adjust to match your navbar or header height */
+}
+  
+/***********************************************************************************/
+/*                            Cast Page                                            */
+/***********************************************************************************/
+  
+.cast-container {
+    margin: 20px auto; /* Center the container */
+    max-width: 1600px; /* Limit the container width */
+    font-family: 'Courier New', sans-serif; /* Consistent font */
+    color: #333; /* Text color */
+    padding: 20px; /* Add padding inside the container */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for background */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+    border: 1px solid #ccc; /* Subtle border for structure */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+  
+/* Title for the cast section */
+.cast-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0078d4;
+    text-align: center;
+  }
+  
+/* Grid layout for cast members */
+.cast-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 15px; /* Space between items */
+    justify-content: center; /* Center items in the grid */
+}
+  
+/* Individual cast member card */
+.cast-member {
+    border: 1px solid #ccc; /* Light border around each member */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    width: 150px; /* Fixed width for uniformity */
+    text-align: center; /* Center-align the content */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+}
+  
+/* Hover effect for cast member cards */
+.cast-member:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+  
+/* Image styling */
+.cast-member img {
+    width: 100%; /* Ensure the image fits the card width */
+    border-radius: 5px; /* Match the card's rounded corners */
+    margin-bottom: 10px; /* Space between the image and text */
+}
+  
+/* Name styling */
+.cast-member h3 {
+    font-size: 1.2rem;
+    margin: 10px 0; /* Add spacing around the name */
+    color: #0078d4; /* Theme color */
+}
+  
+/* Character name styling */
+.cast-member p {
+    font-size: 0.9rem;
+    color: #666; /* Subtle gray for less emphasis */
+}
+  
+/***********************************************************************************/
+/*                            Episodes Page                                        */
+/***********************************************************************************/
+
+.tvmaze-episodes-container {
+    margin: 20px auto;
+    max-width: 1600px;
+    font-family: 'Courier New', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.tvmaze-episodes-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0078d4;
+    text-align: center;
+}
+
+.season-header {
+    flex: 1; /* Let this column take up one part of the available space */
+    display: flex;
+    flex-direction: column; /* Stack title, image, and other details */
+    gap: 5px; /* Add spacing between elements in this column */
+}
+
+.season-image {
+    max-width: 300px;
+    margin: 10px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.season-details-extra {
+    flex: 1; /* Let this column take up one part of the available space */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 15px; /* Add padding for spacing */
+    margin: 10px;
+    border: 1px solid #ccc; /* Optional border for separation */
+    border-radius: 10px; /* Rounded corners for consistency */
+    max-width: 500px; /* Explicit max width to prevent wrapping */
+}
+  
+.episodes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+.episodes-table th,
+.episodes-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+  
+.episodes-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+  
+@media (max-width: 775px) {
+    .tvmaze-results-intro {
+        justify-content: center; /* Center horizontally */
+        margin: 10px auto;
+        display: block;
+    }
+    .season-image,
+    .main-info img{
+        margin: 10px auto;
+    }
+    .season-details-extra,
+    .show-details {
+        justify-content: center; /* Center horizontally */
+        margin: 10px auto;
+        display: block;
+    }
+    .episodes-table {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+        display: block; /* Ensure the table behaves correctly within the container */
+        white-space: nowrap; /* Prevent text wrapping within cells */
+        border-collapse: collapse; /* Maintain clean table styling */
+    }
+
+    .episodes-table th,
+    .episodes-table td {
+        min-width: 120px; /* Optional: Set a minimum width for each column */
+    }
+}
