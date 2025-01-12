@@ -87,7 +87,7 @@
 .chart3-data-box {
   justify-content: center; /* Center the content within the data box */
   align-items: center; /* Center vertically */
-  height: 10px; /* Set height */
+  height: 35px; /* Set height */
   padding: 5px; /* Adjust padding */
   margin-bottom: 5px; 
   border-radius: 4px; /* Rounded corners */
