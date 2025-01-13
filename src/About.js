@@ -131,7 +131,7 @@ const About = () => {
                             <>
                                 <p>
                                     Hello! I&apos;m a passionate creator who thrives on challenges and revels in the art of building intricate virtual worlds. 
-                                    Whether I&apos;m reconstructing the majestic city of Whiterun in Minecraft or delving into the complexities of data analytics, 
+                                    Whether I&apos;m reconstructing the majestic city of Whiterun in <i>Minecraft</i> or delving into the complexities of data analytics, 
                                     my approach is always methodical yet imaginative. With a knack for detail, I often find myself lost in the enchanting process 
                                     of transforming mere ideas into tangible structures, both in the digital realm and beyond.
                                 </p>
@@ -143,7 +143,7 @@ const About = () => {
                                 </p>
                                 <p>
                                     My journey reflects a commitment to continuous improvement and exploration, where each project completed fuels my motivation to keep pushing 
-                                    boundaries. With each new build, whether it&apos;s a complex data visualization or an elaborate Minecraft realm, I enjoy building new things 
+                                    boundaries. With each new build, whether it&apos;s a complex data visualization or an elaborate <i>Minecraft</i> realm, I enjoy building new things 
                                     and seeing the results of my efforts. I believe in the power of curiosity and innovation, and I approach each endeavor with a spirit of adventure 
                                     and a touch of humor, ready to tackle whatever comes next!
                                 </p>
@@ -160,8 +160,9 @@ const About = () => {
                             <>
                                 <ul>
                                     <li>
-                                        In 6 months, I learned and built a fairly complex Windows desktop widget suite themed around the Skyrim video game, 
-                                        which includes a setup widget that controls almost everything, containing close to 10,000 lines of code using .ini and .inc files.
+                                        In just six months, I learned to build with the Windows based program Rainmeter while creating a complex widget suite 
+                                        themed around The <i>Elder Scrolls: Skyrim</i>. This suite features a setup widget that controls nearly every aspect of the interface, 
+                                        utilizing close to 10,000 lines of code across .ini and .inc files.
                                     </li>
                                     <li>
                                         In 6 months, I taught myself how to build a multipage webpage using React and Next.js, which included Bootstrap 
@@ -179,10 +180,6 @@ const About = () => {
                                         featuring 3 custom graphs, an adaptive analysis section, and a display of the CSV data. A portion of that time 
                                         was spent going back over the code due to multiple data parsing, and implementing Redux. Another significant 
                                         portion was dedicated to learning how to collaborate effectively with ChatGPT on development and troubleshooting.
-                                    </li>
-                                    <li>
-                                        In just a few days, I explored the OpenAI Playground training materials and examples from my brother, 
-                                        enabling me to start developing fairly advanced custom prompt engineering systems.
                                     </li>
                                 </ul>
                             </>
@@ -223,7 +220,7 @@ const About = () => {
                                     I have a strong preference for games that balance storytelling with well-executed mechanics, favoring immersive experiences 
                                     that avoid unnecessary handholding while respecting player direction. My interests span a range of genres—from atmospheric 
                                     horror to RPG and stealth—but my passion for tactical and strategic elements shines through. Whether it’s the precise combat 
-                                    mechanics in *Elden Ring*, the immersive storytelling of *Cyberpunk 2077*, or the methodical pace found in classics like *Thief*, 
+                                    mechanics in <i>Elden Ring</i>, the immersive storytelling of <i>Cyberpunk 2077</i>, or the methodical pace found in classics like <i>Thief</i>, 
                                     I appreciate games that prioritize authentic gameplay.
                                 </p>
                                 <p>
@@ -246,13 +243,13 @@ const About = () => {
                         description={
                             <>
                                 <p>
-                                    As a fan of The Elder Scrolls V: Skyrim, I decided to take on the challenge of recreating the iconic town of Whiterun in Minecraft. 
-                                    This project took me about a year and a half, during which I spent time running both games simultaneously, using my character in Skyrim 
-                                    to study the scale, architectural details, and other nuances, ensuring every element was accurately represented in the Minecraft version. 
+                                    As a fan of The <i>Elder Scrolls V: Skyrim</i>, I took on the challenge of recreating the iconic town of Whiterun in <i>Minecraft</i>. This project 
+                                    took about a year and a half to complete, during which I ran both games simultaneously. Using my Skyrim character, I studied the scale, 
+                                    architectural details, and other nuances to ensure an accurate representation in the <i>Minecraft</i> version.
                                 </p>
                                 <p>
                                     This project highlights my ability to approach challenges with precision, patience, and thorough planning. By meticulously studying the scale 
-                                    and design of Whiterun and translating it into Minecraft, I honed skills such as attention to detail, spatial awareness, and creative problem-solving. 
+                                    and design of Whiterun and translating it into <i>Minecraft</i>, I honed skills such as attention to detail, spatial awareness, and creative problem-solving. 
                                     The process required persistence and the ability to adapt, as I constantly refined my work to match the original design. These traits—along with my passion 
                                     for tackling complex tasks—reflect how I approach professional challenges, striving for accuracy and excellence in every detail.
                                 </p>

@@ -113,10 +113,7 @@
       max-width: 300px; /* Remove max-width constraint */
       min-width: 200px;
   }
-
 }
-
-
 
 /***********************************************************************************/
 /*               CSV data display with 2 responsive charts                         */
@@ -131,7 +128,7 @@
   border: 5px solid transparent; /* Add a transparent border */
   border-radius: 10px; /* Rounded corners for a smoother look */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+  /*background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
 }
 
 .dashboard-container ul {
@@ -172,27 +169,91 @@
   margin-bottom: 10px; /* Add spacing below the title */
 }
 
-.graph-wrapper {
+.graph-wrapper-2 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  border: 10px solid pink;
+  justify-content: center; /* Ensure child elements are horizontally centered */
 }
 
-.donut-chart {
+.graph-wrapper {
+  display: flex;
+  justify-content: center; /* Center graphs horizontally */
+  align-items: flex-start; /* Align items at the top */
+  gap: 0; /* Remove unnecessary space between graphs */
+  flex-wrap: wrap; /* Allow wrapping when necessary */
+  margin: 0 auto; /* Center the container itself */
+  padding: 0; /* Remove padding */
+}
+
+.graph-wrapper-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ensure child elements are horizontally centered */
+  align-content: flex-start; /* Align all items towards the top */
+  padding: 10px; /* Add padding if needed */
+  gap: 2000px; /* Space between items */
+}
+
+.donut-chart-1 {
   flex-shrink: 1;
   flex: 0 0 40%; /* Set a fixed basis for the donut chart (60% of the width) */
   max-width: 400px; /* Control the maximum size of the donut chart */
-  margin: auto; /* Add some spacing around the chart */
+  /*margin: auto; /* Add some spacing around the chart */
+  padding: 20px; /* Add padding if needed */
+}
+
+.donut-chart {
+  flex: 1 1 45%; /* Allow flexibility and set a basis width */
+  max-width: 45%; /* Ensure graphs don’t exceed this width */
+  min-width: 350px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin: 10px; /* Minimal margin to prevent overlap */
+  padding: 10px;
+}
+
+.bar-chart-1 {
+  flex-shrink: 1;
+  flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
+  min-width: 300px; /* Control the maximum size of the bar chart */
+  max-width: 400px;
+  /*max-width: 400px;
+  height: 500px;
+  border: 10px solid pink;
+  /*margin: auto; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
 
 .bar-chart {
-  flex-shrink: 1;
-  /*flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
-  /*min-width: 400px; /* Control the maximum size of the bar chart */
-  max-width: 400px;
-  margin: auto; /* Add some spacing around the chart */
-  padding: 20px; /* Add padding if needed */
+  flex: 1 1 45%; /* Allow flexibility and set a basis width */
+  max-width: 45%; /* Ensure graphs don’t exceed this width */
+  min-width: 350px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin: 10px; /* Minimal margin to prevent overlap */
+  padding: 10px;
+}
+
+.bar-chart-1 {
+  display: flex;
+  flex-direction: column; /* Stack the title and chart vertically */
+  align-items: center; /* Center align the chart */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.bar-chart-title {
+  height: 50px; /* Allocate 20% of the height to the title */
+  display: flex;
+  justify-content: center;
+  text-align: center; /* Center text */
+  /*background-color: pink;*/
+}
+
+.bar-chart-content {
+  height: 450px; /* Allocate 80% of the height to the chart area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-color: yellow;*/
 }
 
 .dashboard-csv {
@@ -202,7 +263,6 @@
   margin-top: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
-
 
 .filtered-data {
   max-height: 500px; /* Set a maximum height for the container */
@@ -244,7 +304,6 @@
   font-weight: bold; /* Bold text for headers */
   text-align: center; /* Center-align header text */
 }
-
 
 .csv-data tr:hover {
   background-color: #f5f5f5; /* Highlight row on hover */

@@ -215,40 +215,52 @@ const CSVdata = () => {
                 </div>
                 <div className="graph-wrapper">
                     <div className="donut-chart">
-                        <h3>Top Applications - Donut Chart</h3>
-                        <Doughnut
-                            data={createChartData(top5Applications)}
-                            options={{
-                                plugins: {
-                                    tooltip: {
-                                        callbacks: {
-                                            label: (context) => {
-                                                const label = context.dataset.label || '';
-                                                const value = context.parsed; // Get the value for the Doughnut chart
-                                                return `${label}: ${value.toFixed(2)} hours`; // Format the tooltip label to two decimal points
+                        <div className="bar-chart-title">
+                        <h3>Top Applications</h3>
+                        </div>
+                        <div className="bar-chart-content">
+                            <Doughnut
+                                data={createChartData(top5Applications)}
+                                options={{
+                                    plugins: {
+                                        tooltip: {
+                                            callbacks: {
+                                                label: (context) => {
+                                                    const label = context.dataset.label || '';
+                                                    const value = context.parsed; // Get the value for the Doughnut chart
+                                                    return `${label}: ${value.toFixed(2)} hours`; // Format the tooltip label to two decimal points
+                                                },
                                             },
                                         },
+                                        datalabels: {
+                                            display: true, // Show data labels for the Doughnut chart
+                                            color: 'black', // Color of the data labels
+                                            formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label to two decimal points
+                                        },
                                     },
-                                    datalabels: {
-                                        display: true, // Show data labels for the Doughnut chart
-                                        color: 'black', // Color of the data labels
-                                        formatter: (value) => `${value.toFixed(2)} hours`, // Format the data label to two decimal points
-                                    },
-                                },
-                            }}
-                        />
+                                }}
+                            />
+                        </div>
                     </div>
                     {top5ActivitySubtypes.length === 0 ? (
                         <div className="bar-chart">
-                        <h3 style={{ marginBottom: '200px' }}>Top Activity Subtypes</h3>
-                        {/*<p>Filter Activity Types for more analytical data.</p>*/}
-                        <p style={{ fontStyle: 'italic', color: '#6c757d', textAlign: 'center', marginTop: '20px' }}>
+                        <div className="bar-chart-title">
+                                <h3>Top Activity Subtypes</h3>
+                        </div>
+                        {/*<h3 >Top Activity Subtypes</h3>
+                        <p>Filter Activity Types for more analytical data.</p>*/}
+                        <div className="bar-chart-content">
+                        <p>
                             Filter Activity Types for more analytical data.
                         </p>
                         </div>
+                        </div>
                     ) : (
                         <div className="bar-chart">
-                            <h3 style={{ marginBottom: '70px' }}>Top Activity Subtypes</h3>
+                            <div className="bar-chart-title">
+                                <h3>Top Activity Subtypes</h3>
+                            </div>
+                            <div className="bar-chart-content">
                             <Bar
                                 data={createBarChartData(top5ActivitySubtypes)}
                                 options={{
@@ -272,6 +284,7 @@ const CSVdata = () => {
                                     },
                                 }}
                             />
+                            </div>
                         </div>
                     )}
                 </div>
