@@ -182,6 +182,18 @@ export const WindowHeightDisplay = () => {
     );
 };
 
+export const IntroSection = ({ title, children }) => {
+    return (
+        <section className="Intro">
+            <h2 className="Intro-shadow">{title}</h2>
+            {children}
+        </section>
+    );
+};
+
+
+
+
 
 /*
 <div

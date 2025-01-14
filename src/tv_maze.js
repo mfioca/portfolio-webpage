@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import { DividerLine } from './SharedComponents.js';
+import { DividerLine, IntroSection } from './SharedComponents.js';
 import './Tv_Maze/tv_maze.css';
 
 const TvMaze = () => {
@@ -44,8 +44,7 @@ const TvMaze = () => {
 
     return (
         <div className="tvmaze-body">
-            <div className="Intro">
-                <h1 className="shadow">TV Show Explorer</h1>
+            <IntroSection title="TV Show Explorer">
                 <p>
                     <strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The TV Show Explorer allows users to search for and discover information about their favorite TV shows, 
                     leveraging data from the <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a> database. This feature showcases the integration of third-party 
@@ -55,7 +54,7 @@ const TvMaze = () => {
                     TVmaze provides a rich repository of TV show data, and this page highlights its capabilities by enabling users to explore show summaries, details, and links. The goal is to 
                     deliver an intuitive and engaging experience, blending technical functionality with a clean and accessible design.
                 </p>
-            </div>
+            </IntroSection>
             <DividerLine />
             <div className="tvmaze-search">
                 <h1>TV Show Search</h1>

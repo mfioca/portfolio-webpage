@@ -165,7 +165,6 @@ const CSVdata = () => {
             <div className="dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
-                
                 <p><strong>How to Use:</strong></p>
                     <ul>
                         <li>Use the dropdowns to filter data by activity type, month, or year.</li>

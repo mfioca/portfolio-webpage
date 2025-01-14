@@ -1,12 +1,12 @@
 import React from 'react';
-import { DividerLine } from './SharedComponents.js'; 
+import { DividerLine, IntroSection } from './SharedComponents.js';  
 
 
 const Home = () => {
     return (
         <div className="home-body">      
-            <div className="Intro">
-                <h1 className="shadow" >Welcome to to my home page</h1>
+            <IntroSection title="Welcome to to my home page">
+
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;This web page began as a personal project to explore 
                     the capabilities of OpenAI’s ChatGPT and delve into prompt engineering and customizations. I chose this as a foundation because 
                     of my prior experience learning React during a six-month self-study period. It provided a practical starting point to expand my 
@@ -22,7 +22,7 @@ const Home = () => {
                     This web page serves as both a showcase and a testament to the potential of combining AI-driven assistance with hands-on learning, 
                     demonstrating how even challenging concepts can be tackled with the right tools and support.
                 </p>
-            </div>
+            </IntroSection>
             <DividerLine />
             <div className="home-content">
             <h2 className="shadow" >Professional Profile</h2>

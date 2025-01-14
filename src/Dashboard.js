@@ -5,7 +5,7 @@ import Graph from './dashboard/Graph';
 import SecondGraph from './dashboard/Graph2'; // Import your new graph component
 import ThirdGraph from './dashboard/Graph3'; // Import your new graph component
 import CSVdata from './dashboard/CSVdata'; // Import your new graph component
-import { DividerLine } from './SharedComponents.js';
+import { DividerLine, IntroSection } from './SharedComponents.js';
 
 
 const TextSection = ({ content }) => {
@@ -22,8 +22,7 @@ function Dashboard() {
         // Wrap the App component with Provider for Redoux functions
         <Provider store={store}> 
             <div className="Dashboard">
-                <div className="Intro">
-                    <h2 className="shadow">Dashboard Overview</h2>
+                <IntroSection title="Dashboard Overview">
                     <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard presents a comprehensive visualization of activity data collected over 
                         four years with a single organization. By highlighting trends in job focus and time allocation, it offers valuable insights into 
                         how various activities contribute to overall performance. The design prioritizes user experience, transforming complex CSV data 
@@ -49,7 +48,7 @@ function Dashboard() {
                     <p className="data-source ">Data insights in this dashboard were made possible through the use of <a href="https://www.rescuetime.com" target="_blank" rel="noopener noreferrer">RescueTime.com</a>, 
                         a powerful productivity and time management tool.
                     </p>
-                </div>
+                </IntroSection>
                 <DividerLine />
                 <div className="graph-flexbox">
                     <div className="graph-container">

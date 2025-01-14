@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { DividerLine } from '../SharedComponents.js';
+import { DividerLine, IntroSection } from '../SharedComponents.js';
 import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
 import TvMazeCast from './tv_maze_cast.js';
 import TvMazeEpisodes from './tv_maze_episodes.js';
@@ -36,8 +36,7 @@ const TvMazeResults = () => {
 
     return (
         <div className="tvmaze-body">
-            <div className="Intro">
-                <h1 className="shadow">Explore Your Favorite TV Shows</h1>
+            <IntroSection title="Explore Your Favorite TV Shows">
                 <p>
                     <strong className="shadow">Welcome to the Details Page:</strong>&nbsp;&nbsp;Dive deeper into the world of your favorite TV shows. Here you’ll find detailed 
                     information about casts, episodes, seasons, and more, all sourced from the incredible database at <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a>. Whether you're curious about episode summaries or want to explore a show's rich history, this page has you covered.
@@ -45,7 +44,7 @@ const TvMazeResults = () => {
                 <p>
                     This section is designed to be an immersive experience, bringing together clean design and the power of real-time data. Stay tuned as we continue to enhance and expand these features for even more functionality!
                 </p>
-            </div>
+            </IntroSection>
             <DividerLine />
             <h1 className="section-title">{showDetails.name}</h1>
             <div className="tvmaze-results-intro">

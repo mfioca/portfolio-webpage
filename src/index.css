@@ -9,23 +9,6 @@ body {
   justify-content: center;
 }
 
-.Intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 98%;
-  border: 5px;
-  padding: 5px;
-  text-align: center;
-  /*font-family: 'Arial', sans-serif; /* A clean sans-serif font */
-  font-family: 'Courier New'; /* A clean sans-serif font */
-}
-
-.Intro p {
-  margin: 5px 0; /* Reduce vertical spacing between paragraphs */
-  line-height: 1.5; /* Adjust line spacing for readability */
-}
-
 .shadow {
   text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }

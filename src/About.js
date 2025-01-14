@@ -1,6 +1,6 @@
 import React, { useState, useEffect  } from 'react';
 import './About.css'; 
-import { DividerLine } from './SharedComponents.js';
+import { DividerLine, IntroSection } from './SharedComponents.js';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -101,14 +101,13 @@ const Card = ({ icon, title, description, image }) => {
 const About = () => {
     return (
         <div className="about-body">
-            <div className="Intro">
-                <h1 className="shadow">Welcome to My Story</h1>
+            <IntroSection title="Welcome to My Story">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
                     This page is a window into who I am—my passions, skills, and philosophies. Whether it’s through my projects, gaming insights, 
                     or the creative journeys I’ve embarked on, you’ll find the threads that connect my curiosity, dedication, and love for building 
                     meaningful experiences. Dive in to learn more!
                 </p>
-            </div>
+            </IntroSection>
             <DividerLine />
             <ScrollingQuotes/>
             <Swiper
@@ -259,8 +258,8 @@ const About = () => {
                 </SwiperSlide>
             </Swiper>
         </div>
-      );
-    };
+    );
+};
 
 
 export default About;
