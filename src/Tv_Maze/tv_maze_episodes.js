@@ -68,8 +68,9 @@ const TvMazeEpisodes = ({ showId }) => {
                             </div>
                             <div className="season-details-extra">
                                 <p><strong>Season {season.number}</strong></p>
-                                <p>Premiere Date: {season.premiereDate || 'Unknown'}</p>
-                                <p>End Date: {season.endDate || 'Unknown'}</p>
+                                <p><strong>Premiere Date:</strong> {season.premiereDate || 'Unknown'}</p>
+                                <p><strong>End Date:</strong> {season.endDate || 'Unknown'}</p>
+                                <p><strong>Number of Episodes:</strong> {season.episodes.length || 0}</p>
                                 <p>
                                     <a href={season.url} target="_blank" rel="noopener noreferrer">
                                         View Season on TVMaze
