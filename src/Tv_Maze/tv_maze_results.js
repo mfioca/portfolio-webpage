@@ -47,34 +47,36 @@ const TvMazeResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{showDetails.name}</h1>
-            <div className="tvmaze-results-intro">
-                <div className="main-info">
-                    {showDetails.image && showDetails.image.original && (
-                        <img
-                            src={showDetails.image.original}
-                            alt={showDetails.name}
-                        />
-                    )}
-                </div>
-                <div className="show-details">
-                    <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
-                    <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
-                    <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>
-                    <p><strong>Network:</strong> {showDetails.network ? `${showDetails.network.name} (${showDetails.network.country.code})` : 'N/A'}</p>
-                    <p><strong>Premiered:</strong> {showDetails.premiered || 'N/A'}</p>
-                    <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
-                    {showDetails.url && (
-                        <p>
-                            More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
-                        </p>
-                    )}
-                </div>
-                <div className="show-summary">
-                    <h2>Summary</h2>
-                    <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
+            <div className="tvmaze-results">
+                <div className="tvmaze-results-intro">
+                    <div className="main-info">
+                        {showDetails.image && showDetails.image.original && (
+                            <img
+                                src={showDetails.image.original}
+                                alt={showDetails.name}
+                            />
+                        )}
+                    </div>
+                    <div className="show-details">
+                        <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
+                        <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
+                        <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>
+                        <p><strong>Network:</strong> {showDetails.network ? `${showDetails.network.name} (${showDetails.network.country.code})` : 'N/A'}</p>
+                        <p><strong>Premiered:</strong> {showDetails.premiered || 'N/A'}</p>
+                        <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
+                        {showDetails.url && (
+                            <p>
+                                More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
+                            </p>
+                        )}
+                    </div>
+                    <div className="show-summary">
+                        <h2>Summary</h2>
+                        <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
+                    </div>
                 </div>
             </div>
-            <div className="tabs-container">
+            <div className="results-tabs-container">
                 <Tabs
                     forceRenderTabPanel
                     onSelect={(index) => {

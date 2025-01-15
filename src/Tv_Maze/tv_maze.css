@@ -1,5 +1,4 @@
 .tvmaze-body  {
-    flex-grow: 1; /* Allow the content to take the remaining space */
     font-family: 'Courier New'; /* A clean sans-serif font */
     margin: 10px;
     padding: 5px;
@@ -119,6 +118,12 @@
 /*                            Results Page                                         */
 /***********************************************************************************/
 
+.tvmaze-results {
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+}
+
 .tvmaze-results-intro {
     display: flex;
     flex-direction: row; /* Arrange children in a row */
@@ -163,15 +168,80 @@
     margin-top: 20px;
 }
 
-.tabs-container :focus {
+
+/* Tabs container */
+
+.results-tabs-container .tabs-container :focus
+.tvmaze-episodes-container .tabs-container :focus {
     outline: none;
 }
-  
-/* Tabs container */
-.tabs-container {
-    scroll-margin-top: 100px; /* Adjust to match your navbar or header height */
+
+.results-tabs-container 
+.tvmaze-episodes-container {
+    scroll-margin-top: 100px; /* Adjust to match your navbar or header height*/
 }
-  
+
+.react-tabs__tab {
+    text-align: center; /* Center-align text */
+    padding: 10px 70px; /* Add padding for a larger click area */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for background */
+    margin: 0 10px; /* Add horizontal spacing */
+    margin-bottom: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.react-tabs__tab:hover {
+    background: #e0e0e0; /* Darker shade on hover */
+    cursor: pointer;
+    text-decoration: underline; /* Optional underline */
+}
+
+.react-tabs__tab--selected {
+    font-weight: bold;
+    border-bottom: 2px solid #0078d4; /* Highlight active tab */
+    color: #0078d4;
+}
+
+.results-tabs-container .react-tabs__tab-list {
+    margin: 0 auto;
+    justify-content: center;
+    width: 80%; /* Ensure the TabList doesn't exceed its container */
+    display: flex;
+    justify-content: space-evenly; /* Evenly space the tabs within the list */
+}
+
+.tvmaze-episodes-container .react-tabs__tab-list {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow tabs to wrap to the next line */
+    justify-content: center; /* Center-align tabs within each row */
+    gap: 10px; /* Add spacing between rows and tabs */
+    margin: 0 auto;
+    justify-content: left;
+    width: 100%; /* Ensure the TabList doesn't exceed its container */
+}
+
+@media (max-width: 768px) {
+    .react-tabs__tab {
+        flex: 1 0 22%; /* Each tab takes 22% of the row's width, adjusts based on available space */
+        text-align: center; /* Center the text inside each tab */
+        padding: 2px;
+        margin: 2px;
+        font-size: 1rem;
+    }
+
+    .react-tabs__tab-list {
+        display: flex; /* Use flexbox for layout */
+        flex-wrap: wrap; /* Allow tabs to wrap to the next line */
+        justify-content: center; /* Center-align tabs within each row */
+        gap: 10px; /* Add spacing between rows and tabs */
+    }
+
+    .results-tabs-container .react-tabs__tab-list {
+        width: 100%;
+    }
+}
+
 /***********************************************************************************/
 /*                            Cast Page                                            */
 /***********************************************************************************/
