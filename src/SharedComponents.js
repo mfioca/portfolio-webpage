@@ -2,9 +2,22 @@ import React, { useState, useEffect, useCallback, useRef  } from 'react';
 import './SharedComponents.css';
 
 
+export const IntroSection = ({ title, children }) => {
+    return (
+        <section className="Intro">
+            <h2 className="Intro-shadow">{title}</h2>
+            {children}
+        </section>
+    );
+};
+
 export const DividerLine = ({ width = '80%' }) => {
     return <hr className="divider-line" style={{ width }} />;
 };
+
+/***********************************************************************************/
+/*           Elements to help with CSS on smaller screens                          */
+/***********************************************************************************/
 
 export const WindowWidthDisplay = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -57,9 +70,14 @@ export const WindowHeightDisplay = () => {
             <p>{`Window height: ${windowHeight}px`}</p>
         </div>
     );
-  };
+};
 
-  export const ChatBubble = ({ data }) => {
+/***********************************************************************************/
+/*                          AI Showcase Page                                       */
+/***********************************************************************************/
+
+
+export const ChatBubble = ({ data }) => {
     const [title] = useState(data[0]?.title || ''); // Dynamically set title from props
     const [messages] = useState(data[0]?.messages || []); // Dynamically set messages from props
     const [visibleCount, setVisibleCount] = useState(1); // Number of messages visible initially
@@ -182,33 +200,8 @@ export const WindowHeightDisplay = () => {
     );
 };
 
-export const IntroSection = ({ title, children }) => {
-    return (
-        <section className="Intro">
-            <h2 className="Intro-shadow">{title}</h2>
-            {children}
-        </section>
-    );
-};
 
 
 
 
 
-/*
-<div
-                className="chat-window"
-                ref={chatWindowRef}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                {messages.slice(0, visibleCount).map((msg, index) => (
-                    <div
-                        key={index}
-                        className={`chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'ai-bubble'}`}
-                    >
-                        {msg.text}
-                    </div>
-                ))}
-            </div>
-*/

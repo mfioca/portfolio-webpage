@@ -10,7 +10,8 @@ import AboutPage from './About'; // Import your Home component if you create one
 import AIShowcase from './ai_showcase';
 import reportWebVitals from './reportWebVitals';
 import TvMaze from './tv_maze'
-import TvMazeResults from './Tv_Maze/tv_maze_results';
+import TvMazeShowResults from './Tv_Maze/tv_maze_show_results';
+import TvMazePeopleResults from './Tv_Maze/tv_maze_people_results';
 
 
 
@@ -95,7 +96,9 @@ root.render(
             <Route path="/" element={<Home />} /> {/* Your home page */}
             <Route path="/About" element={<AboutPage />} /> {/* Your About page */}
             <Route path="/tv_maze" element={<TvMaze />} />
-            <Route path="/show/:id" element={<TvMazeResults />} />
+            <Route path="/show/:id" element={<TvMazeShowResults />} />
+            <Route path="/person/:id" element={<TvMazePeopleResults />} />
+            <Route path="/people/:id" element={<TvMazePeopleResults />} />
             <Route path="/Dashboard" element={<Dashboard />} /> {/* Your dashboard page */}
             <Route path="/AIShowcase" element={<AIShowcase />} />
           </Routes>

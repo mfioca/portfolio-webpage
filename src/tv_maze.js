@@ -2,45 +2,51 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link from React Router
 import { DividerLine, IntroSection } from './SharedComponents.js';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import './Tv_Maze/tv_maze.css';
+
+
+const fetchTvMazeData = async (searchTerm, searchType, setResults, setError) => {
+    if (!searchTerm.trim()) {
+        setError('Please enter a valid search term.');
+        setResults([]);
+        return;
+    }
+
+    try {
+        const sanitizedSearchTerm = searchTerm.replace(/[^a-zA-Z0-9 ]/g, '').trim();
+        const response = await axios.get(
+            `https://api.tvmaze.com/search/${searchType}?q=${encodeURIComponent(sanitizedSearchTerm)}`
+        );
+
+        const results = response.data.map((item) => ({
+            id: searchType === "shows" ? item.show.id : item.person.id,
+            name: searchType === "shows" ? item.show.name : item.person.name,
+            image: searchType === "shows"
+                ? item.show.image
+                    ? item.show.image.medium || item.show.image.original
+                    : null
+                : item.person.image
+                    ? item.person.image.medium || item.person.image.original
+                    : null,
+            link: searchType === "shows"
+                ? `/show/${item.show.id}`
+                : `/person/${item.person.id}`,
+        }));
+
+        setResults(results);
+        setError('');
+    } catch (err) {
+        setError('Error fetching data. Please try again later.');
+        setResults([]);
+    }
+};
 
 const TvMaze = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [shows, setShows] = useState([]);
+    const [results, setResults] = useState([]); // Generic state for both shows and people
     const [error, setError] = useState('');
-
-    const handleSearch = async (e) => {
-        e.preventDefault(); // Prevent default form submission
-
-        const sanitizedSearchTerm = searchTerm.replace(/[^a-zA-Z0-9 ]/g, '').trim();
-
-        if (!sanitizedSearchTerm) {
-            setError('Please enter a valid search term.');
-            setShows([]);
-            return;
-        }
-
-        try {
-            const response = await axios.get(
-                `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(sanitizedSearchTerm)}`
-            );
-
-            const results = response.data.map((item) => ({
-                id: item.show.id, // Include the ID for routing
-                name: item.show.name,
-                image: item.show.image
-                    ? item.show.image.medium || item.show.image.original
-                    : null,
-                link: `/show/${item.show.id}`, // Create a dynamic route link
-            }));
-
-            setShows(results);
-            setError('');
-        } catch (err) {
-            setError('Error fetching data. Please try again later.');
-            setShows([]);
-        }
-    };
 
     return (
         <div className="tvmaze-body">
@@ -56,39 +62,100 @@ const TvMaze = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <div className="tvmaze-search">
-                <h1>TV Show Search</h1>
-                <form onSubmit={handleSearch}>
-                    <input
-                        type="text"
-                        placeholder="Search for a TV show..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        aria-label="Search for a TV show"
-                    />
-                    <button type="submit">Search</button>
-                </form>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-            </div>
-            <div className="tvmaze-search-results">
-            {shows.length > 0 ? (
-                shows.map((show) => (
-                    <div key={show.id} className="result-box">
-                        <h3>{show.name}</h3>
-                        {show.image ? (
-                            <img src={show.image} alt={show.name} style={{ width: '100%', borderRadius: '5px' }} />
-                        ) : (
-                            <p>No Image Available</p>
-                        )}
-                        {/* Use Link to navigate to the details page */}
-                        <Link to={show.link}>View Details</Link>
-                    </div>
-                ))
-            ) : (
-                <div className="tvmaze-search-placeholder">
-                    <p>No results found. Try searching for a TV show!</p>
-                </div>
-            )}
+            {/* Tabs Section for Show and Person Search */}
+            <div className="tvmaze-tabs-container">
+                <Tabs
+                    onSelect={() => setSearchTerm('')} // Clear searchTerm on tab change
+                >
+                    <TabList>
+                        <Tab>TV Show Search</Tab>
+                        <Tab>Person Search</Tab>
+                    </TabList>
+                    {/* TV Show Search Panel */}
+                    <TabPanel>
+                        <div className="tvmaze-search">
+                            <h1>TV Show Search</h1>
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                                fetchTvMazeData(searchTerm, "shows", setResults, setError);
+                            }}>
+                                <input
+                                    type="text"
+                                    placeholder="Search for a TV show..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    aria-label="Search for a TV show"
+                                />
+                                <button type="submit">Search</button>
+                            </form>
+                            {error && <p style={{ color: 'red' }}>{error}</p>}
+                        </div>
+                        <div>
+                            {results.length > 0 ? (
+                                <div className="tvmaze-search-results">
+                                    {results.map((item) => (
+                                        <div key={item.id} className="result-box">
+                                            <h3>{item.name}</h3>
+                                            {item.image ? (
+                                                <img src={item.image} alt={item.name} style={{ width: '100%', borderRadius: '5px' }} />
+                                            ) : (
+                                                <p>No Image Available</p>
+                                            )}
+                                            {/* Use Link to navigate to the details page */}
+                                            <Link to={item.link}>View Details</Link>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="tvmaze-search-placeholder">
+                                    <p>No results found. Try entering a search.</p>
+                                </div>
+                            )}
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className="tvmaze-search">
+                            <h1>Person Search</h1>
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                                fetchTvMazeData(searchTerm, "people", setResults, setError);
+                            }}>
+                                <input
+                                    type="text"
+                                    placeholder="Search for a person..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    aria-label="Search for a person"
+                                />
+                                <button type="submit">Search</button>
+                            </form>
+                            {error && <p style={{ color: 'red' }}>{error}</p>}
+                        </div>
+
+                        <div>
+                            {results.length > 0 ? (
+                                <div className="tvmaze-search-results">
+                                    {results.map((item) => (
+                                        <div key={item.id} className="result-box">
+                                            <h3>{item.name}</h3>
+                                            {item.image ? (
+                                                <img src={item.image} alt={item.name} style={{ width: '100%', borderRadius: '5px' }} />
+                                            ) : (
+                                                <p>No Image Available</p>
+                                            )}
+                                            {/* Use Link to navigate to the person's details page */}
+                                            <Link to={item.link}>View Details</Link>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="tvmaze-search-placeholder">
+                                    <p>No results found. Try entering a search.</p>
+                                </div>
+                            )}
+                        </div>
+                    </TabPanel>
+                </Tabs>
             </div>
         </div>
     );

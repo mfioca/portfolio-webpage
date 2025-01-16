@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+
 
 const TvMazeCast = ({ id }) => {
     const [cast, setCast] = useState([]);
@@ -45,20 +48,18 @@ const TvMazeCast = ({ id }) => {
                         )}
                         <p>As: {person.character.name}</p>
                         {person.person.url && (
-                            <a 
-                                href={person.person.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                style={{
+                            <Link 
+                            to={`/people/${person.person.id}`}  // Navigate to the person details page
+                            style={{
                                 display: 'block', 
                                 marginTop: '10px', 
                                 fontSize: '0.9rem', 
                                 color: '#0078d4', 
                                 textDecoration: 'none'
-                                }}
+                            }}
                             >
-                                View on TVmaze
-                            </a>
+                                View More Details
+                            </Link>
                         )}
                     </div>
                 ))}
@@ -68,3 +69,5 @@ const TvMazeCast = ({ id }) => {
 };
 
 export default TvMazeCast;
+
+

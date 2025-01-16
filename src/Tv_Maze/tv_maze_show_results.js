@@ -7,7 +7,7 @@ import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
 import TvMazeCast from './tv_maze_cast.js';
 import TvMazeEpisodes from './tv_maze_episodes.js';
 
-const TvMazeResults = () => {
+const TvMazeShowResults = () => {
     const { id } = useParams(); // Get the show ID from the URL
     const [showDetails, setShowDetails] = useState(null);
     const [error, setError] = useState('');
@@ -38,7 +38,7 @@ const TvMazeResults = () => {
         <div className="tvmaze-body">
             <IntroSection title="Explore Your Favorite TV Shows">
                 <p>
-                    <strong className="shadow">Welcome to the Details Page:</strong>&nbsp;&nbsp;Dive deeper into the world of your favorite TV shows. Here you’ll find detailed 
+                    <strong className="shadow">Welcome to the Show Details Page:</strong>&nbsp;&nbsp;Dive deeper into the world of your favorite TV shows. Here you’ll find detailed 
                     information about casts, episodes, seasons, and more, all sourced from the incredible database at <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a>. Whether you're curious about episode summaries or want to explore a show's rich history, this page has you covered.
                 </p>
                 <p>
@@ -100,4 +100,4 @@ const TvMazeResults = () => {
     );
 };
 
-export default TvMazeResults;
+export default TvMazeShowResults;
