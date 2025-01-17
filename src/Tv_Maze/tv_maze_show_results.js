@@ -54,6 +54,7 @@ const TvMazeShowResults = () => {
                             <img
                                 src={showDetails.image.original}
                                 alt={showDetails.name}
+                                loading="lazy"
                             />
                         )}
                     </div>

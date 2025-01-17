@@ -153,6 +153,24 @@
     border-radius: 8px; /* Rounded corners */
     border: 2px solid #ccc; /* Add a border matching the theme */
 }
+
+.tvmaze-person-results {
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 10px; /* Add space between the columns */
+    max-width: 1600px; /* Limit the total width of the container */
+    margin: 10px; /* Center the container on the page */
+    padding: 10px; /* Add padding for spacing */
+    font-family: 'Courier New', sans-serif; /* Consistent font */
+    align-items: flex-start; /* Align items to the top of the row */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #ccc; /* Add a border matching the theme */
+}
+
+
   
 .main-info {
     flex: 1; /* Let this column take up one part of the available space */
@@ -285,7 +303,7 @@
 .cast-grid {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 15px; /* Space between items */
+    gap: 40px; /* Space between items */
     justify-content: center; /* Center items in the grid */
 }
   
@@ -358,11 +376,27 @@
 }
 
 .season-image {
-    max-width: 300px;
-    margin: 10px;
-    display: block;
+    /*display: block; /* Ensure it's treated as a block element */
+    max-width: 100%; /* Prevent it from overflowing */
+    height: auto; /* Maintain aspect ratio */
+    margin: 5px auto; /* Center the image */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 775px) {
+    .season-image {
+        max-width: 90%; /* Reduce image width on very small screens */
+        min-width: 200px;
+        display: block;
+        margin: 0 auto; /* Center the image */
+    }
+    .main-info img {
+        max-width: 100%;
+        min-width: 300px;
+        display: block;
+        margin: 0 auto; /* Center the image */
+    }
 }
   
 .season-details-extra {
@@ -379,46 +413,67 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    table-layout: fixed; /* Prevents table from expanding beyond the container */
 }
-  
-.episodes-table th,
-.episodes-table td {
-    border: 1px solid #ddd;
+
+.episodes-table th {
+    background-color: #e0e0e0; /* Light theme color */
+    color: #333; /* Darker text for contrast */
     padding: 10px;
     text-align: left;
-}
-  
-.episodes-table th {
-    background-color: #f4f4f4;
     font-weight: bold;
 }
-  
+
+.episodes-table th,
+.episodes-table td {
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 40px;
+    text-align: left;
+    word-wrap: break-word; /* Ensures content wraps within the column */
+    overflow-wrap: break-word;
+    white-space: normal; /* Allows text to wrap */
+}
+
+.episodes-table th:nth-child(4), 
+.episodes-table td:nth-child(4) {
+    width: 300px; /* Set a max width for the Summary column */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.episodes-table th:nth-child(2), 
+.episodes-table td:nth-child(2) {
+    width: 300px; /* Set a max width for the Summary column */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: 15px;
+    text-align: center;
+}
+
 @media (max-width: 775px) {
-    .tvmaze-results-intro {
-        justify-content: center; /* Center horizontally */
-        margin: 10px auto;
-        display: block;
-    }
-    .season-image,
-    .main-info img{
-        margin: 10px auto;
-    }
-    .season-details-extra,
-    .show-details {
-        justify-content: center; /* Center horizontally */
-        margin: 10px auto;
-        display: block;
-    }
     .episodes-table {
         overflow-x: auto; /* Enable horizontal scrolling */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
-        display: block; /* Ensure the table behaves correctly within the container */
-        white-space: nowrap; /* Prevent text wrapping within cells */
-        border-collapse: collapse; /* Maintain clean table styling */
+        display: block; /* Ensure the table behaves correctly */
+        white-space: nowrap; /* Prevent text wrapping within other columns */
     }
 
     .episodes-table th,
     .episodes-table td {
-        min-width: 120px; /* Optional: Set a minimum width for each column */
+        min-width: 120px; /* Ensures cells don’t shrink too much */
+    }
+
+    .episodes-table th:nth-child(4), 
+    .episodes-table td:nth-child(4) {
+        min-width: 250px; /* Adjusts the Summary column width for small screens */
+        white-space: normal; /* Allows proper wrapping on mobile */
+    }
+
+    .episodes-table th:nth-child(2), 
+    .episodes-table td:nth-child(2) {
+        min-width: 5px;
     }
 }

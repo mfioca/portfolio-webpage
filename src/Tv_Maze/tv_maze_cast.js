@@ -42,6 +42,7 @@ const TvMazeCast = ({ id }) => {
                                 src={person.person.image.medium}
                                 alt={person.person.name}
                                 style={{ width: '100%', borderRadius: '5px' }}
+                                loading="lazy"
                             />
                         ) : (
                             <p>No Image Available</p>

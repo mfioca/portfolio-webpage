@@ -60,6 +60,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                     <img
                                         src={season.image.original}
                                         alt={`Season ${season.number}`}
+                                        loading="lazy"
                                         className="season-image"
                                     />
                                 ) : (
