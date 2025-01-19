@@ -263,3 +263,18 @@ const About = () => {
 
 
 export default About;
+
+
+
+/*  format for possible video embedding from my youtube account.
+ <div>
+
+    <div className="video-container">
+        
+        add iframe here
+
+    </div>
+            
+
+</div>
+*/

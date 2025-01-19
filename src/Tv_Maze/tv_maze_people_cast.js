@@ -20,6 +20,32 @@ const TvMazePeopleCast = ({ id }) => {
         fetchCastCredits();
     }, [id]);
 
+    // Group credits by show ID to prevent duplicates
+    const groupedCredits = castCredits.reduce((acc, credit) => {
+        const showId = credit._embedded.show.id;
+
+        if (!acc[showId]) {
+            acc[showId] = {
+                show: credit._embedded.show,
+                characters: [],
+            };
+        }
+
+        // Add character name to the array (if not already included)
+        const characterName = credit._links.character ? credit._links.character.name : 'Unknown';
+        if (!acc[showId].characters.includes(characterName)) {
+            acc[showId].characters.push(characterName);
+        }
+
+        return acc;
+    }, {});
+
+    const groupedShows = Object.values(groupedCredits).sort((a, b) => {
+        const dateA = new Date(a.show.ended || a.show.premiered || 0); // Use ended date first, if available
+        const dateB = new Date(b.show.ended || b.show.premiered || 0);
+        return dateB - dateA; // Sort in descending order (most recent first)
+    });
+
     if (error) {
         return <p style={{ color: 'red' }}>{error}</p>;
     }
@@ -32,30 +58,31 @@ const TvMazePeopleCast = ({ id }) => {
         <div className="cast-container">
             <h2 className="section-title">Cast Credits</h2>
             <div className="cast-grid">
-                {castCredits.map((credit, index) => (
+                {groupedShows.map(({ show, characters }, index) => (
                     <div key={index} className="cast-member">
-                        <h3>{credit._embedded.show.name}</h3>
-                        {credit._embedded.show.image ? (
+                        <h3>{show.name}</h3>
+                        {show.image ? (
                             <img
-                                src={credit._embedded.show.image.medium}
-                                alt={credit._embedded.show.name}
+                                src={show.image.medium}
+                                alt={show.name}
                                 style={{ width: '100%', borderRadius: '5px' }}
                                 loading="lazy"
                             />
                         ) : (
                             <p>No Image Available</p>
                         )}
-                        <p>Role: {credit._links.character ? credit._links.character.name : 'Unknown'}</p>
-                        {credit._embedded.show.summary && (
+                        <p><strong>Roles:</strong> {characters.join(', ')}</p>
+                        <p><strong>Premiered:</strong> {show.premiered ? show.premiered : 'Unknown'}</p>
+                        {show.summary && (
                             <p>
                                 <span dangerouslySetInnerHTML={{ __html: 
-                                    credit._embedded.show.summary.length > 200 
-                                        ? `${credit._embedded.show.summary.substring(0, 200)}... ` 
-                                        : credit._embedded.show.summary 
+                                    show.summary.length > 200 
+                                        ? `${show.summary.substring(0, 200)}... ` 
+                                        : show.summary 
                                 }} />
-                                {credit._embedded.show.summary.length > 200 && (
+                                {show.summary.length > 200 && (
                                     <Link 
-                                        to={`/show/${credit._embedded.show.id}`}  // Navigate to your own show details page
+                                        to={`/show/${show.id}`} 
                                         style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold' }}
                                     >
                                         Read More
@@ -63,9 +90,9 @@ const TvMazePeopleCast = ({ id }) => {
                                 )}
                             </p>
                         )}
-                        {credit._embedded.show.url && (
+                        {show.url && (
                             <a 
-                                href={credit._embedded.show.url} // Direct link to TVMaze page
+                                href={show.url} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 style={{

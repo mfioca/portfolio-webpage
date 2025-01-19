@@ -186,3 +186,23 @@ body {
   }
 }
 
+
+/* css for possible youtube video imbedding on my about page.
+.video-container {
+  width: 400px; 
+  height: 225px; 
+  margin: 20px auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; 
+text-align: left;
+}
+
+.video-container iframe {
+  width: 100%; /* Keep within container 
+  height: 100%;
+  border-radius: 8px; 
+}
+
+*/
