@@ -66,7 +66,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
                 // Convert groupedShows object to an array and sort by **earliest premiere date**
                 setGuestCredits(
                     Object.values(groupedShows).sort((a, b) => {
-                        return new Date(a.earliestPremiere || '9999-12-31') - new Date(b.earliestPremiere || '9999-12-31');
+                        return new Date(b.earliestPremiere || '9999-12-31') - new Date(a.earliestPremiere || '9999-12-31');
                     })
                 );
 
