@@ -7,7 +7,7 @@ import 'react-tabs/style/react-tabs.css';
 import './Tv_Maze/tv_maze.css';
 
 
-const fetchTvMazeData = async (searchTerm, searchType, setResults, setError) => {
+const fetchTvMazeData = async ( searchTerm, searchType, setResults, setError ) => {
     if (!searchTerm.trim()) {
         setError('Please enter a valid search term.');
         setResults([]);
@@ -82,22 +82,22 @@ const TvMaze = () => {
                                 <input
                                     type="text"
                                     placeholder="Search for a TV show..."
-                                    value={searchTerm}
+                                    value={ searchTerm }
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     aria-label="Search for a TV show"
                                 />
                                 <button type="submit">Search</button>
                             </form>
-                            {error && <p style={{ color: 'red' }}>{error}</p>}
+                            { error && <p style={{ color: 'red' }}>{ error }</p> }
                         </div>
                         <div>
-                            {results.length > 0 ? (
+                            { results.length > 0 ? (
                                 <div className="tvmaze-search-results">
-                                    {results.map((item) => (
-                                        <div key={item.id} className="result-box">
-                                            <h3>{item.name}</h3>
-                                            {item.image ? (
-                                                <img src={item.image} alt={item.name} style={{ width: '100%', borderRadius: '5px' }} />
+                                    { results.map((item) => (
+                                        <div key={ item.id } className="result-box">
+                                            <h3>{ item.name }</h3>
+                                            { item.image ? (
+                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
                                             ) : (
                                                 <p>No Image Available</p>
                                             )}
@@ -123,28 +123,27 @@ const TvMaze = () => {
                                 <input
                                     type="text"
                                     placeholder="Search for a person..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    value={ searchTerm }
+                                    onChange={ (e) => setSearchTerm(e.target.value) }
                                     aria-label="Search for a person"
                                 />
                                 <button type="submit">Search</button>
                             </form>
-                            {error && <p style={{ color: 'red' }}>{error}</p>}
+                            { error && <p style={{ color: 'red' }}>{ error }</p> }
                         </div>
-
                         <div>
-                            {results.length > 0 ? (
+                            { results.length > 0 ? (
                                 <div className="tvmaze-search-results">
-                                    {results.map((item) => (
-                                        <div key={item.id} className="result-box">
-                                            <h3>{item.name}</h3>
-                                            {item.image ? (
-                                                <img src={item.image} alt={item.name} style={{ width: '100%', borderRadius: '5px' }} />
+                                    { results.map((item) => (
+                                        <div key={ item.id } className="result-box">
+                                            <h3>{ item.name }</h3>
+                                            { item.image ? (
+                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
                                             ) : (
                                                 <p>No Image Available</p>
                                             )}
                                             {/* Use Link to navigate to the person's details page */}
-                                            <Link to={item.link}>View Details</Link>
+                                            <Link to={ item.link }>View Details</Link>
                                         </div>
                                     ))}
                                 </div>

@@ -5,15 +5,11 @@ import DisenchantedOraclePrompt from './disenchanted_oracle_prompt.js';
 
 
 const DisenchantedOracle = () => {
-
     return (
         <div>
             <IntroSection title="Disenchanted Oracle Prompt">
                 <p>
                     Inspired by the Tarot Reader and Salesman prompt, I wanted to craft a unique MyChatGPT experience that I could share with others. By focusing on the character’s distinct personality and tarot-reading abilities, I refined the concept into a standalone, immersive chatbot. Stripping away the original sales-driven elements of the herbal remedy shop, I emphasized the sarcastic humor, whimsical storytelling, and insightful readings that make this oracle so captivating.  
-                </p>
-                <p>
-
                 </p>
             </IntroSection>
             <DividerLine />
@@ -28,7 +24,7 @@ const DisenchantedOracle = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <ChatBubble data={OracleData} /> 
+            <ChatBubble data={ OracleData } /> 
         </div>
     );
 };

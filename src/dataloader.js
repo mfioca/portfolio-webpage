@@ -5,9 +5,9 @@ import { setGraphData, setRawData } from './actions'; // Include setRawData acti
 /*          Parse the data from the csv file       */
 /***************************************************/
 
-const loadDataForGraphs = async (dispatch, graphType, setTextBoxContent) => {
+const loadDataForGraphs = async ( dispatch, graphType, setTextBoxContent ) => {
     try {
-        const response = await fetch(`${process.env.PUBLIC_URL}/cleaned_data_1.csv`); 
+        const response = await fetch( `${process.env.PUBLIC_URL}/cleaned_data_1.csv` ); 
         const text = await response.text(); 
 
         Papa.parse(text, {
@@ -82,7 +82,7 @@ const handleGraph1Data = (data, dispatch) => {
 /*          Filtered data for grpah 2              */
 /***************************************************/
 
-const handleGraph2Data = (data, dispatch) => {
+const handleGraph2Data = ( data, dispatch ) => {
     const combinedData = [];
     const analyticsData = [];
 
@@ -126,7 +126,7 @@ const handleGraph2Data = (data, dispatch) => {
 /*          Filtered data for grpah 3              */
 /***************************************************/
 
-const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
+const handleGraph3Data = ( data, dispatch, setTextBoxContent ) => {
     const totalWorkByYear = {};
     const analyticsByYear = {};
     let tempPercentages = [];
@@ -152,19 +152,19 @@ const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
     const analyticsDurations = years.map(year => parseFloat((analyticsByYear[year] || 0).toFixed(2))); // Format to 2 decimal points
 
     // Calculate the percentage of analytics time relative to total work time per year
-    tempPercentages = analyticsDurations.map((duration, index) => {
+    tempPercentages = analyticsDurations.map(( duration, index ) => {
         const total = totalWorkDurations[index] || 1; // Avoid division by zero
         return (duration / total) * 100; // Calculate percentage
     });
 
     // Prepare text for the box with percentages
-    const yearText = years.map((year, index) => {
+    const yearText = years.map(( year, index ) => {
         const percentage = tempPercentages[index].toFixed(1); // Use tempPercentages here
-        return `${year}: Analytics ${percentage}%`;
+        return `${ year }: Analytics ${ percentage }%`;
     }).join('\n');
 
     // Set the text box content
-    setTextBoxContent(`${yearText}\n\n`);
+    setTextBoxContent(`${ yearText }\n\n`);
 
     // Dispatch data to Redux store
     dispatch(setGraphData('graph3', {
@@ -185,7 +185,7 @@ const handleGraph3Data = (data, dispatch, setTextBoxContent) => {
 };
 
 // Generates an array of month strings in the format 'YYYY-MM' between the start and end dates
-const generateFullMonthRange = (start, end) => {
+const generateFullMonthRange = ( start, end ) => {
     const fullRange = [];
     const startDate = new Date(start + '-01');
     const endDate = new Date(end + '-01');
@@ -201,7 +201,7 @@ const generateFullMonthRange = (start, end) => {
 };
 
 // Prepares the monthly data for graphing, filling in gaps for months with no data
-const prepareMonthlyData = (data, fullRange) => {
+const prepareMonthlyData = ( data, fullRange ) => {
     const monthlyData = {};
 
     // Aggregate durations by month

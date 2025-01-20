@@ -253,18 +253,16 @@ const talktrack = `
               <Tab>Talk Track</Tab>
           </TabList>
           <TabPanel>
-          <div className="markdown-container">
-          <ReactMarkdown>{prompt}</ReactMarkdown>
-      </div>
+            <div className="markdown-container">
+              <ReactMarkdown>{ prompt }</ReactMarkdown>
+            </div>
           </TabPanel>
           <TabPanel>
-          <div className="markdown-container">
-          <ReactMarkdown>{talktrack}</ReactMarkdown>
-          </div>
+            <div className="markdown-container">
+              <ReactMarkdown>{ talktrack }</ReactMarkdown>
+            </div>
           </TabPanel>
-          
         </Tabs>
-          
       </div>
   );
 };

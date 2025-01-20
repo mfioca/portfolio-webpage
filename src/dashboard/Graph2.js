@@ -68,7 +68,7 @@ const Graph2 = () => {
     return (
         <div className="chart-container">
             <h2 className="shadow">Job Focus and Activities Over Time by Month</h2>
-            <Line data={graphData} options={options } width={350} height={250} /> {/* Use Redux graph data */}
+            <Line data={ graphData } options={ options } width={ 350 } height={ 250 } /> {/* Use Redux graph data */}
         </div>
     );
 };

@@ -7,13 +7,13 @@ import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElem
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
  
-Chart.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels);
+Chart.register( ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels );
 
 /***************************************************/
 /* Custom charts based on dropdown box filtering   */
 /***************************************************/
 
-const createChartData = (top5Applications) => {
+const createChartData = ( top5Applications ) => {
     return {
         labels: top5Applications.map(app => app.name), // Names of the applications
         datasets: [
@@ -39,15 +39,15 @@ const createChartData = (top5Applications) => {
     };
 };
 
-const createBarChartData = (top5ActivitySubtypes) => {
+const createBarChartData = ( top5ActivitySubtypes ) => {
     return {
         labels: top5ActivitySubtypes.map(subtype => subtype.name), // Names of the activity subtypes
         datasets: [
             {
                 label: 'Hours Spent',
                 data: top5ActivitySubtypes.map(subtype => subtype.hours), // All hours in a single dataset
-                backgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${75 + index * 30}, ${192 - index * 30}, 192, 0.6)`), // Generate colors dynamically
-                hoverBackgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${75 + index * 30}, ${192 - index * 30}, 192, 1)`), // Hover colors
+                backgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${ 75 + index * 30 }, ${ 192 - index * 30 }, 192, 0.6)`), // Generate colors dynamically
+                hoverBackgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${ 75 + index * 30 }, ${ 192 - index * 30 }, 192, 1)`), // Hover colors
             },
         ],
     };
@@ -178,22 +178,22 @@ const CSVdata = () => {
                 <div className="dropdowns">
                     <div>
                         <h2>Select Activity Type</h2>
-                        <select value={selectedActivityType} onChange={(e) => setSelectedActivityType(e.target.value)}>
+                        <select value={ selectedActivityType } onChange={ (e) => setSelectedActivityType(e.target.value) }>
                             <option value="">All Activity Types</option>
-                            {activityTypes.map((type, index) => (
-                                <option key={index} value={type}>
-                                    {type}
+                            { activityTypes.map((type, index) => (
+                                <option key={ index } value={ type }>
+                                    { type }
                                 </option>
                             ))}
                         </select>
                     </div>
                     <div>
                         <h2>Select Month</h2>
-                        <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}> 
+                        <select value={ selectedMonth } onChange={ (e) => setSelectedMonth(e.target.value) }> 
                             <option value="">All Months</option>
-                            {months.map((month, index) => (
-                                <option key={index} value={month}>
-                                    {month}
+                            { months.map((month, index) => (
+                                <option key={ index } value={ month }>
+                                    { month }
                                 </option>
                             ))}
                         </select>
@@ -201,12 +201,12 @@ const CSVdata = () => {
                     <div>
                         <h2>Select Year</h2>
                         <select 
-                            value={selectedYear} 
-                            onChange={(e) => setSelectedYear(e.target.value)}>
+                            value={ selectedYear } 
+                            onChange={ (e) => setSelectedYear(e.target.value) }>
                             <option value="">All Years</option>
-                            {years.map((year, index) => (
-                                <option key={index} value={year}>
-                                    {year}
+                            { years.map((year, index) => (
+                                <option key={ index } value={ year }>
+                                    { year }
                                 </option>
                             ))}
                         </select>
@@ -219,7 +219,7 @@ const CSVdata = () => {
                         </div>
                         <div className="bar-chart-content">
                             <Doughnut
-                                data={createChartData(top5Applications)}
+                                data={ createChartData(top5Applications) }
                                 options={{
                                     plugins: {
                                         tooltip: {
@@ -290,13 +290,13 @@ const CSVdata = () => {
             </div>
             <div className = "dashboard-csv">
                 <div className="filtered-data">
-                    {currentData.length > 0 ? (
+                    { currentData.length > 0 ? (
                         <table className="csv-data">
                             <thead>
                                 <tr>
                                     {Object.keys(currentData[0]).map((key, index) => {
                                         if (key !== 'timestamp' && key !== 'hour') {
-                                            return <th key={index}>{key}</th>; // Table headers
+                                            return <th key={ index }>{ key }</th>; // Table headers
                                         }
                                         return null; // Exclude timestamp from headers
                                     })}
@@ -304,10 +304,10 @@ const CSVdata = () => {
                             </thead>
                             <tbody>
                                 {currentData.map((row, index) => (
-                                    <tr key={index}>
-                                        {Object.keys(row).map((key) => {
+                                    <tr key={ index }>
+                                        { Object.keys(row).map((key) => {
                                             if (key !== 'timestamp' && key !== 'hour') {
-                                                return <td key={key}>{row[key]}</td>; // Table data cells
+                                                return <td key={ key }>{row[key]}</td>; // Table data cells
                                             }
                                             return null; // Exclude timestamp from data
                                         })}
@@ -326,11 +326,11 @@ const CSVdata = () => {
                         Previous
                     </button>
                     <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
-                        Page {currentPage} of {totalPages}
+                        Page { currentPage } of { totalPages }
                     </span>
                     <button 
                         onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                        disabled={currentPage === totalPages}>
+                        disabled={ currentPage === totalPages }>
                         Next
                     </button>
                 </div>

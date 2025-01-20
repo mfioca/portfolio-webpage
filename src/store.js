@@ -12,7 +12,7 @@ const initialState = {
 };
 
 // Reducer function to handle actions
-const reducer = (state = initialState, action) => {
+const reducer = ( state = initialState, action ) => {
     switch (action.type) {
         case 'SET_GRAPH_DATA':
             return {

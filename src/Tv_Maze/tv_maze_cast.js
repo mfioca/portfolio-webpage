@@ -23,7 +23,7 @@ const TvMazeCast = ({ id }) => {
     }, [id]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
     if (!cast.length) {
@@ -35,9 +35,9 @@ const TvMazeCast = ({ id }) => {
             <h2 className="section-title">Cast</h2>
             <div className="cast-grid">
                 {cast.map((person, index) => (
-                    <div key={index} className="cast-member">
-                        <h3>{person.person.name}</h3>
-                        {person.person.image ? (
+                    <div key={ index } className="cast-member">
+                        <h3>{ person.person.name }</h3>
+                        { person.person.image ? (
                             <img
                                 src={person.person.image.medium}
                                 alt={person.person.name}
@@ -47,10 +47,10 @@ const TvMazeCast = ({ id }) => {
                         ) : (
                             <p>No Image Available</p>
                         )}
-                        <p>As: {person.character.name}</p>
-                        {person.person.url && (
+                        <p>As: { person.character.name }</p>
+                        { person.person.url && (
                             <Link 
-                            to={`/people/${person.person.id}`}  // Navigate to the person details page
+                            to={ `/people/${ person.person.id }` }  // Navigate to the person details page
                             style={{
                                 display: 'block', 
                                 marginTop: '10px', 

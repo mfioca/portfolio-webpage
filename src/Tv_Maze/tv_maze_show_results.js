@@ -27,7 +27,7 @@ const TvMazeShowResults = () => {
     }, [id]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
     if (!showDetails) {
@@ -46,28 +46,28 @@ const TvMazeShowResults = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <h1 className="section-title">{showDetails.name}</h1>
+            <h1 className="section-title">{ showDetails.name }</h1>
             <div className="tvmaze-results">
                 <div className="tvmaze-results-intro">
                     <div className="main-info">
-                        {showDetails.image && showDetails.image.original && (
+                        { showDetails.image && showDetails.image.original && (
                             <img
-                                src={showDetails.image.original}
-                                alt={showDetails.name}
+                                src={ showDetails.image.original }
+                                alt={ showDetails.name }
                                 loading="lazy"
                             />
                         )}
                     </div>
                     <div className="show-details">
-                        <p><strong>Language:</strong> {showDetails.language || 'N/A'}</p>
-                        <p><strong>Type:</strong> {showDetails.type || 'N/A'}</p>
-                        <p><strong>Genres:</strong> {showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A'}</p>
-                        <p><strong>Network:</strong> {showDetails.network ? `${showDetails.network.name} (${showDetails.network.country.code})` : 'N/A'}</p>
-                        <p><strong>Premiered:</strong> {showDetails.premiered || 'N/A'}</p>
-                        <p><strong>Ended:</strong> {showDetails.ended || 'N/A'}</p>
-                        {showDetails.url && (
+                        <p><strong>Language:</strong> { showDetails.language || 'N/A' }</p>
+                        <p><strong>Type:</strong> { showDetails.type || 'N/A' }</p>
+                        <p><strong>Genres:</strong> { showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A' }</p>
+                        <p><strong>Network:</strong> { showDetails.network ? `${ showDetails.network.name } (${ showDetails.network.country.code })` : 'N/A' }</p>
+                        <p><strong>Premiered:</strong> { showDetails.premiered || 'N/A' }</p>
+                        <p><strong>Ended:</strong> { showDetails.ended || 'N/A' }</p>
+                        { showDetails.url && (
                             <p>
-                                More details at: <a href={showDetails.url} target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
+                                More details at: <a href={ showDetails.url } target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
                             </p>
                         )}
                     </div>
@@ -90,10 +90,10 @@ const TvMazeShowResults = () => {
                         <Tab>Episodes</Tab>
                     </TabList>
                     <TabPanel>
-                        <TvMazeCast id={id} />
+                        <TvMazeCast id={ id } />
                     </TabPanel>
                     <TabPanel>
-                        <TvMazeEpisodes showId={id} />
+                        <TvMazeEpisodes showId={ id } />
                     </TabPanel>
                 </Tabs>
             </div>

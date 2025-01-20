@@ -5,8 +5,8 @@ import './SharedComponents.css';
 export const IntroSection = ({ title, children }) => {
     return (
         <section className="Intro">
-            <h2 className="Intro-shadow">{title}</h2>
-            {children}
+            <h2 className="Intro-shadow">{ title }</h2>
+            { children } 
         </section>
     );
 };
@@ -41,7 +41,7 @@ export const WindowWidthDisplay = () => {
             textAlign: 'center', // Center-align the text inside the div
             /*padding: '10px' // Add padding for better spacing*/
         }}>
-            <p>{`Window width: ${windowWidth}px`}</p>
+            <p>{ `Window width: ${windowWidth}px` }</p>
         </div>
     );
 };
@@ -67,7 +67,7 @@ export const WindowHeightDisplay = () => {
             border: '2px solid black', // Adds a black border with a thickness of 2px
             textAlign: 'center', // Center-align the text inside the div
         }}>
-            <p>{`Window height: ${windowHeight}px`}</p>
+            <p>{ `Window height: ${windowHeight}px` }</p>
         </div>
     );
 };
@@ -158,21 +158,21 @@ export const ChatBubble = ({ data }) => {
 
     return (
         <div className="example-container">
-            <h2>{title}</h2>
+            <h2>{ title }</h2>
             <div
                 className="chat-window"
-                ref={chatWindowRef}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                ref={ chatWindowRef }
+                onMouseEnter={ handleMouseEnter }
+                onMouseLeave={ handleMouseLeave }
             >
-                {messages.slice(0, visibleCount).map((msg, index) => (
+                { messages.slice(0, visibleCount).map((msg, index) => (
                     <div
-                        key={index}
-                        className={`chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'ai-bubble'}`}
+                        key={ index }
+                        className={ `chat-bubble ${msg.sender === 'user' ? 'user-bubble' : 'ai-bubble'}` }
                     >
-                        {msg.text.split("\n").map((line, lineIndex) => (
-                            <React.Fragment key={lineIndex}>
-                                {line}
+                        { msg.text.split("\n").map((line, lineIndex) => (
+                            <React.Fragment key={ lineIndex }>
+                                { line }
                                 <br />
                             </React.Fragment>
                         ))}
@@ -180,7 +180,7 @@ export const ChatBubble = ({ data }) => {
                 ))}
             </div>
             <div className="button-container">
-                {visibleCount < messages.length ? (
+                { visibleCount < messages.length ? (
                     <button
                     className="next-message-btn"
                     onClick={() => {
@@ -191,7 +191,7 @@ export const ChatBubble = ({ data }) => {
                     Next Message
                 </button>
                 ) : (
-                    <button className="reset-message-btn" onClick={() => setVisibleCount(1)}>
+                    <button className="reset-message-btn" onClick={ () => setVisibleCount(1) }>
                         Reset Chat
                     </button>
                 )}

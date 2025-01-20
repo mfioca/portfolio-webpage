@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import loadDataForGraphs from '../dataloader'; // Import the data loader
 
 
-Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
+Chart.register( CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend );
 
 const Graph3 = () => {
     const dispatch = useDispatch(); // Initialize dispatch
@@ -103,7 +103,7 @@ const Graph3 = () => {
                 return `${year}: Analytics ${percentage}%`;
             }).join('\n');
 
-            setTextBoxContent(`${yearText}\n\n`); // Set the text box content
+            setTextBoxContent(`${ yearText }\n\n`); // Set the text box content
         }
     }, [graphData]); // Dependency on graphData
 
@@ -119,9 +119,9 @@ const Graph3 = () => {
         <div className="chart-container">
             <h2 className="shadow">Application Usage Over Time by Month</h2>
             <div className="chart3-data-box">
-                {textBoxContent}
+                { textBoxContent }
             </div>
-            <Bar data={graphData} options={options} width={350} height={250} /> 
+            <Bar data={ graphData } options={ options } width={ 350 } height={ 250 } /> 
         </div>
     );
 };

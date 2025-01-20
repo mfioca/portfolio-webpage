@@ -6,7 +6,6 @@ const Home = () => {
     return (
         <div className="home-body">      
             <IntroSection title="Welcome to to my home page">
-
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;This web page began as a personal project to explore 
                     the capabilities of OpenAI’s ChatGPT and delve into prompt engineering and customizations. I chose this as a foundation because 
                     of my prior experience learning React during a six-month self-study period. It provided a practical starting point to expand my 
@@ -40,7 +39,7 @@ const Home = () => {
                         cross-functional teams has honed my problem-solving skills, and I’m passionate about finding creative, data-centered solutions that drive results.
                     </p>
                     <img 
-                        src={`${process.env.PUBLIC_URL}//image.png`} 
+                        src={ `${process.env.PUBLIC_URL}//image.png` } 
                         alt="Your Name" 
                         className="home-image" 
                     />

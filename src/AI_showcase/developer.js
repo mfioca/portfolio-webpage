@@ -4,10 +4,7 @@ import developerData from './developer.json';
 import DeveloperPrompt from './developer_prompt.js';
 
 
-
-
 const Developer = () => {
-  
     return (
         <div>
             <IntroSection title="Developer Assistant Prompt">
@@ -27,7 +24,7 @@ const Developer = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <ChatBubble data={developerData} /> 
+            <ChatBubble data={ developerData } /> 
         </div>
     );
 };

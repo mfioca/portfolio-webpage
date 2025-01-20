@@ -80,7 +80,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
     }, [id]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
     if (!guestCredits.length) {
@@ -91,22 +91,22 @@ const TvMazePeopleGuestCast = ({ id }) => {
         <div className="cast-container">
             <h2 className="section-title">Guest Appearances</h2>
             <div className="cast-grid">
-                {guestCredits.map((credit, index) => (
-                    <div key={index} className="cast-member">
-                        <h3>{credit.name}</h3>
-                        {credit.image ? (
+                { guestCredits.map((credit, index) => (
+                    <div key={ index } className="cast-member">
+                        <h3>{ credit.name }</h3>
+                        { credit.image ? (
                             <img
-                                src={credit.image}
-                                alt={credit.name}
+                                src={ credit.image }
+                                alt={ credit.name }
                                 style={{ width: '100%', borderRadius: '5px' }}
                                 loading="lazy"
                             />
                         ) : (
                             <p>No Image Available</p>
                         )}
-                        <p><strong>Role:</strong> {credit.character}</p>
-                        <p><strong>Episodes:</strong> {credit.episodeCount}</p>
-                        <p><strong>First Appearance:</strong> {credit.earliestPremiere !== '9999-12-31' ? credit.earliestPremiere : 'Unknown'}</p>
+                        <p><strong>Role:</strong> { credit.character }</p>
+                        <p><strong>Episodes:</strong> { credit.episodeCount }</p>
+                        <p><strong>First Appearance:</strong> { credit.earliestPremiere !== '9999-12-31' ? credit.earliestPremiere : 'Unknown' }</p>
                         <p>
                             <strong>Summary:</strong>&nbsp;
                             <span dangerouslySetInnerHTML={{ __html: 
@@ -114,9 +114,9 @@ const TvMazePeopleGuestCast = ({ id }) => {
                                     ? `${credit.summary.substring(0, 200)}... ` 
                                     : credit.summary 
                             }} />
-                            {credit.summary.length > 200 && (
+                            { credit.summary.length > 200 && (
                                 <Link 
-                                    to={`/show/${credit.id}`}  
+                                    to={`/show/${ credit.id }`}  
                                     style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold' }}
                                 >
                                     Read More
@@ -124,7 +124,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
                             )}
                         </p>
                         <a 
-                            href={`https://www.tvmaze.com/shows/${credit.id}`}  
+                            href={ `https://www.tvmaze.com/shows/${credit.id}` }  
                             target="_blank" 
                             rel="noopener noreferrer"
                             style={{

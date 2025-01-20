@@ -5,7 +5,7 @@ import { Line } from 'react-chartjs-2';
 import loadDataForGraphs from '../dataloader'; // Import your data loader function
 
 
-Chart.register(CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend);
+Chart.register( CategoryScale, LinearScale, LineController, LineElement, Title, Tooltip, Legend );
 
 const Graph = () => {
     const dispatch = useDispatch();
@@ -68,7 +68,7 @@ const Graph = () => {
     return (
         <div className="chart-container">
             <h2 className="shadow">Application Usage Over Time by Month</h2>
-            <Line data={graphData} options={options} width={350} height={250} />
+            <Line data={ graphData } options={ options } width={ 350 } height={ 250 } />
         </div>
     );
 };

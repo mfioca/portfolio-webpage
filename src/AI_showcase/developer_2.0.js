@@ -4,7 +4,6 @@ import developer2Data from './developer_2.0.json';
 import Developer2Prompt from './developer_2.0_prompt.js';
 
 const DeveloperV2 = () => {
-
     return (
         <div>
             <IntroSection title="Developer Assistant Tank Prompt">
@@ -24,7 +23,7 @@ const DeveloperV2 = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <ChatBubble data={developer2Data} /> 
+            <ChatBubble data={ developer2Data } /> 
         </div>
     );
 };

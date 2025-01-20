@@ -342,19 +342,19 @@ const positive = `
               <Tab>positive.pdf</Tab>
           </TabList>
           <TabPanel>
-          <div className="markdown-container">
-          <ReactMarkdown>{prompt}</ReactMarkdown>
-      </div>
+            <div className="markdown-container">
+               <ReactMarkdown>{ prompt }</ReactMarkdown>
+            </div>
           </TabPanel>
           <TabPanel>
-          <div className="markdown-container">
-          <ReactMarkdown>{negative}</ReactMarkdown>
-          </div>
+            <div className="markdown-container">
+               <ReactMarkdown>{ negative }</ReactMarkdown>
+            </div>
           </TabPanel>
           <TabPanel>
-          <div className="markdown-container">
-          <ReactMarkdown>{positive}</ReactMarkdown>
-          </div>
+            <div className="markdown-container">
+            < ReactMarkdown>{ positive }</ReactMarkdown>
+            </div>
           </TabPanel>
         </Tabs>
       </div>

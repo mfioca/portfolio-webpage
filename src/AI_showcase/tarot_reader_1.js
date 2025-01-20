@@ -5,7 +5,6 @@ import TarotReaderPrompt1 from './tarot_reader_1_prompt.js';
 
 
 const TarotReader1 = () => {
-
     return (
         <div>
             <IntroSection title="Tarot Reader and Herb salesman Prompt">
@@ -28,7 +27,7 @@ const TarotReader1 = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <ChatBubble data={tarotData} /> 
+            <ChatBubble data={ tarotData } /> 
         </div>
     );
 };

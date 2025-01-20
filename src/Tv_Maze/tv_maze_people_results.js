@@ -27,7 +27,7 @@ const TvMazePeopleResults = () => {
     }, [id]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
     if (!personDetails) {
@@ -59,25 +59,30 @@ const TvMazePeopleResults = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <h1 className="section-title">{personDetails.name}</h1>
+            <h1 className="section-title">{ personDetails.name }</h1>
             <div className="tvmaze-results">
                 <div className="tvmaze-person-results">
                     <div className="main-info">
-                        {personDetails.image && personDetails.image.original && (
+                        { personDetails.image && personDetails.image.original && (
                             <img
-                                src={personDetails.image.original}
-                                alt={personDetails.name}
+                                src={ personDetails.image.original }
+                                alt={ personDetails.name }
                                 loading="lazy"
                             />
                         )}
                     </div>
                     <div className="show-details">
-                        <p><strong>Born in:</strong> {personDetails.country.name}</p>
-                        <p><strong>Birthday:</strong> {personDetails.birthday || 'Unknown'}</p>
-                        <p><strong>Age:</strong> {calculateAge(personDetails.birthday)}</p>
-                        <p><strong>Number of Shows Featured In:</strong> {personDetails._embedded?.castcredits?.length || 0}</p>
+                        <p><strong>Born in:</strong> { personDetails.country.name }</p>
+                        <p><strong>Birthday:</strong> { personDetails.birthday || 'Unknown' }</p>
+                        <p><strong>Age:</strong> { calculateAge(personDetails.birthday) }</p>
+                        <p><strong>Number of Shows Featured In:</strong> { personDetails._embedded?.castcredits?.length || 0 }</p>
+                        <p>
+                            <strong>More details at: </strong> 
+                            <a href={ personDetails.url } target="_blank" rel="noopener noreferrer">
+                                TVMaze Profile
+                            </a>
+                        </p>
                     </div>
-                    
                 </div>
             </div>
             <div className="results-tabs-container">
@@ -93,10 +98,10 @@ const TvMazePeopleResults = () => {
                         <Tab>Guest Appearances</Tab>
                     </TabList>
                     <TabPanel>
-                        <TvMazePeopleCast id={personDetails.id} />
+                        <TvMazePeopleCast id={ personDetails.id } />
                     </TabPanel>
                     <TabPanel>
-                        <TvMazePeopleGuestCast id={personDetails.id} />
+                        <TvMazePeopleGuestCast id={ personDetails.id } />
                     </TabPanel>
                 </Tabs>
             </div>

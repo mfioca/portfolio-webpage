@@ -47,7 +47,7 @@ const TvMazePeopleCast = ({ id }) => {
     });
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
     if (!castCredits.length) {
@@ -58,31 +58,31 @@ const TvMazePeopleCast = ({ id }) => {
         <div className="cast-container">
             <h2 className="section-title">Cast Credits</h2>
             <div className="cast-grid">
-                {groupedShows.map(({ show, characters }, index) => (
-                    <div key={index} className="cast-member">
-                        <h3>{show.name}</h3>
-                        {show.image ? (
+                { groupedShows.map(({ show, characters }, index) => (
+                    <div key={ index } className="cast-member">
+                        <h3>{ show.name }</h3>
+                        { show.image ? (
                             <img
-                                src={show.image.medium}
-                                alt={show.name}
+                                src={ show.image.medium }
+                                alt={ show.name }
                                 style={{ width: '100%', borderRadius: '5px' }}
                                 loading="lazy"
                             />
                         ) : (
                             <p>No Image Available</p>
                         )}
-                        <p><strong>Roles:</strong> {characters.join(', ')}</p>
-                        <p><strong>Premiered:</strong> {show.premiered ? show.premiered : 'Unknown'}</p>
-                        {show.summary && (
+                        <p><strong>Roles:</strong> { characters.join(', ') }</p>
+                        <p><strong>Premiered:</strong> { show.premiered ? show.premiered : 'Unknown' }</p>
+                        { show.summary && (
                             <p>
                                 <span dangerouslySetInnerHTML={{ __html: 
                                     show.summary.length > 200 
                                         ? `${show.summary.substring(0, 200)}... ` 
                                         : show.summary 
                                 }} />
-                                {show.summary.length > 200 && (
+                                { show.summary.length > 200 && (
                                     <Link 
-                                        to={`/show/${show.id}`} 
+                                        to={`/show/${ show.id }`} 
                                         style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold' }}
                                     >
                                         Read More
@@ -90,9 +90,9 @@ const TvMazePeopleCast = ({ id }) => {
                                 )}
                             </p>
                         )}
-                        {show.url && (
+                        { show.url && (
                             <a 
-                                href={show.url} 
+                                href={ show.url } 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 style={{

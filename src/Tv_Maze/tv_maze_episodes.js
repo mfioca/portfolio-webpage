@@ -36,7 +36,7 @@ const TvMazeEpisodes = ({ showId }) => {
     }, [showId]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
     if (!seasons.length) {
@@ -48,18 +48,18 @@ const TvMazeEpisodes = ({ showId }) => {
             <h2 className="section-title">Episodes by Season</h2>
             <Tabs>
                 <TabList>
-                    {seasons.map((season) => (
-                        <Tab key={season.id}>Season {season.number}</Tab>
+                    { seasons.map((season) => (
+                        <Tab key={ season.id }>Season { season.number }</Tab>
                     ))}
                 </TabList>
-                {seasons.map((season) => (
-                    <TabPanel key={season.id}>
+                { seasons.map((season) => (
+                    <TabPanel key={ season.id }>
                         <div className="tvmaze-results-intro">
                             <div className="season-header">
-                                {season.image ? (
+                                { season.image ? (
                                     <img
-                                        src={season.image.original}
-                                        alt={`Season ${season.number}`}
+                                        src={ season.image.original }
+                                        alt={`Season ${ season.number }`}
                                         loading="lazy"
                                         className="season-image"
                                     />
@@ -68,12 +68,12 @@ const TvMazeEpisodes = ({ showId }) => {
                                 )}
                             </div>
                             <div className="season-details-extra">
-                                <p><strong>Season {season.number}</strong></p>
-                                <p><strong>Premiere Date:</strong> {season.premiereDate || 'Unknown'}</p>
-                                <p><strong>End Date:</strong> {season.endDate || 'Unknown'}</p>
-                                <p><strong>Number of Episodes:</strong> {season.episodes.length || 0}</p>
+                                <p><strong>Season { season.number }</strong></p>
+                                <p><strong>Premiere Date:</strong> { season.premiereDate || 'Unknown' }</p>
+                                <p><strong>End Date:</strong> { season.endDate || 'Unknown' }</p>
+                                <p><strong>Number of Episodes:</strong> { season.episodes.length || 0 }</p>
                                 <p>
-                                    <a href={season.url} target="_blank" rel="noopener noreferrer">
+                                    <a href={ season.url } target="_blank" rel="noopener noreferrer">
                                         View Season on TVMaze
                                     </a>
                                 </p>
@@ -90,18 +90,18 @@ const TvMazeEpisodes = ({ showId }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {season.episodes.map((episode) => (
-                                    <tr key={episode.id}>
-                                        <td>{episode.name}</td>
-                                        <td>{episode.number}</td>
-                                        <td>{episode.airdate || 'Unknown'}</td>
+                                { season.episodes.map((episode) => (
+                                    <tr key={ episode.id }>
+                                        <td>{ episode.name }</td>
+                                        <td>{ episode.number }</td>
+                                        <td>{ episode.airdate || 'Unknown'}</td>
                                         <td
                                             dangerouslySetInnerHTML={{
                                                 __html: episode.summary || 'No summary available.',
                                             }}
                                         />
                                         <td>
-                                            <a href={episode.url} target="_blank" rel="noopener noreferrer">
+                                            <a href={ episode.url } target="_blank" rel="noopener noreferrer">
                                                 View Episode on TVMaze
                                             </a>
                                         </td>
