@@ -24,7 +24,6 @@
 .scrolling-quotes .quote-text {
     font-size: 16px;
     font-family: 'Playfair Display', serif;
-    /*font-family: 'Courier New'; /* A clean sans-serif font */
 }
 
 .scrolling-quotes .quote-source {
@@ -46,7 +45,6 @@
         height: 240px; /* Adjust height for smaller viewports */
     }
 }
-
 
 /***********************************************************************************/
 /*                            Swiper Section                                       */
@@ -114,7 +112,6 @@
     margin-bottom: 10px;
 }
 
-/* Swiper Slide Images */
 .swiper-slide img {
     display: block;
     max-width: 100%; /* Make the image responsive to its container */
@@ -123,7 +120,6 @@
     border-radius: 8px; /* Match card styling if needed */
 }
 
-/* Card Image */
 .card-image {
     flex-shrink: 1; /* Allow the image to shrink if necessary */
     margin: auto; /* Center the image horizontally */
@@ -153,7 +149,6 @@
     }
 }
 
-/* Adjust for small screens */
 @media (max-width: 1000px) {
   .about-swiper .swiper-button-next {
     right: 10px;

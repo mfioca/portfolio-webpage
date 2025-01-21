@@ -58,8 +58,6 @@ body {
 }
 
 .footer {
-  /*position: relative;*/
-  /*margin-top: auto; /* Pushes the footer to the bottom of the screen */
   position: relative;
   margin-bottom: 0;
   width: auto;
@@ -132,7 +130,6 @@ body {
   letter-spacing: 0.5px; /* Adjust as needed */
   font-weight: 600; /* Semi-bold */
   justify-content: center; /* Centers horizontally */
-  /*margin-left: calc(40% - 400px); /* Initially, start with 50% of the screen width minus 200px */
 }
 
 .home-content p {
@@ -150,7 +147,6 @@ body {
 
 .home-image-original {
   float: right;
-  /*margin: 0px 0px 15px 20px;*/
   width: 100%; /* Ensures the image scales based on its parent container */
   max-width: 700px; /* Maximum width to avoid the image getting too big */
   height: auto; /* Maintain the aspect ratio */

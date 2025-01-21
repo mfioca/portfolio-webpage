@@ -74,7 +74,6 @@
 }
 
 .chart-container {
-  /*flex: 1; /* Allow the graph to take available space */
   width: 350px;
   height: 350px;
   padding: 10px; /* Padding for inner spacing */
@@ -97,9 +96,9 @@
 
 @media (max-width: 800px) { /* Adjust this breakpoint as needed */
   .chart-container {
-      grid-template-columns: 1fr; /* Switch to a single column layout */
-      justify-content: center; /* Center the pagination controls */
-      margin: auto;
+    grid-template-columns: 1fr; /* Switch to a single column layout */
+    justify-content: center; /* Center the pagination controls */
+    margin: auto;
   }
   .text-section {
     width: 95%; /* Make it full width below the graph */
@@ -108,10 +107,10 @@
     padding: 10px;
 }
   .chart3-data-box {
-      margin: 10px 0; /* Add margin to separate it from the title */
-      width: 100%; /* Full width in small screens */
-      max-width: 300px; /* Remove max-width constraint */
-      min-width: 200px;
+    margin: 10px 0; /* Add margin to separate it from the title */
+    width: 100%; /* Full width in small screens */
+    max-width: 300px; /* Remove max-width constraint */
+    min-width: 200px;
   }
 }
 
@@ -128,7 +127,6 @@
   border: 5px solid transparent; /* Add a transparent border */
   border-radius: 10px; /* Rounded corners for a smoother look */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  /*background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
 }
 
 .dashboard-container ul {
@@ -163,7 +161,6 @@
   text-align: center; /* Center-align text inside each div */
 }
 
-/* Optional: Normalize the size of h2 tags */
 .dropdowns h2 {
   font-size: 16px; /* Adjust to a consistent size */
   margin-bottom: 10px; /* Add spacing below the title */
@@ -199,7 +196,6 @@
   flex-shrink: 1;
   flex: 0 0 40%; /* Set a fixed basis for the donut chart (60% of the width) */
   max-width: 400px; /* Control the maximum size of the donut chart */
-  /*margin: auto; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
 
@@ -217,10 +213,6 @@
   flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
   min-width: 300px; /* Control the maximum size of the bar chart */
   max-width: 400px;
-  /*max-width: 400px;
-  height: 500px;
-  border: 10px solid pink;
-  /*margin: auto; /* Add some spacing around the chart */
   padding: 20px; /* Add padding if needed */
 }
 
@@ -245,7 +237,6 @@
   display: flex;
   justify-content: center;
   text-align: center; /* Center text */
-  /*background-color: pink;*/
 }
 
 .bar-chart-content {
@@ -253,7 +244,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /*background-color: yellow;*/
 }
 
 .dashboard-csv {

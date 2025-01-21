@@ -170,8 +170,6 @@
     border: 2px solid #ccc; /* Add a border matching the theme */
 }
 
-
-  
 .main-info {
     flex: 1; /* Let this column take up one part of the available space */
     display: flex;
@@ -199,7 +197,6 @@
     line-height: 1.5;
     margin-top: 20px;
 }
-
 
 /* Tabs container */
 
@@ -291,7 +288,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
   
-/* Title for the cast section */
 .cast-container h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
@@ -299,7 +295,6 @@
     text-align: center;
   }
   
-/* Grid layout for cast members */
 .cast-grid {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
@@ -307,7 +302,6 @@
     justify-content: center; /* Center items in the grid */
 }
   
-/* Individual cast member card */
 .cast-member {
     border: 1px solid #ccc; /* Light border around each member */
     border-radius: 5px; /* Rounded corners */
@@ -319,27 +313,23 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
 }
   
-/* Hover effect for cast member cards */
 .cast-member:hover {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
   
-/* Image styling */
 .cast-member img {
     width: 100%; /* Ensure the image fits the card width */
     border-radius: 5px; /* Match the card's rounded corners */
     margin-bottom: 10px; /* Space between the image and text */
 }
   
-/* Name styling */
 .cast-member h3 {
     font-size: 1.2rem;
     margin: 10px 0; /* Add spacing around the name */
     color: #0078d4; /* Theme color */
 }
   
-/* Character name styling */
 .cast-member p {
     font-size: 0.9rem;
     color: #666; /* Subtle gray for less emphasis */
