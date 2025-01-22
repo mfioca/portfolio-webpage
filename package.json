@@ -2,7 +2,7 @@
   "name": "my-analytics-graphs",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mfioca.github.io/test-webpage/",
+  "homepage": "https://yourusername.github.io/portfolio-webpage/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "@testing-library/jest-dom": "^5.17.0",
