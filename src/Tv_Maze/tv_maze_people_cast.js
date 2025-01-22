@@ -80,14 +80,12 @@ const TvMazePeopleCast = ({ id }) => {
                                         ? `${show.summary.substring(0, 200)}... ` 
                                         : show.summary 
                                 }} />
-                                { show.summary.length > 200 && (
-                                    <Link 
-                                        to={`/show/${ show.id }`} 
-                                        style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold' }}
-                                    >
-                                        Read More
-                                    </Link>
-                                )}
+                                <Link 
+                                    to={`/show/${ show.id }`} 
+                                    style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold', display: 'block', marginTop: '5px' }}
+                                >
+                                    Read More
+                                </Link>
                             </p>
                         )}
                         { show.url && (
@@ -97,13 +95,13 @@ const TvMazePeopleCast = ({ id }) => {
                                 rel="noopener noreferrer"
                                 style={{
                                     display: 'block', 
-                                    marginTop: '10px', 
+                                    marginTop: '5px', 
                                     fontSize: '0.9rem', 
                                     color: '#0078d4', 
                                     textDecoration: 'none'
                                 }}
                             >
-                                View More on TVMaze
+                                View on TVMaze
                             </a>
                         )}
                     </div>
@@ -114,3 +112,5 @@ const TvMazePeopleCast = ({ id }) => {
 };
 
 export default TvMazePeopleCast;
+
+

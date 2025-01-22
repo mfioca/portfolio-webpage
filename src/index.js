@@ -108,7 +108,6 @@ root.render(
             <Route path="/tv_maze" element={<TvMaze />} />
             <Route path="/show/:id" element={<TvMazeShowResults />} />
             <Route path="/person/:id" element={<TvMazePeopleResults />} />
-            <Route path="/people/:id" element={<TvMazePeopleResults />} />
             <Route path="/Dashboard" element={<Dashboard />} /> 
             <Route path="/AIShowcase" element={<AIShowcase />} />
           </Routes>

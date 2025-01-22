@@ -50,7 +50,7 @@ const TvMazeCast = ({ id }) => {
                         <p>As: { person.character.name }</p>
                         { person.person.url && (
                             <Link 
-                            to={ `/people/${ person.person.id }` }  // Navigate to the person details page
+                            to={ `/person/${ person.person.id }` }  // Navigate to the person details page
                             style={{
                                 display: 'block', 
                                 marginTop: '10px', 
