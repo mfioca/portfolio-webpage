@@ -15,10 +15,6 @@
     padding: 10px;
     align-items: center;
     letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
-    box-sizing: border-box; /* Include padding and borders in element's total width/height */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
 .scrolling-quotes .quote-text {
@@ -61,7 +57,7 @@
     box-sizing: border-box; /* Include padding in size calculations */
     background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
     line-height: 3; /* Adjust line height for better spacing */
     overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }

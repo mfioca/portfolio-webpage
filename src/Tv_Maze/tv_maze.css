@@ -91,11 +91,6 @@
     padding: 20px;
     margin: 20px auto; /* Center the container on the page */
     max-width: 1600px; /* Optional: constrain width */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 8px; /* Rounded corners */
-    border: 2px solid #ccc; /* Add a border matching the theme */
 }
 
 .tvmaze-search-placeholder {
@@ -113,8 +108,6 @@
 /* Individual result box */
 
 .result-box {
-    border: 1px solid #ccc; /* Light border around each result */
-    border-radius: 5px; /* Rounded corners */
     padding: 15px;
     width: 150px; /* Set a fixed width for each box */
     text-align: center; /* Center-align the content */
@@ -148,10 +141,6 @@
     padding: 10px; /* Add padding for spacing */
     font-family: 'Courier New', sans-serif; /* Consistent font */
     align-items: flex-start; /* Align items to the top of the row */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
-    border-radius: 8px; /* Rounded corners */
-    border: 2px solid #ccc; /* Add a border matching the theme */
 }
 
 .tvmaze-person-results {
@@ -164,9 +153,6 @@
     padding: 10px; /* Add padding for spacing */
     font-family: 'Courier New', sans-serif; /* Consistent font */
     align-items: flex-start; /* Align items to the top of the row */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
-    border-radius: 8px; /* Rounded corners */
     border: 2px solid #ccc; /* Add a border matching the theme */
 }
 
@@ -281,11 +267,6 @@
     font-family: 'Courier New', sans-serif; /* Consistent font */
     color: #333; /* Text color */
     padding: 20px; /* Add padding inside the container */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for background */
-    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
-    border: 1px solid #ccc; /* Subtle border for structure */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
   
 .cast-container h2 {
@@ -391,11 +372,8 @@
   
 .season-details-extra {
     flex: 1; /* Let this column take up one part of the available space */
-    background-color: #f9f9f9; /* Light background color */
     padding: 15px; /* Add padding for spacing */
     margin: 10px;
-    border: 1px solid #ccc; /* Optional border for separation */
-    border-radius: 10px; /* Rounded corners for consistency */
     max-width: 500px; /* Explicit max width to prevent wrapping */
 }
   

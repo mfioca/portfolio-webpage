@@ -24,7 +24,7 @@ const AIShowcase = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <div className="ai-showcase-container">
+            <div className="box-background ai-showcase-container">
                 <Tabs>
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>

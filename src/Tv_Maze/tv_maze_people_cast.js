@@ -55,7 +55,7 @@ const TvMazePeopleCast = ({ id }) => {
     }
 
     return (
-        <div className="cast-container">
+        <div className="box-background  cast-container">
             <h2 className="section-title">Cast Credits</h2>
             <div className="cast-grid">
                 { groupedShows.map(({ show, characters }, index) => (

@@ -50,7 +50,7 @@ function Dashboard() {
                     </p>
                 </IntroSection>
                 <DividerLine />
-                <div className="graph-flexbox">
+                <div className="box-background graph-flexbox">
                     <div className="graph-container">
                         <Graph />
                         <TextSection>

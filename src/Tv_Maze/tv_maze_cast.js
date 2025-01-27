@@ -31,7 +31,7 @@ const TvMazeCast = ({ id }) => {
     }
 
     return (
-        <div className="cast-container">
+        <div className="box-background cast-container">
             <h2 className="section-title">Cast</h2>
             <div className="cast-grid">
                 {cast.map((person, index) => (

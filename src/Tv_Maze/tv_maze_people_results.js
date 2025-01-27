@@ -61,7 +61,7 @@ const TvMazePeopleResults = () => {
             <DividerLine />
             <h1 className="section-title">{ personDetails.name }</h1>
             <div className="tvmaze-results">
-                <div className="tvmaze-person-results">
+                <div className="box-background tvmaze-person-results">
                     <div className="main-info">
                         { personDetails.image && personDetails.image.original && (
                             <img

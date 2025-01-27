@@ -47,7 +47,7 @@ const Navigation = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">{title}</div>
+      <div className="navbar-brand">{ title }</div>
       <ul className="navbar-links">
         <li>
           <Link to="/" className="nav-link">Home</Link>
@@ -102,15 +102,15 @@ root.render(
     <HashRouter>
       <Navigation /> {/* Place Navigation here */}
       <div className="body">
-          <Routes>
-            <Route path="/" element={<Home />} /> 
-            <Route path="/About" element={<AboutPage />} /> 
-            <Route path="/tv_maze" element={<TvMaze />} />
-            <Route path="/show/:id" element={<TvMazeShowResults />} />
-            <Route path="/person/:id" element={<TvMazePeopleResults />} />
-            <Route path="/Dashboard" element={<Dashboard />} /> 
-            <Route path="/AIShowcase" element={<AIShowcase />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={ <Home /> } /> 
+          <Route path="/About" element={ <AboutPage /> } /> 
+          <Route path="/tv_maze" element={ <TvMaze /> } />
+          <Route path="/show/:id" element={ <TvMazeShowResults /> } />
+          <Route path="/person/:id" element={ <TvMazePeopleResults /> } />
+          <Route path="/Dashboard" element={ <Dashboard /> } /> 
+          <Route path="/AIShowcase" element={ <AIShowcase /> } />
+        </Routes>
       </div>
     </HashRouter>
     <Footer />

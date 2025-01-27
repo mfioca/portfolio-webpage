@@ -67,7 +67,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                     <p>No image available</p>
                                 )}
                             </div>
-                            <div className="season-details-extra">
+                            <div className="box-background  season-details-extra">
                                 <p><strong>Season { season.number }</strong></p>
                                 <p><strong>Premiere Date:</strong> { season.premiereDate || 'Unknown' }</p>
                                 <p><strong>End Date:</strong> { season.endDate || 'Unknown' }</p>

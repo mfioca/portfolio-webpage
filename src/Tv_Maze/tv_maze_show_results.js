@@ -48,7 +48,7 @@ const TvMazeShowResults = () => {
             <DividerLine />
             <h1 className="section-title">{ showDetails.name }</h1>
             <div className="tvmaze-results">
-                <div className="tvmaze-results-intro">
+                <div className="box-background  tvmaze-results-intro">
                     <div className="main-info">
                         { showDetails.image && showDetails.image.original && (
                             <img

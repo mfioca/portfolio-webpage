@@ -161,7 +161,7 @@ const CSVdata = () => {
     const currentData = filteredData.slice(startIndex, endIndex);
  
     return (
-        <div className="dashboard-container">
+        <div className="box-background dashboard-container">
             <div className="dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
@@ -288,7 +288,7 @@ const CSVdata = () => {
                     )}
                 </div>
             </div>
-            <div className = "dashboard-csv">
+            {/*<div className = "box-background dashboard-csv"> */}
                 <div className="filtered-data">
                     { currentData.length > 0 ? (
                         <table className="csv-data">
@@ -334,7 +334,7 @@ const CSVdata = () => {
                         Next
                     </button>
                 </div>
-            </div>
+            {/*</div>*/}
         </div>
     );
 };
