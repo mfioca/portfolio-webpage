@@ -31,11 +31,11 @@ const TvMazeCast = ({ id }) => {
     }
 
     return (
-        <div className="box-background cast-container">
+        <div className="box-background border cast-container">
             <h2 className="section-title">Cast</h2>
-            <div className="cast-grid">
+            <div className="flex-wrap cast-grid">
                 {cast.map((person, index) => (
-                    <div key={ index } className="cast-member">
+                    <div key={ index } className="box-style cast-member">
                         <h3>{ person.person.name }</h3>
                         { person.person.image ? (
                             <img

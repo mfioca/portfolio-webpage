@@ -44,7 +44,7 @@ const TvMazeEpisodes = ({ showId }) => {
     }
 
     return (
-        <div className="tvmaze-episodes-container">
+        <div className="flex-wrap box-style tvmaze-episodes-container">
             <h2 className="section-title">Episodes by Season</h2>
             <Tabs>
                 <TabList>
@@ -54,8 +54,8 @@ const TvMazeEpisodes = ({ showId }) => {
                 </TabList>
                 { seasons.map((season) => (
                     <TabPanel key={ season.id }>
-                        <div className="tvmaze-results-intro">
-                            <div className="season-header">
+                        <div className="flex-wrap tvmaze-results-intro">
+                            <div className="flex-column season-header">
                                 { season.image ? (
                                     <img
                                         src={ season.image.original }
@@ -67,7 +67,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                     <p>No image available</p>
                                 )}
                             </div>
-                            <div className="box-background  season-details-extra">
+                            <div className="box-background border season-details-extra">
                                 <p><strong>Season { season.number }</strong></p>
                                 <p><strong>Premiere Date:</strong> { season.premiereDate || 'Unknown' }</p>
                                 <p><strong>End Date:</strong> { season.endDate || 'Unknown' }</p>

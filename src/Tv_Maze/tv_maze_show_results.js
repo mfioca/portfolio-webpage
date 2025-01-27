@@ -48,8 +48,8 @@ const TvMazeShowResults = () => {
             <DividerLine />
             <h1 className="section-title">{ showDetails.name }</h1>
             <div className="tvmaze-results">
-                <div className="box-background  tvmaze-results-intro">
-                    <div className="main-info">
+                <div className="box-background border flex-wrap tvmaze-results-intro">
+                    <div className="flex-column main-info">
                         { showDetails.image && showDetails.image.original && (
                             <img
                                 src={ showDetails.image.original }
@@ -58,10 +58,11 @@ const TvMazeShowResults = () => {
                             />
                         )}
                     </div>
-                    <div className="show-details">
+                    <div className="box-style show-details">
                         <p><strong>Language:</strong> { showDetails.language || 'N/A' }</p>
                         <p><strong>Type:</strong> { showDetails.type || 'N/A' }</p>
                         <p><strong>Genres:</strong> { showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A' }</p>
+                        <p><strong>Country:</strong> {showDetails.network?.country?.name || showDetails.webChannel?.country?.name || 'N/A'}</p>
                         <p><strong>Network:</strong> { showDetails.network ? `${ showDetails.network.name } (${ showDetails.network.country.code })` : 'N/A' }</p>
                         <p><strong>Premiered:</strong> { showDetails.premiered || 'N/A' }</p>
                         <p><strong>Ended:</strong> { showDetails.ended || 'N/A' }</p>

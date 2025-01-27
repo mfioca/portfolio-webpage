@@ -37,8 +37,6 @@
 /***********************************************************************************/
 
 .graph-flexbox {
-  display: flex; /* Enable flexbox for layout */
-  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
   justify-content: center; /* Center items horizontally */
   margin: auto;
   padding: 10px;
@@ -46,37 +44,24 @@
 }
 
 .graph-container {
-  display: flex; /* Enable flexbox for its children */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: space-between; /* Distribute items evenly */
   gap: 10px; /* Add space between items */
   padding: 10px; /* Padding for inner spacing */
   margin: 10px;
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Slight rounding */
-  background-color: #ffffff; /* White */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #ffffff;
 }
 
 .text-section {
   flex-shrink: 1; /* Allow the text to take available space */
   max-width: 250px;
-  padding: 10px;
-  border: 1px solid #ddd; /* Subtle light border */
-  border-radius: 4px; /* Rounded corners */
   background-color: #f8f9fa; /* Light beige or cream */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow */
   color: #333; /* Dark gray text for readability */
 }
 
 .chart-container {
   width: 350px;
-  height: 350px;
-  padding: 10px; /* Padding for inner spacing */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Slight rounding */
+  height: 375px;
   background-color: #ffffff; /* White */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .chart3-data-box {
@@ -85,7 +70,7 @@
   height: 35px; /* Set height */
   padding: 5px; /* Adjust padding */
   margin-bottom: 5px; 
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 2px; /* Rounded corners */
   background-color: #f9f9f9; /* Background color */
   font-size: 14px; /* Font size */
 }
@@ -115,8 +100,6 @@
 /***********************************************************************************/
 
 .dashboard-container {
-  display: flex; /* or block, depending on your layout needs */
-  flex-direction: column; /* Stack elements vertically */
   padding: 10px; /* Add padding for spacing */
   margin: 10px auto;
   max-width: 1600px;
@@ -133,16 +116,10 @@
 }
 
 .dashboard-hub {
-  padding: 10px; /* Padding inside the wrapper */
-  /*border: 5px solid transparent; /* Add a transparent border */
-  /*border-radius: 10px; /* Rounded corners for a smoother look */
   background-color: #e0e0e0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .dropdowns {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping if needed */
   justify-content: space-between; /* Distribute items evenly */
   align-items: stretch; /* Make all items the same height */
   margin: auto; /* Center the container */
@@ -159,56 +136,15 @@
   margin-bottom: 10px; /* Add spacing below the title */
 }
 
-.graph-wrapper-2 {
-  display: flex;
-  flex-wrap: wrap;
-  border: 10px solid pink;
-  justify-content: center; /* Ensure child elements are horizontally centered */
-}
-
 .graph-wrapper {
-  display: flex;
   justify-content: center; /* Center graphs horizontally */
   align-items: flex-start; /* Align items at the top */
   gap: 0; /* Remove unnecessary space between graphs */
-  flex-wrap: wrap; /* Allow wrapping when necessary */
   margin: 0 auto; /* Center the container itself */
   padding: 0; /* Remove padding */
 }
 
-.graph-wrapper-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Ensure child elements are horizontally centered */
-  align-content: flex-start; /* Align all items towards the top */
-  padding: 10px; /* Add padding if needed */
-  gap: 2000px; /* Space between items */
-}
-
-.donut-chart-1 {
-  flex-shrink: 1;
-  flex: 0 0 40%; /* Set a fixed basis for the donut chart (60% of the width) */
-  max-width: 400px; /* Control the maximum size of the donut chart */
-  padding: 20px; /* Add padding if needed */
-}
-
-.donut-chart {
-  flex: 1 1 45%; /* Allow flexibility and set a basis width */
-  max-width: 45%; /* Ensure graphs don’t exceed this width */
-  min-width: 350px;
-  box-sizing: border-box; /* Include padding and border in the width */
-  margin: 10px; /* Minimal margin to prevent overlap */
-  padding: 10px;
-}
-
-.bar-chart-1 {
-  flex-shrink: 1;
-  flex: 0 0 40%; /* Set a fixed basis for the bar chart (35% of the width) */
-  min-width: 300px; /* Control the maximum size of the bar chart */
-  max-width: 400px;
-  padding: 20px; /* Add padding if needed */
-}
-
+.donut-chart,
 .bar-chart {
   flex: 1 1 45%; /* Allow flexibility and set a basis width */
   max-width: 45%; /* Ensure graphs don’t exceed this width */
@@ -216,13 +152,6 @@
   box-sizing: border-box; /* Include padding and border in the width */
   margin: 10px; /* Minimal margin to prevent overlap */
   padding: 10px;
-}
-
-.bar-chart-1 {
-  display: flex;
-  flex-direction: column; /* Stack the title and chart vertically */
-  align-items: center; /* Center align the chart */
-  margin: 0 auto; /* Center the container horizontally */
 }
 
 .bar-chart-title {
@@ -240,11 +169,8 @@
 }
 
 .dashboard-csv {
-  /*border: 5px solid transparent; /* Add a transparent border */
-  /*border-radius: 10px; /* Rounded corners for a smoother look */
   padding: 10px; /* Padding inside the wrapper */
   margin-top: 10px;
-  /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .filtered-data {

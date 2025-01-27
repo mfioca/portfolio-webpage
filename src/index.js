@@ -46,7 +46,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="navbar">
+    <nav className="index-shared navbar">
       <div className="navbar-brand">{ title }</div>
       <ul className="navbar-links">
         <li>
@@ -72,8 +72,8 @@ const Navigation = () => {
 
 const Footer = () =>{
   return (
-    <footer className="footer">
-      <div className="footer-content">
+    <div className="footer">
+      <footer className="footer-content">
         <p>Contact Me: <a href="mailto:mfioca@gmail.com" className="contact-link">mfioca@gmail.com</a></p>
         <p>
           <a 
@@ -90,8 +90,8 @@ const Footer = () =>{
             LinkedIn Profile
           </a>
         </p>
-      </div>
-    </footer>
+      </footer>
+    </div>
   )
 };
 
@@ -101,7 +101,6 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Navigation /> {/* Place Navigation here */}
-      <div className="body">
         <Routes>
           <Route path="/" element={ <Home /> } /> 
           <Route path="/About" element={ <AboutPage /> } /> 
@@ -111,9 +110,8 @@ root.render(
           <Route path="/Dashboard" element={ <Dashboard /> } /> 
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
         </Routes>
-      </div>
+      <Footer />
     </HashRouter>
-    <Footer />
   </React.StrictMode>
 );
 

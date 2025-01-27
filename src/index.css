@@ -1,6 +1,4 @@
 body {
-  display: flex;
-  flex-direction: column;
   padding-top: 120px;
   margin: auto;
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
@@ -9,22 +7,55 @@ body {
   justify-content: center;
 }
 
+body h2 {
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 0.5px; /* Adjust as needed */
+}
+
 .shadow {
   text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
 .box-background {
-  box-sizing: border-box; /* Include padding and borders in element's total width/height */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
-  border: 2px solid #ccc; /* Add a border matching the theme */
   border-radius: 8px; /* Rounded corners */
+  padding: 10px;
+}
+
+.flex-column {
+  display: flex; /* Optional: if using flex for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.border {
+  box-sizing: border-box; /* Include padding and borders in element's total width/height */
+  border: 2px solid #ccc; /* Add a border matching the theme */
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.index-shared {
+  color: white;
+  background-color: #282c34;
+  font-family: 'Roboto', sans-serif; /* A clean, modern font */
+}
+
+.box-style {
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 /***********************************************************************************/
 /*                            Nav Bar and Footer                                   */
 /***********************************************************************************/
+
 
 .navbar {
   display: flex;
@@ -38,9 +69,6 @@ body {
   right: 0; /* Ensure it spans the full width */
   z-index: 1000; /* Ensure the navbar stays above other elements */
   min-height: 100px;
-  color: white;
-  background-color: #282c34;
-  font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
 
 .navbar-brand {
@@ -66,20 +94,36 @@ body {
   color: #e0e0e0; /* Change color on hover */
 }
 
+.footer-1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  text-align: center;
+}
+
 .footer {
   position: relative;
-  margin-bottom: 0;
-  width: auto;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif; /* A clean, modern font */
+  width: 100%;
   background-color: #282c34;
   color: white;
   text-align: center;
+  padding: 0px; /* Add padding to make content visible */
+  margin: 0px; /* Ensure space above */
 }
 
 .footer-content {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  width: 100%; /* Ensures it spans fully within the footer */
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .contact-link {
@@ -136,8 +180,6 @@ body {
   margin-bottom: 10px; /* Smaller space below the heading */
   margin: 0 auto;
   line-height: 5; /* Increase line height for readability */
-  letter-spacing: 0.5px; /* Adjust as needed */
-  font-weight: 600; /* Semi-bold */
   justify-content: center; /* Centers horizontally */
 }
 
@@ -151,7 +193,7 @@ body {
 .home-container {
   display: flex;
   align-items: flex-start; /* Align items at the top */
-  gap: 20px; /* Space between the image and text */
+  gap: 10px; /* Space between the image and text */
 }
 
 .home-image-original {

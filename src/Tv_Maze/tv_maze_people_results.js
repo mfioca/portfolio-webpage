@@ -62,7 +62,7 @@ const TvMazePeopleResults = () => {
             <h1 className="section-title">{ personDetails.name }</h1>
             <div className="tvmaze-results">
                 <div className="box-background tvmaze-person-results">
-                    <div className="main-info">
+                    <div className="flex-column main-info">
                         { personDetails.image && personDetails.image.original && (
                             <img
                                 src={ personDetails.image.original }
@@ -71,7 +71,7 @@ const TvMazePeopleResults = () => {
                             />
                         )}
                     </div>
-                    <div className="show-details">
+                    <div className="box-style show-details">
                         <p><strong>Born in:</strong> { personDetails.country.name }</p>
                         <p><strong>Birthday:</strong> { personDetails.birthday || 'Unknown' }</p>
                         <p><strong>Age:</strong> { calculateAge(personDetails.birthday) }</p>

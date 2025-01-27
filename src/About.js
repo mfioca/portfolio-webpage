@@ -61,7 +61,7 @@ const ScrollingQuotes = () => {
     }, []);
 
     return (
-        <div className="box-background scrolling-quotes">
+        <div className="box-background border flex-column scrolling-quotes">
             <p className="quote-text">{ quotes[currentQuoteIndex].text }</p>
             <p className="quote-source">{ quotes[currentQuoteIndex].source }</p>
         </div>
@@ -74,7 +74,7 @@ const ScrollingQuotes = () => {
 
 const Card = ({ icon, title, image, children }) => {
     return (
-        <div className="card-container">
+        <div className="flex-column card-container">
             <div className="top-icon">{ icon }</div>
             <div className="card-body">
                 <div>
@@ -118,7 +118,7 @@ const About = () => {
                 }}
                 navigation={ true }
                 modules={ [Pagination, Navigation] }
-                className="box-background about-swiper"
+                className="box-background flex-column border about-swiper"
             >
                 <SwiperSlide>
                     <Card 

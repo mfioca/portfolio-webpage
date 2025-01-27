@@ -1,6 +1,7 @@
 .about-body {
     margin: 10px;
     padding: 5px;
+    flex-grow: 1;
 }
 
 /***********************************************************************************/
@@ -8,11 +9,8 @@
 /***********************************************************************************/
 
 .scrolling-quotes {
-    display: flex; /* Flex container for Swiper */
-    flex-direction: column; /* Stack slides vertically if needed */
     justify-content: center;
     margin: auto;
-    padding: 10px;
     align-items: center;
     letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
 }
@@ -47,8 +45,6 @@
 /***********************************************************************************/
 
 .about-swiper {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
     justify-content: flex-start; /* Content starts at the top */
     max-width: 1600px;
     margin-top: 20px;
@@ -77,12 +73,9 @@
     text-align: center; /* Center the title */
     color: #007bff; /* Primary color for section headings */
     font-size: 32px; /* Section heading font size */
-    font-weight: 600; /* Semi-bold */
 }
 
 .card-container {
-    display: flex; /* Optional: if using flex for layout */
-    flex-direction: column; /* Stack children vertically */
     margin-bottom: 50px;
     height: 100%; /* Ensure it occupies the full viewport */
     width: 100%;
@@ -139,9 +132,9 @@
 @media (min-width: 1000px) {
     .card-container {
         justify-content: center;
-    align-items: center;
-      width: 90%;
-      margin: auto;
+        align-items: center;
+        width: 90%;
+        margin: auto;
     }
 }
 

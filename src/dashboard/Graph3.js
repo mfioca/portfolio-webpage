@@ -116,7 +116,7 @@ const Graph3 = () => {
     }
 
     return (
-        <div className="chart-container">
+        <div className="box-style chart-container">
             <h2 className="shadow">Application Usage Over Time by Month</h2>
             <div className="chart3-data-box">
                 { textBoxContent }

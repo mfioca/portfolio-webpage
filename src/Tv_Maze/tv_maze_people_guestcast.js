@@ -88,11 +88,11 @@ const TvMazePeopleGuestCast = ({ id }) => {
     }
 
     return (
-        <div className="box-background  cast-container">
+        <div className="box-background  border cast-container">
             <h2 className="section-title">Guest Appearances</h2>
-            <div className="cast-grid">
+            <div className="flex-wrap cast-grid">
                 { guestCredits.map((credit, index) => (
-                    <div key={ index } className="cast-member">
+                    <div key={ index } className="box-style cast-member">
                         <h3>{ credit.name }</h3>
                         { credit.image ? (
                             <img

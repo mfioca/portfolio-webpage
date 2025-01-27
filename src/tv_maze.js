@@ -73,7 +73,7 @@ const TvMaze = () => {
                     </TabList>
                     {/* TV Show Search Panel */}
                     <TabPanel>
-                        <div className="tvmaze-search">
+                        <div className="box-style tvmaze-search">
                             <h1>TV Show Search</h1>
                             <form onSubmit={(e) => {
                                 e.preventDefault();
@@ -92,7 +92,7 @@ const TvMaze = () => {
                         </div>
                         <div>
                             { results.length > 0 ? (
-                                <div className="box-background tvmaze-search-results">
+                                <div className="box-background flex-wrap tvmaze-search-results">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
@@ -114,7 +114,7 @@ const TvMaze = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className="tvmaze-search">
+                        <div className="box-style tvmaze-search">
                             <h1>Person Search</h1>
                             <form onSubmit={(e) => {
                                 e.preventDefault();
@@ -133,7 +133,7 @@ const TvMaze = () => {
                         </div>
                         <div>
                             { results.length > 0 ? (
-                                <div className="box-background tvmaze-search-results">
+                                <div className="box-background flex-wrap tvmaze-search-results">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>

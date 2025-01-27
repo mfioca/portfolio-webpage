@@ -10,7 +10,7 @@ import { DividerLine, IntroSection } from './SharedComponents.js';
 
 const TextSection = ({ children }) => {
     return (
-        <div className="text-section">
+        <div className="box-style text-section">
             { children }
         </div>
     );
@@ -50,8 +50,8 @@ function Dashboard() {
                     </p>
                 </IntroSection>
                 <DividerLine />
-                <div className="box-background graph-flexbox">
-                    <div className="graph-container">
+                <div className="flex-wrap box-background graph-flexbox">
+                    <div className="flex-wrap box-style graph-container">
                         <Graph />
                         <TextSection>
                             <p>
@@ -73,7 +73,7 @@ function Dashboard() {
                             </p>
                         </TextSection>
                     </div>
-                    <div className="graph-container">
+                    <div className="flex-wrap box-style graph-container">
                         <SecondGraph />
                         <TextSection>
                             <p>
@@ -90,7 +90,7 @@ function Dashboard() {
                             </p>
                         </TextSection>
                     </div>
-                    <div className="graph-container">
+                    <div className="flex-wrap box-style graph-container">
                         <ThirdGraph />
                         <TextSection>
                             <p>

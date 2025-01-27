@@ -161,8 +161,8 @@ const CSVdata = () => {
     const currentData = filteredData.slice(startIndex, endIndex);
  
     return (
-        <div className="box-background dashboard-container">
-            <div className="dashboard-hub">        
+        <div className="box-background flex-column dashboard-container">
+            <div className="box-style dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
                 <p><strong>How to Use:</strong></p>
@@ -175,7 +175,7 @@ const CSVdata = () => {
                         <li>The Donut Chart displays the proportion of time spent on different applications.</li>
                         <li>The Bar Chart shows detailed breakdowns of activity subtypes, enabling you to identify trends and focus areas.</li>
                     </ul>
-                <div className="dropdowns">
+                <div className="flex-wrap dropdowns">
                     <div>
                         <h2>Select Activity Type</h2>
                         <select value={ selectedActivityType } onChange={ (e) => setSelectedActivityType(e.target.value) }>
@@ -212,7 +212,7 @@ const CSVdata = () => {
                         </select>
                     </div>
                 </div>
-                <div className="graph-wrapper">
+                <div className="flex-wrap graph-wrapper">
                     <div className="donut-chart">
                         <div className="bar-chart-title">
                         <h3>Top Applications</h3>
