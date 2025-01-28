@@ -253,12 +253,12 @@ const talktrack = `
               <Tab>Talk Track</Tab>
           </TabList>
           <TabPanel>
-            <div className="markdown-container">
+            <div className="box-style markdown-container">
               <ReactMarkdown>{ prompt }</ReactMarkdown>
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="markdown-container">
+            <div className="box-style markdown-container">
               <ReactMarkdown>{ talktrack }</ReactMarkdown>
             </div>
           </TabPanel>

@@ -30,22 +30,13 @@
 
 
 .example-container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80vh; /* Adjust as needed */
-    padding: 20px;
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for a cohesive look */
-    border: 5px solid transparent; /* Match border style */
-    border-radius: 10px; /* Rounded edges for consistency */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     overflow: hidden; /* Prevent elements from overflowing the container */
 }
 
 .chat-window {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
@@ -53,25 +44,16 @@
     height: 100%; 
     padding: 10px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
     scroll-snap-type: y mandatory; /* Optional: Snaps messages cleanly */
 }
 
-.next-message-btn {
+.next-message-btn,
+.reset-message-btn {
     margin-top: 20px; /* Space above the button */
-    padding: 10px 20px; /* Comfortable click area */
-    background-color: #0078d4; /* Same as user bubble for visual consistency */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .next-message-btn:hover {
@@ -81,19 +63,6 @@
 .next-message-btn:disabled {
     background-color: #c1c1c1; /* Gray out when disabled */
     cursor: not-allowed;
-}
-
-.reset-message-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #ff6f61; /* Contrast color for reset */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
 }
 
 .reset-message-btn:hover {

@@ -86,7 +86,7 @@ const TvMaze = () => {
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     aria-label="Search for a TV show"
                                 />
-                                <button type="submit">Search</button>
+                                <button className="button" type="submit">Search</button>
                             </form>
                             { error && <p style={{ color: 'red' }}>{ error }</p> }
                         </div>
@@ -127,7 +127,7 @@ const TvMaze = () => {
                                     onChange={ (e) => setSearchTerm(e.target.value) }
                                     aria-label="Search for a person"
                                 />
-                                <button type="submit">Search</button>
+                                <button className="button" type="submit">Search</button>
                             </form>
                             { error && <p style={{ color: 'red' }}>{ error }</p> }
                         </div>

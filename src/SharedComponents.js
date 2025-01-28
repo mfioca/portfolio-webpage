@@ -157,10 +157,10 @@ export const ChatBubble = ({ data }) => {
     };
 
     return (
-        <div className="example-container">
+        <div className="box-background border flex-column example-container">
             <h2>{ title }</h2>
             <div
-                className="chat-window"
+                className="flex-column box-style chat-window"
                 ref={ chatWindowRef }
                 onMouseEnter={ handleMouseEnter }
                 onMouseLeave={ handleMouseLeave }
@@ -179,10 +179,10 @@ export const ChatBubble = ({ data }) => {
                     </div>
                 ))}
             </div>
-            <div className="button-container">
+            <div>
                 { visibleCount < messages.length ? (
                     <button
-                    className="next-message-btn"
+                    className=" button next-message-btn"
                     onClick={() => {
                         setVisibleCount((prev) => prev + 1); // Increment visible messages
                         setTimeout(() => scrollToBottom(), 0); // Ensure smooth scrolling
@@ -191,7 +191,7 @@ export const ChatBubble = ({ data }) => {
                     Next Message
                 </button>
                 ) : (
-                    <button className="reset-message-btn" onClick={ () => setVisibleCount(1) }>
+                    <button className="button reset-message-btn" onClick={ () => setVisibleCount(1) }>
                         Reset Chat
                     </button>
                 )}

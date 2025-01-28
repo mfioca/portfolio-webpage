@@ -80,7 +80,7 @@ Explain each card in detail while weaving them into a connected story that ties 
 ;
 
   return (
-    <div className="markdown-container">
+    <div className="box-style markdown-container">
         <ReactMarkdown>{ prompt }</ReactMarkdown>
     </div>
   );

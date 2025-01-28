@@ -12,6 +12,7 @@ body h2 {
   letter-spacing: 0.5px; /* Adjust as needed */
 }
 
+/*used for shadowing text */
 .shadow {
   text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
@@ -52,10 +53,26 @@ body h2 {
   padding: 10px;
 }
 
+.button {
+  padding: 10px 20px;
+  background-color: #0078d4; /* Same as user bubble for visual consistency */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #005a9e; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
 /***********************************************************************************/
 /*                            Nav Bar and Footer                                   */
 /***********************************************************************************/
-
 
 .navbar {
   display: flex;
@@ -94,22 +111,12 @@ body h2 {
   color: #e0e0e0; /* Change color on hover */
 }
 
-.footer-1 {
+.footer {
   position: relative;
   margin: 0;
   padding: 0;
   width: auto;
   text-align: center;
-}
-
-.footer {
-  position: relative;
-  width: 100%;
-  background-color: #282c34;
-  color: white;
-  text-align: center;
-  padding: 0px; /* Add padding to make content visible */
-  margin: 0px; /* Ensure space above */
 }
 
 .footer-content {

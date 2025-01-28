@@ -92,7 +92,7 @@ Ask one question at a time. Do not make it obvious that you are trying to sell y
 ;
 
   return (
-      <div className="markdown-container">
+      <div className="box-style markdown-container">
           <ReactMarkdown>{ prompt }</ReactMarkdown>
       </div>
   );

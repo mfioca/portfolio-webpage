@@ -161,7 +161,7 @@ const CSVdata = () => {
     const currentData = filteredData.slice(startIndex, endIndex);
  
     return (
-        <div className="box-background flex-column dashboard-container">
+        <div className="box-background border flex-column dashboard-container">
             <div className="box-style dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
@@ -321,6 +321,7 @@ const CSVdata = () => {
                 </div>
                 <div className="pagination">
                     <button 
+                        className="button"
                         onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
                         disabled={currentPage === 1}>
                         Previous
@@ -329,6 +330,7 @@ const CSVdata = () => {
                         Page { currentPage } of { totalPages }
                     </span>
                     <button 
+                        className="button"
                         onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
                         disabled={ currentPage === totalPages }>
                         Next

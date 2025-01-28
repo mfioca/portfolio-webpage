@@ -235,17 +235,6 @@
   margin-top: 20px; /* Space above pagination */
 }
 
-.pagination button {
-  padding: 10px 15px; /* Button padding */
-  margin: 0 5px; /* Space between buttons */
-  border: none; /* Remove default border */
-  background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
-  border-radius: 5px; /* Rounded edges */
-}
 
-.pagination button:hover {
-  background-color: #0056b3; /* Darker on hover */
-}
 
 

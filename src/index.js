@@ -72,7 +72,7 @@ const Navigation = () => {
 
 const Footer = () =>{
   return (
-    <div className="footer">
+    <div className="index-shared footer">
       <footer className="footer-content">
         <p>Contact Me: <a href="mailto:mfioca@gmail.com" className="contact-link">mfioca@gmail.com</a></p>
         <p>

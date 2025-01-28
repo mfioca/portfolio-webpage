@@ -1,3 +1,5 @@
+/*  Chat bubble css in sharedcomponents.css */
+
 .ai-body {
     margin-bottom: 100px;
     margin-top: 10px;
@@ -8,10 +10,10 @@
     padding: 20px; /* Add spacing inside the container */
     max-width: 1600px;
     margin: 0 auto; /* Center the container on the page */
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
 }
 
 .ai-showcase-container h1 {
-    font-family: 'Arial', sans-serif; /* Clean, readable font */
     font-size: 32px; /* Large, prominent title */
     font-weight: bold; /* Make the title stand out */
     margin-bottom: 20px; /* Space below the title */
@@ -29,23 +31,14 @@
     }
 }
 
-
-.test {
-    background-color: #e0e0e0;
-}
 /***********************************************************************************/
 /*                            Prompt section                                       */
 /***********************************************************************************/
 
 .markdown-container {
-    /*background-image: linear-gradient(#e0e0e0, #ffffff); /* Gradient to match sections */
     background-color: #f9f9f9; /* Light background color */
-    padding: 20px;
-    border: 5px solid transparent; /* Transparent border for cohesion */
-    border-radius: 10px; /* Rounded corners for consistency */
     font-family: 'Courier New', monospace; /* Keep the monospaced font */
     color: #24292f; /* GitHub-like dark text color */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Match shadow style */
     max-width: 1500px; /* Limit width for readability */
     margin: 20px auto; /* Center the container */
     overflow-y: auto; /* Enables vertical scrolling */
@@ -56,7 +49,6 @@
 .markdown-container h1, 
 .markdown-container h2, 
 .markdown-container h3 {
-    font-family: 'Arial', sans-serif; /* Clean font for headings */
     color: #0366d6; /* GitHub blue for headings */
     margin-top: 10px;
     margin-bottom: 10px;
@@ -66,7 +58,6 @@
     background-color: #eeeeee; /* Light background for code blocks */
     padding: 10px;
     border-radius: 5px;
-    font-family: 'Courier New', monospace; /* Monospaced font for code blocks */
     overflow-x: auto; /* Horizontal scrolling for long code */
 }
 
@@ -76,7 +67,6 @@
     border-radius: 3px;
     font-size: 14px;
     color: #d73a49; /* Red for inline code */
-    font-family: 'Courier New', monospace;
 }
 
 .markdown-container ul {
@@ -96,3 +86,5 @@
 .markdown-container a:hover {
     text-decoration: underline;
 }
+
+
