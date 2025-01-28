@@ -60,8 +60,8 @@ const TvMazePeopleResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{ personDetails.name }</h1>
-            <div className="tvmaze-results">
-                <div className="box-background tvmaze-person-results">
+            <div className="box-background border flex-wrap tvmaze-results">
+                
                     <div className="flex-column main-info">
                         { personDetails.image && personDetails.image.original && (
                             <img
@@ -84,7 +84,7 @@ const TvMazePeopleResults = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            
             <div className="results-tabs-container">
                 <Tabs
                     forceRenderTabPanel

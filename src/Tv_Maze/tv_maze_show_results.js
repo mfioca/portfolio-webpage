@@ -47,8 +47,7 @@ const TvMazeShowResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{ showDetails.name }</h1>
-            <div className="tvmaze-results">
-                <div className="box-background border flex-wrap tvmaze-results-intro">
+            <div className="box-background border flex-wrap tvmaze-results">
                     <div className="flex-column main-info">
                         { showDetails.image && showDetails.image.original && (
                             <img
@@ -76,7 +75,6 @@ const TvMazeShowResults = () => {
                         <h2>Summary</h2>
                         <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
                     </div>
-                </div>
             </div>
             <div className="results-tabs-container">
                 <Tabs

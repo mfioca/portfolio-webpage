@@ -11,7 +11,7 @@
     font-size: 2.5rem; /* Emphasized font size */
     color: #0078d4; /* Theme color */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    margin: 20px 0; /* Add spacing above and below */
+    margin: auto; /* Add spacing above and below */
     font-family: 'Courier New', monospace; /* Consistent font family */
 }
 
@@ -120,32 +120,13 @@
 /***********************************************************************************/
 
 .tvmaze-results {
-    display: flex; /* Enable flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically if needed */
-}
-
-.tvmaze-results-intro {
     flex-direction: row; /* Arrange children in a row */
     gap: 10px; /* Add space between the columns */
     max-width: 1600px; /* Limit the total width of the container */
-    margin: 10px; /* Center the container on the page */
+    margin: 20px auto; /* Center the container */
     padding: 10px; /* Add padding for spacing */
     font-family: 'Courier New', sans-serif; /* Consistent font */
     align-items: flex-start; /* Align items to the top of the row */
-}
-
-.tvmaze-person-results {
-    display: flex;
-    flex-direction: row; /* Arrange children in a row */
-    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-    gap: 10px; /* Add space between the columns */
-    max-width: 1600px; /* Limit the total width of the container */
-    margin: 10px; /* Center the container on the page */
-    padding: 10px; /* Add padding for spacing */
-    font-family: 'Courier New', sans-serif; /* Consistent font */
-    align-items: flex-start; /* Align items to the top of the row */
-    border: 2px solid #ccc; /* Add a border matching the theme */
 }
 
 .main-info {

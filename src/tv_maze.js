@@ -5,6 +5,8 @@ import { DividerLine, IntroSection } from './SharedComponents.js';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Tv_Maze/tv_maze.css';
+import './SharedComponents.css';
+
 
 
 const fetchTvMazeData = async ( searchTerm, searchType, setResults, setError ) => {
@@ -63,7 +65,7 @@ const TvMaze = () => {
             </IntroSection>
             <DividerLine />
             {/* Tabs Section for Show and Person Search */}
-            <div className="tvmaze-tabs-container">
+            <div className="tabs-container">
                 <Tabs
                     onSelect={() => setSearchTerm('')} // Clear searchTerm on tab change
                 >
