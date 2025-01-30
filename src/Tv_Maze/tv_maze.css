@@ -187,6 +187,7 @@
     color: #0078d4;
 }
 
+
 .results-tabs-container .react-tabs__tab-list {
     margin: 0 auto;
     justify-content: center;
@@ -289,6 +290,9 @@
     color: #333;
     padding: 20px;
     background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
   
 .tvmaze-episodes-container h2 {
@@ -300,6 +304,8 @@
 
 .season-header {
     flex: 1; /* Let this column take up one part of the available space */
+    display: flex;
+    flex-direction: column; /* Stack title, image, and other details */
     gap: 5px; /* Add spacing between elements in this column */
 }
 
@@ -329,8 +335,11 @@
   
 .season-details-extra {
     flex: 1; /* Let this column take up one part of the available space */
+    background-color: #f9f9f9; /* Light background color */
     padding: 15px; /* Add padding for spacing */
     margin: 10px;
+    border: 1px solid #ccc; /* Optional border for separation */
+    border-radius: 10px; /* Rounded corners for consistency */
     max-width: 500px; /* Explicit max width to prevent wrapping */
 }
   

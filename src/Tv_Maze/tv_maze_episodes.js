@@ -3,9 +3,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import axios from 'axios';
 
-
-
-
 const TvMazeEpisodes = ({ showId }) => {
     const [seasons, setSeasons] = useState([]);
     const [error, setError] = useState('');
@@ -39,7 +36,7 @@ const TvMazeEpisodes = ({ showId }) => {
     }, [showId]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{ error }</p>;
+        return <p style={{ color: 'red' }}>{error}</p>;
     }
 
     if (!seasons.length) {
@@ -47,22 +44,22 @@ const TvMazeEpisodes = ({ showId }) => {
     }
 
     return (
-        <div className="flex-wrap box-style tvmaze-episodes-container">
+        <div className="tvmaze-episodes-container">
             <h2 className="section-title">Episodes by Season</h2>
             <Tabs>
                 <TabList>
-                    { seasons.map((season) => (
-                        <Tab key={ season.id }>Season { season.number }</Tab>
+                    {seasons.map((season) => (
+                        <Tab key={season.id}>Season {season.number}</Tab>
                     ))}
                 </TabList>
-                { seasons.map((season) => (
-                    <TabPanel key={ season.id }>
-                        <div className="flex-wrap tvmaze-results-intro">
-                            <div className="flex-column season-header">
-                                { season.image ? (
+                {seasons.map((season) => (
+                    <TabPanel key={season.id}>
+                        <div className="tvmaze-results-intro">
+                            <div className="season-header">
+                                {season.image ? (
                                     <img
-                                        src={ season.image.original }
-                                        alt={`Season ${ season.number }`}
+                                        src={season.image.original}
+                                        alt={`Season ${season.number}`}
                                         loading="lazy"
                                         className="season-image"
                                     />
@@ -70,13 +67,13 @@ const TvMazeEpisodes = ({ showId }) => {
                                     <p>No image available</p>
                                 )}
                             </div>
-                            <div className="box-background border season-details-extra">
-                                <p><strong>Season { season.number }</strong></p>
-                                <p><strong>Premiere Date:</strong> { season.premiereDate || 'Unknown' }</p>
-                                <p><strong>End Date:</strong> { season.endDate || 'Unknown' }</p>
-                                <p><strong>Number of Episodes:</strong> { season.episodes.length || 0 }</p>
+                            <div className="season-details-extra">
+                                <p><strong>Season {season.number}</strong></p>
+                                <p><strong>Premiere Date:</strong> {season.premiereDate || 'Unknown'}</p>
+                                <p><strong>End Date:</strong> {season.endDate || 'Unknown'}</p>
+                                <p><strong>Number of Episodes:</strong> {season.episodes.length || 0}</p>
                                 <p>
-                                    <a href={ season.url } target="_blank" rel="noopener noreferrer">
+                                    <a href={season.url} target="_blank" rel="noopener noreferrer">
                                         View Season on TVMaze
                                     </a>
                                 </p>
@@ -93,18 +90,18 @@ const TvMazeEpisodes = ({ showId }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                { season.episodes.map((episode) => (
-                                    <tr key={ episode.id }>
-                                        <td>{ episode.name }</td>
-                                        <td>{ episode.number }</td>
-                                        <td>{ episode.airdate || 'Unknown'}</td>
+                                {season.episodes.map((episode) => (
+                                    <tr key={episode.id}>
+                                        <td>{episode.name}</td>
+                                        <td>{episode.number}</td>
+                                        <td>{episode.airdate || 'Unknown'}</td>
                                         <td
                                             dangerouslySetInnerHTML={{
                                                 __html: episode.summary || 'No summary available.',
                                             }}
                                         />
                                         <td>
-                                            <a href={ episode.url } target="_blank" rel="noopener noreferrer">
+                                            <a href={episode.url} target="_blank" rel="noopener noreferrer">
                                                 View Episode on TVMaze
                                             </a>
                                         </td>
