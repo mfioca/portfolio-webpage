@@ -1,5 +1,5 @@
 body {
-  padding-top: 130px;
+  padding-top: 150px;
   margin: auto;
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   -webkit-font-smoothing: antialiased;
@@ -11,6 +11,13 @@ body h2 {
   font-weight: 600; /* Semi-bold */
   letter-spacing: 0.5px; /* Adjust as needed */
 }
+
+@media (max-width: 800px) {
+  body {
+    padding-top: 220px;
+  }
+}
+
 
 /*used for shadowing text */
 .shadow {
@@ -111,6 +118,42 @@ button:hover {
   color: #e0e0e0; /* Change color on hover */
 }
 
+.navbar-banner {
+  height: 50px;
+  bottom: 0;
+  width: 100%;
+  background-color: #3a3f4b;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar-banner p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 20s linear infinite;
+}
+
+.navbar-banner a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* FOOTER */
+
 .footer {
   position: relative;
   margin: 0;
@@ -122,6 +165,7 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  justify-content: space-evenly; /* Spaces links evenly */
 }
 
 
@@ -150,6 +194,20 @@ button:hover {
 .linkedin-icon {
   width: 20px;
   height: 20px;
+}
+
+.vite-link {
+  color: #ffcc00; /* Bright gold for visibility */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.vite-link:hover {
+  text-decoration: underline;
+}
+
+.vite-link:visited {
+  color: #e6b800; /* Slightly darker gold for visited links */
 }
 
 /***********************************************************************************/
@@ -232,40 +290,6 @@ button:hover {
   }
 }
 
-
-.navbar-banner {
-
-  bottom: 0;
-  width: 100%;
-  /*background: rgba(0, 0, 0, 0.8);*/
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-top: 10px;
-}
-
-.navbar-banner p {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-text 30s linear infinite;
-}
-
-.navbar-banner a {
-  color: #ffcc00;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-@keyframes scroll-text {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 
 
 

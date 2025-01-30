@@ -70,7 +70,7 @@ const Navigation = () => {
 
   {/* Scrolling Banner Inside Navbar */}
   <div className="navbar-banner">
-      <p>⚡ This site is transitioning updates to the <a href="NEW_VITE_SITE_URL">Vite version</a>. Stay up to date!</p>
+      <p>⚡ This site is now being maintained on a new Vite-powered version. Stay up to date!</p>
     </div>
 
     </nav>
@@ -80,25 +80,37 @@ const Navigation = () => {
 const Footer = () =>{
   return (
     <div className="index-shared footer">
-      <footer className="footer-content">
-        <p>Contact Me: <a href="mailto:mfioca@gmail.com" className="contact-link">mfioca@gmail.com</a></p>
-        <p>
-          <a 
-            href="https://www.linkedin.com/in/mark-fioca/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="linkedin-link"
-          >
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" 
-              alt="LinkedIn" 
-              className="linkedin-icon" 
-            />
-            LinkedIn Profile
-          </a>
-        </p>
-      </footer>
-    </div>
+    <footer className="footer-content">
+      <p>Contact Me: <a href="mailto:mfioca@gmail.com" className="contact-link">mfioca@gmail.com</a></p>
+      <p>
+        <a 
+          href="https://www.linkedin.com/in/mark-fioca/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="linkedin-link"
+        >
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" 
+            alt="LinkedIn" 
+            className="linkedin-icon" 
+          />
+          LinkedIn Profile
+        </a>
+      </p>
+      <p>
+      <a 
+        href="https://mfioca.github.io/vite-portfolio-webpage/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="vite-link"
+      >
+        Vite Version of This Site
+      </a>
+
+      </p>
+    </footer>
+  </div>
+
   )
 };
 
