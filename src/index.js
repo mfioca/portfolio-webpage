@@ -46,6 +46,7 @@ const Navigation = () => {
   }
 
   return (
+    <>
     <nav className="index-shared navbar">
       <div className="navbar-brand">{ title }</div>
       <ul className="navbar-links">
@@ -67,6 +68,11 @@ const Navigation = () => {
         {/* Add more links as needed */}
       </ul>
     </nav>
+    {/* Footer Notice Banner */}
+    <div className="footer-banner">
+      <p>⚡ This site is transitioning updates to the <a href="NEW_VITE_SITE_URL">Vite version</a>. Stay up to date!</p>
+    </div>
+  </>
   );
 };
 

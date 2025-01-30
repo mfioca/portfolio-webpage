@@ -57,7 +57,7 @@ const TvMazeShowResults = () => {
                             />
                         )}
                     </div>
-                    <div className="box-style show-details">
+                    <div className="box-style extra-details">
                         <p><strong>Language:</strong> { showDetails.language || 'N/A' }</p>
                         <p><strong>Type:</strong> { showDetails.type || 'N/A' }</p>
                         <p><strong>Genres:</strong> { showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A' }</p>

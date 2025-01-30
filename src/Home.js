@@ -4,7 +4,10 @@ import { DividerLine, IntroSection } from './SharedComponents.js';
 
 const Home = () => {
     return (
-        <div className="home-body">      
+        <div className="home-body">
+            <div className="notice-banner">
+  ⚡ This site is now transitioning updates to the <a href="NEW_VITE_SITE_URL">Vite version</a>. Stay up to date!
+</div>     
             <IntroSection title="Welcome to to my home page">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;This web page began as a personal project to explore 
                     the capabilities of OpenAI’s ChatGPT and delve into prompt engineering and customizations. I chose this as a foundation because 

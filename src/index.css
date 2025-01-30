@@ -1,5 +1,5 @@
 body {
-  padding-top: 120px;
+  padding-top: 130px;
   margin: auto;
   min-height: calc(100vh - 120px); /* Ensure it fills the available height (subtract the navbar height if needed) */
   -webkit-font-smoothing: antialiased;
@@ -229,6 +229,41 @@ button:hover {
 
   .home-text {
     order: 2; /* Ensure the text appears below the image */
+  }
+}
+
+.footer-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.footer-banner p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 15s linear infinite;
+}
+
+.footer-banner a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
