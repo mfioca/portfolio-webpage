@@ -66,13 +66,10 @@ const Navigation = () => {
         </li>
         {/* Add more links as needed */}
       </ul>
-
-
-  {/* Scrolling Banner Inside Navbar */}
-  <div className="navbar-banner">
-      <p>⚡ This site is now being maintained on a new Vite-powered version. Stay up to date!</p>
-    </div>
-
+      {/* Scrolling Banner Inside Navbar */}
+      <div className="navbar-banner">
+        <p>⚡ This site is now being maintained on a new Vite-powered version. Stay up to date!</p>
+      </div>
     </nav>
   );
 };
